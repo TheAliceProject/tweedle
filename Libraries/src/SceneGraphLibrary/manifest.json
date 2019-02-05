@@ -314,6 +314,12 @@
       "format": "png",
       "files": ["resources/meanQueen.png"],
       "type": "Image"
+    },
+    {
+      "id": "Alien",
+      "format": "json",
+      "files": ["resources/Alien/Alien.json"],
+      "type": "Model"
     }
   ]
 }

@@ -433,6 +433,7 @@ class Scene extends SScene {
   STorus torus <- new STorus();
   SDisc disc <- new SDisc();
   SBillboard billboard <- new SBillboard();
+  //SModel alien <- new SModel(resource: "Alien");
 
   void performCustomSetup() {
     this.box.setPositionRelativeToVehicle(position: new Position(x: -0.5, y: 0.0, z: 0.0), duration: Duration.ZERO);
