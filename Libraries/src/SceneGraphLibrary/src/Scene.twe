@@ -23,7 +23,9 @@ class Scene extends SScene {
       alien.move(direction: MoveDirection.UP, amount: 0.5, duration: new Duration(seconds: 0.25), style: AnimationStyle.BEGIN_ABRUPTLY_AND_END_GENTLY);
       alien.move(direction: MoveDirection.DOWN, amount: 0.5, duration: new Duration(seconds: 0.25), style: AnimationStyle.BEGIN_GENTLY_AND_END_ABRUPTLY);
     }
+    DecimalNumber alienHeight <- alien.getHeight();
     alien.setHeight(height: 3, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
+    alien.setHeight(height: alienHeight, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
 
     $Debug.log(message: "billboard");
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: billboard);
