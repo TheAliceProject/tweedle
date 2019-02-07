@@ -17,6 +17,14 @@ class Scene extends SScene {
     camPos <- new Position(x: camPos.x, y: camPos.y + 1, z: camPos.z - 5);
     Orientation camRot <- camera.getOrientationRelativeToVehicle();
 
+    $Debug.log(message: "model");
+    this.camera.moveAndOrientToAGoodVantagePointOf(entity: alien);
+    countUpTo( indexB < 3 ) {
+      alien.move(direction: MoveDirection.UP, amount: 0.5, duration: new Duration(seconds: 0.25), style: AnimationStyle.BEGIN_ABRUPTLY_AND_END_GENTLY);
+      alien.move(direction: MoveDirection.DOWN, amount: 0.5, duration: new Duration(seconds: 0.25), style: AnimationStyle.BEGIN_GENTLY_AND_END_ABRUPTLY);
+    }
+    alien.setHeight(height: 3, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
+
     $Debug.log(message: "billboard");
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: billboard);
     billboard.setPaint(paint: Color.RED);
@@ -259,7 +267,7 @@ class Scene extends SScene {
     Portion fogDensity <- getFogDensity();
     Color atmosphereColor <- getAtmosphereColor();
     doTogether {
-      setFogDensity(density: new Portion(portion: 0.2), duration: Duration.TWO_SECONDS);
+      setFogDensity(density: new Portion(portion: 0.8), duration: Duration.TWO_SECONDS);
       setAtmosphereColor(color: new Color(red: 160.0/255.0, green: 150.0/255.0, blue: 170.0/255.0 ), duration: Duration.TWO_SECONDS);
     }
     doTogether {
@@ -433,7 +441,7 @@ class Scene extends SScene {
   STorus torus <- new STorus();
   SDisc disc <- new SDisc();
   SBillboard billboard <- new SBillboard();
-  //SModel alien <- new SModel(resource: "Alien");
+  SModel alien <- new SModel(resource: "Alien/DEFAULT");
 
   void performCustomSetup() {
     this.box.setPositionRelativeToVehicle(position: new Position(x: -0.5, y: 0.0, z: 0.0), duration: Duration.ZERO);
@@ -487,6 +495,9 @@ class Scene extends SScene {
 
     billboard.setVehicle(vehicle: this);
     billboard.setPositionRelativeToVehicle(position: new Position(x: -6, y: 0.0, z: -12.0), duration: Duration.ZERO);
+
+    alien.setVehicle(vehicle: this);
+    alien.setPositionRelativeToVehicle(position: new Position(x: 0.0, y: 0.0, z: 12.0), duration: Duration.ZERO);
 
   }
 

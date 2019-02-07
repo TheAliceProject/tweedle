@@ -7,6 +7,7 @@ class SGround extends SThing {
 
   void setVehicle(SThing vehicle) {
     this.vehicle <- vehicle;
+    $SceneGraph.setVehicle(vehicle: vehicle, rider: this);
   }
 
   Paint getPaint() {
