@@ -86,7 +86,7 @@
     {
       "name": "DEFAULT",
       "structure": "Alien",
-      "textureSet": "3e320af4-8dec-4c05-9ebc-46efadd343e8",
+      "textureSet": "Alien_DEFAULT",
       "icon": "DEFAULT.png"
     }
   ],
