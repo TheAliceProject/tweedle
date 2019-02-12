@@ -19,6 +19,8 @@ class Scene extends SScene {
 
     $Debug.log(message: "model");
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: alien);
+    alien.setOpacity(opacity: Portion.NONE, duration: Duration.ONE_SECOND);
+    alien.setOpacity(opacity: Portion.WHOLE, duration: Duration.ONE_SECOND);
     countUpTo( indexB < 3 ) {
       alien.move(direction: MoveDirection.UP, amount: 0.5, duration: new Duration(seconds: 0.25), style: AnimationStyle.BEGIN_ABRUPTLY_AND_END_GENTLY);
       alien.move(direction: MoveDirection.DOWN, amount: 0.5, duration: new Duration(seconds: 0.25), style: AnimationStyle.BEGIN_GENTLY_AND_END_ABRUPTLY);
