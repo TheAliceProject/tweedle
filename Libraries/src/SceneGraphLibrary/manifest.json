@@ -268,6 +268,21 @@
       "files": ["src/SGround.twe"],
       "type": "Class"
     }, {
+      "id": "SMarker",
+      "format": "tweedle",
+      "files": ["src/SMarker.twe"],
+      "type": "Class"
+    }, {
+      "id": "SCameraMarker",
+      "format": "tweedle",
+      "files": ["src/SCameraMarker.twe"],
+      "type": "Class"
+    }, {
+      "id": "SThingMarker",
+      "format": "tweedle",
+      "files": ["src/SThingMarker.twe"],
+      "type": "Class"
+    }, {
       "id": "SProgram",
       "format": "tweedle",
       "files": ["src/SProgram.twe"],

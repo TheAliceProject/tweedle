@@ -1,0 +1,11 @@
+class SMarker extends SMovableTurnable {
+  SMarker() {
+      $SceneGraph.createMarkerEntity(marker: this);
+      $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value: this.localTransformation.getValue());
+  }
+
+  void setVehicle(SThing vehicle) {
+    this.vehicle <- vehicle;
+    localTransformation.value <- $SceneGraph.setVehicle(vehicle: vehicle, rider: this);
+  }
+}

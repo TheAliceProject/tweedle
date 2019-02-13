@@ -33,6 +33,12 @@ class Scene extends SScene {
     alien.setHeight(height: 3, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
     alien.setHeight(height: alienHeight, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
 
+    $Debug.log(message: "markers");
+    alien.moveAndOrientTo(target: marker1);
+    this.delay(duration: Duration.HALF_SECOND);
+    alien.moveAndOrientTo(target: marker2);
+    this.delay(duration: Duration.HALF_SECOND);
+
     $Debug.log(message: "axes");
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: axes);
     axes.setOpacity(opacity: Portion.NONE);
@@ -458,6 +464,8 @@ class Scene extends SScene {
   SBillboard billboard <- new SBillboard();
   SAxes axes <- new SAxes();
   SModel alien <- new SModel(resource: "Alien/DEFAULT");
+  SCameraMarker marker1 <- new SCameraMarker();
+  SThingMarker marker2 <- new SThingMarker();
 
   void performCustomSetup() {
     this.box.setPositionRelativeToVehicle(position: new Position(x: -0.5, y: 0.0, z: 0.0), duration: Duration.ZERO);
@@ -517,6 +525,14 @@ class Scene extends SScene {
 
     alien.setVehicle(vehicle: this);
     alien.setPositionRelativeToVehicle(position: new Position(x: 0.0, y: 0.0, z: 12.0), duration: Duration.ZERO);
+
+    marker1.setVehicle(vehicle: this);
+    marker1.setPositionRelativeToVehicle(position: new Position(x: 1.0, y: 0.0, z: 12.0), duration: Duration.ZERO);
+    marker1.setOrientationRelativeToVehicle(orientation: new Orientation(axis: new Direction(x: 1, y: -1, z: 1).normalize(), angle: new Angle(revolutions: 0.2)), duration: Duration.ZERO);
+
+    marker2.setVehicle(vehicle: this);
+    marker2.setPositionRelativeToVehicle(position: new Position(x: -1.0, y: 0.0, z: 12.0), duration: Duration.ZERO);
+    marker2.setOrientationRelativeToVehicle(orientation: new Orientation(axis: new Direction(x: 1, y: 1, z: 1).normalize(), angle: new Angle(revolutions: -0.25)), duration: Duration.ZERO);
 
   }
 
