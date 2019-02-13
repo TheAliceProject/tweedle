@@ -29,6 +29,13 @@ class Scene extends SScene {
     alien.setHeight(height: 3, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
     alien.setHeight(height: alienHeight, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
 
+    $Debug.log(message: "axes");
+    this.camera.moveAndOrientToAGoodVantagePointOf(entity: axes);
+    axes.setOpacity(opacity: Portion.NONE, duration: Duration.ONE_SECOND);
+    axes.setOpacity(opacity: Portion.WHOLE, duration: Duration.ONE_SECOND);
+    axes.resize(factor: 2);
+    axes.resize(factor: 0.5);
+
     $Debug.log(message: "billboard");
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: billboard);
     billboard.setPaint(paint: Color.RED);
@@ -445,6 +452,7 @@ class Scene extends SScene {
   STorus torus <- new STorus();
   SDisc disc <- new SDisc();
   SBillboard billboard <- new SBillboard();
+  SAxes axes <- new SAxes();
   SModel alien <- new SModel(resource: "Alien/DEFAULT");
 
   void performCustomSetup() {
@@ -499,6 +507,9 @@ class Scene extends SScene {
 
     billboard.setVehicle(vehicle: this);
     billboard.setPositionRelativeToVehicle(position: new Position(x: -6, y: 0.0, z: -12.0), duration: Duration.ZERO);
+
+    axes.setVehicle(vehicle: this);
+    axes.setPositionRelativeToVehicle(position: new Position(x: 6, y: 0.0, z: -12.0), duration: Duration.ZERO);
 
     alien.setVehicle(vehicle: this);
     alien.setPositionRelativeToVehicle(position: new Position(x: 0.0, y: 0.0, z: 12.0), duration: Duration.ZERO);
