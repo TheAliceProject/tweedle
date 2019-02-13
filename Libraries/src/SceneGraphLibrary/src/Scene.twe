@@ -19,8 +19,12 @@ class Scene extends SScene {
 
     $Debug.log(message: "model");
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: alien);
-    alien.setOpacity(opacity: Portion.NONE, duration: Duration.ONE_SECOND);
-    alien.setOpacity(opacity: Portion.WHOLE, duration: Duration.ONE_SECOND);
+    alien.setOpacity(opacity: Portion.NONE);
+    alien.setOpacity(opacity: Portion.WHOLE);
+    alien.setPaint(paint: Color.RED);
+    alien.setPaint(paint: Color.GREEN);
+    alien.setPaint(paint: Color.BLUE);
+    alien.setPaint(paint: Color.WHITE);
     countUpTo( indexB < 3 ) {
       alien.move(direction: MoveDirection.UP, amount: 0.5, duration: new Duration(seconds: 0.25), style: AnimationStyle.BEGIN_ABRUPTLY_AND_END_GENTLY);
       alien.move(direction: MoveDirection.DOWN, amount: 0.5, duration: new Duration(seconds: 0.25), style: AnimationStyle.BEGIN_GENTLY_AND_END_ABRUPTLY);
@@ -31,8 +35,8 @@ class Scene extends SScene {
 
     $Debug.log(message: "axes");
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: axes);
-    axes.setOpacity(opacity: Portion.NONE, duration: Duration.ONE_SECOND);
-    axes.setOpacity(opacity: Portion.WHOLE, duration: Duration.ONE_SECOND);
+    axes.setOpacity(opacity: Portion.NONE);
+    axes.setOpacity(opacity: Portion.WHOLE);
     axes.resize(factor: 2);
     axes.resize(factor: 0.5);
 
