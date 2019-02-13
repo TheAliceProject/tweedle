@@ -4,8 +4,19 @@ class SMarker extends SMovableTurnable {
       $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value: this.localTransformation.getValue());
   }
 
-  void setVehicle(SThing vehicle) {
+  @TuckedAway void setVehicle(SThing vehicle) {
     this.vehicle <- vehicle;
     localTransformation.value <- $SceneGraph.setVehicle(vehicle: vehicle, rider: this);
   }
+
+
+  @CompletelyHidden Color getColorId() {
+    return this.color;
+  }
+
+  @CompletelyHidden  void setColorId(Color color ) {
+    this.color <- color;
+  }
+
+  @CompletelyHidden Color color = Color.WHITE;
 }
