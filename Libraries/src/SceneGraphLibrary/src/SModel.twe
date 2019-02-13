@@ -14,6 +14,12 @@ class SModel extends SMovableTurnable
     
   }
 
+  void setResource(TextString resource) {
+      $SceneGraph.setEntityResource(model: this, resource: resource);
+      this.size.sync();
+      this.defaultSize <- this.size.getValue();
+  }
+
   Size getSize() {
     return this.size.getValue();
   }
