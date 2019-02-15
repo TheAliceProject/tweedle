@@ -10,11 +10,11 @@ class SMarker extends SMovableTurnable {
   }
 
 
-  @CompletelyHidden Color getColorId() {
+  @CompletelyHidden Color getColor() {
     return this.color;
   }
 
-  @CompletelyHidden  void setColorId(Color color ) {
+  @CompletelyHidden  void setColor(Color color ) {
     this.color <- color;
   }
 
