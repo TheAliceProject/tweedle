@@ -1,0 +1,76 @@
+class SJointedModel extends SModel {
+    SJointedModel(TextString resource) {
+        super(resource: resource);
+    }
+
+    SJointedModel(TextString resource, JointId root) {
+        super(resource: resource);
+
+        if (root != null) {
+            this.buildJoints(root: root);
+        }
+    }
+
+    SJoint getJoint(JointId id) {
+        if (this.joints != null) {
+            forEach(SJoint joint in this.joints) {
+                if (joint.getId().getName() == id.getName()) {
+                    return joint;
+                }
+            }
+        }
+        return null;
+    }
+
+    SJoint[] getJointArray(JointId[] idArray) {
+        WholeNumber len <- idArray.length;
+        SJoint[] jointArray <- new SJoint[len];
+        if (this.joints != null) {
+            WholeNumber index <- 0;
+            countUpTo(index < JointIdArray.length) {
+                jointArray[index] <- this.getJoint(idArray[index]);
+            }
+        }
+        return jointArray;
+    }
+
+    // TODO: is this necessary?
+    //SJoint[] getJointArray(JointArrayId jointArrayId) {
+    //}
+
+    void straightenOutJoints() {
+    }
+
+    void say(TextString text) {
+    }
+
+    void think(TextString text) {
+    }
+
+    //void strikePose(Pose pose) {
+    //}
+
+    @CompletelyHidden void buildJoints(JointId root) {
+
+        WholeNumber count <- root.getHierarchyCount();
+        this.joints <- new SJoint[count];
+        buildJoint(id: root, parent: null, index: 0);
+    }
+
+    @CompletelyHidden WholeNumber buildJoint(JointId id, SJoint parent, WholeNumber index) {
+
+        SJoint joint <- new SJoint(id: id, parent: parent, model: this);
+        JointIdNode current <- id.getChildren().getFirst();
+        joints[index] <- joint;
+        index <- index + 1;
+
+        while (current != null) {
+            index <- buildJoint(id: current.id, parent: joint, index: index);
+            current <- current.next;
+        }
+
+        return index;
+    }
+
+    @CompletelyHidden SJoint[] joints;
+}

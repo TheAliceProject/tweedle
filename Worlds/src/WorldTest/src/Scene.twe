@@ -17,8 +17,50 @@ class Scene extends SScene {
     camPos <- new Position(x: camPos.x, y: camPos.y + 1, z: camPos.z - 5);
     Orientation camRot <- camera.getOrientationRelativeToVehicle();
 
-    $Debug.log(message: "model");
+    $Debug.log(message: "biped");
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: alien);
+
+    doTogether {
+        alien.getNeck().roll(direction: RollDirection.RIGHT, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+        alien.getHead().turn(direction: TurnDirection.LEFT, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+    }
+
+    doTogether {
+        alien.getNeck().roll(direction: RollDirection.LEFT, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+        alien.getHead().turn(direction: TurnDirection.RIGHT, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+    }
+
+    alien.getRightHip().turn(direction: TurnDirection.BACKWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getRightKnee().turn(direction: TurnDirection.FORWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getRightAnkle().turn(direction: TurnDirection.FORWARD, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+    alien.getRightKnee().turn(direction: TurnDirection.BACKWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getRightAnkle().turn(direction: TurnDirection.BACKWARD, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+    alien.getRightHip().turn(direction: TurnDirection.FORWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+
+    alien.getLeftHip().turn(direction: TurnDirection.BACKWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getLeftKnee().turn(direction: TurnDirection.FORWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getLeftAnkle().turn(direction: TurnDirection.FORWARD, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+    alien.getLeftKnee().turn(direction: TurnDirection.BACKWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getLeftAnkle().turn(direction: TurnDirection.BACKWARD, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+    alien.getLeftHip().turn(direction: TurnDirection.FORWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+
+    alien.getRightShoulder().turn(direction: TurnDirection.BACKWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getRightElbow().turn(direction: TurnDirection.RIGHT, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getRightWrist().turn(direction: TurnDirection.FORWARD, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+    alien.getRightWrist().turn(direction: TurnDirection.BACKWARD, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+    alien.getRightShoulder().turn(direction: TurnDirection.FORWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getRightElbow().turn(direction: TurnDirection.LEFT, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+
+    alien.getLeftShoulder().turn(direction: TurnDirection.BACKWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getLeftElbow().turn(direction: TurnDirection.LEFT, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getLeftWrist().turn(direction: TurnDirection.FORWARD, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+    alien.getLeftWrist().turn(direction: TurnDirection.BACKWARD, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
+    alien.getLeftShoulder().turn(direction: TurnDirection.FORWARD, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+    alien.getLeftElbow().turn(direction: TurnDirection.RIGHT, amount: new Angle(revolutions: 0.25), duration: Duration.QUARTER_SECOND);
+
+
+
+
     alien.setOpacity(opacity: Portion.NONE);
     alien.setOpacity(opacity: Portion.WHOLE);
     alien.setPaint(paint: Color.RED);
@@ -463,7 +505,7 @@ class Scene extends SScene {
   SDisc disc <- new SDisc();
   SBillboard billboard <- new SBillboard();
   SAxes axes <- new SAxes();
-  SModel alien <- new SModel(resource: "Alien/DEFAULT");
+  SBiped alien <- new SBiped(resource: "Alien/DEFAULT");
   SCameraMarker marker1 <- new SCameraMarker();
   SThingMarker marker2 <- new SThingMarker();
 

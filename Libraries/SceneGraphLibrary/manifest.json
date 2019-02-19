@@ -223,6 +223,41 @@
       "files": ["src/SShape.twe"],
       "type": "Class"
     }, {
+      "id": "SJointedModel",
+      "format": "tweedle",
+      "files": ["src/SJointedModel.twe"],
+      "type": "Class"
+    }, {
+      "id": "SJoint",
+      "format": "tweedle",
+      "files": ["src/SJoint.twe"],
+      "type": "Class"
+    }, {
+      "id": "JointID",
+      "format": "tweedle",
+      "files": ["src/JointID.twe"],
+      "type": "Class"
+    }, {
+      "id": "JointIDList",
+      "format": "tweedle",
+      "files": ["src/JointIDList.twe"],
+      "type": "Class"
+    }, {
+      "id": "JointIDNode",
+      "format": "tweedle",
+      "files": ["src/JointIDNode.twe"],
+      "type": "Class"
+    }, {
+      "id": "SProp",
+      "format": "tweedle",
+      "files": ["src/SProp.twe"],
+      "type": "Class"
+    }, {
+      "id": "SBiped",
+      "format": "tweedle",
+      "files": ["src/SBiped.twe"],
+      "type": "Class"
+    }, {
       "id": "SBox",
       "format": "tweedle",
       "files": ["src/SBox.twe"],

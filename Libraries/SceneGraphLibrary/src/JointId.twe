@@ -1,0 +1,40 @@
+class JointId {
+    JointId (TextString name, JointId parent) {
+        this.name <- name;
+        this.parent <- parent;
+
+        if (parent != null) {
+            parent.children.addLast(id: this);
+        }
+    }
+
+    TextString getName() {
+        return this.name;
+    }
+
+    JointId getParent() {
+        return this.parent;
+    }
+
+    JointIdList getChildren() {
+        return this.children;
+    }
+
+    WholeNumber getHierarchyCount() {
+        WholeNumber count <- 1;
+
+        JointIdNode current <- children.getFirst();
+        while (current != null) {
+            count <- count + current.id.getHierarchyCount();
+            current <- current.next;
+        }
+
+        return count;
+    }
+
+    @CompletelyHidden TextString name;
+    @CompletelyHidden JointId parent;
+    @CompletelyHidden JointIdList children <- new JointIdList();
+
+
+}
