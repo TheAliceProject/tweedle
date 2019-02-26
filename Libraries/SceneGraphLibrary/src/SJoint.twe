@@ -10,7 +10,8 @@ class SJoint extends SMovableTurnable {
         this.model <- model;
 
         $SceneGraph.createJointEntity(joint: this, id: id.getName(), model: model);
-        $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value: $SceneGraph.getLocalTransformation(thing: this));
+        this.defaultTransformation <- $SceneGraph.getLocalTransformation(thing: this);
+        $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value:this.defaultTransformation);
     }
 
     TextString getId() {
@@ -46,18 +47,23 @@ class SJoint extends SMovableTurnable {
     // TODO reconcile size with minimum bounding box
 
     DecimalNumber getWidth() {
-        this.getSize().x;
+        this.getSize().width;
     }
 
     DecimalNumber getHeight() {
-        this.getSize().y;
+        this.getSize().height;
     }
 
     DecimalNumber getDepth() {
-        this.getSize().z;
+        this.getSize().depth;
+    }
+
+    void straightenOut() {
+        this.localTransformation.animateValue(endValue: defaultTransformation, asSeenBy: this.getVehicle(), duration: Default.duration(), animationStyle: Default.animationStyle());
     }
 
     @CompletelyHidden JointId id;
     @CompletelyHidden SJoint parent;
     @CompletelyHidden SJointedModel model;
+    @CompletelyHidden VantagePoint defaultTransformation;
 }

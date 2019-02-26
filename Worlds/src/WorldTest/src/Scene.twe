@@ -20,6 +20,9 @@ class Scene extends SScene {
     $Debug.log(message: "biped");
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: alien);
 
+    alien.strikePose(pose: TestAlien.TEST_POSE_1);
+    alien.straightenOutJoints();
+
     doTogether {
         alien.getNeck().roll(direction: RollDirection.RIGHT, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
         alien.getHead().turn(direction: TurnDirection.LEFT, amount: new Angle(revolutions: 0.125), duration: Duration.QUARTER_SECOND);
@@ -505,7 +508,7 @@ class Scene extends SScene {
   SDisc disc <- new SDisc();
   SBillboard billboard <- new SBillboard();
   SAxes axes <- new SAxes();
-  SBiped alien <- new SBiped(resource: "Alien/DEFAULT");
+  TestAlien alien <- new TestAlien();
   SCameraMarker marker1 <- new SCameraMarker();
   SThingMarker marker2 <- new SThingMarker();
 

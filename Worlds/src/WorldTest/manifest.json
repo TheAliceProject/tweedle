@@ -46,6 +46,11 @@
       "format": "tweedle",
       "files": ["src/DirectionalBox.twe"],
       "type": "Class"
+    }, {
+      "id": "TestAlien",
+      "format": "tweedle",
+      "files": ["src/TestAlien.twe"],
+      "type": "Class"
     },
     {
       "id": "grass",
