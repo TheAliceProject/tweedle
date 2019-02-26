@@ -233,21 +233,6 @@
       "files": ["src/SJoint.twe"],
       "type": "Class"
     }, {
-      "id": "JointID",
-      "format": "tweedle",
-      "files": ["src/JointID.twe"],
-      "type": "Class"
-    }, {
-      "id": "JointIDList",
-      "format": "tweedle",
-      "files": ["src/JointIDList.twe"],
-      "type": "Class"
-    }, {
-      "id": "JointIDNode",
-      "format": "tweedle",
-      "files": ["src/JointIDNode.twe"],
-      "type": "Class"
-    }, {
       "id": "SProp",
       "format": "tweedle",
       "files": ["src/SProp.twe"],
@@ -321,6 +306,31 @@
       "id": "SProgram",
       "format": "tweedle",
       "files": ["src/SProgram.twe"],
+      "type": "Class"
+    }, {
+      "id": "JointID",
+      "format": "tweedle",
+      "files": ["src/JointID.twe"],
+      "type": "Class"
+    }, {
+      "id": "JointIDList",
+      "format": "tweedle",
+      "files": ["src/JointIDList.twe"],
+      "type": "Class"
+    }, {
+      "id": "JointIDNode",
+      "format": "tweedle",
+      "files": ["src/JointIDNode.twe"],
+      "type": "Class"
+    }, {
+      "id": "JointedModelPose",
+      "format": "tweedle",
+      "files": ["src/JointedModelPose.twe"],
+      "type": "Class"
+    }, {
+      "id": "JointIDTransformationPair",
+      "format": "tweedle",
+      "files": ["src/JointIDTransformationPair.twe"],
       "type": "Class"
     }, {
       "id": "AbstractEvent",

@@ -47,8 +47,16 @@ class SJointedModel extends SModel {
     void think(TextString text) {
     }
 
-    //void strikePose(Pose pose) {
-    //}
+    void strikePose(JointedModelPose pose) {
+        doTogether {
+            forEach(JointIdTransformationPair pair in pose.getPairs()) {
+                SJoint joint <- this.getJoint(id: pair.getId());
+                if (joint != null) {
+                    joint.localTransformation.animateValue(endValue: pair.getTransformation());
+                }
+            }
+        }
+    }
 
     @CompletelyHidden void buildJoints(JointId root) {
 
