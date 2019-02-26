@@ -4,348 +4,351 @@
     "icon": "thumbnail.png",
     "tags": [],
     "groupTags": [],
-    "themeTags": []},
+    "themeTags": []
+  },
   "provenance": {
     "aliceVersion": "3.4.0.0-alpha",
     "creationYear": "2018",
-    "creator": "Alice Project"},
+    "creator": "Alice Project"
+  },
   "metadata": {
     "identifier": {
       "id": "970a310f-90a7-4d29-8380-5b2a742e3ee4",
       "version": "1.0",
-      "type": "Library"}
+      "type": "Library"
+    }
   },
   "prerequisites": [],
   "resources": [
     {
       "id": "Default",
       "format": "tweedle",
-      "files": ["src/Default.twe"],
+      "file": "src/Default.twe",
       "type": "Class"
     }, {
       "id": "AnimationStyle",
       "format": "tweedle",
-      "files": ["src/AnimationStyle.twe"],
+      "file": "src/AnimationStyle.twe",
       "type": "Enum"
     }, {
       "id": "DimensionPolicy",
       "format": "tweedle",
-      "files": ["src/DimensionPolicy.twe"],
+      "file": "src/DimensionPolicy.twe",
       "type": "Enum"
     }, {
       "id": "TurnDirection",
       "format": "tweedle",
-      "files": ["src/TurnDirection.twe"],
+      "file": "src/TurnDirection.twe",
       "type": "Enum"
     }, {
       "id": "RollDirection",
       "format": "tweedle",
-      "files": ["src/RollDirection.twe"],
+      "file": "src/RollDirection.twe",
       "type": "Enum"
     }, {
       "id": "MoveDirection",
       "format": "tweedle",
-      "files": ["src/MoveDirection.twe"],
+      "file": "src/MoveDirection.twe",
       "type": "Enum"
     }, {
       "id": "PathStyle",
       "format": "tweedle",
-      "files": ["src/PathStyle.twe"],
+      "file": "src/PathStyle.twe",
       "type": "Enum"
     }, {
       "id": "SpatialRelation",
       "format": "tweedle",
-      "files": ["src/SpatialRelation.twe"],
+      "file": "src/SpatialRelation.twe",
       "type": "Enum"
     }, {
       "id": "Epsilon",
       "format": "tweedle",
-      "files": ["src/Epsilon.twe"],
+      "file": "src/Epsilon.twe",
       "type": "Enum"
     }, {
       "id": "Property",
       "format": "tweedle",
-      "files": ["src/Property.twe"],
+      "file": "src/Property.twe",
       "type": "Class"
     }, {
       "id": "PropertyTween",
       "format": "tweedle",
-      "files": ["src/PropertyTween.twe"],
+      "file": "src/PropertyTween.twe",
       "type": "Class"
     }, {
       "id": "DecimalNumberProperty",
       "format": "tweedle",
-      "files": ["src/DecimalNumberProperty.twe"],
+      "file": "src/DecimalNumberProperty.twe",
       "type": "Class"
     }, {
       "id": "DimensionProperty",
       "format": "tweedle",
-      "files": ["src/DimensionProperty.twe"],
+      "file": "src/DimensionProperty.twe",
       "type": "Class"
     }, {
       "id": "DecimalNumberTween",
       "format": "tweedle",
-      "files": ["src/DecimalNumberTween.twe"],
+      "file": "src/DecimalNumberTween.twe",
       "type": "Class"
     }, {
       "id": "PortionProperty",
       "format": "tweedle",
-      "files": ["src/PortionProperty.twe"],
+      "file": "src/PortionProperty.twe",
       "type": "Class"
     }, {
       "id": "PortionTween",
       "format": "tweedle",
-      "files": ["src/PortionTween.twe"],
+      "file": "src/PortionTween.twe",
       "type": "Class"
     }, {
       "id": "VantagePointProperty",
       "format": "tweedle",
-      "files": ["src/VantagePointProperty.twe"],
+      "file": "src/VantagePointProperty.twe",
       "type": "Class"
     }, {
       "id": "PositionTween",
       "format": "tweedle",
-      "files": ["src/PositionTween.twe"],
+      "file": "src/PositionTween.twe",
       "type": "Class"
     }, {
       "id": "SmoothPositionTween",
       "format": "tweedle",
-      "files": ["src/SmoothPositionTween.twe"],
+      "file": "src/SmoothPositionTween.twe",
       "type": "Class"
     }, {
       "id": "ApplyTranslationTween",
       "format": "tweedle",
-      "files": ["src/ApplyTranslationTween.twe"],
+      "file": "src/ApplyTranslationTween.twe",
       "type": "Class"
     }, {
       "id": "OrientationTween",
       "format": "tweedle",
-      "files": ["src/OrientationTween.twe"],
+      "file": "src/OrientationTween.twe",
       "type": "Class"
     }, {
       "id": "ApplyRotationTween",
       "format": "tweedle",
-      "files": ["src/ApplyRotationTween.twe"],
+      "file": "src/ApplyRotationTween.twe",
       "type": "Class"
     }, {
       "id": "VantagePointTween",
       "format": "tweedle",
-      "files": ["src/VantagePointTween.twe"],
+      "file": "src/VantagePointTween.twe",
       "type": "Class"
     }, {
       "id": "SmoothVantagePointTween",
       "format": "tweedle",
-      "files": ["src/SmoothVantagePointTween.twe"],
+      "file": "src/SmoothVantagePointTween.twe",
       "type": "Class"
     }, {
       "id": "SizeProperty",
       "format": "tweedle",
-      "files": ["src/SizeProperty.twe"],
+      "file": "src/SizeProperty.twe",
       "type": "Class"
     }, {
       "id": "SizeTween",
       "format": "tweedle",
-      "files": ["src/SizeTween.twe"],
+      "file": "src/SizeTween.twe",
       "type": "Class"
     }, {
       "id": "WidthOnlyTween",
       "format": "tweedle",
-      "files": ["src/WidthOnlyTween.twe"],
+      "file": "src/WidthOnlyTween.twe",
       "type": "Class"
     }, {
       "id": "HeightOnlyTween",
       "format": "tweedle",
-      "files": ["src/HeightOnlyTween.twe"],
+      "file": "src/HeightOnlyTween.twe",
       "type": "Class"
     }, {
       "id": "DepthOnlyTween",
       "format": "tweedle",
-      "files": ["src/DepthOnlyTween.twe"],
+      "file": "src/DepthOnlyTween.twe",
       "type": "Class"
     }, {
       "id": "ApplyResizeTween",
       "format": "tweedle",
-      "files": ["src/ApplyResizeTween.twe"],
+      "file": "src/ApplyResizeTween.twe",
       "type": "Class"
     }, {
       "id": "PaintProperty",
       "format": "tweedle",
-      "files": ["src/PaintProperty.twe"],
+      "file": "src/PaintProperty.twe",
       "type": "Class"
     }, {
       "id": "PaintTween",
       "format": "tweedle",
-      "files": ["src/PaintTween.twe"],
+      "file": "src/PaintTween.twe",
       "type": "Class"
     }, {
       "id": "ColorProperty",
       "format": "tweedle",
-      "files": ["src/ColorProperty.twe"],
+      "file": "src/ColorProperty.twe",
       "type": "Class"
     }, {
       "id": "ColorTween",
       "format": "tweedle",
-      "files": ["src/ColorTween.twe"],
+      "file": "src/ColorTween.twe",
       "type": "Class"
     }, {
       "id": "SThing",
       "format": "tweedle",
-      "files": ["src/SThing.twe"],
+      "file": "src/SThing.twe",
       "type": "Class"
     }, {
       "id": "SScene",
       "format": "tweedle",
-      "files": ["src/SScene.twe"],
+      "file": "src/SScene.twe",
       "type": "Class"
     }, {
       "id": "STurnable",
       "format": "tweedle",
-      "files": ["src/STurnable.twe"],
+      "file": "src/STurnable.twe",
       "type": "Class"
     }, {
       "id": "SMovableTurnable",
       "format": "tweedle",
-      "files": ["src/SMovableTurnable.twe"],
+      "file": "src/SMovableTurnable.twe",
       "type": "Class"
     }, {
       "id": "SCamera",
       "format": "tweedle",
-      "files": ["src/SCamera.twe"],
+      "file": "src/SCamera.twe",
       "type": "Class"
     }, {
       "id": "SModel",
       "format": "tweedle",
-      "files": ["src/SModel.twe"],
+      "file": "src/SModel.twe",
       "type": "Class"
     }, {
       "id": "SShape",
       "format": "tweedle",
-      "files": ["src/SShape.twe"],
+      "file": "src/SShape.twe",
       "type": "Class"
     }, {
       "id": "SJointedModel",
       "format": "tweedle",
-      "files": ["src/SJointedModel.twe"],
+      "file": "src/SJointedModel.twe",
       "type": "Class"
     }, {
       "id": "SJoint",
       "format": "tweedle",
-      "files": ["src/SJoint.twe"],
+      "file": "src/SJoint.twe",
       "type": "Class"
     }, {
       "id": "SProp",
       "format": "tweedle",
-      "files": ["src/SProp.twe"],
+      "file": "src/SProp.twe",
       "type": "Class"
     }, {
       "id": "SBiped",
       "format": "tweedle",
-      "files": ["src/SBiped.twe"],
+      "file": "src/SBiped.twe",
       "type": "Class"
     }, {
       "id": "SBox",
       "format": "tweedle",
-      "files": ["src/SBox.twe"],
+      "file": "src/SBox.twe",
       "type": "Class"
     }, {
       "id": "SSphere",
       "format": "tweedle",
-      "files": ["src/SSphere.twe"],
+      "file": "src/SSphere.twe",
       "type": "Class"
     }, {
       "id": "SCylinder",
       "format": "tweedle",
-      "files": ["src/SCylinder.twe"],
+      "file": "src/SCylinder.twe",
       "type": "Class"
     }, {
       "id": "SCone",
       "format": "tweedle",
-      "files": ["src/SCone.twe"],
+      "file": "src/SCone.twe",
       "type": "Class"
     }, {
       "id": "STorus",
       "format": "tweedle",
-      "files": ["src/STorus.twe"],
+      "file": "src/STorus.twe",
       "type": "Class"
     }, {
       "id": "SDisc",
       "format": "tweedle",
-      "files": ["src/SDisc.twe"],
+      "file": "src/SDisc.twe",
       "type": "Class"
     }, {
       "id": "SBillboard",
       "format": "tweedle",
-      "files": ["src/SBillboard.twe"],
+      "file": "src/SBillboard.twe",
       "type": "Class"
     }, {
       "id": "SAxes",
       "format": "tweedle",
-      "files": ["src/SAxes.twe"],
+      "file": "src/SAxes.twe",
       "type": "Class"
     }, {
       "id": "SGround",
       "format": "tweedle",
-      "files": ["src/SGround.twe"],
+      "file": "src/SGround.twe",
       "type": "Class"
     }, {
       "id": "SMarker",
       "format": "tweedle",
-      "files": ["src/SMarker.twe"],
+      "file": "src/SMarker.twe",
       "type": "Class"
     }, {
       "id": "SCameraMarker",
       "format": "tweedle",
-      "files": ["src/SCameraMarker.twe"],
+      "file": "src/SCameraMarker.twe",
       "type": "Class"
     }, {
       "id": "SThingMarker",
       "format": "tweedle",
-      "files": ["src/SThingMarker.twe"],
+      "file": "src/SThingMarker.twe",
       "type": "Class"
     }, {
       "id": "SProgram",
       "format": "tweedle",
-      "files": ["src/SProgram.twe"],
+      "file": "src/SProgram.twe",
       "type": "Class"
     }, {
       "id": "JointID",
       "format": "tweedle",
-      "files": ["src/JointID.twe"],
+      "file": "src/JointID.twe",
       "type": "Class"
     }, {
       "id": "JointIDList",
       "format": "tweedle",
-      "files": ["src/JointIDList.twe"],
+      "file": "src/JointIDList.twe",
       "type": "Class"
     }, {
       "id": "JointIDNode",
       "format": "tweedle",
-      "files": ["src/JointIDNode.twe"],
+      "file": "src/JointIDNode.twe",
       "type": "Class"
     }, {
       "id": "JointedModelPose",
       "format": "tweedle",
-      "files": ["src/JointedModelPose.twe"],
+      "file": "src/JointedModelPose.twe",
       "type": "Class"
     }, {
       "id": "JointIDTransformationPair",
       "format": "tweedle",
-      "files": ["src/JointIDTransformationPair.twe"],
+      "file": "src/JointIDTransformationPair.twe",
       "type": "Class"
     }, {
       "id": "AbstractEvent",
       "format": "tweedle",
-      "files": ["src/AbstractEvent.twe"],
+      "file": "src/AbstractEvent.twe",
       "type": "Class"
     }, {
       "id": "SceneActivationEvent",
       "format": "tweedle",
-      "files": ["src/SceneActivationEvent.twe"],
+      "file": "src/SceneActivationEvent.twe",
       "type": "Class"
     }, {
       "id": "OverlappingEventPolicy",
       "format": "tweedle",
-      "files": ["src/OverlappingEventPolicy.twe"],
+      "file": "src/OverlappingEventPolicy.twe",
       "type": "Class"
     }
   ]
