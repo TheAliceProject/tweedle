@@ -5,13 +5,13 @@ class TestAlien extends SBiped {
 
     static JointedModelPose TEST_POSE_1 <- new JointedModelPose(name: "TestPose1",
                                                                 pairs: new JointIdTransformationPair[] {
-                                                                            new JointIdTransformationPair(id: SBiped.SPINE_MIDDLE, position: new Position(x: 0, y: 0, z: 0), orientation: new Orientation (x: 0, y: 0, z: 0, w: 1)),
-                                                                            new JointIdTransformationPair(id: SBiped.LEFT_ELBOW, position: new Position(x: 0, y: 0, z: 0), orientation: new Orientation (x: 0, y: 0, z: 0, w: 1))
+                                                                            new JointIdTransformationPair(id: SBiped.SPINE_MIDDLE, position: new Position(x: 0, y: 0, z: 0), orientation: new Orientation (x: 0, y: 0.707, z: 0, w: 0.707)),
+                                                                            new JointIdTransformationPair(id: SBiped.LEFT_ELBOW, position: new Position(x: 0, y: 0, z: 0), orientation: new Orientation (x: 0.707, y: 0, z: 0, w: 0.707))
                                                                 });
 
     static JointedModelPose TEST_POSE_2 <- new JointedModelPose(name: "TestPose2",
                                                                 pairs: new JointIdTransformationPair[] {
-                                                                            new JointIdTransformationPair(id: SBiped.RIGHT_HAND, position: new Position(x: 0, y: 0, z: 0), orientation: new Orientation (x: 0, y: 0, z: 0, w: 1)),
+                                                                            new JointIdTransformationPair(id: SBiped.RIGHT_HAND, position: new Position(x: 0, y: 0, z: 0), orientation: new Orientation (x: 1, y: 0, z: 0, w: 0)),
                                                                             new JointIdTransformationPair(id: SBiped.LEFT_FOOT, position: new Position(x: 0, y: 0, z: 0), orientation: new Orientation (x: 0.707, y: 0.707, z: 0, w: 0))
                                                                 });
 }

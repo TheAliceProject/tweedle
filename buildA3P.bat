@@ -2,7 +2,7 @@
 
 set BUILD_DIR=%cd%\build
 set SOURCE_NAME=%1
-set SOURCE_DIR="src\%SOURCE_NAME%"
+set SOURCE_DIR="%SOURCE_NAME%"
 
 ::buildFile
 pushd %SOURCE_DIR%
