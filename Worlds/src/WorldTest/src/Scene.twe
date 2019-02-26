@@ -21,6 +21,7 @@ class Scene extends SScene {
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: alien);
 
     alien.strikePose(pose: TestAlien.TEST_POSE_1);
+    alien.strikePose(pose: TestAlien.TEST_POSE_2);
     alien.straightenOutJoints();
 
     doTogether {
