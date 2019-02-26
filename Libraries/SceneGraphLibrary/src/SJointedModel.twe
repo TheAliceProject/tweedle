@@ -39,12 +39,9 @@ class SJointedModel extends SModel {
     //}
 
     void straightenOutJoints() {
-
         if (this.joints != null) {
-            doTogether {
-                forEach(SJoint joint in this.joints) {
-                    joint.straightenOut();
-                }
+            eachTogether(SJoint joint in this.joints) {
+                joint.straightenOut();
             }
         }
     }
@@ -56,12 +53,10 @@ class SJointedModel extends SModel {
     }
 
     void strikePose(JointedModelPose pose) {
-        doTogether {
-            forEach(JointIdTransformationPair pair in pose.getPairs()) {
-                SJoint joint <- this.getJoint(id: pair.getId());
-                if (joint != null) {
-                    joint.localTransformation.animateValue(endValue: pair.getTransformation(), asSeenBy: joint.getVehicle(), duration: Default.duration(), animationStyle: Default.animationStyle());
-                }
+        eachTogether(JointIdTransformationPair pair in pose.getPairs()) {
+            SJoint joint <- this.getJoint(id: pair.getId());
+            if (joint != null) {
+                joint.localTransformation.animateValue(endValue: pair.getTransformation(), asSeenBy: joint.getVehicle(), duration: Default.duration(), animationStyle: Default.animationStyle());
             }
         }
     }
