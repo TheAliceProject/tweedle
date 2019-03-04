@@ -3,66 +3,60 @@ class SBiped extends SJointedModel {
         super(resource: resource, root: SBiped.ROOT);
     }
 
-    void walkTo(SThing entity) {
-    }
+    static JointId ROOT <- new JointId(name: "ROOT", parent: null);
+    static JointId SPINE_BASE <- new JointId(name: "SPINE_BASE", parent: SBiped.ROOT);
+    static JointId SPINE_MIDDLE <- new JointId(name: "SPINE_MIDDLE", parent: SBiped.SPINE_BASE);
+    static JointId SPINE_UPPER <- new JointId(name: "SPINE_UPPER", parent: SBiped.SPINE_MIDDLE);
 
-    void touch(SThing entity) {
-    }
+    static JointId NECK <- new JointId(name: "NECK", parent: SBiped.SPINE_UPPER);
+    static JointId HEAD <- new JointId(name: "HEAD", parent: SBiped.NECK);
+    static JointId MOUTH <- new JointId(name: "MOUTH", parent: SBiped.HEAD);
+    static JointId LEFT_EYE <- new JointId(name: "LEFT_EYE", parent: SBiped.HEAD);
+    static JointId LEFT_EYELID <- new JointId(name: "LEFT_EYELID", parent: SBiped.HEAD);
+    static JointId RIGHT_EYE <- new JointId(name: "RIGHT_EYE", parent: SBiped.HEAD);
+    static JointId RIGHT_EYELID <- new JointId(name: "RIGHT_EYELID", parent: SBiped.HEAD);
 
-	static JointId ROOT <- new JointId(name: "ROOT", parent: null);
-	static JointId SPINE_BASE <- new JointId(name: "SPINE_BASE", parent: SBiped.ROOT);
-	static JointId SPINE_MIDDLE <- new JointId(name: "SPINE_MIDDLE", parent: SBiped.SPINE_BASE);
-	static JointId SPINE_UPPER <- new JointId(name: "SPINE_UPPER", parent: SBiped.SPINE_MIDDLE);
+    static JointId RIGHT_CLAVICLE <- new JointId(name: "RIGHT_CLAVICLE", parent: SBiped.SPINE_UPPER);
+    static JointId RIGHT_SHOULDER <- new JointId(name: "RIGHT_SHOULDER", parent: SBiped.RIGHT_CLAVICLE);
+    static JointId RIGHT_ELBOW <- new JointId(name: "RIGHT_ELBOW", parent: SBiped.RIGHT_SHOULDER);
+    static JointId RIGHT_WRIST <- new JointId(name: "RIGHT_WRIST", parent: SBiped.RIGHT_ELBOW);
 
-	static JointId NECK <- new JointId(name: "NECK", parent: SBiped.SPINE_UPPER);
-	static JointId HEAD <- new JointId(name: "HEAD", parent: SBiped.NECK);
-	static JointId MOUTH <- new JointId(name: "MOUTH", parent: SBiped.HEAD);
-	static JointId LEFT_EYE <- new JointId(name: "LEFT_EYE", parent: SBiped.HEAD);
-	static JointId LEFT_EYELID <- new JointId(name: "LEFT_EYELID", parent: SBiped.HEAD);
-	static JointId RIGHT_EYE <- new JointId(name: "RIGHT_EYE", parent: SBiped.HEAD);
-	static JointId RIGHT_EYELID <- new JointId(name: "RIGHT_EYELID", parent: SBiped.HEAD);
+    static JointId LEFT_CLAVICLE <- new JointId(name: "LEFT_CLAVICLE", parent: SBiped.SPINE_UPPER);
+    static JointId LEFT_SHOULDER <- new JointId(name: "LEFT_SHOULDER", parent: SBiped.LEFT_CLAVICLE);
+    static JointId LEFT_ELBOW <- new JointId(name: "LEFT_ELBOW", parent: SBiped.LEFT_SHOULDER);
+    static JointId LEFT_WRIST <- new JointId(name: "LEFT_WRIST", parent: SBiped.LEFT_ELBOW);
 
-	static JointId RIGHT_CLAVICLE <- new JointId(name: "RIGHT_CLAVICLE", parent: SBiped.SPINE_UPPER);
-	static JointId RIGHT_SHOULDER <- new JointId(name: "RIGHT_SHOULDER", parent: SBiped.RIGHT_CLAVICLE);
-	static JointId RIGHT_ELBOW <- new JointId(name: "RIGHT_ELBOW", parent: SBiped.RIGHT_SHOULDER);
-	static JointId RIGHT_WRIST <- new JointId(name: "RIGHT_WRIST", parent: SBiped.RIGHT_ELBOW);
+    static JointId RIGHT_HAND <- new JointId(name: "RIGHT_HAND", parent: SBiped.RIGHT_WRIST);
+    static JointId RIGHT_THUMB <- new JointId(name: "RIGHT_THUMB", parent: SBiped.RIGHT_HAND);
+    static JointId RIGHT_THUMB_KNUCKLE <- new JointId(name: "RIGHT_THUMB_KNUCKLE", parent: SBiped.RIGHT_THUMB);
+    static JointId RIGHT_INDEX_FINGER <- new JointId(name: "RIGHT_INDEX_FINGER", parent: SBiped.RIGHT_HAND);
+    static JointId RIGHT_INDEX_FINGER_KNUCKLE <- new JointId(name: "RIGHT_INDEX_FINGER_KNUCKLE", parent: SBiped.RIGHT_INDEX_FINGER);
+    static JointId RIGHT_MIDDLE_FINGER <- new JointId(name: "RIGHT_MIDDLE_FINGER", parent: SBiped.RIGHT_HAND);
+    static JointId RIGHT_MIDDLE_FINGER_KNUCKLE <- new JointId(name: "RIGHT_MIDDLE_FINGER_KNUCKLE", parent: SBiped.RIGHT_MIDDLE_FINGER);
+    static JointId RIGHT_PINKY_FINGER <- new JointId(name: "RIGHT_PINKY_FINGER", parent: SBiped.RIGHT_HAND);
+    static JointId RIGHT_PINKY_FINGER_KNUCKLE <- new JointId(name: "RIGHT_PINKY_FINGER_KNUCKLE", parent: SBiped.RIGHT_PINKY_FINGER);
 
-	static JointId LEFT_CLAVICLE <- new JointId(name: "LEFT_CLAVICLE", parent: SBiped.SPINE_UPPER);
-	static JointId LEFT_SHOULDER <- new JointId(name: "LEFT_SHOULDER", parent: SBiped.LEFT_CLAVICLE);
-	static JointId LEFT_ELBOW <- new JointId(name: "LEFT_ELBOW", parent: SBiped.LEFT_SHOULDER);
-	static JointId LEFT_WRIST <- new JointId(name: "LEFT_WRIST", parent: SBiped.LEFT_ELBOW);
+    static JointId LEFT_HAND <- new JointId(name: "LEFT_HAND", parent: SBiped.LEFT_WRIST);
+    static JointId LEFT_THUMB <- new JointId(name: "LEFT_THUMB", parent: SBiped.LEFT_HAND);
+    static JointId LEFT_THUMB_KNUCKLE <- new JointId(name: "LEFT_THUMB_KNUCKLE", parent: SBiped.LEFT_THUMB);
+    static JointId LEFT_INDEX_FINGER <- new JointId(name: "LEFT_INDEX_FINGER", parent: SBiped.LEFT_HAND);
+    static JointId LEFT_INDEX_FINGER_KNUCKLE <- new JointId(name: "LEFT_INDEX_FINGER_KNUCKLE", parent: SBiped.LEFT_INDEX_FINGER);
+    static JointId LEFT_MIDDLE_FINGER <- new JointId(name: "LEFT_MIDDLE_FINGER", parent: SBiped.LEFT_HAND);
+    static JointId LEFT_MIDDLE_FINGER_KNUCKLE <- new JointId(name: "LEFT_MIDDLE_FINGER_KNUCKLE", parent: SBiped.LEFT_MIDDLE_FINGER);
+    static JointId LEFT_PINKY_FINGER <- new JointId(name: "LEFT_PINKY_FINGER", parent: SBiped.LEFT_HAND);
+    static JointId LEFT_PINKY_FINGER_KNUCKLE <- new JointId(name: "LEFT_PINKY_FINGER_KNUCKLE", parent: SBiped.LEFT_PINKY_FINGER);
 
-	static JointId RIGHT_HAND <- new JointId(name: "RIGHT_HAND", parent: SBiped.RIGHT_WRIST);
-	static JointId RIGHT_THUMB <- new JointId(name: "RIGHT_THUMB", parent: SBiped.RIGHT_HAND);
-	static JointId RIGHT_THUMB_KNUCKLE <- new JointId(name: "RIGHT_THUMB_KNUCKLE", parent: SBiped.RIGHT_THUMB);
-	static JointId RIGHT_INDEX_FINGER <- new JointId(name: "RIGHT_INDEX_FINGER", parent: SBiped.RIGHT_HAND);
-	static JointId RIGHT_INDEX_FINGER_KNUCKLE <- new JointId(name: "RIGHT_INDEX_FINGER_KNUCKLE", parent: SBiped.RIGHT_INDEX_FINGER);
-	static JointId RIGHT_MIDDLE_FINGER <- new JointId(name: "RIGHT_MIDDLE_FINGER", parent: SBiped.RIGHT_HAND);
-	static JointId RIGHT_MIDDLE_FINGER_KNUCKLE <- new JointId(name: "RIGHT_MIDDLE_FINGER_KNUCKLE", parent: SBiped.RIGHT_MIDDLE_FINGER);
-	static JointId RIGHT_PINKY_FINGER <- new JointId(name: "RIGHT_PINKY_FINGER", parent: SBiped.RIGHT_HAND);
-	static JointId RIGHT_PINKY_FINGER_KNUCKLE <- new JointId(name: "RIGHT_PINKY_FINGER_KNUCKLE", parent: SBiped.RIGHT_PINKY_FINGER);
+    static JointId PELVIS_LOWER_BODY <- new JointId(name: "PELVIS_LOWER_BODY", parent: SBiped.ROOT);
 
-	static JointId LEFT_HAND <- new JointId(name: "LEFT_HAND", parent: SBiped.LEFT_WRIST);
-	static JointId LEFT_THUMB <- new JointId(name: "LEFT_THUMB", parent: SBiped.LEFT_HAND);
-	static JointId LEFT_THUMB_KNUCKLE <- new JointId(name: "LEFT_THUMB_KNUCKLE", parent: SBiped.LEFT_THUMB);
-	static JointId LEFT_INDEX_FINGER <- new JointId(name: "LEFT_INDEX_FINGER", parent: SBiped.LEFT_HAND);
-	static JointId LEFT_INDEX_FINGER_KNUCKLE <- new JointId(name: "LEFT_INDEX_FINGER_KNUCKLE", parent: SBiped.LEFT_INDEX_FINGER);
-	static JointId LEFT_MIDDLE_FINGER <- new JointId(name: "LEFT_MIDDLE_FINGER", parent: SBiped.LEFT_HAND);
-	static JointId LEFT_MIDDLE_FINGER_KNUCKLE <- new JointId(name: "LEFT_MIDDLE_FINGER_KNUCKLE", parent: SBiped.LEFT_MIDDLE_FINGER);
-	static JointId LEFT_PINKY_FINGER <- new JointId(name: "LEFT_PINKY_FINGER", parent: SBiped.LEFT_HAND);
-	static JointId LEFT_PINKY_FINGER_KNUCKLE <- new JointId(name: "LEFT_PINKY_FINGER_KNUCKLE", parent: SBiped.LEFT_PINKY_FINGER);
+    static JointId RIGHT_HIP <- new JointId(name: "RIGHT_HIP", parent: SBiped.PELVIS_LOWER_BODY);
+    static JointId RIGHT_KNEE <- new JointId(name: "RIGHT_KNEE", parent: SBiped.RIGHT_HIP);
+    static JointId RIGHT_ANKLE <- new JointId(name: "RIGHT_ANKLE", parent: SBiped.RIGHT_KNEE);
+    static JointId RIGHT_FOOT <- new JointId(name: "RIGHT_FOOT", parent: SBiped.RIGHT_ANKLE);
 
-	static JointId PELVIS_LOWER_BODY <- new JointId(name: "PELVIS_LOWER_BODY", parent: SBiped.ROOT);
-
-	static JointId RIGHT_HIP <- new JointId(name: "RIGHT_HIP", parent: SBiped.PELVIS_LOWER_BODY);
-	static JointId RIGHT_KNEE <- new JointId(name: "RIGHT_KNEE", parent: SBiped.RIGHT_HIP);
-	static JointId RIGHT_ANKLE <- new JointId(name: "RIGHT_ANKLE", parent: SBiped.RIGHT_KNEE);
-	static JointId RIGHT_FOOT <- new JointId(name: "RIGHT_FOOT", parent: SBiped.RIGHT_ANKLE);
-
-	static JointId LEFT_HIP <- new JointId(name: "LEFT_HIP", parent: SBiped.PELVIS_LOWER_BODY);
-	static JointId LEFT_KNEE <- new JointId(name: "LEFT_KNEE", parent: SBiped.LEFT_HIP);
-	static JointId LEFT_ANKLE <- new JointId(name: "LEFT_ANKLE", parent: SBiped.LEFT_KNEE);
-	static JointId LEFT_FOOT <- new JointId(name: "LEFT_FOOT", parent: SBiped.LEFT_ANKLE);
+    static JointId LEFT_HIP <- new JointId(name: "LEFT_HIP", parent: SBiped.PELVIS_LOWER_BODY);
+    static JointId LEFT_KNEE <- new JointId(name: "LEFT_KNEE", parent: SBiped.LEFT_HIP);
+    static JointId LEFT_ANKLE <- new JointId(name: "LEFT_ANKLE", parent: SBiped.LEFT_KNEE);
+    static JointId LEFT_FOOT <- new JointId(name: "LEFT_FOOT", parent: SBiped.LEFT_ANKLE);
 
     SJoint getRoot() {
         return getJoint(id: SBiped.ROOT);
@@ -247,10 +241,4 @@ class SBiped extends SJointedModel {
     SJoint getLeftPinkyFingerKnuckle() {
         return getJoint(id: SBiped.LEFT_PINKY_FINGER_KNUCKLE);
     }
-
-  //void strikePose(BipedPose pose) {
-  //}
-
-  //void reachFor(Limb limb, SThing thing) {
-  //}
 }
