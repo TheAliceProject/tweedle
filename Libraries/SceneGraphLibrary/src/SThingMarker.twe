@@ -1,0 +1,5 @@
+class SThingMarker extends SMarker {
+  SThingMarker() {
+    super();
+  }
+}
