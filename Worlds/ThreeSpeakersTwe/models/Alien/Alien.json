@@ -1,0 +1,167 @@
+{
+  "parentClass": "Biped",
+  "rootJoints": [],
+  "additionalJoints": [
+    {
+      "name": "LOWER_LIP",
+      "parent": "MOUTH",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LEFT_THUMB_TIP",
+      "parent": "LEFT_THUMB_KNUCKLE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LEFT_INDEX_FINGER_TIP",
+      "parent": "LEFT_INDEX_FINGER_KNUCKLE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LEFT_MIDDLE_FINGER_TIP",
+      "parent": "LEFT_MIDDLE_FINGER_KNUCKLE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LEFT_PINKY_FINGER_TIP",
+      "parent": "LEFT_PINKY_FINGER_KNUCKLE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_THUMB_TIP",
+      "parent": "RIGHT_THUMB_KNUCKLE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_INDEX_FINGER_TIP",
+      "parent": "RIGHT_INDEX_FINGER_KNUCKLE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_MIDDLE_FINGER_TIP",
+      "parent": "RIGHT_MIDDLE_FINGER_KNUCKLE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_PINKY_FINGER_TIP",
+      "parent": "RIGHT_PINKY_FINGER_KNUCKLE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LEFT_TOES",
+      "parent": "LEFT_FOOT",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_TOES",
+      "parent": "RIGHT_FOOT",
+      "visibility": "COMPLETELY_HIDDEN"
+    }
+  ],
+  "additionalJointArrays": [],
+  "additionalJointArrayIds": [],
+  "poses": [],
+  "boundingBox": {
+    "min": [
+      -0.281617,
+      7.213192E-4,
+      -0.18244708
+    ],
+    "max": [
+      0.2846615,
+      1.4431626,
+      0.39562756
+    ]
+  },
+  "placeOnGround": false,
+  "textureSets": [
+    {
+      "name": "Alien_DEFAULT",
+      "idToResourceMap": {
+        "1": "Alien_Alien_DEFAULT_texture_1_diffuseMap"
+      }
+    }
+  ],
+  "models": [
+    {
+      "name": "DEFAULT",
+      "structure": "Alien",
+      "textureSet": "Alien_DEFAULT",
+      "icon": "DEFAULT.png"
+    }
+  ],
+  "description": {
+    "name": "Alien",
+    "icon": "Alien_cls.png",
+    "tags": [
+      "alien",
+      "space"
+    ],
+    "groupTags": [
+      "characters"
+    ],
+    "themeTags": [
+      "*outer space"
+    ]
+  },
+  "provenance": {
+    "aliceVersion": "3.5.0.0-alpha",
+    "created": "2011",
+    "creator": "Laura Paoletti"
+  },
+  "metadata": {
+    "formatVersion": "0.1+alpha",
+    "identifier": {
+      "version": "1.0",
+      "type": "Model"
+    }
+  },
+  "prerequisites": [],
+  "resources": [
+    {
+      "boundingBox": {
+        "min": [
+          -0.281617,
+          7.213192E-4,
+          -0.18244708
+        ],
+        "max": [
+          0.2846615,
+          1.4431626,
+          0.39562756
+        ]
+      },
+      "name": "Alien",
+      "format": "dae",
+      "file": "Alien_Alien.dae",
+      "type": "skeletonMesh"
+    },
+    {
+      "uuid": "16b7c621-4841-4d80-9ed5-80bd5efedbb8",
+      "height": 512.0,
+      "width": 512.0,
+      "name": "Alien_Alien_DEFAULT_texture_1_diffuseMap",
+      "format": "image/png",
+      "file": "Alien_Alien_DEFAULT_texture_1_diffuseMap.png",
+      "type": "image"
+    },
+    {
+      "uuid": "1fdaafd5-0923-4e73-9afc-417c5e34c015",
+      "height": 120.0,
+      "width": 43.0,
+      "name": "DEFAULT.png",
+      "format": "image/png",
+      "file": "DEFAULT.png",
+      "type": "image"
+    },
+    {
+      "uuid": "63759643-2e45-4e96-bd75-09ea3c3f9864",
+      "height": 120.0,
+      "width": 43.0,
+      "name": "Alien_cls.png",
+      "format": "image/png",
+      "file": "Alien_cls.png",
+      "type": "image"
+    }
+  ]
+}

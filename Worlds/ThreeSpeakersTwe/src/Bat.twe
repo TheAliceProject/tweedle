@@ -1,0 +1,27 @@
+class Bat extends Biped models Bat {
+  Bat() {
+    super(resource: Bat.DEFAULT);
+  }
+
+  static TextString DEFAULT <- "Bat/DEFAULT";
+
+  SJoint getLeftEar() {
+    return this.getJoint(jointId: BatResource.LEFT_EAR);
+  }
+
+  SJoint getRightEar() {
+    return this.getJoint(jointId: BatResource.RIGHT_EAR);
+  }
+
+  void vampirePose() {
+    this.strikePose(pose: BatResource.VAMPIRE_POSE);
+  }
+
+  void spreadWingsPose() {
+    this.strikePose(pose: BatResource.SPREAD_WINGS_POSE);
+  }
+
+  void foldWingsPose() {
+    this.strikePose(pose: BatResource.FOLD_WINGS_POSE);
+  }
+}

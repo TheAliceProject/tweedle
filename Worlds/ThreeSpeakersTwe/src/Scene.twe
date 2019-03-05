@@ -1,0 +1,85 @@
+class Scene extends SScene models Scene {
+  Scene() {
+    super();
+  }
+
+  void initializeEventListeners() {
+    this.addSceneActivationListener(listener: (SceneActivationEvent event)-> {
+      this.myFirstMethod();
+    });
+  }
+
+  void myFirstMethod() {
+    this.zeroBat.say(string: "hello");
+    this.al.say(string: "hello");
+    this.childPerson.say(string: "hello");
+  }
+  SGround ground <- new SGround();
+  SCamera camera <- new SCamera();
+  Alien al <- new Alien();
+  Bat zeroBat <- new Bat();
+
+  void performCustomSetup() {
+    // |Make adjustments to the starting scene, in a way not available in the Scene editor|
+  }
+
+  void performGeneratedSetUp() {
+    // |DO NOT EDIT
+    // This code is automatically generated.  Any work you perform in this method will be overwritten.
+    // DO NOT EDIT|
+    this.setAtmosphereColor(color: new Color(red: 0.0, green: 0.431, blue: 0.859));
+    this.setFromAboveLightColor(color: Color.WHITE);
+    this.setFromBelowLightColor(color: new Color(red: 0.0, green: 0.549, blue: 0.565));
+    this.setFogDensity(density: 0.3);
+    this.setName(name: "myScene");
+    this.ground.setPaint(paint: SurfaceAppearance.OCEAN_FLOOR);
+    this.ground.setOpacity(opacity: 1.0);
+    this.ground.setName(name: "ground");
+    this.ground.setVehicle(vehicle: this);
+    this.camera.setName(name: "camera");
+    this.camera.setVehicle(vehicle: this);
+    this.camera.setOrientationRelativeToVehicle(orientation: new Orientation(x: -0.00735612, y: 0.992378, z: 0.0977406, w: 0.0746844));
+    this.camera.setPositionRelativeToVehicle(position: new Position(x: 0.198, y: 1.56, z: -9.16));
+    this.al.setPaint(paint: Color.WHITE);
+    this.al.setOpacity(opacity: 1.0);
+    this.al.setName(name: "al");
+    this.al.setVehicle(vehicle: this);
+    this.al.setOrientationRelativeToVehicle(orientation: new Orientation(x: 0.0, y: 0.0, z: 0.0, w: 1.0));
+    this.al.setPositionRelativeToVehicle(position: new Position(x: -2.6, y: 0.231, z: -2.79));
+    this.zeroBat.setPaint(paint: Color.WHITE);
+    this.zeroBat.setOpacity(opacity: 1.0);
+    this.zeroBat.setName(name: "zeroBat");
+    this.zeroBat.setVehicle(vehicle: this);
+    this.zeroBat.setOrientationRelativeToVehicle(orientation: new Orientation(x: 0.0, y: 0.0, z: 0.0, w: 1.0));
+    this.zeroBat.setPositionRelativeToVehicle(position: new Position(x: 0.717, y: 0.0, z: -3.98));
+  }
+
+  void handleActiveChanged(Boolean isActive, WholeNumber activationCount) {
+    if(isActive) {
+      if(activationCount==1) {
+        this.performGeneratedSetUp();
+        this.performCustomSetup();
+        this.initializeEventListeners();
+      } else {
+        this.restoreStateAndEventListeners();
+      }
+    } else {
+      this.preserveStateAndEventListeners();
+    }
+  }
+  SGround getGround() {
+    return this.ground;
+  }
+  SCamera getCamera() {
+    return this.camera;
+  }
+  ChildPerson getChildPerson() {
+    return this.childPerson;
+  }
+  Alien getAl() {
+    return this.al;
+  }
+  Bat getZeroBat() {
+    return this.zeroBat;
+  }
+}

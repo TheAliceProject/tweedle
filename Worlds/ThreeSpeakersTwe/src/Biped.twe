@@ -1,0 +1,5 @@
+class Biped extends SBiped models Biped {
+  Biped(TextString resource) {
+    super(resource: resource);
+  }
+}
