@@ -1,0 +1,266 @@
+{
+  "title": "JSON schema for Tweedle manifest files",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://alice.org/schemas/manifest.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "metadata"
+  ],
+  "properties": {
+    "description": {
+      "$id": "#/properties/description",
+      "type": "object",
+      "properties": {
+        "name": {
+          "$id": "#/properties/description/properties/name",
+          "type": "string",
+          "description": "A human readable name to refer to this.",
+          "default": "",
+          "examples": [
+            "Scene Graph Library"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "icon": {
+          "$id": "#/properties/description/properties/icon",
+          "type": "string",
+          "description": "A relative file path to a displayable image.",
+          "default": "thumbnail.png",
+          "examples": [
+            "thumbnail.png"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "tags": {
+          "$id": "#/properties/description/properties/tags",
+          "type": "array",
+          "description": "Tags to support search.",
+          "items": {
+            "$id": "#/properties/description/properties/tags/items",
+            "type": "string",
+            "examples": [
+              "bird",
+              "person",
+              "wonderland",
+              "norse"
+            ],
+            "pattern": "^(.*)$"
+          }
+        },
+        "groupTags": {
+          "$id": "#/properties/description/properties/groupTags",
+          "type": "array",
+          "description": "Tags to group by within the gallery",
+          "items": {
+            "$id": "#/properties/description/properties/groupTags/items",
+            "type": "string",
+            "description": "Colon separated tags describe a path in a forest of tags",
+            "examples": [
+              "characters",
+              "props:castle",
+              "scenery:ancient temple"
+            ],
+            "pattern": "^(.*)$"
+          }
+        },
+        "themeTags": {
+          "$id": "#/properties/description/properties/themeTags",
+          "type": "array",
+          "description": "Tags Schema",
+          "items": {
+            "$id": "#/properties/description/properties/themeTags/items",
+            "type": "string",
+            "description": "Colon separated tags describe a path in a forest of tags",
+            "examples": [
+              "india",
+              "wonderland",
+              "*norse",
+              "snow",
+              "fantasy:cauldron"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "$id": "#/properties/provenance",
+      "type": "object",
+      "description": "The Provenance Schema",
+      "additionalProperties": false,
+      "properties": {
+        "aliceVersion": {
+          "$id": "#/properties/provenance/properties/aliceVersion",
+          "type": "string",
+          "description": "The version of Alice that generated the manifest",
+          "default": "",
+          "examples": [
+            "3.4.0.0-alpha"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "created": {
+          "$id": "#/properties/provenance/properties/created",
+          "type": "string",
+          "description": "When the source material was created. Expressed in ISO-8601 format.",
+          "default": "",
+          "examples": [
+            "2013",
+            "2017-01-05",
+            "2018-11-23T04:13:00+05:00"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "creator": {
+          "$id": "#/properties/provenance/properties/creator",
+          "type": "string",
+          "description": "The name of the author or originator.",
+          "default": "",
+          "examples": [
+            "Alice Project",
+            "Dennis Cosgrove",
+            "Laura Paoletti",
+            "EA"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "metadata": {
+      "$id": "#/properties/metadata",
+      "type": "object",
+      "description": "System level information about the content",
+      "required": [
+        "formatVersion",
+        "identifier"
+      ],
+      "properties": {
+        "formatVersion": {
+          "$id": "#/properties/metadata/properties/formatVersion",
+          "type": "string",
+          "description": "The version of the content. Presently 0.1.",
+          "additionalProperties": false,
+          "default": "0.1",
+          "examples": [
+            "0.1"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "identifier": {
+          "$id": "#/properties/metadata/properties/identifier",
+          "description": "",
+          "additionalProperties": false,
+          "type": "object",
+          "required": [
+            "id",
+            "version",
+            "type"
+          ],
+          "properties": {
+            "id": {
+              "$id": "#/properties/metadata/properties/identifier/properties/id",
+              "type": "string",
+              "description": "The term to refer to the represented content in code and across versions.",
+              "default": "",
+              "examples": [
+                "SceneGraphLibrary",
+                "PatsRacingGame",
+                "Alice"
+              ],
+              "pattern": "^[^\\s]*$"
+            },
+            "version": {
+              "$id": "#/properties/metadata/properties/identifier/properties/version",
+              "type": "string",
+              "description": "The version of the represented content.",
+              "default": "",
+              "examples": [
+                "1.0"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "type": {
+              "$id": "#/properties/metadata/properties/identifier/properties/type",
+              "type": "string",
+              "enum": ["Library", "World", "Model"],
+              "description": "What kind of thing the manifest represents.",
+              "default": "World",
+              "examples": [
+                "Library", "World", "Model"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    },
+    "prerequisites": {
+      "$id": "#/properties/prerequisites",
+      "type": "array",
+      "description": "The metadata identifiers of required assets.",
+      "items": {
+        "$ref": "#/properties/metadata/properties/identifier"
+      }
+    },
+    "resources": {
+      "$id": "#/properties/resources",
+      "type": "array",
+      "description": "Resources contained within",
+      "additionalProperties": false,
+      "items": {
+        "$id": "#/properties/resources/items",
+        "type": "object",
+        "required": [
+          "id",
+          "format",
+          "file",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "$id": "#/properties/resources/items/properties/id",
+            "type": "string",
+            "description": "The identifier within the context of this, the parent manifest",
+            "examples": [
+              "Alien"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "format": {
+            "$id": "#/properties/resources/items/properties/format",
+            "type": "string",
+            "description": "The format of the resource file",
+            "examples": [
+              "tweedle"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "file": {
+            "$id": "#/properties/resources/items/properties/file",
+            "type": "string",
+            "description": "The relative path to the root file of the resource.",
+            "examples": [
+              "src/Alien.twe"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "type": {
+            "$id": "#/properties/resources/items/properties/type",
+            "type": "string",
+            "enum": ["Class", "audio", "image","model", "aliceTexture3", "skeletonMesh"],
+            "description": "The type of the resource",
+            "default": "",
+            "examples": [
+              "Class",
+              "audio",
+              "image"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}
