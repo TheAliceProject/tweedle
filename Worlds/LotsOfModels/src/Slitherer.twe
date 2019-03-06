@@ -1,0 +1,5 @@
+class Slitherer extends SSlitherer models Slitherer {
+  Slitherer(TextString resource) {
+    super(resource: resource);
+  }
+}

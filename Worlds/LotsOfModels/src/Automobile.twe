@@ -1,0 +1,17 @@
+class Automobile extends Transport models Automobile {
+  Automobile(TextString resource) {
+    super(resource: resource);
+  }
+
+  SJoint getBackWheels() {
+    return this.getJoint(jointId: AutomobileResource.BACK_WHEELS);
+  }
+
+  SJoint getFrontRightWheel() {
+    return this.getJoint(jointId: AutomobileResource.FRONT_RIGHT_WHEEL);
+  }
+
+  SJoint getFrontLeftWheel() {
+    return this.getJoint(jointId: AutomobileResource.FRONT_LEFT_WHEEL);
+  }
+}

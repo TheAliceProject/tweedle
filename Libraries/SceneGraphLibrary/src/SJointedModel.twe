@@ -11,10 +11,22 @@ class SJointedModel extends SModel {
         }
     }
 
-    SJoint getJoint(JointId id) {
+    SJointedModel(TextString resource, JointId[] roots) {
+        super(resource: resource);
+
+        if (roots != null) {
+            forEach(JointId root in roots) {
+                if (root != null) {
+                    this.buildJoints(root: root);
+                }
+            }
+        }
+    }
+
+    SJoint getJoint(JointId jointId) {
         if (this.joints != null) {
             forEach(SJoint joint in this.joints) {
-                if (joint.getId().getName() == id.getName()) {
+                if (joint.getId().getName() == jointId.getName()) {
                     return joint;
                 }
             }
@@ -34,9 +46,10 @@ class SJointedModel extends SModel {
         return jointArray;
     }
 
-    // TODO: is this necessary?
-    //SJoint[] getJointArray(JointArrayId jointArrayId) {
-    //}
+
+    SJoint[] getJointArrayFromArrayId(JointArrayId jointArrayId) {
+        return getJointArray(jointArrayId.getIds());
+    }
 
     void straightenOutJoints() {
         if (this.joints != null) {

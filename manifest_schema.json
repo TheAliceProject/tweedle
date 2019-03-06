@@ -249,7 +249,7 @@
           "type": {
             "$id": "#/properties/resources/items/properties/type",
             "type": "string",
-            "enum": ["Class", "audio", "image","model", "aliceTexture3", "skeletonMesh"],
+            "enum": ["Class", "Enum", "audio", "image","model", "aliceTexture3", "skeletonMesh"],
             "description": "The type of the resource",
             "default": "",
             "examples": [

@@ -12,8 +12,24 @@
                 <list>
                   <Item>
                     <option name="pattern" value="true" />
-                    <option name="path" value="*/manifest.json" />
+                    <option name="path" value="*.json" />
                     <option name="mappingKind" value="Pattern" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="JSON schema v4">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="JSON schema v4" />
+              <option name="relativePathToSchema" value="http://json-schema.org/draft-04/schema" />
+              <option name="applicationDefined" value="true" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="manifest_schema.json" />
                   </Item>
                 </list>
               </option>

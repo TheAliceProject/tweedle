@@ -1,0 +1,34 @@
+class TrainEngine extends Train models TrainEngine {
+  TrainEngine(TextString resource) {
+    super(resource: resource);
+  }
+
+  static TextString CIRCUS_LIGHTS <- "TrainEngine/CIRCUS_LIGHTS";
+
+  static JointId COAL_BOX <- new JointId(name: "COAL_BOX", parent: TrainEngine.ROOT);
+  static JointId THROTTLE <- new JointId(name: "THROTTLE", parent: TrainEngine.ROOT);
+  static JointId BELL <- new JointId(name: "BELL", parent: TrainEngine.ROOT);
+  static JointId FIREBOX_DOOR <- new JointId(name: "FIREBOX_DOOR", parent: TrainEngine.ROOT);
+  static JointId PRESSURE_GAUGE <- new JointId(name: "PRESSURE_GAUGE", parent: TrainEngine.ROOT);
+
+
+  SJoint getCoalBox() {
+    return this.getJoint(jointId: TrainEngine.COAL_BOX);
+  }
+
+  SJoint getThrottle() {
+    return this.getJoint(jointId: TrainEngine.THROTTLE);
+  }
+
+  SJoint getBell() {
+    return this.getJoint(jointId: TrainEngine.BELL);
+  }
+
+  SJoint getFireboxDoor() {
+    return this.getJoint(jointId: TrainEngine.FIREBOX_DOOR);
+  }
+
+  SJoint getPressureGauge() {
+    return this.getJoint(jointId: TrainEngine.PRESSURE_GAUGE);
+  }
+}

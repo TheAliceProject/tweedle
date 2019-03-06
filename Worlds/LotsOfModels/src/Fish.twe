@@ -1,0 +1,5 @@
+class Fish extends Swimmer models Fish {
+  Fish(TextString resource) {
+    super(resource: resource);
+  }
+}

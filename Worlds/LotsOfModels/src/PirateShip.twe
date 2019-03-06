@@ -1,0 +1,7 @@
+class PirateShip extends Watercraft models PirateShip {
+  PirateShip() {
+    super(resource: PirateShip.DEFAULT);
+  }
+
+  static TextString DEFAULT <- "PirateShip/DEFAULT";
+}

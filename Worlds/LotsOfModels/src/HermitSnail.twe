@@ -1,0 +1,23 @@
+class HermitSnail extends Slitherer models HermitSnail {
+  HermitSnail() {
+    super(resource: HermitSnail.DEFAULT);
+  }
+
+  static TextString DEFAULT <- "HermitSnail/DEFAULT";
+
+  SJoint getLowerLip() {
+    return this.getJoint(jointId: HermitSnailResource.LOWER_LIP);
+  }
+
+  SJoint[] getShellArray() {
+    return this.getJointArray(jointIdArray: HermitSnailResource.SHELL_ARRAY);
+  }
+
+  SJoint[] getLeftTentacleArray() {
+    return this.getJointArray(jointIdArray: HermitSnailResource.LEFT_TENTACLE_ARRAY);
+  }
+
+  SJoint[] getRightTentacleArray() {
+    return this.getJointArray(jointIdArray: HermitSnailResource.RIGHT_TENTACLE_ARRAY);
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "parentClass": "Fish",
+  "rootJoints": [],
+  "additionalJoints": [
+    {
+      "name": "LOWER_LIP",
+      "parent": "MOUTH",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "BACK_TOP_FIN_TIP",
+      "parent": "TAIL",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "BACK_BOTTOM_FIN_TIP",
+      "parent": "TAIL",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "FRONT_LEFT_FIN_TIP",
+      "parent": "FRONT_LEFT_FIN",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "FRONT_RIGHT_FIN_TIP",
+      "parent": "FRONT_RIGHT_FIN",
+      "visibility": "COMPLETELY_HIDDEN"
+    }
+  ],
+  "additionalJointArrays": [],
+  "additionalJointArrayIds": [],
+  "poses": [],
+  "boundingBox": {
+    "min": [
+      -0.7347131,
+      -1.3597999,
+      -2.2052836
+    ],
+    "max": [
+      0.7347131,
+      1.4310303,
+      4.201054
+    ]
+  },
+  "placeOnGround": true,
+  "textureSets": [
+    {
+      "name": "Shark_DEFAULT",
+      "idToResourceMap": {
+        "1": "Shark_Shark_DEFAULT_texture_1_diffuseMap"
+      }
+    }
+  ],
+  "models": [
+    {
+      "name": "DEFAULT",
+      "structure": "Shark",
+      "textureSet": "Shark_DEFAULT",
+      "icon": "DEFAULT.png"
+    }
+  ],
+  "description": {
+    "name": "Shark",
+    "icon": "Shark_cls.png",
+    "tags": [
+      "underwater",
+      "villain"
+    ],
+    "groupTags": [
+      "animals"
+    ],
+    "themeTags": [
+      "*ocean"
+    ]
+  },
+  "provenance": {
+    "aliceVersion": "3.5.0.0-alpha",
+    "created": "2011",
+    "creator": "Ethan Gagorik"
+  },
+  "metadata": {
+    "formatVersion": "0.1+alpha",
+    "identifier": {
+      "version": "1.0",
+      "type": "Model",
+      "id": "Shark"
+    }
+  },
+  "prerequisites": [],
+  "resources": [
+    {
+      "boundingBox": {
+        "min": [
+          -0.7347131,
+          -1.3597999,
+          -2.2052836
+        ],
+        "max": [
+          0.7347131,
+          1.4310303,
+          4.201054
+        ]
+      },
+      "id": "Shark",
+      "format": "dae",
+      "file": "Shark_Shark.dae",
+      "type": "skeletonMesh"
+    },
+    {
+      "uuid": "ab7da962-55c4-435c-84b2-5558a763ec16",
+      "height": 512.0,
+      "width": 512.0,
+      "id": "Shark_Shark_DEFAULT_texture_1_diffuseMap",
+      "format": "image/png",
+      "file": "Shark_Shark_DEFAULT_texture_1_diffuseMap.png",
+      "type": "image"
+    },
+    {
+      "uuid": "f6809c98-fff5-49ec-9f57-f8f4f8f6b8f7",
+      "height": 120.0,
+      "width": 68.0,
+      "id": "DEFAULT.png",
+      "format": "image/png",
+      "file": "DEFAULT.png",
+      "type": "image"
+    },
+    {
+      "uuid": "3950d403-8b26-48f9-830f-2351fdd38deb",
+      "height": 120.0,
+      "width": 68.0,
+      "id": "Shark_cls.png",
+      "format": "image/png",
+      "file": "Shark_cls.png",
+      "type": "image"
+    }
+  ]
+}

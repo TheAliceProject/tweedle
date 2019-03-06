@@ -1,0 +1,826 @@
+{
+  "parentClass": "Flyer",
+  "rootJoints": [
+    "ROOT"
+  ],
+  "additionalJoints": [
+    {
+      "name": "PLUME",
+      "parent": "HEAD",
+      "visibility": "PRIME_TIME"
+    },
+    {
+      "name": "PLUME_TIP",
+      "parent": "PLUME",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "PLUMAGE_BASE",
+      "parent": "SPINE_MIDDLE",
+      "visibility": "PRIME_TIME"
+    },
+    {
+      "name": "PLUMAGE_CENTER",
+      "parent": "PLUMAGE_BASE",
+      "visibility": "PRIME_TIME"
+    },
+    {
+      "name": "PLUMAGE_CENTER_TIP",
+      "parent": "PLUMAGE_CENTER",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LEFT_PLUMAGE",
+      "parent": "PLUMAGE_BASE",
+      "visibility": "PRIME_TIME"
+    },
+    {
+      "name": "PLUMAGE_LEFT_TIP",
+      "parent": "LEFT_PLUMAGE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_PLUMAGE",
+      "parent": "PLUMAGE_BASE",
+      "visibility": "PRIME_TIME"
+    },
+    {
+      "name": "PLUMAGE_RIGHT_TIP",
+      "parent": "RIGHT_PLUMAGE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LEFT_TOE",
+      "parent": "LEFT_FOOT",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_TOE",
+      "parent": "RIGHT_FOOT",
+      "visibility": "COMPLETELY_HIDDEN"
+    }
+  ],
+  "additionalJointArrays": [
+    {
+      "name": "NECK_ARRAY",
+      "visibility": "COMPLETELY_HIDDEN",
+      "jointIds": [
+        "NECK_0",
+        "NECK_1"
+      ]
+    },
+    {
+      "name": "TAIL_ARRAY",
+      "visibility": "COMPLETELY_HIDDEN",
+      "jointIds": [
+        "TAIL_0",
+        "TAIL_1",
+        "TAIL_2"
+      ]
+    }
+  ],
+  "additionalJointArrayIds": [],
+  "poses": [
+    {
+      "name": "SPREAD_FAN_POSE",
+      "transforms": [
+        {
+          "jointName": "LEFT_ANKLE",
+          "orientation": [
+            0.9855399,
+            0.12231282,
+            0.046261333,
+            -0.10775196
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.12098212
+          ]
+        },
+        {
+          "jointName": "NECK_1",
+          "orientation": [
+            0.97444445,
+            0.22462875,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.1922597
+          ]
+        },
+        {
+          "jointName": "LEFT_EYE",
+          "orientation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.012160854,
+            0.054139037,
+            -0.025528824
+          ]
+        },
+        {
+          "jointName": "LEFT_KNEE",
+          "orientation": [
+            0.94416153,
+            0.28064856,
+            0.04918191,
+            0.16545843
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.18522407
+          ]
+        },
+        {
+          "jointName": "SPINE_UPPER",
+          "orientation": [
+            0.99244916,
+            0.122656554,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.14220421
+          ]
+        },
+        {
+          "jointName": "RIGHT_PLUMAGE",
+          "orientation": [
+            0.107842475,
+            0.6666426,
+            -0.07863487,
+            -0.73333085
+          ],
+          "position": [
+            -0.0,
+            -1.8166466E-7,
+            1.7463702E-7
+          ]
+        },
+        {
+          "jointName": "MOUTH",
+          "orientation": [
+            0.91729087,
+            -0.39821783,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.038151566,
+            0.015822155
+          ]
+        },
+        {
+          "jointName": "PELVIS_LOWER_BODY",
+          "orientation": [
+            6.123234E-17,
+            0.0,
+            -0.98262894,
+            0.18558116
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "jointName": "LEFT_PLUMAGE",
+          "orientation": [
+            0.6419045,
+            -0.10575901,
+            -0.7549232,
+            0.082853
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "jointName": "HEAD",
+          "orientation": [
+            0.88223964,
+            -0.4708006,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.12479551
+          ]
+        },
+        {
+          "jointName": "RIGHT_KNEE",
+          "orientation": [
+            0.9441614,
+            0.28064892,
+            -0.049182013,
+            -0.16545856
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.18522485
+          ]
+        },
+        {
+          "jointName": "SPINE_BASE",
+          "orientation": [
+            0.98359716,
+            -0.18037903,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "jointName": "RIGHT_ANKLE",
+          "orientation": [
+            0.98554,
+            0.122312255,
+            -0.046260927,
+            0.107752495
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.12098185
+          ]
+        },
+        {
+          "jointName": "RIGHT_HIP",
+          "orientation": [
+            0.22624943,
+            -0.14683987,
+            -0.775954,
+            -0.5702145
+          ],
+          "position": [
+            -0.146122,
+            -0.12353052,
+            0.13302048
+          ]
+        },
+        {
+          "jointName": "PLUMAGE_BASE",
+          "orientation": [
+            6.123234E-17,
+            0.0,
+            -0.927315,
+            0.3742818
+          ],
+          "position": [
+            -0.0,
+            0.22149998,
+            0.03573697
+          ]
+        },
+        {
+          "jointName": "RIGHT_EYE",
+          "orientation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0121609,
+            0.05413947,
+            -0.025528723
+          ]
+        },
+        {
+          "jointName": "ROOT",
+          "orientation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.4940222,
+            0.15073301
+          ]
+        },
+        {
+          "jointName": "LEFT_HIP",
+          "orientation": [
+            0.22624958,
+            -0.14684017,
+            0.7759538,
+            0.5702146
+          ],
+          "position": [
+            0.14612189,
+            -0.12353097,
+            0.13302064
+          ]
+        },
+        {
+          "jointName": "SPINE_MIDDLE",
+          "orientation": [
+            0.99679774,
+            -0.07996379,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.13431205
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SPREAD_WINGS_FAN_POSE",
+      "transforms": [
+        {
+          "jointName": "NECK_1",
+          "orientation": [
+            0.97444445,
+            0.22462875,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.1922597
+          ]
+        },
+        {
+          "jointName": "LEFT_EYE",
+          "orientation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.012160854,
+            0.054139037,
+            -0.025528824
+          ]
+        },
+        {
+          "jointName": "SPINE_UPPER",
+          "orientation": [
+            0.99244916,
+            0.122656554,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.14220421
+          ]
+        },
+        {
+          "jointName": "LEFT_WING_SHOULDER",
+          "orientation": [
+            0.8679212,
+            0.13445124,
+            0.47453332,
+            0.05876942
+          ],
+          "position": [
+            -0.22840334,
+            0.12150435,
+            0.20569664
+          ]
+        },
+        {
+          "jointName": "LEFT_PLUMAGE",
+          "orientation": [
+            0.8109345,
+            -0.054951303,
+            -0.58203495,
+            0.024514457
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "jointName": "PELVIS_LOWER_BODY",
+          "orientation": [
+            6.123234E-17,
+            0.0,
+            -0.98262894,
+            0.18558116
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "jointName": "RIGHT_KNEE",
+          "orientation": [
+            0.9441614,
+            0.28064892,
+            -0.049182013,
+            -0.16545856
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.18522485
+          ]
+        },
+        {
+          "jointName": "HEAD",
+          "orientation": [
+            0.88223964,
+            -0.4708006,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.12479551
+          ]
+        },
+        {
+          "jointName": "SPINE_BASE",
+          "orientation": [
+            0.98359716,
+            -0.18037903,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.0
+          ]
+        },
+        {
+          "jointName": "RIGHT_HIP",
+          "orientation": [
+            0.22624943,
+            -0.14683987,
+            -0.775954,
+            -0.5702145
+          ],
+          "position": [
+            -0.146122,
+            -0.12353052,
+            0.13302048
+          ]
+        },
+        {
+          "jointName": "RIGHT_ANKLE",
+          "orientation": [
+            0.98554,
+            0.122312255,
+            -0.046260927,
+            0.107752495
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.12098185
+          ]
+        },
+        {
+          "jointName": "PLUMAGE_BASE",
+          "orientation": [
+            6.123234E-17,
+            0.0,
+            -0.927315,
+            0.3742818
+          ],
+          "position": [
+            -0.0,
+            0.22149998,
+            0.03573697
+          ]
+        },
+        {
+          "jointName": "RIGHT_WING_ELBOW",
+          "orientation": [
+            0.97843415,
+            0.019599328,
+            -0.20536482,
+            0.010379102
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.26605606
+          ]
+        },
+        {
+          "jointName": "ROOT",
+          "orientation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.4940222,
+            0.15073301
+          ]
+        },
+        {
+          "jointName": "SPINE_MIDDLE",
+          "orientation": [
+            0.99679774,
+            -0.07996379,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.13431205
+          ]
+        },
+        {
+          "jointName": "LEFT_WING_ELBOW",
+          "orientation": [
+            0.9784342,
+            0.019597223,
+            0.20536473,
+            -0.010379194
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.26605594
+          ]
+        },
+        {
+          "jointName": "LEFT_ANKLE",
+          "orientation": [
+            0.9855399,
+            0.12231282,
+            0.046261333,
+            -0.10775196
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.12098212
+          ]
+        },
+        {
+          "jointName": "LEFT_KNEE",
+          "orientation": [
+            0.94416153,
+            0.28064856,
+            0.04918191,
+            0.16545843
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.18522407
+          ]
+        },
+        {
+          "jointName": "RIGHT_PLUMAGE",
+          "orientation": [
+            0.1534939,
+            0.863549,
+            0.093473494,
+            -0.47115332
+          ],
+          "position": [
+            -0.0,
+            -1.8166466E-7,
+            1.7463702E-7
+          ]
+        },
+        {
+          "jointName": "MOUTH",
+          "orientation": [
+            0.91729087,
+            -0.39821783,
+            0.0,
+            0.0
+          ],
+          "position": [
+            -0.0,
+            0.038151566,
+            0.015822155
+          ]
+        },
+        {
+          "jointName": "LEFT_WING_WRIST",
+          "orientation": [
+            0.9856943,
+            -0.14409094,
+            -0.08718968,
+            -0.0065190964
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.23246303
+          ]
+        },
+        {
+          "jointName": "RIGHT_WING_SHOULDER",
+          "orientation": [
+            0.86792123,
+            0.1344501,
+            -0.47453344,
+            -0.058770064
+          ],
+          "position": [
+            0.228403,
+            0.12150456,
+            0.2056967
+          ]
+        },
+        {
+          "jointName": "RIGHT_WING_WRIST",
+          "orientation": [
+            0.9856943,
+            -0.14409111,
+            0.08718976,
+            0.0065189693
+          ],
+          "position": [
+            -0.0,
+            0.0,
+            -0.23246326
+          ]
+        },
+        {
+          "jointName": "RIGHT_EYE",
+          "orientation": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "position": [
+            0.0121609,
+            0.05413947,
+            -0.025528723
+          ]
+        },
+        {
+          "jointName": "LEFT_HIP",
+          "orientation": [
+            0.22624958,
+            -0.14684017,
+            0.7759538,
+            0.5702146
+          ],
+          "position": [
+            0.14612189,
+            -0.12353097,
+            0.13302064
+          ]
+        }
+      ]
+    }
+  ],
+  "boundingBox": {
+    "min": [
+      -0.36082852,
+      -0.0030190337,
+      -0.4889694
+    ],
+    "max": [
+      0.32844856,
+      1.0223752,
+      1.1406654
+    ]
+  },
+  "placeOnGround": false,
+  "textureSets": [
+    {
+      "name": "Peacock_DEFAULT",
+      "idToResourceMap": {
+        "1": "Peacock_Peacock_DEFAULT_texture_1_diffuseMap",
+        "2": "Peacock_Peacock_DEFAULT_texture_2_diffuseMap"
+      }
+    }
+  ],
+  "models": [
+    {
+      "name": "DEFAULT",
+      "structure": "Peacock",
+      "textureSet": "Peacock_DEFAULT",
+      "icon": "DEFAULT.png"
+    }
+  ],
+  "description": {
+    "name": "Peacock",
+    "icon": "Peacock_cls.png",
+    "tags": [
+      "india",
+      "peahen",
+      "bird"
+    ],
+    "groupTags": [
+      "animals"
+    ],
+    "themeTags": [
+      "india"
+    ]
+  },
+  "provenance": {
+    "aliceVersion": "3.5.0.0-alpha",
+    "created": "2013",
+    "creator": "Laura Paoletti"
+  },
+  "metadata": {
+    "formatVersion": "0.1+alpha",
+    "identifier": {
+      "version": "1.0",
+      "type": "Model",
+      "id": "Peacock"
+    }
+  },
+  "prerequisites": [],
+  "resources": [
+    {
+      "boundingBox": {
+        "min": [
+          -0.36082852,
+          -0.0030190337,
+          -0.4889694
+        ],
+        "max": [
+          0.32844856,
+          1.0223752,
+          1.1406654
+        ]
+      },
+      "id": "Peacock",
+      "format": "dae",
+      "file": "Peacock_Peacock.dae",
+      "type": "skeletonMesh"
+    },
+    {
+      "uuid": "60aa4784-b94e-495f-9329-60baf7115fb9",
+      "height": 512.0,
+      "width": 512.0,
+      "id": "Peacock_Peacock_DEFAULT_texture_1_diffuseMap",
+      "format": "image/png",
+      "file": "Peacock_Peacock_DEFAULT_texture_1_diffuseMap.png",
+      "type": "image"
+    },
+    {
+      "uuid": "07995ef8-4f9a-4a00-99b1-4701e703d020",
+      "height": 512.0,
+      "width": 512.0,
+      "id": "Peacock_Peacock_DEFAULT_texture_2_diffuseMap",
+      "format": "image/png",
+      "file": "Peacock_Peacock_DEFAULT_texture_2_diffuseMap.png",
+      "type": "image"
+    },
+    {
+      "uuid": "f2c99021-d4aa-4b8c-8d2f-971a6ed54030",
+      "height": 120.0,
+      "width": 99.0,
+      "id": "DEFAULT.png",
+      "format": "image/png",
+      "file": "DEFAULT.png",
+      "type": "image"
+    },
+    {
+      "uuid": "0bf8f503-9353-41e8-96c3-d69e59f7b3d1",
+      "height": 120.0,
+      "width": 99.0,
+      "id": "Peacock_cls.png",
+      "format": "image/png",
+      "file": "Peacock_cls.png",
+      "type": "image"
+    }
+  ]
+}

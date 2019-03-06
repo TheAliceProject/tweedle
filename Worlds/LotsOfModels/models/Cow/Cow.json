@@ -1,0 +1,150 @@
+{
+  "parentClass": "Quadruped",
+  "rootJoints": [
+    "ROOT"
+  ],
+  "additionalJoints": [
+    {
+      "name": "RIGHT_EAR_TIP",
+      "parent": "RIGHT_EAR",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LEFT_EAR_TIP",
+      "parent": "LEFT_EAR",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LOWER_LIP",
+      "parent": "MOUTH",
+      "visibility": "COMPLETELY_HIDDEN"
+    }
+  ],
+  "additionalJointArrays": [
+    {
+      "name": "TAIL_ARRAY",
+      "visibility": "COMPLETELY_HIDDEN",
+      "jointIds": [
+        "TAIL_0",
+        "TAIL_1",
+        "TAIL_2",
+        "TAIL_3"
+      ]
+    }
+  ],
+  "additionalJointArrayIds": [],
+  "poses": [],
+  "boundingBox": {
+    "min": [
+      -0.40431473,
+      0.0057558487,
+      -1.4520118
+    ],
+    "max": [
+      0.40353167,
+      1.6589589,
+      1.1906338
+    ]
+  },
+  "placeOnGround": false,
+  "textureSets": [
+    {
+      "name": "Cow_DEFAULT",
+      "idToResourceMap": {
+        "1": "Cow_Cow_DEFAULT_texture_1_diffuseMap",
+        "2": "Cow_Cow_DEFAULT_texture_2_diffuseMap"
+      }
+    }
+  ],
+  "models": [
+    {
+      "name": "DEFAULT",
+      "structure": "Cow",
+      "textureSet": "Cow_DEFAULT",
+      "icon": "DEFAULT.png"
+    }
+  ],
+  "description": {
+    "name": "Cow",
+    "icon": "Cow_cls.png",
+    "tags": [
+      "farm",
+      "cow",
+      "bovine"
+    ],
+    "groupTags": [
+      "animals"
+    ],
+    "themeTags": []
+  },
+  "provenance": {
+    "aliceVersion": "3.5.0.0-alpha",
+    "created": "2012",
+    "creator": "Yi-Yi"
+  },
+  "metadata": {
+    "formatVersion": "0.1+alpha",
+    "identifier": {
+      "version": "1.0",
+      "type": "Model",
+      "id": "Cow"
+    }
+  },
+  "prerequisites": [],
+  "resources": [
+    {
+      "boundingBox": {
+        "min": [
+          -0.40431473,
+          0.0057558487,
+          -1.4520118
+        ],
+        "max": [
+          0.40353167,
+          1.6589589,
+          1.1906338
+        ]
+      },
+      "id": "Cow",
+      "format": "dae",
+      "file": "Cow_Cow.dae",
+      "type": "skeletonMesh"
+    },
+    {
+      "uuid": "eb0ab247-a2a3-4924-8641-fba1dc08fa64",
+      "height": 512.0,
+      "width": 512.0,
+      "id": "Cow_Cow_DEFAULT_texture_1_diffuseMap",
+      "format": "image/png",
+      "file": "Cow_Cow_DEFAULT_texture_1_diffuseMap.png",
+      "type": "image"
+    },
+    {
+      "uuid": "5a94e903-8480-455c-92a0-2deb9e4b477b",
+      "height": 256.0,
+      "width": 256.0,
+      "id": "Cow_Cow_DEFAULT_texture_2_diffuseMap",
+      "format": "image/png",
+      "file": "Cow_Cow_DEFAULT_texture_2_diffuseMap.png",
+      "type": "image"
+    },
+    {
+      "uuid": "3bb83411-5518-4055-abfd-5c55155a44e8",
+      "height": 120.0,
+      "width": 82.0,
+      "id": "DEFAULT.png",
+      "format": "image/png",
+      "file": "DEFAULT.png",
+      "type": "image"
+    },
+    {
+      "uuid": "f1a69b7e-27a9-43a3-bab3-2853eef007a7",
+      "height": 120.0,
+      "width": 82.0,
+      "id": "Cow_cls.png",
+      "format": "image/png",
+      "file": "Cow_cls.png",
+      "type": "image"
+    }
+  ]
+}

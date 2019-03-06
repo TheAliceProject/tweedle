@@ -1,0 +1,17 @@
+class JointArrayId {
+    JointArrayId(TextString name, JointId[] ids) {
+        this.name <- name;
+        this.ids <- ids;
+    }
+
+    TextString getName() {
+        return this.name;
+    }
+
+    JointId[] getIds() {
+        return this.ids;
+    }
+
+    @CompletelyHidden TextString name;
+    @CompletelyHidden JointId[] ids;
+}

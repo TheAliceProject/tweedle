@@ -1,0 +1,5 @@
+class Prop extends SProp models Prop {
+  Prop(TextString resource) {
+    super(resource: resource);
+  }
+}

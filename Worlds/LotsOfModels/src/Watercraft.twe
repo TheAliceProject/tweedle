@@ -1,0 +1,5 @@
+class Watercraft extends Transport models Watercraft {
+  Watercraft(TextString resource) {
+    super(resource: resource);
+  }
+}

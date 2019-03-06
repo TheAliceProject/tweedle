@@ -1,7 +1,0 @@
-class Alien extends Biped models Alien {
-  Alien() {
-    super(resource: Alien.DEFAULT);
-  }
-
-  static TextString DEFAULT <- "Alien/DEFAULT";
-}

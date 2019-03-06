@@ -1,0 +1,114 @@
+{
+  "parentClass": "Prop",
+  "rootJoints": [],
+  "additionalJoints": [],
+  "additionalJointArrays": [],
+  "additionalJointArrayIds": [],
+  "poses": [],
+  "boundingBox": {
+    "min": [
+      -0.41898254,
+      -0.0027555847,
+      -0.60332406
+    ],
+    "max": [
+      0.49957526,
+      0.338264,
+      0.24554534
+    ]
+  },
+  "placeOnGround": false,
+  "textureSets": [
+    {
+      "name": "BonePile_DEFAULT",
+      "idToResourceMap": {
+        "1": "BonePile_BonePile_DEFAULT_texture_1_diffuseMap"
+      }
+    }
+  ],
+  "models": [
+    {
+      "name": "DEFAULT",
+      "structure": "BonePile",
+      "textureSet": "BonePile_DEFAULT",
+      "icon": "DEFAULT.png"
+    }
+  ],
+  "description": {
+    "name": "BonePile",
+    "icon": "BonePile_cls.png",
+    "tags": [
+      "haunted",
+      "skeleton",
+      "bones",
+      "pile of bones"
+    ],
+    "groupTags": [
+      "props"
+    ],
+    "themeTags": [
+      "*haunted:bones"
+    ]
+  },
+  "provenance": {
+    "aliceVersion": "3.5.0.0-alpha",
+    "created": "2015",
+    "creator": "Laura Paoletti"
+  },
+  "metadata": {
+    "formatVersion": "0.1+alpha",
+    "identifier": {
+      "version": "1.0",
+      "type": "Model",
+      "id": "BonePile"
+    }
+  },
+  "prerequisites": [],
+  "resources": [
+    {
+      "boundingBox": {
+        "min": [
+          -0.41898254,
+          -0.0027555847,
+          -0.60332406
+        ],
+        "max": [
+          0.49957526,
+          0.338264,
+          0.24554534
+        ]
+      },
+      "id": "BonePile",
+      "format": "dae",
+      "file": "BonePile_BonePile.dae",
+      "type": "skeletonMesh"
+    },
+    {
+      "uuid": "0edde4ae-ae07-4003-a1b6-56eb0691d23b",
+      "height": 512.0,
+      "width": 512.0,
+      "id": "BonePile_BonePile_DEFAULT_texture_1_diffuseMap",
+      "format": "image/png",
+      "file": "BonePile_BonePile_DEFAULT_texture_1_diffuseMap.png",
+      "type": "image"
+    },
+    {
+      "uuid": "9384a62b-3ab3-4225-8016-931c6273a8cb",
+      "height": 104.0,
+      "width": 160.0,
+      "id": "DEFAULT.png",
+      "format": "image/png",
+      "file": "DEFAULT.png",
+      "type": "image"
+    },
+    {
+      "uuid": "ff250952-4464-4583-8a6b-51cd499c110c",
+      "height": 104.0,
+      "width": 160.0,
+      "id": "BonePile_cls.png",
+      "format": "image/png",
+      "file": "BonePile_cls.png",
+      "type": "image"
+    }
+  ]
+}

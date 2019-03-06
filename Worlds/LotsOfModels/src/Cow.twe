@@ -1,0 +1,7 @@
+class Cow extends Quadruped models Cow {
+  Cow() {
+    super(resource: Cow.DEFAULT);
+  }
+
+  static TextString DEFAULT <- "Cow/DEFAULT";
+}
