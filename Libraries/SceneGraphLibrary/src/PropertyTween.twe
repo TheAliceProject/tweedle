@@ -2,6 +2,8 @@
 class PropertyTween {
   PropertyTween() {}
 
+  @TuckedAway static Boolean enableAnimations <- true;
+
   void interpolate(Portion portion) {
 
   }
@@ -11,7 +13,7 @@ class PropertyTween {
   }
 
   void animate(Duration duration, AnimationStyle animationStyle) {
-    if (duration.seconds <= 0) {
+    if (duration.seconds <= 0 || !PropertyTween.enableAnimations) {
       this.setEndValue();
       return;
     }
