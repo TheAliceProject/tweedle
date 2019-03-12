@@ -1,60 +1,71 @@
 class SSwimmer extends SJointedModel {
-  SSwimmerTextString resource) {
-    super(resource: resource);
-  }
+    SSwimmer(TextString resource) {
+        super(resource: resource, root: SSwimmer.ROOT);
+    }
+    
+    static JointId ROOT <- new JointId( name: "ROOT", parent: null );
+    static JointId NECK <- new JointId( name: "NECK", parent: SSwimmer.ROOT );
+    static JointId HEAD <- new JointId( name: "HEAD", parent: SSwimmer.NECK );
+    static JointId MOUTH <- new JointId( name: "MOUTH", parent: SSwimmer.HEAD );
+    static JointId LEFT_EYE <- new JointId( name: "LEFT_EYE", parent: SSwimmer.HEAD );
+    static JointId RIGHT_EYE <- new JointId( name: "RIGHT_EYE", parent: SSwimmer.HEAD );
+    static JointId LEFT_EYELID <- new JointId( name: "LEFT_EYELID", parent: SSwimmer.HEAD );
+    static JointId RIGHT_EYELID <- new JointId( name: "RIGHT_EYELID", parent: SSwimmer.HEAD );
+    static JointId FRONT_LEFT_FIN <- new JointId( name: "FRONT_LEFT_FIN", parent: SSwimmer.NECK );
+    static JointId FRONT_RIGHT_FIN <- new JointId( name: "FRONT_RIGHT_FIN", parent: SSwimmer.NECK );
+    static JointId SPINE_BASE <- new JointId( name: "SPINE_BASE", parent: SSwimmer.ROOT );
+    static JointId SPINE_MIDDLE <- new JointId( name: "SPINE_MIDDLE", parent: SSwimmer.SPINE_BASE );
+    static JointId TAIL <- new JointId( name: "TAIL", parent: SSwimmer.SPINE_MIDDLE );
 
-  void swimTo(SThing entity) {
-  }
+    public SJoint getRoot() {
+        return this.getJoint(jointId: SSwimmer.ROOT );
+    }
+    
+    public SJoint getNeck() {
+        return this.getJoint(jointId: SSwimmer.NECK );
+    }
+    
+    public SJoint getHead() {
+        return this.getJoint(jointId: SSwimmer.HEAD );
+    }
+    
+    public SJoint getMouth() {
+        return this.getJoint(jointId: SSwimmer.MOUTH );
+    }
 
-  SJoint getRoot() {
-    SJoint.getJoint( model: this, joint: "Root");
-  }
+    public SJoint getLeftEye() {
+        return this.getJoint(jointId: SSwimmer.LEFT_EYE );
+    }
+    
+    public SJoint getRightEye() {
+        return this.getJoint(jointId: SSwimmer.RIGHT_EYE );
+    }
+    
+    public SJoint getLeftEyelid() {
+        return this.getJoint(jointId: SSwimmer.LEFT_EYELID );
+    }
+    
+    public SJoint getRightEyelid() {
+        return this.getJoint(jointId: SSwimmer.RIGHT_EYELID );
+    }
+    
+    public SJoint getFrontLeftFin() {
+        return this.getJoint(jointId: SSwimmer.FRONT_LEFT_FIN );
+    }
 
-  SJoint getNeck() {
-    SJoint.getJoint( model: this, joint: "Neck");
-  }
+    public SJoint getFrontRightFin() {
+        return this.getJoint(jointId: SSwimmer.FRONT_RIGHT_FIN );
+    }
 
-  SJoint getHead() {
-    SJoint.getJoint( model: this, joint: "Head");
-  }
-
-  SJoint getMouth() {
-    SJoint.getJoint( model: this, joint: "Mouth");
-  }
-
-  SJoint getLeftEye() {
-    SJoint.getJoint( model: this, joint: "LeftEye");
-  }
-
-  SJoint getRightEye() {
-    SJoint.getJoint( model: this, joint: "RightEye");
-  }
-
-  SJoint getLeftEyelid() {
-    SJoint.getJoint( model: this, joint: "LeftEyelid");
-  }
-
-  SJoint getRightEyelid() {
-    SJoint.getJoint( model: this, joint: "RightEyelid");
-  }
-
-  SJoint getFrontLeftFin() {
-    SJoint.getJoint( model: this, joint: "FrontLeftFin");
-  }
-
-  SJoint getFrontRightFin() {
-    SJoint.getJoint( model: this, joint: "FrontRightFin");
-  }
-
-  SJoint getSpineBase() {
-    SJoint.getJoint( model: this, joint: "SpineBase");
-  }
-
-  SJoint getSpineMiddle() {
-    SJoint.getJoint( model: this, joint: "SpineMiddle");
-  }
-
-  SJoint getTail() {
-    SJoint.getJoint( model: this, joint: "Tail");
-  }
+    public SJoint getSpineBase() {
+        return this.getJoint(jointId: SSwimmer.SPINE_BASE );
+    }
+    
+    public SJoint getSpineMiddle() {
+        return this.getJoint(jointId: SSwimmer.SPINE_MIDDLE );
+    }
+    
+    public SJoint getTail() {
+        return this.getJoint(jointId: SSwimmer.TAIL );
+    }
 }
