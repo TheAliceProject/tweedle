@@ -1,6 +1,7 @@
 class SSlitherer extends SJointedModel {
-    SSlitherer(TextString resource) {
+    SSlitherer(TextString resource, JointId[] tailArray) {
         super(resource: resource, root: SSlitherer.ROOT);
+        this.tailArray <- tailArray;
     }
     
     static JointId ROOT <- new JointId( name: "ROOT",  parent: null );
@@ -16,8 +17,11 @@ class SSlitherer extends SJointedModel {
     static JointId RIGHT_EYELID <- new JointId( name: "RIGHT_EYELID",  parent: SSlitherer.HEAD );
     
     @CompletelyHidden static JointId TAIL_0 <- new JointId( name: "TAIL_0",  parent: SSlitherer.ROOT );
-    
-    SJoint[] getTailArray() { return null; }
+    @CompletelyHidden JointId[] tailArray;
+
+    SJoint[] getTailArray() {
+        return tailArray;
+    }
 
     SJoint getRoot() {
         return this.getJoint( jointId: SSlitherer.ROOT );

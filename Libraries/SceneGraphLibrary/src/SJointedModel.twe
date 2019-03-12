@@ -40,7 +40,7 @@ class SJointedModel extends SModel {
         if (this.joints != null) {
             WholeNumber index <- 0;
             countUpTo(index < JointIdArray.length) {
-                jointArray[index] <- this.getJoint(idArray[index]);
+                jointArray[index] <- this.getJoint(jointId: idArray[index]);
             }
         }
         return jointArray;
@@ -61,7 +61,7 @@ class SJointedModel extends SModel {
 
     void strikePose(JointedModelPose pose, Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
         eachTogether(JointIdTransformationPair pair in pose.getPairs()) {
-            SJoint joint <- this.getJoint(id: pair.getId());
+            SJoint joint <- this.getJoint(jointId: pair.getId());
             if (joint != null) {
                 joint.localTransformation.animateValue(endValue: pair.getTransformation(), asSeenBy: joint.getVehicle(), duration: duration, animationStyle: animationStyle);
             }

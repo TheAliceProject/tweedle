@@ -1,6 +1,15 @@
 class SFlyer extends SJointedModel {
-    SFlyer(TextString resource) {
+    SFlyer(TextString resource,
+           JointedModelPose spreadWingsPose,
+           JointedModelPose foldWingsPose,
+           JointId[] tailArray,
+           JointId[] neckArray)
+    {
         super(resource: resource, root: SFlyer.ROOT);
+        this.spreadWingsPose <- spreadWingsPose;
+        this.foldWingsPose <- foldWingsPose;
+        this.tailArray <- tailArray;
+        this.neckArray <- neckArray;
     }
   
     static JointId ROOT <- new JointId( name: "ROOT", parent: null );
@@ -43,23 +52,25 @@ class SFlyer extends SJointedModel {
     static JointId RIGHT_ANKLE <- new JointId( name: "RIGHT_ANKLE", parent: SFlyer.RIGHT_KNEE );
     static JointId RIGHT_FOOT <- new JointId( name: "RIGHT_FOOT", parent: SFlyer.RIGHT_ANKLE );
 
-    @CompletelyHidden JointId[] getTailArray() { return null; }
-    @CompletelyHidden JointId[] getNeckArray() { return null; }
-    @CompletelyHidden JointedModelPose getSpreadWingsPose() { return null; }
-    @CompletelyHidden JointedModelPose getFoldWingsPose() { return null; }
+    @CompletelyHidden JointId[] tailArray;
+    @CompletelyHidden JointId[] neckArray;
+    @CompletelyHidden JointedModelPose spreadWingsPose;
+    @CompletelyHidden JointedModelPose foldWingsPose;
 
     void spreadWings(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
-        JointedModelPose pose <- getSpreadWingsPose();
-        if (pose != null) {
-            this.strikePose(pose: pose, duration: duration, animationStyle: animationStyle);
-        }
+        this.strikePose(pose: spreadWingsPose, duration: duration, animationStyle: animationStyle);
     }
 
     void foldWings(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
-        JointedModelPose pose <- getFoldWingsPose();
-        if (pose != null) {
-            this.strikePose(pose: pose, duration: duration, animationStyle: animationStyle);
-        }
+        this.strikePose(pose: foldWingsPose, duration: duration, animationStyle: animationStyle);
+    }
+
+    JointId[] getTailArray() {
+        return this.tailArray;
+    }
+
+    JointId[] getNeckArray() {
+        return this.neckArray;
     }
 
     SJoint getRoot() {

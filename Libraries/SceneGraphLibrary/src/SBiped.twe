@@ -123,7 +123,7 @@ class SBiped extends SJointedModel {
     }
 
     SJoint getLeftHip() {
-        return getJoint(id: SBiped.LEFT_HIP);
+        return getJoint(jointId: SBiped.LEFT_HIP);
     }
 
     SJoint getLeftKnee() {

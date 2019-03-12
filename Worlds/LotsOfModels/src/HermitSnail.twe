@@ -1,6 +1,6 @@
 class HermitSnail extends Slitherer models HermitSnail {
   HermitSnail() {
-    super(resource: HermitSnail.DEFAULT);
+    super(resource: HermitSnail.DEFAULT, tailArray: null);
   }
 
   static TextString DEFAULT <- "HermitSnail/DEFAULT";

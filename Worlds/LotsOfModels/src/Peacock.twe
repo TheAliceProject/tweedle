@@ -1,6 +1,10 @@
 class Peacock extends Flyer models Peacock {
   Peacock() {
-    super(resource: Peacock.DEFAULT);
+    super(resource: Peacock.DEFAULT,
+          spreadWingsPose: null,
+          foldWingsPose: null,
+          tailArray: null,
+          neckArray: null);
   }
 
   static TextString DEFAULT <- "Peacock/DEFAULT";
