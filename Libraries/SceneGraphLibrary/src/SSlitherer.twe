@@ -1,57 +1,69 @@
 class SSlitherer extends SJointedModel {
-  SSlitherer(TextString resource) {
-    super(resource: resource);
-  }
+    SSlitherer(TextString resource) {
+        super(resource: resource, root: SSlitherer.ROOT);
+    }
+    
+    static JointId ROOT <- new JointId( name: "ROOT",  parent: null );
+    static JointId SPINE_BASE <- new JointId( name: "SPINE_BASE",  parent: SSlitherer.ROOT );
+    static JointId SPINE_MIDDLE <- new JointId( name: "SPINE_MIDDLE",  parent: SSlitherer.SPINE_BASE );
+    static JointId SPINE_UPPER <- new JointId( name: "SPINE_UPPER",  parent: SSlitherer.SPINE_MIDDLE );
+    static JointId NECK <- new JointId( name: "NECK",  parent: SSlitherer.SPINE_UPPER );
+    static JointId HEAD <- new JointId( name: "HEAD",  parent: SSlitherer.NECK );
+    static JointId MOUTH <- new JointId( name: "MOUTH",  parent: SSlitherer.HEAD );
+    static JointId LEFT_EYE <- new JointId( name: "LEFT_EYE",  parent: SSlitherer.HEAD );
+    static JointId RIGHT_EYE <- new JointId( name: "RIGHT_EYE",  parent: SSlitherer.HEAD );
+    static JointId LEFT_EYELID <- new JointId( name: "LEFT_EYELID",  parent: SSlitherer.HEAD );
+    static JointId RIGHT_EYELID <- new JointId( name: "RIGHT_EYELID",  parent: SSlitherer.HEAD );
+    
+    @CompletelyHidden static JointId TAIL_0 <- new JointId( name: "TAIL_0",  parent: SSlitherer.ROOT );
+    
+    SJoint[] getTailArray() { return null; }
 
-  SJoint getRoot() {
-    SJoint.getJoint( model: this, joint: "Root");
-  }
+    SJoint getRoot() {
+        return this.getJoint( jointId: SSlitherer.ROOT );
+    }
 
-  SJoint getNeck() {
-    SJoint.getJoint( model: this, joint: "Neck");
-  }
+    SJoint getNeck() {
+        return this.getJoint( jointId: SSlitherer.NECK );
+    }
 
-  SJoint getHead() {
-    SJoint.getJoint( model: this, joint: "Head");
-  }
+    SJoint getHead() {
+        return this.getJoint( jointId: SSlitherer.HEAD );
+    }
 
-  SJoint getMouth() {
-    SJoint.getJoint( model: this, joint: "Mouth");
-  }
+    SJoint getMouth() {
+        return this.getJoint( jointId: SSlitherer.MOUTH );
+    }
 
-  SJoint getLeftEye() {
-    SJoint.getJoint( model: this, joint: "LeftEye");
-  }
+    SJoint getLeftEye() {
+        return this.getJoint( jointId: SSlitherer.LEFT_EYE );
+    }
 
-  SJoint getRightEye() {
-    SJoint.getJoint( model: this, joint: "RightEye");
-  }
+    SJoint getRightEye() {
+        return this.getJoint( jointId: SSlitherer.RIGHT_EYE );
+    }
 
-  SJoint getLeftEyelid() {
-    SJoint.getJoint( model: this, joint: "LeftEyelid");
-  }
+    SJoint getLeftEyelid() {
+        return this.getJoint( jointId: SSlitherer.LEFT_EYELID );
+    }
 
-  SJoint getRightEyelid() {
-    SJoint.getJoint( model: this, joint: "RightEyelid");
-  }
+    SJoint getRightEyelid() {
+        return this.getJoint( jointId: SSlitherer.RIGHT_EYELID );
+    }
 
-  SJoint getSpineBase() {
-    SJoint.getJoint( model: this, joint: "SpineBase");
-  }
+    SJoint getSpineBase() {
+        return this.getJoint( jointId: SSlitherer.SPINE_BASE );
+    }
 
-  SJoint getSpineMiddle() {
-    SJoint.getJoint( model: this, joint: "SpineMiddle");
-  }
+    SJoint getSpineMiddle() {
+        return this.getJoint( jointId: SSlitherer.SPINE_MIDDLE );
+    }
 
-  SJoint getSpineUpper() {
-    SJoint.getJoint( model: this, joint: "SpineUpper");
-  }
+    SJoint getSpineUpper() {
+        return this.getJoint( jointId: SSlitherer.SPINE_UPPER );
+    }
 
-  SJoint[] getTailArray() {
-    SJoint.getJoint( model: this, joint: "TailArray");
-  }
-
-  SJoint getTail() {
-    SJoint.getJoint( model: this, joint: "Tail");
-  }
+    SJoint getTail() {
+        return this.getJoint( jointId: SSlitherer.TAIL_0 );
+    }
 }
