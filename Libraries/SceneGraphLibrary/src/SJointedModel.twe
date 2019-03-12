@@ -51,19 +51,19 @@ class SJointedModel extends SModel {
         return getJointArray(jointArrayId.getIds());
     }
 
-    void straightenOutJoints() {
+    void straightenOutJoints(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
         if (this.joints != null) {
             eachTogether(SJoint joint in this.joints) {
-                joint.straightenOut();
+                joint.straightenOut(duration: duration, animationStyle: animationStyle);
             }
         }
     }
 
-    void strikePose(JointedModelPose pose) {
+    void strikePose(JointedModelPose pose, Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
         eachTogether(JointIdTransformationPair pair in pose.getPairs()) {
             SJoint joint <- this.getJoint(id: pair.getId());
             if (joint != null) {
-                joint.localTransformation.animateValue(endValue: pair.getTransformation(), asSeenBy: joint.getVehicle(), duration: Default.duration(), animationStyle: Default.animationStyle());
+                joint.localTransformation.animateValue(endValue: pair.getTransformation(), asSeenBy: joint.getVehicle(), duration: duration, animationStyle: animationStyle);
             }
         }
     }

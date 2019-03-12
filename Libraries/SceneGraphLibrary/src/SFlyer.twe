@@ -1,141 +1,172 @@
 class SFlyer extends SJointedModel {
-  SFlyer(TextString resource) {
-    super(resource: resource);
-  }
+    SFlyer(TextString resource) {
+        super(resource: resource, root: SFlyer.ROOT);
+    }
+  
+    static JointId ROOT <- new JointId( name: "ROOT", parent: null );
+    static JointId SPINE_BASE <- new JointId( name: "SPINE_BASE", parent: SFlyer.ROOT );
+    static JointId SPINE_MIDDLE <- new JointId( name: "SPINE_MIDDLE", parent: SFlyer.SPINE_BASE );
+    static JointId SPINE_UPPER <- new JointId( name: "SPINE_UPPER", parent: SFlyer.SPINE_MIDDLE );
 
-  void walkTo(SThing entity) {
-  }
+    //Necks are now included as arrays access
+    static JointId NECK_0 <- new JointId( name: "NECK_0", parent: SFlyer.SPINE_UPPER );
+    static JointId NECK_1 <- new JointId( name: "NECK_1", parent: SFlyer.NECK_0 );
 
-  void touch(SThing entity) {
-  }
+    static JointId HEAD <- new JointId( name: "HEAD", parent: SFlyer.NECK_1 );
+    static JointId MOUTH <- new JointId( name: "MOUTH", parent: SFlyer.HEAD );
+    static JointId LOWER_LIP <- new JointId( name: "LOWER_LIP", parent: SFlyer.MOUTH );
+    static JointId LEFT_EYE <- new JointId( name: "LEFT_EYE", parent: SFlyer.HEAD );
+    static JointId RIGHT_EYE <- new JointId( name: "RIGHT_EYE", parent: SFlyer.HEAD );
+    static JointId LEFT_EYELID <- new JointId( name: "LEFT_EYELID", parent: SFlyer.HEAD );
+    static JointId RIGHT_EYELID <- new JointId( name: "RIGHT_EYELID", parent: SFlyer.HEAD );
+    static JointId LEFT_WING_SHOULDER <- new JointId( name: "LEFT_WING_SHOULDER", parent: SFlyer.SPINE_UPPER );
+    static JointId LEFT_WING_ELBOW <- new JointId( name: "LEFT_WING_ELBOW", parent: SFlyer.LEFT_WING_SHOULDER );
+    static JointId LEFT_WING_WRIST <- new JointId( name: "LEFT_WING_WRIST", parent: SFlyer.LEFT_WING_ELBOW );
+    static JointId LEFT_WING_TIP <- new JointId( name: "LEFT_WING_TIP", parent: SFlyer.LEFT_WING_WRIST );
+    static JointId RIGHT_WING_SHOULDER <- new JointId( name: "RIGHT_WING_SHOULDER", parent: SFlyer.SPINE_UPPER );
+    static JointId RIGHT_WING_ELBOW <- new JointId( name: "RIGHT_WING_ELBOW", parent: SFlyer.RIGHT_WING_SHOULDER );
+    static JointId RIGHT_WING_WRIST <- new JointId( name: "RIGHT_WING_WRIST", parent: SFlyer.RIGHT_WING_ELBOW );
+    static JointId RIGHT_WING_TIP <- new JointId( name: "RIGHT_WING_TIP", parent: SFlyer.RIGHT_WING_WRIST );
+    static JointId PELVIS_LOWER_BODY <- new JointId( name: "PELVIS_LOWER_BODY", parent: SFlyer.ROOT );
 
-  void spreadWings() {
-  }
+    //Tails are now included as arrays access
+    static JointId TAIL_0 <- new JointId( name: "TAIL_0", parent: SFlyer.PELVIS_LOWER_BODY );
+    static JointId TAIL_1 <- new JointId( name: "TAIL_1", parent: SFlyer.TAIL_0 );
+    static JointId TAIL_2 <- new JointId( name: "TAIL_2", parent: SFlyer.TAIL_1 );
 
-  void foldWings() {
-  }
+    static JointId LEFT_HIP <- new JointId( name: "LEFT_HIP", parent: SFlyer.PELVIS_LOWER_BODY );
+    static JointId LEFT_KNEE <- new JointId( name: "LEFT_KNEE", parent: SFlyer.LEFT_HIP );
+    static JointId LEFT_ANKLE <- new JointId( name: "LEFT_ANKLE", parent: SFlyer.LEFT_KNEE );
+    static JointId LEFT_FOOT <- new JointId( name: "LEFT_FOOT", parent: SFlyer.LEFT_ANKLE );
+    static JointId RIGHT_HIP <- new JointId( name: "RIGHT_HIP", parent: SFlyer.PELVIS_LOWER_BODY );
+    static JointId RIGHT_KNEE <- new JointId( name: "RIGHT_KNEE", parent: SFlyer.RIGHT_HIP );
+    static JointId RIGHT_ANKLE <- new JointId( name: "RIGHT_ANKLE", parent: SFlyer.RIGHT_KNEE );
+    static JointId RIGHT_FOOT <- new JointId( name: "RIGHT_FOOT", parent: SFlyer.RIGHT_ANKLE );
 
-  SJoint getRoot() {
-    SJoint.getJoint( model: this, joint: "Root");
-  }
+    @CompletelyHidden JointId[] getTailArray() { return null; }
+    @CompletelyHidden JointId[] getNeckArray() { return null; }
+    @CompletelyHidden JointedModelPose getSpreadWingsPose() { return null; }
+    @CompletelyHidden JointedModelPose getFoldWingsPose() { return null; }
 
-  SJoint getSpineBase() {
-    SJoint.getJoint( model: this, joint: "SpineBase");
-  }
+    void spreadWings(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
+        JointedModelPose pose <- getSpreadWingsPose();
+        if (pose != null) {
+            this.strikePose(pose: pose, duration: duration, animationStyle: animationStyle);
+        }
+    }
 
-  SJoint getSpineMiddle() {
-    SJoint.getJoint( model: this, joint: "SpineMiddle");
-  }
+    void foldWings(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
+        JointedModelPose pose <- getFoldWingsPose();
+        if (pose != null) {
+            this.strikePose(pose: pose, duration: duration, animationStyle: animationStyle);
+        }
+    }
 
-  SJoint getSpineUpper() {
-    SJoint.getJoint( model: this, joint: "SpineUpper");
-  }
+    SJoint getRoot() {
+        return this.getJoint(jointId: SFlyer.ROOT );
+    }
 
-  SJoint[] getNeckArray() {
-    // TODO
-  }
+    SJoint getSpineBase() {
+        return this.getJoint(jointId: SFlyer.SPINE_BASE );
+    }
 
-  SJoint getNeck() {
-    SJoint.getJoint( model: this, joint: "Neck");
-  }
+    SJoint getSpineMiddle() {
+        return this.getJoint(jointId: SFlyer.SPINE_MIDDLE );
+    }
 
-  SJoint getHead() {
-    SJoint.getJoint( model: this, joint: "Head");
-  }
+    SJoint getSpineUpper() {
+        return this.getJoint(jointId: SFlyer.SPINE_UPPER );
+    }
 
-  SJoint getMouth() {
-    SJoint.getJoint( model: this, joint: "Mouth");
-  }
+    SJoint getNeck() {
+        return this.getJoint(jointId: SFlyer.NECK_0 );
+    }
 
-  SJoint getLeftEye() {
-    SJoint.getJoint( model: this, joint: "LeftEye");
-  }
+    SJoint getHead() {
+        return this.getJoint(jointId: SFlyer.HEAD );
+    }
 
-  SJoint getRightEye() {
-    SJoint.getJoint( model: this, joint: "RightEye");
-  }
+    SJoint getMouth() {
+        return this.getJoint(jointId: SFlyer.MOUTH );
+    }
 
-  SJoint getLeftEyelid() {
-    SJoint.getJoint( model: this, joint: "LeftEyelid");
-  }
+    SJoint getLeftEye() {
+        return this.getJoint(jointId: SFlyer.LEFT_EYE );
+    }
 
-  SJoint getRightEyelid() {
-    SJoint.getJoint( model: this, joint: "RightEyelid");
-  }
+    SJoint getRightEye() {
+        return this.getJoint(jointId: SFlyer.RIGHT_EYE );
+    }
 
-  SJoint getLeftWingShoulder() {
-    SJoint.getJoint( model: this, joint: "LeftWingShoulder");
-  }
+    SJoint getLeftEyelid() {
+        return this.getJoint(jointId: SFlyer.LEFT_EYELID );
+    }
 
-  SJoint getLeftWingElbow() {
-    SJoint.getJoint( model: this, joint: "LeftWingElbow");
-  }
+    SJoint getRightEyelid() {
+        return this.getJoint(jointId: SFlyer.RIGHT_EYELID );
+    }
 
-  SJoint getLeftWingWrist() {
-    SJoint.getJoint( model: this, joint: "LeftWingWrist");
-  }
+    SJoint getLeftWingShoulder() {
+        return this.getJoint(jointId: SFlyer.LEFT_WING_SHOULDER );
+    }
 
-  SJoint getRightWingShoulder() {
-    SJoint.getJoint( model: this, joint: "RightWingShoulder");
-  }
+    SJoint getLeftWingElbow() {
+        return this.getJoint(jointId: SFlyer.LEFT_WING_ELBOW );
+    }
 
-  SJoint getRightWingElbow() {
-    SJoint.getJoint( model: this, joint: "RightWingElbow");
-  }
+    SJoint getLeftWingWrist() {
+        return this.getJoint(jointId: SFlyer.LEFT_WING_WRIST );
+    }
 
-  SJoint getRightWingWrist() {
-    SJoint.getJoint( model: this, joint: "RightWingWrist");
-  }
+    SJoint getRightWingShoulder() {
+        return this.getJoint(jointId: SFlyer.RIGHT_WING_SHOULDER );
+    }
 
-  SJoint getPelvisLowerBody() {
-    SJoint.getJoint( model: this, joint: "PelvisLowerBody");
-  }
+    SJoint getRightWingElbow() {
+        return this.getJoint(jointId: SFlyer.RIGHT_WING_ELBOW );
+    }
 
-  SJoint[] getTailArray() {
-    // TODO
-  }
+    SJoint getRightWingWrist() {
+        return this.getJoint(jointId: SFlyer.RIGHT_WING_WRIST );
+    }
 
-  SJoint getTail() {
-    SJoint.getJoint( model: this, joint: "Tail");
-  }
+    SJoint getPelvisLowerBody() {
+        return this.getJoint(jointId: SFlyer.PELVIS_LOWER_BODY );
+    }
 
-  SJoint getTail2() {
-    SJoint.getJoint( model: this, joint: "Tail2");
-  }
+    SJoint getTail() {
+        return this.getJoint(jointId: SFlyer.TAIL_0 );
+    }
 
-  SJoint getTail3() {
-    SJoint.getJoint( model: this, joint: "Tail3");
-  }
+    SJoint getLeftHip() {
+        return this.getJoint(jointId: SFlyer.LEFT_HIP );
+    }
 
-  SJoint getLeftHip() {
-    SJoint.getJoint( model: this, joint: "LeftHip");
-  }
+    SJoint getLeftKnee() {
+        return this.getJoint(jointId: SFlyer.LEFT_KNEE );
+    }
 
-  SJoint getLeftKnee() {
-    SJoint.getJoint( model: this, joint: "LeftKnee");
-  }
+    SJoint getLeftAnkle() {
+        return this.getJoint(jointId: SFlyer.LEFT_ANKLE );
+    }
 
-  SJoint getLeftAnkle() {
-    SJoint.getJoint( model: this, joint: "LeftAnkle");
-  }
+    SJoint getLeftFoot() {
+        return this.getJoint(jointId: SFlyer.LEFT_FOOT );
+    }
 
-  SJoint getLeftFoot() {
-    SJoint.getJoint( model: this, joint: "LeftFoot");
-  }
+    SJoint getRightHip() {
+        return this.getJoint(jointId: SFlyer.RIGHT_HIP );
+    }
 
-  SJoint getRightHip() {
-    SJoint.getJoint( model: this, joint: "RightHip");
-  }
+    SJoint getRightKnee() {
+        return this.getJoint(jointId: SFlyer.RIGHT_KNEE );
+    }
 
-  SJoint getRightKnee() {
-    SJoint.getJoint( model: this, joint: "RightKnee");
-  }
+    SJoint getRightAnkle() {
+        return this.getJoint(jointId: SFlyer.RIGHT_ANKLE );
+    }
 
-  SJoint getRightAnkle() {
-    SJoint.getJoint( model: this, joint: "RightAnkle");
-  }
-
-  SJoint getRightFoot() {
-    SJoint.getJoint( model: this, joint: "RightFoot");
-  }
+    SJoint getRightFoot() {
+        return this.getJoint(jointId: SFlyer.RIGHT_FOOT );
+    }
 }
