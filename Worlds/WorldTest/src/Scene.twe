@@ -494,7 +494,7 @@ class Scene extends SScene {
     target.setPaint(paint: Color.WHITE, duration: Duration.HALF_SECOND);
   }
 
-  SGround ground <- new SGround();
+  SRoom room <- new SRoom();
   SCamera camera <- new SCamera();
   Box box <- new Box();
   DirectionalBox box2 <- new DirectionalBox();
@@ -581,8 +581,6 @@ class Scene extends SScene {
 
   }
 
-
-
   // NOTE: All property settings should use a duration of 0
   void performGeneratedSetUp() {
     // DO NOT EDIT
@@ -593,10 +591,12 @@ class Scene extends SScene {
     this.setFromBelowLightColor(color: new Color(red: 0.541, green: 0.0, blue: 0.125), duration: Duration.ZERO);
     this.setFogDensity(density: new Portion(portion: 0.2), duration: Duration.ZERO);
     this.setName(name: "myScene");
-    this.ground.setPaint(paint: SurfaceAppearance.GRASS.getImageSource(), duration: Duration.ZERO);
-    this.ground.setOpacity(opacity: Portion.WHOLE, duration: Duration.ZERO);
-    this.ground.setName(name: "ground");
-    this.ground.setVehicle(vehicle: this);
+    this.room.setWallPaint(paint: SurfaceAppearance.BRICK.getImageSource(), duration: Duration.ZERO);
+    this.room.setCeilingPaint(paint: SurfaceAppearance.WOOD.getImageSource(), duration: Duration.ZERO);
+    this.room.setFloorPaint(paint: SurfaceAppearance.WOOD.getImageSource(), duration: Duration.ZERO);
+    this.room.setOpacity(opacity: Portion.WHOLE, duration: Duration.ZERO);
+    this.room.setName(name: "room");
+    this.room.setVehicle(vehicle: this);
     this.camera.setName(name: "camera");
     this.camera.setVehicle(vehicle: this);
     this.camera.setOrientationRelativeToVehicle(orientation: new Orientation(x: 0.0, y: 0.995185, z: 0.0980144, w: 6.12323E-17), duration: Duration.ZERO);
@@ -610,8 +610,8 @@ class Scene extends SScene {
     this.box.setSize(size: new Size(width: 1.0, height: 1.0, depth: 1.0), duration: Duration.ZERO);
   }
 
-  SGround getGround() {
-    return this.ground;
+  SRoom getRoom() {
+    return this.room;
   }
   SCamera getCamera() {
     return this.camera;

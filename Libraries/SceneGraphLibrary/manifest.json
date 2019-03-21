@@ -317,6 +317,11 @@
       "file": "src/SGround.twe",
       "type": "Class"
     }, {
+      "id": "SRoom",
+      "format": "tweedle",
+      "file": "src/SRoom.twe",
+      "type": "Class"
+    }, {
       "id": "SMarker",
       "format": "tweedle",
       "file": "src/SMarker.twe",
@@ -385,6 +390,11 @@
       "id": "SurfaceAppearance",
       "format": "tweedle",
       "file": "src/SurfaceAppearance.twe",
+      "type": "Enum"
+    }, {
+      "id": "WallAppearance",
+      "format": "tweedle",
+      "file": "src/WallAppearance.twe",
       "type": "Enum"
     }, {
       "id": "Ground/brick",

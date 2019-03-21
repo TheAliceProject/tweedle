@@ -1,0 +1,45 @@
+enum WallAppearance {
+{
+    BLUE_STRIPE_WITH_WOOD_TRIM(resource: "Ground/brick"),
+    BLUE_STRIPE_WITH_WHITE_TRIM(resource: "Ground/brown_savana_grass"),
+    BLUE_STRIPE_WITH_WOOD_COFFER(resource: "Ground/dark_grass"),
+    BLUE_STRIPE_WITH_WHITE_COFFER(resource: "Ground/desert"),
+    BLUE_STRIPE_WITH_WOOD_BEAD(resource: "Ground/desert_brown"),
+    BLUE_STRIPE_WITH_WHITE_BEAD(resource: "Ground/dirt"),
+    STARS(resource: "Ground/dry_grass"),
+    BRICK(resource: "Ground/forest_floor_brown"),
+    GREY_STRIPE(resource: "Ground/forest_floor_dark"),
+    GREY_STRIPE_WITH_COFFER(resource: "Ground/forest_floor_red"),
+    YELLOW_STRIPE(resource: "Ground/gold_coins"),
+    YELLOW_STRIPE_WITH_COFFER(resource: "Ground/grass"),
+    GREEN_SAVANA_GRASS(resource: "Ground/green_savana_grass"),
+    YELLOW_STRIPE_WITH_BEAD(resource: "Ground/ice"),
+    GOLD_FAN(resource: "Ground/jungle"),
+    GOLD_FAN_WITH_COFFER(resource: "Ground/mars"),
+    GREEN_STRIPE(resource: "Ground/moon"),
+    GREEN_STRIPE_WITH_COFFER(resource: "Ground/ocean"),
+    GREEN_STRIPE_WITH_BEAD(resource: "Ground/ocean_night"),
+    BUNNIES_YELLOW(resource: "Ground/rocky_brown"),
+    BUNNIES_PURPLE(resource: "Ground/rocky_red"),
+    BUNNIES_PINK(resource: "Ground/rocky_sand"),
+    TEAL(resource: "Ground/sand"),
+    TEAL_WITH_BEAD(resource: "Ground/snow"),
+    YELLOW(resource: "Ground/swamp"),
+    YELLOW_WITH_BEAD(resource: "Ground/swamp_poison"),
+    PURPLE(resource: "Ground/swamp_water"),
+    PURPLE_WITH_BEAD(resource: "Ground/underwater"),
+    BLUE(resource: "Ground/water"),
+    BLUE_WITH_BEAD(resource: "Ground/wood"),
+    SALMON(resource: "Ground/wood"),
+    SALMON_WITH_BEAD(resource: "Ground/wood");
+
+    @CompletelyHidden ImageSource imageSource;
+
+    WallAppearance( TextString resource ) {
+        this.imageSource <- new ImageSource(resource: resource);
+    }
+
+    ImageSource getImageSource() {
+        return this.imageSource;
+    }
+}
