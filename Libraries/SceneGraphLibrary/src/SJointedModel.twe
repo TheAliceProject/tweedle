@@ -46,11 +46,6 @@ class SJointedModel extends SModel {
         return jointArray;
     }
 
-
-    SJoint[] getJointArrayFromArrayId(JointArrayId jointArrayId) {
-        return getJointArray(jointArrayId.getIds());
-    }
-
     void straightenOutJoints(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
         if (this.joints != null) {
             eachTogether(SJoint joint in this.joints) {
