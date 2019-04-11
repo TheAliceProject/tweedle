@@ -202,13 +202,9 @@ class SScene extends SThing {
 
 
   @CompletelyHidden void changeActiveStatus( Boolean isActive) {
-    // TODO Work out appropriate mechanism to cause this happen immediately and not animate the setup 
-    //DecimalNumber prevSimulationSpeedFactor <- program.getSimulationSpeedFactor();
-    //program.setSimulationSpeedFactor( factor: $Math.POSITIVE_INFINITY );
-
+    PropertyTween.enableAnimations <- false;
     this.handleActiveChanged( isActive: isActive, activationCount: this.activeCount );
-
-    //program.setSimulationSpeedFactor( factor: prevSimulationSpeedFactor );
+    PropertyTween.enableAnimations <- true;
   }
   
 /*

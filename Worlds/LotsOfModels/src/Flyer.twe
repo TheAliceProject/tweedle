@@ -1,0 +1,5 @@
+class Flyer extends SFlyer models Flyer {
+  Flyer(TextString resource) {
+    super(resource: resource);
+  }
+}

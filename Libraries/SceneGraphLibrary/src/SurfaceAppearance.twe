@@ -1,0 +1,43 @@
+enum SurfaceAppearance {
+{
+    BRICK(resource: "Ground/brick"),
+    BROWN_SAVANA_GRASS(resource: "Ground/brown_savana_grass"),
+    DARK_GRASS(resource: "Ground/dark_grass"),
+    DESERT(resource: "Ground/desert"),
+    DESERT_BROW(resource: "Ground/desert_brown"),
+    DIRT(resource: "Ground/dirt"),
+    DRY_GRASS(resource: "Ground/dry_grass"),
+    FOREST_FLOOR_BROWN(resource: "Ground/forest_floor_brown"),
+    FOREST_FLOOR_DARK(resource: "Ground/forest_floor_dark"),
+    FOREST_FLOOR_RED(resource: "Ground/forest_floor_red"),
+    GOLD_COINS(resource: "Ground/gold_coins"),
+    GRASS(resource: "Ground/grass"),
+    GREEN_SAVANA_GRASS(resource: "Ground/green_savana_grass"),
+    ICE(resource: "Ground/ice"),
+    JUNGLE(resource: "Ground/jungle"),
+    MARS(resource: "Ground/mars"),
+    MOON(resource: "Ground/moon"),
+    OCEAN(resource: "Ground/ocean"),
+    OCEAN_NIGHT(resource: "Ground/ocean_night"),
+    ROCKY_BROWN(resource: "Ground/rocky_brown"),
+    ROCKY_RED(resource: "Ground/rocky_red"),
+    ROCKY_SAND(resource: "Ground/rocky_sand"),
+    SAND(resource: "Ground/sand"),
+    SNOW(resource: "Ground/snow"),
+    SWAMP(resource: "Ground/swamp"),
+    SWAMP_POISON(resource: "Ground/swamp_poison"),
+    SWAMP_WATER(resource: "Ground/swamp_water"),
+    UNDERWATER(resource: "Ground/underwater"),
+    WATER(resource: "Ground/water"),
+    WOOD(resource: "Ground/wood");
+
+    @CompletelyHidden ImageSource imageSource;
+
+    SurfaceAppearance( TextString resource ) {
+        this.imageSource <- new ImageSource(resource: resource);
+    }
+
+    ImageSource getImageSource() {
+        return this.imageSource;
+    }
+}

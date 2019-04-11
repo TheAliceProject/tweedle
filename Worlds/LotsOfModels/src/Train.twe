@@ -1,0 +1,16 @@
+class Train extends Transport models Train {
+  Train(TextString resource) {
+    super(resource: resource, root: Train.ROOT);
+  }
+
+  static JointId ROOT <- new JointId(name: "ROOT", parent: null);
+  static JointId NEXT_CAR_LOCATION <- new JointId(name: "NEXT_CAR_LOCATION", parent: Train.ROOT);
+
+  SJoint getNextCarLocation() {
+    return this.getJoint(jointId: Train.NEXT_CAR_LOCATION);
+  }
+
+  SJoint[] getWheelsArray() {
+    return this.getJointArray(jointArrayId: Train.WHEELS_ARRAY);
+  }
+}

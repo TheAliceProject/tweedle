@@ -1,0 +1,11 @@
+class ColaBottle extends Prop models ColaBottle {
+    ColaBottle() {
+        super(resource: ColaBottle.DEFAULT);
+    }
+
+    static TextString DEFAULT <- "ColaBottle/DEFAULT";
+
+    SJoint getCap() {
+        return this.getJoint(jointId: ColaBottleResource.CAP);
+    }
+}

@@ -1,0 +1,5 @@
+class Quadruped extends SQuadruped models Quadruped {
+  Quadruped(TextString resource) {
+    super(resource: resource);
+  }
+}

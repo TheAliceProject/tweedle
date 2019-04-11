@@ -28,7 +28,7 @@ class SProgram {
     $Clock.simulationSpeedFactor <- factor;
   }
 
-  void initializeInFrame() {
+  void initializeInFrame(TextString[] args <- null) {
     //$SceneManager.createFrame();
   }
 

@@ -1,0 +1,176 @@
+{
+  "parentClass": "Biped",
+  "rootJoints": [],
+  "additionalJoints": [
+    {
+      "name": "LEFT_EAR",
+      "parent": "HEAD",
+      "visibility": "PRIME_TIME"
+    },
+    {
+      "name": "LEFT_EAR_MIDDLE",
+      "parent": "LEFT_EAR",
+      "visibility": "PRIME_TIME"
+    },
+    {
+      "name": "LEFT_EAR_TIP",
+      "parent": "LEFT_EAR_MIDDLE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_EAR",
+      "parent": "HEAD",
+      "visibility": "PRIME_TIME"
+    },
+    {
+      "name": "RIGHT_EAR_MIDDLE",
+      "parent": "RIGHT_EAR",
+      "visibility": "PRIME_TIME"
+    },
+    {
+      "name": "RIGHT_EAR_TIP",
+      "parent": "RIGHT_EAR_MIDDLE",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LOWER_LIP",
+      "parent": "MOUTH",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "TAIL_0",
+      "parent": "PELVIS_LOWER_BODY",
+      "visibility": "PRIME_TIME"
+    },
+    {
+      "name": "TAIL_1",
+      "parent": "TAIL_0",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_TOES",
+      "parent": "RIGHT_FOOT",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LEFT_TOES",
+      "parent": "LEFT_FOOT",
+      "visibility": "COMPLETELY_HIDDEN"
+    }
+  ],
+  "additionalJointArrays": [
+    {
+      "name": "TAIL_ARRAY",
+      "jointIds": [
+        "TAIL_0",
+        "TAIL_1"
+      ]
+    }
+  ],
+  "additionalJointArrayIds": [],
+  "poses": [],
+  "boundingBox": {
+    "min": [
+      -0.36379778,
+      -0.0031739501,
+      -0.2740498
+    ],
+    "max": [
+      0.3792206,
+      1.8198688,
+      0.35839546
+    ]
+  },
+  "placeOnGround": false,
+  "textureSets": [
+    {
+      "name": "Hare_DEFAULT",
+      "idToResourceMap": {
+        "1": "Hare_Hare_DEFAULT_texture_1_diffuseMap"
+      }
+    }
+  ],
+  "models": [
+    {
+      "name": "DEFAULT",
+      "structure": "Hare",
+      "textureSet": "Hare_DEFAULT",
+      "icon": "DEFAULT.png"
+    }
+  ],
+  "description": {
+    "name": "Hare",
+    "icon": "Hare_cls.png",
+    "tags": [
+      "rabbit"
+    ],
+    "groupTags": [
+      "animals",
+      "characters"
+    ],
+    "themeTags": [
+      "fantasy"
+    ]
+  },
+  "provenance": {
+    "aliceVersion": "3.5.0.0-alpha",
+    "created": "2011",
+    "creator": "Laura Paoletti"
+  },
+  "metadata": {
+    "formatVersion": "0.1+alpha",
+    "identifier": {
+      "version": "1.0",
+      "type": "Model",
+      "id": "Hare"
+    }
+  },
+  "prerequisites": [],
+  "resources": [
+    {
+      "boundingBox": {
+        "min": [
+          -0.36379778,
+          -0.0031739501,
+          -0.2740498
+        ],
+        "max": [
+          0.3792206,
+          1.8198688,
+          0.35839546
+        ]
+      },
+      "id": "Hare",
+      "format": "dae",
+      "file": "Hare_Hare.dae",
+      "type": "skeletonMesh"
+    },
+    {
+      "uuid": "9cd4f497-cb2a-463c-9358-bde35de44830",
+      "height": 512.0,
+      "width": 512.0,
+      "id": "Hare_Hare_DEFAULT_texture_1_diffuseMap",
+      "format": "image/png",
+      "file": "Hare_Hare_DEFAULT_texture_1_diffuseMap.png",
+      "type": "image"
+    },
+    {
+      "uuid": "7d76eb76-fcef-44a6-a0e3-be56b2c961cd",
+      "height": 120.0,
+      "width": 49.0,
+      "id": "DEFAULT.png",
+      "format": "image/png",
+      "file": "DEFAULT.png",
+      "type": "image"
+    },
+    {
+      "uuid": "3a4569ec-9c71-4245-a71c-81a7bf8ea02c",
+      "height": 120.0,
+      "width": 49.0,
+      "id": "Hare_cls.png",
+      "format": "image/png",
+      "file": "Hare_cls.png",
+      "type": "image"
+    }
+  ]
+}

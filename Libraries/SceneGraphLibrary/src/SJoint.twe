@@ -58,8 +58,8 @@ class SJoint extends SMovableTurnable {
         this.getSize().depth;
     }
 
-    void straightenOut() {
-        this.localTransformation.animateValue(endValue: defaultTransformation, asSeenBy: this.getVehicle(), duration: Default.duration(), animationStyle: Default.animationStyle());
+    void straightenOut(Duration duration, AnimationStyle animationStyle) {
+        this.localTransformation.animateValue(endValue: defaultTransformation, asSeenBy: this.getVehicle(), duration: duration, animationStyle: animationStyle);
     }
 
     @CompletelyHidden JointId id;

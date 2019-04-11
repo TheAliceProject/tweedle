@@ -11,10 +11,22 @@ class SJointedModel extends SModel {
         }
     }
 
-    SJoint getJoint(JointId id) {
+    SJointedModel(TextString resource, JointId[] roots) {
+        super(resource: resource);
+
+        if (roots != null) {
+            forEach(JointId root in roots) {
+                if (root != null) {
+                    this.buildJoints(root: root);
+                }
+            }
+        }
+    }
+
+    SJoint getJoint(JointId jointId) {
         if (this.joints != null) {
             forEach(SJoint joint in this.joints) {
-                if (joint.getId().getName() == id.getName()) {
+                if (joint.getId().getName() == jointId.getName()) {
                     return joint;
                 }
             }
@@ -28,29 +40,25 @@ class SJointedModel extends SModel {
         if (this.joints != null) {
             WholeNumber index <- 0;
             countUpTo(index < JointIdArray.length) {
-                jointArray[index] <- this.getJoint(idArray[index]);
+                jointArray[index] <- this.getJoint(jointId: idArray[index]);
             }
         }
         return jointArray;
     }
 
-    // TODO: is this necessary?
-    //SJoint[] getJointArray(JointArrayId jointArrayId) {
-    //}
-
-    void straightenOutJoints() {
+    void straightenOutJoints(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
         if (this.joints != null) {
             eachTogether(SJoint joint in this.joints) {
-                joint.straightenOut();
+                joint.straightenOut(duration: duration, animationStyle: animationStyle);
             }
         }
     }
 
-    void strikePose(JointedModelPose pose) {
+    void strikePose(JointedModelPose pose, Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
         eachTogether(JointIdTransformationPair pair in pose.getPairs()) {
-            SJoint joint <- this.getJoint(id: pair.getId());
+            SJoint joint <- this.getJoint(jointId: pair.getId());
             if (joint != null) {
-                joint.localTransformation.animateValue(endValue: pair.getTransformation(), asSeenBy: joint.getVehicle(), duration: Default.duration(), animationStyle: Default.animationStyle());
+                joint.localTransformation.animateValue(endValue: pair.getTransformation(), asSeenBy: joint.getVehicle(), duration: duration, animationStyle: animationStyle);
             }
         }
     }
