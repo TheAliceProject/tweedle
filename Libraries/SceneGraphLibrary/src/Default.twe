@@ -35,6 +35,18 @@ class Default {
     return 256.0;
   }
 
+  static TextStyle textStyle() {
+    return TextStyle.PLAIN;
+  }
+
+  static FontType fontType() {
+    return FontType.DEFAULT;
+  }
+
+  static BubblePosition bubblePosition(){
+    return BubblePosition.AUTOMATIC;
+  }
+
 //  static HeldKeyPolicy heldKeyPolicy() {
 //  }
 }

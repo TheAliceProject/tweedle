@@ -402,6 +402,21 @@
       "file": "src/FloorAppearance.twe",
       "type": "Enum"
     }, {
+      "id": "TextStyle",
+      "format": "tweedle",
+      "file": "src/TextStyle.twe",
+      "type": "Enum"
+    }, {
+      "id": "FontType",
+      "format": "tweedle",
+      "file": "src/FontType.twe",
+      "type": "Enum"
+    }, {
+      "id": "BubblePosition",
+      "format": "tweedle",
+      "file": "src/BubblePosition.twe",
+      "type": "Enum"
+    }, {
       "id": "Ground/brick",
       "format": "png",
       "file": "resources/grounds/brick.png",

@@ -1,0 +1,16 @@
+enum BubblePosition {
+	AUTOMATIC(value: $BubblePosition.AUTOMATIC),
+	LEFT(value: $BubblePosition.LEFT),
+	CENTER(value: $BubblePosition.CENTER),
+	RIGHT(value: $BubblePosition.RIGHT);
+
+	BubblePosition(WholeNumber value) {
+		this.value <- value;
+	}
+
+	WholeNumber getValue() {
+		return this.value;
+	}
+
+	@CompletelyHidden WholeNumber value;
+}
