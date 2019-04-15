@@ -18,8 +18,12 @@ class Scene extends SScene {
     Orientation camRot <- camera.getOrientationRelativeToVehicle();
 
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: sphere);
+    $Debug.log(message: "Text model stuff");
+    this.textModel.say(text: "if words could talk");
+
     $Debug.log(message: "torus");
     torus.say(text: "Hello world! I'm a torus", outlineColorIn: Color.BLACK);
+    textModel.append(str: "appended words");
     sphere.think(text: "I wonder if I'm a sphere", outlineColorIn: Color.BLACK, fontTypeIn: FontType.MONOSPACED, bubbleColorIn: Color.CYAN, textStyleIn: TextStyle.BOLD, textColorIn: Color.BLUE);
     cone.say(text: "Hello world! I'm a cone", fontTypeIn: FontType.SERIF, textStyleIn: TextStyle.ITALIC);
     cylinder.say(text: "Hello world! I'm a cylinder", outlineColorIn: Color.BLACK);
@@ -540,6 +544,8 @@ class Scene extends SScene {
   SSphere sphere <- new SSphere();
   SCylinder cylinder <- new SCylinder();
   SCone cone <- new SCone();
+  STextModel textModel <- new STextModel(textString: "Tweedle!");
+  STextModel anotherOne <- new STextModel(textString: "X");
   STorus torus <- new STorus();
   SDisc disc <- new SDisc();
   SBillboard billboard <- new SBillboard();
@@ -654,5 +660,8 @@ class Scene extends SScene {
   }
   Box getBox() {
     return this.box;
+  }
+  STextModel getModel() {
+    return this.textModel;
   }
 }

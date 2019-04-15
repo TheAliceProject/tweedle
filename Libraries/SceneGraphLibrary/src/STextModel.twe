@@ -1,0 +1,41 @@
+class STextModel extends SModel {
+
+    STextModel(TextString textString) {
+        $SceneGraph.createTextModelEntity(textModel: this, text: textString);
+    }
+
+    // This works but is it the right way?
+    void append(TextString str){
+        $SceneGraph.append(model: this, appendStr: str);
+    }
+
+    void setValue(TextString text){
+
+    }
+
+    void append(WholeNumber num){
+
+    }
+    void append(DecimalNumber num){
+
+    }
+    // Also append thing.name?
+
+    void delete(WholeNumber start, WholeNumber end){
+
+    }
+    void deleteCharAt(WholeNumber index){
+
+    }
+    void insert(WholeNumber offset, TextString value){
+
+    }
+    void replace(WholeNumber start, WholeNumber end, TextString s){
+
+    }
+
+    // c should be a char?
+    void setCharAt(WholeNumber index, TextString c){
+
+    }
+}

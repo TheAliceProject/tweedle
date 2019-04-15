@@ -322,6 +322,11 @@
       "file": "src/SRoom.twe",
       "type": "Class"
     }, {
+      "id": "STextModel",
+      "format": "tweedle",
+      "file": "src/STextModel.twe",
+      "type": "Class"
+    }, {
       "id": "SMarker",
       "format": "tweedle",
       "file": "src/SMarker.twe",
