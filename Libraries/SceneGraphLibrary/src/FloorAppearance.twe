@@ -1,0 +1,34 @@
+enum FloorAppearance {
+{
+    BLACK_CHECKER(resource: "Floor/black_white"),
+    BLUE_CHECKER(resource: "Floor/blue_white"),
+    BLUE_SQUARES(resource: "Floor/blue_moroccan"),
+    BLACK_TILES(resource: "Floor/black_ceramic"),
+    WHITE_TILES(resource: "Floor/carpet_chianti_white"),
+    PAW_PRINT_CARPET(resource: "Floor/carpet_cat_paws"),
+    BLUE_STAR_CARPET(resource: "Floor/carpet_blue"),
+    RED_STAR_CARPET(resource: "Floor/carpet_red_stars"),
+    RED_CARPET(resource: "Floor/carpet_hotel_red"),
+    BLUE_CARPET(resource: "Floor/carpet_hotel_blue"),
+    GOLD_CARPET(resource: "Floor/carpet_hotel_gold"),
+    LEAF_CARPET(resource: "Floor/carpet_leaves"),
+    GREEN_TILE(resource: "Floor/green_ceramic"),
+    RED_TILE(resource: "Floor/red_ceramic"),
+    BLUE_TILE(resource: "Floor/turquoise_ceramic"),
+    REDWOOD(resource: "Floor/deck_redwood"),
+    WOOD_ZIG_ZAG(resource: "Floor/club_zigzag"),
+    WOOD_SQUARES(resource: "Floor/wood_cross_tile"),
+    MOROCCAN_TILES(resource: "Floor/wood_moroccan"),
+    WOOD_DIAMOND(resource: "Floor/wood_panel_diamonds");
+
+
+    @CompletelyHidden ImageSource imageSource;
+
+    FloorAppearance( TextString resource ) {
+        this.imageSource <- new ImageSource(resource: resource);
+    }
+
+    ImageSource getImageSource() {
+        return this.imageSource;
+    }
+}

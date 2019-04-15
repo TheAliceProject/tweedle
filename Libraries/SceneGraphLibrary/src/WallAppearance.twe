@@ -1,0 +1,44 @@
+enum WallAppearance {
+{
+    BLUE_STRIPE_WITH_WOOD_TRIM(resource: "Wall/blueGoldStripe-KCr-Md"),
+    BLUE_STRIPE_WITH_WHITE_TRIM(resource: "Wall/blueGoldStripe-KCr-Wh"),
+    BLUE_STRIPE_WITH_WOOD_COFFER(resource: "Wall/blueGoldStripe-W2coffer-Md"),
+    BLUE_STRIPE_WITH_WHITE_COFFER(resource: "Wall/blueGoldStripe-W2coffer-Wh"),
+    BLUE_STRIPE_WITH_WOOD_BEAD(resource: "Wall/blueGoldStripe-Wbead-Md"),
+    BLUE_STRIPE_WITH_WHITE_BEAD(resource: "Wall/blueGoldStripe-Wbead-Wh"),
+    STARS(resource: "Wall/blueStars-base"),
+    BRICK(resource: "Wall/brickChimneyRedAgedBelting-base"),
+    GREY_STRIPE(resource: "Wall/charcoalStripeWainscot-KCr-Dk"),
+    GREY_STRIPE_WITH_COFFER(resource: "Wall/charcoalStripeWainscot-W2coffer-Dk"),
+    YELLOW_STRIPE(resource: "Wall/clubYellow03-KCr-Wh"),
+    YELLOW_STRIPE_WITH_COFFER(resource: "Wall/clubYellow03-W2coffer-Wh"),
+    YELLOW_STRIPE_WITH_BEAD(resource: "Wall/clubYellow03-Wbead-Wh"),
+    GOLD_FAN(resource: "Wall/decoGoldFan-KCr-Md"),
+    GOLD_FAN_WITH_COFFER(resource: "Wall/decoGoldFan-W2coffer-Md"),
+    GREEN_STRIPE(resource: "Wall/greenStripe-KCr-Md"),
+    GREEN_STRIPE_WITH_COFFER(resource: "Wall/greenStripe-W2coffer-Md"),
+    GREEN_STRIPE_WITH_BEAD(resource: "Wall/greenStripe-Wbead-Md"),
+    BUNNIES_YELLOW(resource: "Wall/paintBunnyCitronette-K-Wh"),
+    BUNNIES_PURPLE(resource: "Wall/paintBunnyDeepLilak-K-Wh"),
+    BUNNIES_PINK(resource: "Wall/paintBunnyRoseblossom-K-Wh"),
+    TEAL(resource: "Wall/paintPasCeladonFields-KCr-Wh"),
+    TEAL_WITH_BEAD(resource: "Wall/paintPasCeladonFields-Wbead-Wh"),
+    YELLOW(resource: "Wall/paintPasCitronette-KCr-Wh"),
+    YELLOW_WITH_BEAD(resource: "Wall/paintPasCitronette-Wbead-Wh"),
+    PURPLE(resource: "Wall/paintPasDeepLilac-KCr-Wh"),
+    PURPLE_WITH_BEAD(resource: "Wall/paintPasDeepLilac-Wbead-Wh"),
+    BLUE(resource: "Wall/paintPasDelftPowder-KCr-Wh"),
+    BLUE_WITH_BEAD(resource: "Wall/paintPasDelftPowder-Wbead-Wh"),
+    SALMON(resource: "Wall/paintPasRoseBlossom-KCr-Wh"),
+    SALMON_WITH_BEAD(resource: "Wall/paintPasRoseblossom-Wbead-Wh");
+
+    @CompletelyHidden ImageSource imageSource;
+
+    WallAppearance( TextString resource ) {
+        this.imageSource <- new ImageSource(resource: resource);
+    }
+
+    ImageSource getImageSource() {
+        return this.imageSource;
+    }
+}

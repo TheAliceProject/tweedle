@@ -176,10 +176,30 @@ class SModel extends SMovableTurnable
         localTransformation.value <- $SceneGraph.setVehicle(vehicle: vehicle, rider: this);
     }
 
-    void say(TextString text) {
+    void say(TextString text,
+            TextStyle textStyleIn <- Default.textStyle(),
+            FontType fontTypeIn <- Default.fontType(),
+            BubblePosition bubblePositionIn <- Default.bubblePosition(),
+            Duration durationIn <- Default.duration(),
+            Color bubbleColorIn <- Color.WHITE,
+            Color outlineColorIn <- Color.WHITE,
+            Color textColorIn <- Color.BLACK,
+            DecimalNumber textScaleIn <- 1.0 ) {
+        $SceneGraph.say(entity: this, bubbleText: text, position: bubblePositionIn.getValue(), fontType: fontTypeIn.getValue(),
+          textStyle: textStyleIn.getValue(), textScale: textScaleIn, bubbleColor: bubbleColorIn, outlineColor: outlineColorIn, textColor: textColorIn, duration: durationIn);
     }
 
-    void think(TextString text) {
+    void think(TextString text,
+            TextStyle textStyleIn <- Default.textStyle(),
+            FontType fontTypeIn <- Default.fontType(),
+            BubblePosition bubblePositionIn <- Default.bubblePosition(),
+            Duration durationIn <- Default.duration(),
+            Color bubbleColorIn <- Color.WHITE,
+            Color outlineColorIn <- Color.WHITE,
+            Color textColorIn <- Color.BLACK,
+            DecimalNumber textScaleIn <- 1.0 ) {
+        $SceneGraph.think(entity: this, bubbleText: text, position: bubblePositionIn.getValue(), fontType: fontTypeIn.getValue(),
+          textStyle: textStyleIn.getValue(), textScale: textScaleIn, bubbleColor: bubbleColorIn, outlineColor: outlineColorIn, textColor: textColorIn, duration: durationIn);
     }
 
     @CompletelyHidden Size defaultSize;
