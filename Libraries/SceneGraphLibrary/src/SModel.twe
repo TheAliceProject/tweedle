@@ -185,7 +185,7 @@ class SModel extends SMovableTurnable
             Color outlineColorIn <- Color.WHITE,
             Color textColorIn <- Color.BLACK,
             DecimalNumber textScaleIn <- 1.0 ) {
-        $SceneGraph.sayThink(entity: this, bubbleText: text, bubbleStyle: true, position: bubblePositionIn.getValue(), fontType: fontTypeIn.getValue(),
+        $SceneGraph.say(entity: this, bubbleText: text, position: bubblePositionIn.getValue(), fontType: fontTypeIn.getValue(),
           textStyle: textStyleIn.getValue(), textScale: textScaleIn, bubbleColor: bubbleColorIn, outlineColor: outlineColorIn, textColor: textColorIn, duration: durationIn);
     }
 
@@ -198,7 +198,7 @@ class SModel extends SMovableTurnable
             Color outlineColorIn <- Color.WHITE,
             Color textColorIn <- Color.BLACK,
             DecimalNumber textScaleIn <- 1.0 ) {
-        $SceneGraph.sayThink(entity: this, bubbleText: text, bubbleStyle: false, position: bubblePositionIn.getValue(), fontType: fontTypeIn.getValue(),
+        $SceneGraph.think(entity: this, bubbleText: text, position: bubblePositionIn.getValue(), fontType: fontTypeIn.getValue(),
           textStyle: textStyleIn.getValue(), textScale: textScaleIn, bubbleColor: bubbleColorIn, outlineColor: outlineColorIn, textColor: textColorIn, duration: durationIn);
     }
 
