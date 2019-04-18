@@ -17,30 +17,57 @@ class Scene extends SScene {
     camPos <- new Position(x: camPos.x, y: camPos.y + 1, z: camPos.z - 5);
     Orientation camRot <- camera.getOrientationRelativeToVehicle();
 
-    this.camera.moveAndOrientToAGoodVantagePointOf(entity: sphere);
+    this.camera.moveAndOrientToAGoodVantagePointOf(entity: axes);
     $Debug.log(message: "Text model stuff");
-    this.textModel.say(text: "if words could talk");
 
     $Debug.log(message: "torus");
+    textModel2.setPaint(paint: Color.BLACK);
     torus.say(text: "Hello world! I'm a torus", outlineColorIn: Color.BLACK);
-    textModel.append(str: "appended words");
+    torus.setPaint(paint: Color.RED);
+    axes.setSize(size: new Size(width: 0.5, height: 0.5, depth: 0.5), duration: Duration.ONE_SECOND);
+     textModel.place(
+        spatialRelation: SpatialRelation.RIGHT_OF,
+        target: axes,
+        asSeenBy: torus,
+        duration: Duration.ONE_SECOND,
+        pathStyle: PathStyle.SMOOTH,
+        alongAxisOffset: 0.1
+      );
+    textModel.append(value: " appended words");
+    textModel.setOpacity(opacity: new Portion(portion: 0.1));
+    textModel.setSize(size: new Size(width: 0.1, height: 0.1, depth: 0.1), duration: Duration.ONE_SECOND);
+    textModel.setPaint(paint: Color.GREEN);
+    textModel.setOpacity(opacity: new Portion(portion: 1.0));
+   textModel.place(
+           spatialRelation: SpatialRelation.RIGHT_OF,
+           target: axes,
+           asSeenBy: torus,
+           duration: Duration.ONE_SECOND,
+           pathStyle: PathStyle.SMOOTH,
+           alongAxisOffset: 0.1
+         );
+    this.delay(duration: Duration.ONE_SECOND);
+    textModel.place(
+            spatialRelation: SpatialRelation.ABOVE,
+            target: torus,
+            asSeenBy: torus,
+            duration: Duration.ONE_SECOND,
+            pathStyle: PathStyle.SMOOTH,
+            alongAxisOffset: 0.1
+          );
+
+    this.camera.moveAndOrientToAGoodVantagePointOf(entity: textModel);
     sphere.think(text: "I wonder if I'm a sphere", outlineColorIn: Color.BLACK, fontTypeIn: FontType.MONOSPACED, bubbleColorIn: Color.CYAN, textStyleIn: TextStyle.BOLD, textColorIn: Color.BLUE);
     cone.say(text: "Hello world! I'm a cone", fontTypeIn: FontType.SERIF, textStyleIn: TextStyle.ITALIC);
     cylinder.say(text: "Hello world! I'm a cylinder", outlineColorIn: Color.BLACK);
     this.delay(duration: Duration.TWO_SECONDS);
 
-
     doTogether{
         torus.say(text: "Hello world! I'm a torus!", outlineColorIn: Color.BLACK, fontTypeIn: FontType.MONOSPACED, textScaleIn: 2.0);
         torus.say(text: "Torus here, I'm apparently talking over myself.", outlineColorIn: Color.BLACK, fontTypeIn: FontType.SERIF, durationIn: Duration.TWO_SECONDS);
         sphere.think(text: "Sphere chiming in!");
-        sphere.think(text: "Why would anyone do this");
-        sphere.think(text: "Please no more think boxes!");
         cone.say(text: "What are y'all talking about over there?");
-        cone.say(text: "Ventriloquism", bubblePositionIn: BubblePosition.LEFT);
     }
-    sphere.say(text: "I'm automatically in the center?", outlineColorIn: Color.BLACK, fontTypeIn: FontType.SANS_SERIF);
-    cone.say(text: "So many text boxes!", outlineColorIn: Color.BLACK, bubblePositionIn: BubblePosition.CENTER);
     torus.setOpacity(opacity: new Portion(portion: 0.5));
     torus.setOuterRadius(radius: 1.25);
     torus.say(text: "Hello world! I'm a torus", outlineColorIn: Color.BLACK, fontTypeIn: FontType.MONOSPACED);
@@ -545,7 +572,7 @@ class Scene extends SScene {
   SCylinder cylinder <- new SCylinder();
   SCone cone <- new SCone();
   STextModel textModel <- new STextModel(textString: "Tweedle!");
-  STextModel anotherOne <- new STextModel(textString: "X");
+  STextModel textModel2 <- new STextModel(textString: "X");
   STorus torus <- new STorus();
   SDisc disc <- new SDisc();
   SBillboard billboard <- new SBillboard();
@@ -588,6 +615,9 @@ class Scene extends SScene {
     box5.setPositionRelativeToVehicle(position: new Position(x: 2.0, y: 1, z: 5.0), duration: Duration.ZERO);
     box5.setOrientationRelativeToVehicle(orientation: new Orientation(axis: new Direction(x: 1, y: -1, z: 1).normalize(), angle: new Angle(revolutions: 0.2)), duration: Duration.ZERO);
     box5.setOpacity(opacity: Portion.NONE, duration: Duration.ZERO);
+
+    textModel.setVehicle(vehicle: this);
+    textModel.setPositionRelativeToVehicle(position: new Position(x: 6.0, y: 0.5, z: -9.0), duration: Duration.ZERO);
 
     sphere.setVehicle(vehicle: this);
     sphere.setPositionRelativeToVehicle(position: new Position(x: 2.0, y: 0.5, z: -12.0), duration: Duration.ZERO);

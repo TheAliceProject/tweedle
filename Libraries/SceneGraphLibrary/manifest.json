@@ -187,6 +187,11 @@
       "file": "src/ColorProperty.twe",
       "type": "Class"
     }, {
+      "id": "TextProperty",
+      "format": "tweedle",
+      "file": "src/TextProperty.twe",
+      "type": "Class"
+    }, {
       "id": "ColorTween",
       "format": "tweedle",
       "file": "src/ColorTween.twe",
