@@ -86,13 +86,21 @@ class SScene extends SThing {
   void addDefaultModelManipulation() {
     $SceneManager.addDragAdapter();
   }
+*/
 
-  void addTimeListener( TimeListener listener,
-                        Number frequency,
-                        OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy() ) {
-    $Clock.addTimerEventListener( listener: listener, frequency: frequency, overlappingEventPolicy: overlappingEventPolicy );
+
+  void addTimeListener( <TimeEvent->void> inListener,
+                                  Duration frequency,
+                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+
+        $Clock.addTimeEventListener(duration: frequency, scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: () -> {
+              TimeEvent event <- new TimeEvent();
+              inListener(event);
+            });
+
   }
 
+/*
   void addKeyPressListener( KeyPressListener listener,
                             OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                             HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy() ) {

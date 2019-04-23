@@ -1,0 +1,4 @@
+class TimeEvent extends AbstractEvent {
+
+
+}
