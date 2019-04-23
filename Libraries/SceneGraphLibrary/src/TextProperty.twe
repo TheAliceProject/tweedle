@@ -25,24 +25,21 @@ class TextProperty extends Property {
     $SceneGraph.updateProperty(owner: this.owner, property: this, value: this.value);
   }
 
-  //void deleteCharAt(WholeNumber index) {
-  //  value <- value.delete(start: index, end: index);
- // }
-
   void insert(WholeNumber offset, TextString value) {
     TextString endOfString <- this.value.substring(startIndex: offset);
     this.value <- this.value.substring(startIndex: 0, length: offset) .. value .. endOfString;
     $SceneGraph.updateProperty(owner: this.owner, property: this, value: this.value);
   }
 
-  void replace(WholeNumber start, WholeNumber end, TextString s) {
-    value <- value.substring(startIndex: 0, length: start) .. s .. value.substring(startIndex: end);
+  void replace(WholeNumber start, WholeNumber end, TextString replacement) {
+    value <- value.substring(startIndex: 0, length: start) .. replacement .. value.substring(startIndex: end);
     $SceneGraph.updateProperty(owner: this.owner, property: this, value: this.value);
   }
 
-  //void setCharAt(WholeNumber index, Character c) {
-  //  value <- value.setCharAt(index: index, char: c);
-  //}
+  void replaceChar(WholeNumber start, WholeNumber end, Character replacement) {
+      value <- value.substring(startIndex: 0, length: start) .. replacement.getString() .. value.substring(startIndex: end);
+      $SceneGraph.updateProperty(owner: this.owner, property: this, value: this.value);
+  }
 
   @CompletelyHidden TextString value;
 }

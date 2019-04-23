@@ -21,12 +21,20 @@ class STextModel extends SModel {
     this.text.delete( start: start, end: end);
   }
 
+  void deleteCharAt(WholeNumber index){
+    this.text.delete( start: index, end: index + 1);
+  }
+
   void insert(WholeNumber offset, TextString value) {
     this.text.insert( offset: offset, value: value );
   }
 
   void replace(WholeNumber start, WholeNumber end, TextString s) {
     return this.text.replace( start: start, end: end, replacement: s );
+  }
+
+  void setCharAt(WholeNumber index, Character c){
+    return this.text.replaceChar( start: index, end: index + 1, replacement: c);
   }
 
    @CompletelyHidden TextProperty text;

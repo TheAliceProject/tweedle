@@ -35,10 +35,12 @@ class Scene extends SScene {
       );
     textModel.append(value: " appended words");
     textModel.setOpacity(opacity: new Portion(portion: 0.1));
+    //textModel.deleteCharAt(index: 3);
+    textModel.setCharAt(index:3, c: new Character(theChar: "m"));
     textModel.setSize(size: new Size(width: 0.1, height: 0.1, depth: 0.1), duration: Duration.ONE_SECOND);
     textModel.setPaint(paint: Color.GREEN);
     textModel.setOpacity(opacity: new Portion(portion: 1.0));
-   textModel.place(
+    textModel.place(
            spatialRelation: SpatialRelation.RIGHT_OF,
            target: axes,
            asSeenBy: torus,
