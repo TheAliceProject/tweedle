@@ -1,4 +1,12 @@
 class TimeEvent extends AbstractEvent {
 
+    TimeEvent(Duration timeElapsed){
+        timeSinceLastFire <- timeElapsed;
+    }
 
-}
+    Duration getTimeSinceLastFire(){
+        return $Clock.currentTime - timeSinceLastFire;
+    }
+
+    @CompletelyHidden Duration timeSinceLastFire;
+ }

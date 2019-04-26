@@ -1,0 +1,4 @@
+class MouseEvent extends AbstractEvent {
+
+
+}
