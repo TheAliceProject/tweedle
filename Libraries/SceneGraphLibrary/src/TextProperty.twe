@@ -16,29 +16,29 @@ class TextProperty extends Property {
   }
 
   void append(TextString value) {
-    this.value <- this.value .. value;
-    $SceneGraph.updateProperty(owner: this.owner, property: this, value: this.value);
+    TextString newVal <- this.value .. value;
+    setValue(value: newVal);
   }
 
   void delete(WholeNumber start, WholeNumber end) {
-    value <- value.substring(startIndex: 0, length: start) .. value.substring(startIndex: end);
-    $SceneGraph.updateProperty(owner: this.owner, property: this, value: this.value);
+    TextString newVal <- value.substring(startIndex: 0, length: start) .. value.substring(startIndex: end);
+    setValue(value: newVal);
   }
 
   void insert(WholeNumber offset, TextString value) {
     TextString endOfString <- this.value.substring(startIndex: offset);
-    this.value <- this.value.substring(startIndex: 0, length: offset) .. value .. endOfString;
-    $SceneGraph.updateProperty(owner: this.owner, property: this, value: this.value);
+    TextString newVal <- this.value.substring(startIndex: 0, length: offset) .. value .. endOfString;
+    setValue(value: newVal);
   }
 
   void replace(WholeNumber start, WholeNumber end, TextString replacement) {
-    value <- value.substring(startIndex: 0, length: start) .. replacement .. value.substring(startIndex: end);
-    $SceneGraph.updateProperty(owner: this.owner, property: this, value: this.value);
+    TextString newVal <- value.substring(startIndex: 0, length: start) .. replacement .. value.substring(startIndex: end);
+    setValue(value: newVal);
   }
 
   void replaceChar(WholeNumber start, WholeNumber end, Character replacement) {
-      value <- value.substring(startIndex: 0, length: start) .. replacement.getString() .. value.substring(startIndex: end);
-      $SceneGraph.updateProperty(owner: this.owner, property: this, value: this.value);
+      TextString newVal <- value.substring(startIndex: 0, length: start) .. replacement.getString() .. value.substring(startIndex: end);
+      setValue(value: newVal);
   }
 
   @CompletelyHidden TextString value;
