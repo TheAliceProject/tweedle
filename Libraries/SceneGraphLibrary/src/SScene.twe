@@ -89,22 +89,22 @@ class SScene extends SThing {
 */
 
 
-  void addTimeListener( <TimeEvent->void> inListener,
+  void addTimeListener( <TimeEvent->void> listener,
                                   Duration frequency,
                                   OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
       $Clock.addTimeEventListener(duration: frequency, scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: (Duration lastFireTime) -> {
         TimeEvent event <- new TimeEvent(timeElapsed: lastFireTime);
-        inListener(event);
+        listener(event);
     });
   }
 
-   void addMouseClickListener( <MouseEvent->void> inListener,
+   void addMouseClickListener( <MouseEvent->void> listener,
                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
 
       // TODO Finish mouse click listeners
      $Mouse.addMouseEventListener(scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: () -> {
        MouseEvent event <- new MouseEvent();
-       inListener(event);
+       listener(event);
     });
 
    }
