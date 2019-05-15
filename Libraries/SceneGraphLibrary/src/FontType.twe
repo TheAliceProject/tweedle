@@ -1,0 +1,16 @@
+enum FontType {
+	DEFAULT(value: $FontType.DEFAULT),
+	SERIF(value: $FontType.SERIF),
+	SANS_SERIF(value: $FontType.SANS_SERIF),
+	MONOSPACED(value: $FontType.MONOSPACED);
+
+	FontType(WholeNumber value) {
+		this.value <- value;
+	}
+
+	WholeNumber getValue() {
+		return this.value;
+	}
+
+	@CompletelyHidden WholeNumber value;
+}

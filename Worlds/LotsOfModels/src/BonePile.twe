@@ -1,0 +1,7 @@
+class BonePile extends Prop models BonePile {
+  BonePile() {
+    super(resource: BonePile.DEFAULT);
+  }
+
+  static TextString DEFAULT <- "BonePile/DEFAULT";
+}

@@ -1,0 +1,17 @@
+class JointIdTransformationPair {
+    JointIdTransformationPair(JointId id, Position position, Orientation orientation) {
+        this.id <- id;
+        this.transformation <- new VantagePoint(position: position, orientation: orientation);
+    }
+
+    TextString getId() {
+        return this.id;
+    }
+
+    VantagePoint getTransformation() {
+        return this.transformation;
+    }
+
+    @CompletelyHidden JointId id;
+    @CompletelyHidden VantagePoint transformation;
+}

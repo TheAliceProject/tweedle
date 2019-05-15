@@ -1,0 +1,10 @@
+class JointIdNode {
+
+    JointIdNode(JointId id, JointIdNode next) {
+        this.id <- id;
+        this.next <- next;
+    }
+
+    JointId id;
+    JointIdNode next;
+}

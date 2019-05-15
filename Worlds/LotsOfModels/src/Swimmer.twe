@@ -1,0 +1,5 @@
+class Swimmer extends SSwimmer models Swimmer {
+  Swimmer(TextString resource) {
+    super(resource: resource);
+  }
+}

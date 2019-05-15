@@ -1,0 +1,41 @@
+class STextModel extends SModel {
+  STextModel(TextString textString) {
+      super(resource: $SceneGraph.TEXTMODEL);
+      this.text <- new TextProperty(owner: this, value: textString);
+      $SceneGraph.bindTextProperty(owner: this, property: this.text, value: this.text.getValue());
+  }
+
+  TextString getValue() {
+    return this.text.getValue();
+  }
+
+  void setValue(TextString text) {
+    this.text.setValue( value: text );
+  }
+
+  void append(TextString value) {
+    this.text.append( value: value );
+  }
+
+  void delete(WholeNumber start, WholeNumber end) {
+    this.text.delete( start: start, end: end);
+  }
+
+  void deleteCharAt(WholeNumber index){
+    this.text.delete( start: index, end: index + 1);
+  }
+
+  void insert(WholeNumber offset, TextString value) {
+    this.text.insert( offset: offset, value: value );
+  }
+
+  void replace(WholeNumber start, WholeNumber end, TextString s) {
+    return this.text.replace( start: start, end: end, replacement: s );
+  }
+
+  void setCharAt(WholeNumber index, Character c){
+    return this.text.replaceChar( start: index, end: index + 1, replacement: c);
+  }
+
+   @CompletelyHidden TextProperty text;
+}

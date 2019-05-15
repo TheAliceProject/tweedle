@@ -1,0 +1,7 @@
+class Shark extends Fish models Shark {
+  Shark() {
+    super(resource: Shark.DEFAULT);
+  }
+
+  static TextString DEFAULT <- "Shark/DEFAULT";
+}

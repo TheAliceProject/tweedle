@@ -1,0 +1,69 @@
+{
+  "description": {
+    "name": "WorldTest",
+    "icon": "thumbnail.png",
+    "tags": [],
+    "groupTags": [],
+    "themeTags": []
+  },
+  "provenance": {
+    "aliceVersion": "3.4.0.0-alpha",
+    "created": "2018",
+    "creator": "Alice Project"
+  },
+  "metadata": {
+    "formatVersion": "0.1",
+    "identifier": {
+      "id": "970a310f-90a7-4d29-8380-5b2a742e3ee5",
+      "version": "1.0",
+      "type": "World"
+    }
+  },
+  "prerequisites": [
+    {
+      "id": "970a310f-90a7-4d29-8380-5b2a742e3ee4",
+      "version": "1.0",
+      "type": "Library"
+    }
+  ],
+  "resources": [
+    {
+      "id": "Program",
+      "format": "tweedle",
+      "file": "src/Program.twe",
+      "type": "Class"
+    }, {
+      "id": "Scene",
+      "format": "tweedle",
+      "file": "src/Scene.twe",
+      "type": "Class"
+    }, {
+      "id": "Box",
+      "format": "tweedle",
+      "file": "src/Box.twe",
+      "type": "Class"
+    }, {
+      "id": "DirectionalBox",
+      "format": "tweedle",
+      "file": "src/DirectionalBox.twe",
+      "type": "Class"
+    }, {
+      "id": "TestAlien",
+      "format": "tweedle",
+      "file": "src/TestAlien.twe",
+      "type": "Class"
+    },
+    {
+      "id": "meanQueen",
+      "format": "png",
+      "file": "resources/meanQueen.png",
+      "type": "Image"
+    },
+    {
+      "id": "Alien",
+      "format": "json",
+      "file": "resources/Alien/Alien.json",
+      "type": "Model"
+    }
+  ]
+}

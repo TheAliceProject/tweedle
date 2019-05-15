@@ -1,0 +1,7 @@
+class HangGlider extends Aircraft models HangGlider {
+  HangGlider() {
+    super(resource: HangGlider.HANG_GLIDER);
+  }
+
+  static TextString HANG_GLIDER <- "Cow/HANG_GLIDER";
+}

@@ -1,0 +1,15 @@
+enum TextStyle {
+	PLAIN(value: $TextStyle.PLAIN),
+	BOLD(value: $TextStyle.BOLD),
+	ITALIC(value: $TextStyle.ITALIC);
+
+	TextStyle(WholeNumber value) {
+		this.value <- value;
+	}
+
+	WholeNumber getValue() {
+		return this.value;
+	}
+
+	@CompletelyHidden WholeNumber value;
+}

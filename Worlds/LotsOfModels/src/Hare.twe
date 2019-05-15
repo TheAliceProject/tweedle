@@ -1,0 +1,31 @@
+class Hare extends Biped models Hare {
+  Hare() {
+    super(resource: Hare.DEFAULT);
+  }
+
+  static TextString DEFAULT <- "Hare/DEFAULT";
+
+  SJoint getLeftEar() {
+    return this.getJoint(jointId: HareResource.LEFT_EAR);
+  }
+
+  SJoint getLeftEarMiddle() {
+    return this.getJoint(jointId: HareResource.LEFT_EAR_MIDDLE);
+  }
+
+  SJoint getRightEar() {
+    return this.getJoint(jointId: HareResource.RIGHT_EAR);
+  }
+
+  SJoint getRightEarMiddle() {
+    return this.getJoint(jointId: HareResource.RIGHT_EAR_MIDDLE);
+  }
+
+  SJoint getTail() {
+    return this.getJoint(jointId: HareResource.TAIL_0);
+  }
+
+  SJoint[] getTailArray() {
+    return this.getJointArray(jointIdArray: HareResource.TAIL_ARRAY);
+  }
+}

@@ -1,0 +1,89 @@
+class SJointedModel extends SModel {
+    SJointedModel(TextString resource) {
+        super(resource: resource);
+    }
+
+    SJointedModel(TextString resource, JointId root) {
+        super(resource: resource);
+
+        if (root != null) {
+            this.buildJoints(root: root);
+        }
+    }
+
+    SJointedModel(TextString resource, JointId[] roots) {
+        super(resource: resource);
+
+        if (roots != null) {
+            forEach(JointId root in roots) {
+                if (root != null) {
+                    this.buildJoints(root: root);
+                }
+            }
+        }
+    }
+
+    SJoint getJoint(JointId jointId) {
+        if (this.joints != null) {
+            forEach(SJoint joint in this.joints) {
+                if (joint.getId().getName() == jointId.getName()) {
+                    return joint;
+                }
+            }
+        }
+        return null;
+    }
+
+    SJoint[] getJointArray(JointId[] idArray) {
+        WholeNumber len <- idArray.length;
+        SJoint[] jointArray <- new SJoint[len];
+        if (this.joints != null) {
+            WholeNumber index <- 0;
+            countUpTo(index < JointIdArray.length) {
+                jointArray[index] <- this.getJoint(jointId: idArray[index]);
+            }
+        }
+        return jointArray;
+    }
+
+    void straightenOutJoints(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
+        if (this.joints != null) {
+            eachTogether(SJoint joint in this.joints) {
+                joint.straightenOut(duration: duration, animationStyle: animationStyle);
+            }
+        }
+    }
+
+    void strikePose(JointedModelPose pose, Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
+        eachTogether(JointIdTransformationPair pair in pose.getPairs()) {
+            SJoint joint <- this.getJoint(jointId: pair.getId());
+            if (joint != null) {
+                joint.localTransformation.animateValue(endValue: pair.getTransformation(), asSeenBy: joint.getVehicle(), duration: duration, animationStyle: animationStyle);
+            }
+        }
+    }
+
+    @CompletelyHidden void buildJoints(JointId root) {
+
+        WholeNumber count <- root.getHierarchyCount();
+        this.joints <- new SJoint[count];
+        buildJoint(id: root, parent: null, index: 0);
+    }
+
+    @CompletelyHidden WholeNumber buildJoint(JointId id, SJoint parent, WholeNumber index) {
+
+        SJoint joint <- new SJoint(id: id, parent: parent, model: this);
+        JointIdNode current <- id.getChildren().getFirst();
+        joints[index] <- joint;
+        index <- index + 1;
+
+        while (current != null) {
+            index <- buildJoint(id: current.id, parent: joint, index: index);
+            current <- current.next;
+        }
+
+        return index;
+    }
+
+    @CompletelyHidden SJoint[] joints;
+}

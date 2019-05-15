@@ -1,0 +1,39 @@
+class Peacock extends Flyer models Peacock {
+  Peacock() {
+    super(resource: Peacock.DEFAULT,
+          spreadWingsPose: null,
+          foldWingsPose: null,
+          tailArray: null,
+          neckArray: null);
+  }
+
+  static TextString DEFAULT <- "Peacock/DEFAULT";
+
+  SJoint getPlume() {
+    return this.getJoint(jointId: PeacockResource.PLUME);
+  }
+
+  SJoint getPlumageBase() {
+    return this.getJoint(jointId: PeacockResource.PLUMAGE_BASE);
+  }
+
+  SJoint getPlumageCenter() {
+    return this.getJoint(jointId: PeacockResource.PLUMAGE_CENTER);
+  }
+
+  SJoint getLeftPlumage() {
+    return this.getJoint(jointId: PeacockResource.LEFT_PLUMAGE);
+  }
+
+  SJoint getRightPlumage() {
+    return this.getJoint(jointId: PeacockResource.RIGHT_PLUMAGE);
+  }
+
+  void spreadFanPose() {
+    this.strikePose(pose: PeacockResource.SPREAD_FAN_POSE);
+  }
+
+  void spreadWingsFanPose() {
+    this.strikePose(pose: PeacockResource.SPREAD_WINGS_FAN_POSE);
+  }
+}

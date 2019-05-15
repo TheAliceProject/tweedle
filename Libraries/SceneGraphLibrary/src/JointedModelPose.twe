@@ -1,0 +1,17 @@
+class JointedModelPose {
+    JointedModelPose(TextString name, JointIdTransformationPair[] pairs) {
+        this.name <- name;
+        this.pairs <- pairs;
+    }
+
+    TextString getName() {
+        return this.name;
+    }
+
+    JointIdTransformationPair[] getPairs() {
+        return this.pairs;
+    }
+
+    @CompletelyHidden TextString name;
+    @CompletelyHidden JointIdTransformationPair[] pairs;
+}

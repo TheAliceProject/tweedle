@@ -1,0 +1,216 @@
+{
+  "parentClass": "Slitherer",
+  "rootJoints": [
+    "ROOT"
+  ],
+  "additionalJoints": [
+    {
+      "name": "TAIL_1",
+      "parent": "TAIL_0",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "TAIL_2",
+      "parent": "TAIL_1",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "TAIL_3",
+      "parent": "TAIL_2",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "TAIL_4",
+      "parent": "TAIL_3",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "SHELL_0",
+      "parent": "TAIL_0",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "SHELL_1",
+      "parent": "SHELL_0",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LOWER_LIP",
+      "parent": "MOUTH",
+      "visibility": "PRIME_TIME"
+    },
+    {
+      "name": "LEFT_TENTACLE_0",
+      "parent": "HEAD",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LEFT_TENTACLE_1",
+      "parent": "LEFT_TENTACLE_0",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "LEFT_TENTACLE_2",
+      "parent": "LEFT_TENTACLE_1",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_TENTACLE_0",
+      "parent": "HEAD",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_TENTACLE_1",
+      "parent": "RIGHT_TENTACLE_0",
+      "visibility": "COMPLETELY_HIDDEN"
+    },
+    {
+      "name": "RIGHT_TENTACLE_2",
+      "parent": "RIGHT_TENTACLE_1",
+      "visibility": "COMPLETELY_HIDDEN"
+    }
+  ],
+  "additionalJointArrays": [
+    {
+      "name": "SHELL_ARRAY",
+      "jointIds": [
+        "SHELL_0",
+        "SHELL_1"
+      ]
+    },
+    {
+      "name": "LEFT_TENTACLE_ARRAY",
+      "jointIds": [
+        "LEFT_TENTACLE_0",
+        "LEFT_TENTACLE_1",
+        "LEFT_TENTACLE_2"
+      ]
+    },
+    {
+      "name": "RIGHT_TENTACLE_ARRAY",
+      "jointIds": [
+        "RIGHT_TENTACLE_0",
+        "RIGHT_TENTACLE_1",
+        "RIGHT_TENTACLE_2"
+      ]
+    },
+    {
+      "name": "TAIL_ARRAY",
+      "visibility": "COMPLETELY_HIDDEN",
+      "jointIds": [
+        "TAIL_0",
+        "TAIL_1",
+        "TAIL_2",
+        "TAIL_3",
+        "TAIL_4"
+      ]
+    }
+  ],
+  "additionalJointArrayIds": [],
+  "poses": [],
+  "boundingBox": {
+    "min": [
+      -0.43222666,
+      -0.008754338,
+      -0.51366657
+    ],
+    "max": [
+      0.44055387,
+      0.94701123,
+      0.6428131
+    ]
+  },
+  "placeOnGround": false,
+  "textureSets": [
+    {
+      "name": "HermitSnail_DEFAULT",
+      "idToResourceMap": {
+        "1": "HermitSnail_HermitSnail_DEFAULT_texture_1_diffuseMap"
+      }
+    }
+  ],
+  "models": [
+    {
+      "name": "DEFAULT",
+      "structure": "HermitSnail",
+      "textureSet": "HermitSnail_DEFAULT",
+      "icon": "DEFAULT.png"
+    }
+  ],
+  "description": {
+    "name": "HermitSnail",
+    "icon": "HermitSnail_cls.png",
+    "tags": [
+      "wonderland",
+      "alice",
+      "snail"
+    ],
+    "groupTags": [
+      "characters"
+    ],
+    "themeTags": [
+      "wonderland"
+    ]
+  },
+  "provenance": {
+    "aliceVersion": "3.5.0.0-alpha",
+    "created": "2015",
+    "creator": "Laura Paoletti"
+  },
+  "metadata": {
+    "formatVersion": "0.1+alpha",
+    "identifier": {
+      "version": "1.0",
+      "type": "Model",
+      "id": "HermitSnail"
+    }
+  },
+  "prerequisites": [],
+  "resources": [
+    {
+      "boundingBox": {
+        "min": [
+          -0.43222666,
+          -0.008754338,
+          -0.51366657
+        ],
+        "max": [
+          0.44055387,
+          0.94701123,
+          0.6428131
+        ]
+      },
+      "id": "HermitSnail",
+      "format": "dae",
+      "file": "HermitSnail_HermitSnail.dae",
+      "type": "skeletonMesh"
+    },
+    {
+      "uuid": "559abd30-7bb5-451d-a0e4-1625f9773683",
+      "height": 512.0,
+      "width": 512.0,
+      "id": "HermitSnail_HermitSnail_DEFAULT_texture_1_diffuseMap",
+      "format": "image/png",
+      "file": "HermitSnail_HermitSnail_DEFAULT_texture_1_diffuseMap.png",
+      "type": "image"
+    },
+    {
+      "uuid": "f56d0466-24f2-4a89-8a34-f29f41a0f3ac",
+      "height": 120.0,
+      "width": 100.0,
+      "id": "DEFAULT.png",
+      "format": "image/png",
+      "file": "DEFAULT.png",
+      "type": "image"
+    },
+    {
+      "uuid": "e9d83fe4-d0d0-4a83-9482-480710bf5826",
+      "height": 120.0,
+      "width": 100.0,
+      "id": "HermitSnail_cls.png",
+      "format": "image/png",
+      "file": "HermitSnail_cls.png",
+      "type": "image"
+    }
+  ]
+}

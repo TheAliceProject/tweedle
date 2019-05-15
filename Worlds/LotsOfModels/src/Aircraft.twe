@@ -1,0 +1,5 @@
+class Aircraft extends Transport models Aircraft {
+  Aircraft(TextString resource) {
+    super(resource: resource);
+  }
+}

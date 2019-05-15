@@ -1,0 +1,45 @@
+class TextProperty extends Property {
+  TextProperty(SThing owner, TextString value) {
+    super(owner: owner);
+    this.value <- value;
+  }
+
+  TextString getValue() {
+    return value;
+  }
+
+  void setValue(TextString value) {
+    if (this.value != value) {
+      this.value <- value;
+      $SceneGraph.updateProperty(owner: this.owner, property: this, value: value);
+    }
+  }
+
+  void append(TextString value) {
+    TextString newVal <- this.value .. value;
+    setValue(value: newVal);
+  }
+
+  void delete(WholeNumber start, WholeNumber end) {
+    TextString newVal <- value.substring(startIndex: 0, length: start) .. value.substring(startIndex: end);
+    setValue(value: newVal);
+  }
+
+  void insert(WholeNumber offset, TextString value) {
+    TextString endOfString <- this.value.substring(startIndex: offset);
+    TextString newVal <- this.value.substring(startIndex: 0, length: offset) .. value .. endOfString;
+    setValue(value: newVal);
+  }
+
+  void replace(WholeNumber start, WholeNumber end, TextString replacement) {
+    TextString newVal <- value.substring(startIndex: 0, length: start) .. replacement .. value.substring(startIndex: end);
+    setValue(value: newVal);
+  }
+
+  void replaceChar(WholeNumber start, WholeNumber end, Character replacement) {
+      TextString newVal <- value.substring(startIndex: 0, length: start) .. replacement.getString() .. value.substring(startIndex: end);
+      setValue(value: newVal);
+  }
+
+  @CompletelyHidden TextString value;
+}

@@ -1,0 +1,59 @@
+class SRoom extends SThing {
+    SRoom() {
+        $SceneGraph.createRoomEntity(room: this);
+        $SceneGraph.bindPaintProperty(owner: this, property: this.wallPaint, value: this.wallPaint.getValue());
+        $SceneGraph.bindCeilingPaintProperty(owner: this, property: this.ceilingPaint, value: this.ceilingPaint.getValue());
+        $SceneGraph.bindFloorPaintProperty(owner: this, property: this.floorPaint, value: this.floorPaint.getValue());
+        $SceneGraph.bindOpacityProperty(owner: this, property: this.opacity, value: this.opacity.getValue());
+    }
+
+    void setVehicle(SThing vehicle) {
+        this.vehicle <- vehicle;
+        $SceneGraph.setVehicle(vehicle: vehicle, rider: this);
+    }
+
+    Paint getWallPaint() {
+        return this.wallPaint.getValue();
+    }
+
+    void setWallPaint(Paint paint,
+                Duration duration <- Default.duration(),
+                AnimationStyle animationStyle <- Default.animationStyle() ) {
+        this.wallPaint.animateValue( endValue: paint, duration: duration, animationStyle: animationStyle );
+    }
+
+    Paint getCeilingPaint() {
+        return this.ceilingPaint.getValue();
+    }
+
+    void setCeilingPaint(Paint paint,
+                  Duration duration <- Default.duration(),
+                  AnimationStyle animationStyle <- Default.animationStyle() ) {
+        this.ceilingPaint.animateValue( endValue: paint, duration: duration, animationStyle: animationStyle );
+    }
+
+    Paint getFloorPaint() {
+            return this.floorPaint.getValue();
+    }
+
+    void setFloorPaint(Paint paint,
+                  Duration duration <- Default.duration(),
+                  AnimationStyle animationStyle <- Default.animationStyle() ) {
+        this.floorPaint.animateValue( endValue: paint, duration: duration, animationStyle: animationStyle );
+    }
+
+    Portion getOpacity() {
+        return this.opacity.getValue();
+    }
+
+    void setOpacity(Portion opacity,
+                  Duration duration <- Default.duration(),
+                  AnimationStyle animationStyle <- Default.animationStyle() ) {
+        this.opacity.animateValue( endValue: opacity, duration: duration, animationStyle: animationStyle );
+    }
+
+    @CompletelyHidden PaintProperty wallPaint <- new PaintProperty(owner: this, value: Color.RED);
+    @CompletelyHidden PaintProperty ceilingPaint <- new PaintProperty(owner: this, value: Color.WHITE);
+    @CompletelyHidden PaintProperty floorPaint <- new PaintProperty(owner: this, value: Color.BLUE);
+    @CompletelyHidden PortionProperty opacity <- new PortionProperty(owner: this, value: Portion.WHOLE);
+}
