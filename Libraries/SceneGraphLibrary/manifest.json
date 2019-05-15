@@ -387,6 +387,16 @@
       "file": "src/SceneActivationEvent.twe",
       "type": "Class"
     }, {
+      "id": "TimeEvent",
+      "format": "tweedle",
+      "file": "src/TimeEvent.twe",
+      "type": "Class"
+    }, {
+      "id": "MouseEvent",
+      "format": "tweedle",
+      "file": "src/MouseEvent.twe",
+      "type": "Class"
+    }, {
       "id": "OverlappingEventPolicy",
       "format": "tweedle",
       "file": "src/OverlappingEventPolicy.twe",

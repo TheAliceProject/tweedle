@@ -7,6 +7,16 @@ class Scene extends SScene {
     this.addSceneActivationListener(listener: (SceneActivationEvent event)-> {
       this.myFirstMethod();
     });
+
+    this.addTimeListener(frequency: new Duration(seconds: 1.0), overlappingEventPolicy: OverlappingEventPolicy.IGNORE, listener: (TimeEvent event)-> {
+        textModel2.move(direction: MoveDirection.UP, amount: 1, duration: new Duration(seconds: 2.0), style: AnimationStyle.BEGIN_AND_END_GENTLY);
+        textModel2.append(value: " X");
+    });
+
+   //this.addMouseClickListener(overlappingEventPolicy: OverlappingEventPolicy.ENQUEUE, listener: (MouseEvent event)-> {
+   //     textModel2.move(direction: MoveDirection.UP, amount: 1.0, duration: new Duration(seconds: 1.0), style: AnimationStyle.BEGIN_AND_END_GENTLY);
+    //    textModel2.append(value: " X");
+    //});
   }
 
   void myFirstMethod() {
