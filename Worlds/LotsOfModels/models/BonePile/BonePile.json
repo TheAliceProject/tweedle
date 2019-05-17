@@ -60,7 +60,7 @@
     "identifier": {
       "version": "1.0",
       "type": "Model",
-      "id": "BonePile"
+      "name": "BonePile"
     }
   },
   "prerequisites": [],
@@ -78,7 +78,7 @@
           0.24554534
         ]
       },
-      "id": "BonePile",
+      "name": "BonePile",
       "format": "dae",
       "file": "BonePile_BonePile.dae",
       "type": "skeletonMesh"
@@ -87,7 +87,7 @@
       "uuid": "0edde4ae-ae07-4003-a1b6-56eb0691d23b",
       "height": 512.0,
       "width": 512.0,
-      "id": "BonePile_BonePile_DEFAULT_texture_1_diffuseMap",
+      "name": "BonePile_BonePile_DEFAULT_texture_1_diffuseMap",
       "format": "image/png",
       "file": "BonePile_BonePile_DEFAULT_texture_1_diffuseMap.png",
       "type": "image"
@@ -96,7 +96,7 @@
       "uuid": "9384a62b-3ab3-4225-8016-931c6273a8cb",
       "height": 104.0,
       "width": 160.0,
-      "id": "DEFAULT.png",
+      "name": "DEFAULT.png",
       "format": "image/png",
       "file": "DEFAULT.png",
       "type": "image"
@@ -105,7 +105,7 @@
       "uuid": "ff250952-4464-4583-8a6b-51cd499c110c",
       "height": 104.0,
       "width": 160.0,
-      "id": "BonePile_cls.png",
+      "name": "BonePile_cls.png",
       "format": "image/png",
       "file": "BonePile_cls.png",
       "type": "image"

@@ -12,30 +12,30 @@
   "metadata": {
     "formatVersion": "0.1",
     "identifier": {
-      "id": "970a310f-90a7-4d29-8380-5b2a742e3e2f",
+      "name": "WorldWithOneBox",
       "version": "1.1",
       "type": "World"}
   },
   "prerequisites": [
     {
-      "id": "970a310f-90a7-4d29-8380-5b2a742e3ee4",
+      "name": "SceneGraphLibrary",
       "version": "1.0",
       "type": "Library"
     }
   ],
   "resources": [
     {
-      "id": "Program",
+      "name": "Program",
       "format": "tweedle",
       "file": "src/Program.twe",
       "type": "Class"
     }, {
-      "id": "Scene",
+      "name": "Scene",
       "format": "tweedle",
       "file": "src/Scene.twe",
       "type": "Class"
     }, {
-      "id": "Box",
+      "name": "Box",
       "format": "tweedle",
       "file": "src/Box.twe",
       "type": "Class"

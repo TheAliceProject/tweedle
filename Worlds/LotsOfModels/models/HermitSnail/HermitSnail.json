@@ -162,7 +162,7 @@
     "identifier": {
       "version": "1.0",
       "type": "Model",
-      "id": "HermitSnail"
+      "name": "HermitSnail"
     }
   },
   "prerequisites": [],
@@ -180,7 +180,7 @@
           0.6428131
         ]
       },
-      "id": "HermitSnail",
+      "name": "HermitSnail",
       "format": "dae",
       "file": "HermitSnail_HermitSnail.dae",
       "type": "skeletonMesh"
@@ -189,7 +189,7 @@
       "uuid": "559abd30-7bb5-451d-a0e4-1625f9773683",
       "height": 512.0,
       "width": 512.0,
-      "id": "HermitSnail_HermitSnail_DEFAULT_texture_1_diffuseMap",
+      "name": "HermitSnail_HermitSnail_DEFAULT_texture_1_diffuseMap",
       "format": "image/png",
       "file": "HermitSnail_HermitSnail_DEFAULT_texture_1_diffuseMap.png",
       "type": "image"
@@ -198,7 +198,7 @@
       "uuid": "f56d0466-24f2-4a89-8a34-f29f41a0f3ac",
       "height": 120.0,
       "width": 100.0,
-      "id": "DEFAULT.png",
+      "name": "DEFAULT.png",
       "format": "image/png",
       "file": "DEFAULT.png",
       "type": "image"
@@ -207,7 +207,7 @@
       "uuid": "e9d83fe4-d0d0-4a83-9482-480710bf5826",
       "height": 120.0,
       "width": 100.0,
-      "id": "HermitSnail_cls.png",
+      "name": "HermitSnail_cls.png",
       "format": "image/png",
       "file": "HermitSnail_cls.png",
       "type": "image"
