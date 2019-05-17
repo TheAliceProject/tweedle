@@ -7,7 +7,7 @@ set SOURCE_DIR="%SOURCE_NAME%"
 ::buildFile
 pushd %SOURCE_DIR%
 
-set target=%BUILD_DIR%\%SOURCE_NAME%.a3p
+set target=%BUILD_DIR%\%SOURCE_NAME%.a3w
 
 echo Building %SOURCE_DIR% to %target%...
 if exist "%targetFile%" (
