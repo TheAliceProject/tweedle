@@ -35,13 +35,13 @@ class Scene extends SScene models Scene {
     this.camera.setName(name: "camera");
     this.camera.setVehicle(vehicle: this);
     this.camera.setOrientationRelativeToVehicle(orientation: new Orientation(x: 0.0, y: 0.995185, z: 0.0980144, w: 6.12323E-17));
-    this.camera.setPositionRelativeToVehicle(position: new Position(x: 0.0 , y: 1.56, z: -7.85));
+    this.camera.setPositionRelativeToVehicle(position: new Position(right: 0.0 , up: 1.56, backward: -7.85));
     this.box.setPaint(paint: Color.WHITE);
     this.box.setOpacity(opacity: new Portion(portion: 1.0));
     this.box.setName(name: "box");
     this.box.setVehicle(vehicle: this);
     this.box.setOrientationRelativeToVehicle(orientation: new Orientation(x: 0.0, y: 0.0, z: 0.0, w: 1.0));
-    this.box.setPositionRelativeToVehicle(position: new Position(x: 0.0, y: 0.0, z: 0.0));
+    this.box.setPositionRelativeToVehicle(position: new Position(right: 0.0, up: 0.0, backward: 0.0));
     this.box.setSize(size: new Size(width: 1.0, height: 1.0, depth: 1.0));
   }
 

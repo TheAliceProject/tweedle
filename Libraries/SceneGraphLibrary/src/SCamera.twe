@@ -15,8 +15,8 @@ class SCamera extends SMovableTurnable {
           Duration duration <- Default.duration(),
           AnimationStyle style <- Default.animationStyle() ) {
 
-    Position pos <- new Position(x: 2, y: 4, z: -8);
-    Orientation rot <- new Orientation(forward: new Direction(x: -pos.x, y: -pos.y, z: -pos.z), up: Direction.UP);
+    Position pos <- new Position(right: 2, up: 4, backward: -8);
+    Orientation rot <- new Orientation(forward: new Direction(x: -pos.right, y: -pos.up, z: -pos.backward), up: Direction.UP);
     VantagePoint end <- new VantagePoint(position: pos, orientation: rot);
 
     this.localTransformation.animateValue(endValue: end, asSeenBy: entity, duration: duration, animationStyle: style);

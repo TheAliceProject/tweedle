@@ -85,8 +85,8 @@ class STurnable extends SThing {
     }
 
     @CompletelyHidden DecimalNumber getVerticalGap( SThing lower, SThing upper, SThing asSeenBy ) {
-        return this.differenceToEpsilon(a: upper.getMinPoint( asSeenBy: asSeenBy ).y,
-                                        b: lower.getMaxPoint( asSeenBy: asSeenBy ).y );
+        return this.differenceToEpsilon(a: upper.getMinPoint( asSeenBy: asSeenBy ).up,
+                                        b: lower.getMaxPoint( asSeenBy: asSeenBy ).up );
     }
 
     DecimalNumber getDistanceToTheRightOf( SThing other, SThing asSeenBy <- other ) {
@@ -106,8 +106,8 @@ class STurnable extends SThing {
     }
 
     @CompletelyHidden DecimalNumber getLeftRightGap( SThing left, SThing right, SThing asSeenBy ) {
-    return this.differenceToEpsilon(a: right.getMinPoint( asSeenBy: asSeenBy ).x,
-                                    b: left.getMaxPoint( asSeenBy: asSeenBy ).x );
+    return this.differenceToEpsilon(a: right.getMinPoint( asSeenBy: asSeenBy ).right,
+                                    b: left.getMaxPoint( asSeenBy: asSeenBy ).right );
     }
 
     DecimalNumber getDistanceInFrontOf( SThing other, SThing asSeenBy <- other ) {
@@ -128,8 +128,8 @@ class STurnable extends SThing {
 
     @CompletelyHidden DecimalNumber getFrontBackGap( SThing back, SThing front, SThing asSeenBy ) {
         //Front and back calculations are flipped because -Z is front
-        return this.differenceToEpsilon(a: back.getMinPoint( asSeenBy: asSeenBy ).z,
-                                    b: front.getMaxPoint( asSeenBy: asSeenBy ).z );
+        return this.differenceToEpsilon(a: back.getMinPoint( asSeenBy: asSeenBy ).backward,
+                                    b: front.getMaxPoint( asSeenBy: asSeenBy ).backward );
     }
 
     @CompletelyHidden DecimalNumber differenceToEpsilon( DecimalNumber a, DecimalNumber b ) {

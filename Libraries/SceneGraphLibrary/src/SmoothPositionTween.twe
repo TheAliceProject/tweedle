@@ -9,18 +9,18 @@ class SmoothPositionTween extends PositionTween {
     Direction endForward <- Direction.FORWARD.rotate(orientation: endOrientation);
     DecimalNumber s <- -8.0;
 
-    xHermiteX <- start.position.x;
-    xHermiteY <- end.position.x;
+    xHermiteX <- start.position.right;
+    xHermiteY <- end.position.right;
     xHermiteZ <- s * startForward.x;
     xHermiteW <- s * endForward.x;
 
-    yHermiteX <- start.position.y;
-    yHermiteY <- end.position.y;
+    yHermiteX <- start.position.up;
+    yHermiteY <- end.position.up;
     yHermiteZ <- s * startForward.y;
     yHermiteW <- s * endForward.y;
 
-    zHermiteX <- start.position.z;
-    zHermiteY <- end.position.z;
+    zHermiteX <- start.position.backward;
+    zHermiteY <- end.position.backward;
     zHermiteZ <- s * startForward.z;
     zHermiteW <- s * endForward.z;
   }
@@ -29,7 +29,7 @@ class SmoothPositionTween extends PositionTween {
     DecimalNumber x <- VantagePoint.evaluateHermiteCubic(x:xHermiteX, y: xHermiteY, z: xHermiteZ, w: xHermiteW, t: portion);
     DecimalNumber y <- VantagePoint.evaluateHermiteCubic(x:yHermiteX, y: yHermiteY, z: yHermiteZ, w: yHermiteW, t: portion);
     DecimalNumber z <- VantagePoint.evaluateHermiteCubic(x:zHermiteX, y: zHermiteY, z: zHermiteZ, w: zHermiteW, t: portion);
-    return new Position(x: x, y: y, z: z);
+    return new Position(right: x, up: y, backward: z );
   }
 
   void interpolate(Portion portion) {

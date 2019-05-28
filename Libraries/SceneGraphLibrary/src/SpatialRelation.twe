@@ -16,30 +16,30 @@ enum SpatialRelation {
         DecimalNumber z <- 0;
 
         if( this.placeAxis.x > 0 ) {
-            x <- (targetBoundingBox.maximum.x - subjectBoundingBox.minimum.x) + alongAxisOffset;
+            x <- (targetBoundingBox.maximum.right - subjectBoundingBox.minimum.right) + alongAxisOffset;
         } else {
             if( this.placeAxis.x < 0 ) {
-                x <- (targetBoundingBox.minimum.x - subjectBoundingBox.maximum.x) - alongAxisOffset;
+                x <- (targetBoundingBox.minimum.right - subjectBoundingBox.maximum.right) - alongAxisOffset;
             }
         }
 
         if( this.placeAxis.y > 0 ) {
-            y <- (targetBoundingBox.maximum.y - subjectBoundingBox.minimum.y) + alongAxisOffset;
+            y <- (targetBoundingBox.maximum.up - subjectBoundingBox.minimum.up) + alongAxisOffset;
         } else {
             if( this.placeAxis.y < 0 ) {
-                y <- (targetBoundingBox.minimum.y - subjectBoundingBox.maximum.y) - alongAxisOffset;
+                y <- (targetBoundingBox.minimum.up - subjectBoundingBox.maximum.up) - alongAxisOffset;
             }
         }
 
         if( this.placeAxis.z > 0 ) {
-            z <- (targetBoundingBox.maximum.z - subjectBoundingBox.minimum.z) + alongAxisOffset;
+            z <- (targetBoundingBox.maximum.backward - subjectBoundingBox.minimum.backward) + alongAxisOffset;
         } else {
             if( this.placeAxis.z < 0 ) {
-                z <- (targetBoundingBox.minimum.z - subjectBoundingBox.maximum.z) - alongAxisOffset;
+                z <- (targetBoundingBox.minimum.backward - subjectBoundingBox.maximum.backward) - alongAxisOffset;
             }
         }
 
-        return new Position(x: x, y: y, z: z );
+        return new Position(right: x, up: y, backward: z );
     }
 
     @CompletelyHidden Direction placeAxis;

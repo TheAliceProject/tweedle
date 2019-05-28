@@ -24,7 +24,7 @@ class Scene extends SScene {
     $Debug.log(message: this.getName() .. ": myFirstMethod()");
 
     Position camPos <- camera.getPositionRelativeToVehicle();
-    camPos <- new Position(x: camPos.x, y: camPos.y + 1, z: camPos.z - 5);
+    camPos <- new Position(right: camPos.right, up: camPos.up + 1, backward: camPos.backward - 5);
     Orientation camRot <- camera.getOrientationRelativeToVehicle();
 
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: axes);
@@ -328,7 +328,7 @@ class Scene extends SScene {
       box2.setPositionRelativeToVehicle(position: pos);
       box2.setOrientationRelativeToVehicle(orientation: rot);
     }
-    
+
     // turn and roll
     $Debug.log(message: "turn forward");
     turnBox(box: box2, dir: TurnDirection.FORWARD, asSeenBy: box2);
@@ -434,8 +434,8 @@ class Scene extends SScene {
     Color below <- getFromBelowLightColor();
     setFromBelowLightColor(color: Color.BLUE);
     setFromBelowLightColor(color: below);
-    
-    
+
+
   }
 
   void moveBox(SBox box, MoveDirection dir, SBox asSeenBy, Boolean showAsSeenBy) {
@@ -489,7 +489,7 @@ class Scene extends SScene {
           if (target != asSeenBy) {
             asSeenBy.setPaint(paint: Color.BLUE, duration: halfTime);
           }
-        } 
+        }
         doTogether {
           target.setPaint(paint: Color.WHITE, duration: halfTime);
           if (target != asSeenBy) {
@@ -594,73 +594,73 @@ class Scene extends SScene {
   SThingMarker marker2 <- new SThingMarker();
 
   void performCustomSetup() {
-    this.box.setPositionRelativeToVehicle(position: new Position(x: -0.5, y: 0.0, z: 0.0), duration: Duration.ZERO);
+    this.box.setPositionRelativeToVehicle(position: new Position(right: -0.5, up: 0.0, backward: 0.0), duration: Duration.ZERO);
     this.box.setOrientationRelativeToVehicle(orientation: new Orientation(axis: Direction.UP, angle: new Angle(revolutions: -0.1)), duration: Duration.ZERO);
 
-    // show forward on box 
+    // show forward on box
     SBox nose <- new SBox();
     nose.setName(name: "Nose");
     nose.setVehicle(vehicle: box);
     nose.setSize(size: new Size(width: 0.5, height: 0.5, depth: 0.5), duration: Duration.ZERO);
     nose.setOrientationRelativeToVehicle(orientation: Orientation.IDENTITY, duration: Duration.ZERO);
-    nose.setPositionRelativeToVehicle(position: new Position(x: 0, y: 0.25, z: -0.5), duration: Duration.ZERO);
-    
+    nose.setPositionRelativeToVehicle(position: new Position(right: 0, up: 0.25, backward: -0.5), duration: Duration.ZERO);
+
     box3.setName(name: "box3");
     box3.setVehicle(vehicle: this);
-    box3.setPositionRelativeToVehicle(position: new Position(x: 3.5, y: 2.0, z: 0.0), duration: Duration.ZERO);
+    box3.setPositionRelativeToVehicle(position: new Position(right: 3.5, up: 2.0, backward: 0.0), duration: Duration.ZERO);
     box3.setOrientationRelativeToVehicle(orientation: new Orientation(axis: Direction.UP, angle: new Angle(revolutions: 0.1)), duration: Duration.ZERO);
     box3.setOpacity(opacity: Portion.NONE, duration: Duration.ZERO);
 
     box2.setName(name: "box2");
-    box2.setPositionRelativeToVehicle(position: new Position(x: 2.5, y: 0.0, z: 0.0), duration: Duration.ZERO);
+    box2.setPositionRelativeToVehicle(position: new Position(right: 2.5, up: 0.0, backward: 0.0), duration: Duration.ZERO);
     box2.setVehicle(vehicle: box3);
     box2.setOpacity(opacity: Portion.NONE, duration: Duration.ZERO);
 
     box4.setName(name: "box4");
     box4.setVehicle(vehicle: this);
-    box4.setPositionRelativeToVehicle(position: new Position(x: -3.0, y: 0.5, z: -4.0), duration: Duration.ZERO);
+    box4.setPositionRelativeToVehicle(position: new Position(right: -3.0, up: 0.5, backward: -4.0), duration: Duration.ZERO);
     box4.setOrientationRelativeToVehicle(orientation: new Orientation(axis: new Direction(x: 1, y: 1, z: 1).normalize(), angle: new Angle(revolutions: -0.25)), duration: Duration.ZERO);
     box4.setOpacity(opacity: Portion.NONE, duration: Duration.ZERO);
 
     box5.setName(name: "box5");
     box5.setVehicle(vehicle: this);
-    box5.setPositionRelativeToVehicle(position: new Position(x: 2.0, y: 1, z: 5.0), duration: Duration.ZERO);
+    box5.setPositionRelativeToVehicle(position: new Position(right: 2.0, up: 1, backward: 5.0), duration: Duration.ZERO);
     box5.setOrientationRelativeToVehicle(orientation: new Orientation(axis: new Direction(x: 1, y: -1, z: 1).normalize(), angle: new Angle(revolutions: 0.2)), duration: Duration.ZERO);
     box5.setOpacity(opacity: Portion.NONE, duration: Duration.ZERO);
 
     textModel.setVehicle(vehicle: this);
-    textModel.setPositionRelativeToVehicle(position: new Position(x: 6.0, y: 0.5, z: -9.0), duration: Duration.ZERO);
+    textModel.setPositionRelativeToVehicle(position: new Position(right: 6.0, up: 0.5, backward: -9.0), duration: Duration.ZERO);
 
     sphere.setVehicle(vehicle: this);
-    sphere.setPositionRelativeToVehicle(position: new Position(x: 2.0, y: 0.5, z: -12.0), duration: Duration.ZERO);
+    sphere.setPositionRelativeToVehicle(position: new Position(right: 2.0, up: 0.5, backward: -12.0), duration: Duration.ZERO);
 
     cylinder.setVehicle(vehicle: this);
-    cylinder.setPositionRelativeToVehicle(position: new Position(x: -2.0, y: 0.0, z: -12.0), duration: Duration.ZERO);
+    cylinder.setPositionRelativeToVehicle(position: new Position(right: -2.0, up: 0.0, backward: -12.0), duration: Duration.ZERO);
 
     cone.setVehicle(vehicle: this);
-    cone.setPositionRelativeToVehicle(position: new Position(x: 0.0, y: 0.0, z: -12.0), duration: Duration.ZERO);
+    cone.setPositionRelativeToVehicle(position: new Position(right: 0.0, up: 0.0, backward: -12.0), duration: Duration.ZERO);
 
     torus.setVehicle(vehicle: this);
-    torus.setPositionRelativeToVehicle(position: new Position(x: 4, y: 0.5, z: -12.0), duration: Duration.ZERO);
+    torus.setPositionRelativeToVehicle(position: new Position(right: 4, up: 0.5, backward: -12.0), duration: Duration.ZERO);
 
     disc.setVehicle(vehicle: this);
-    disc.setPositionRelativeToVehicle(position: new Position(x: -4, y: 0.0, z: -12.0), duration: Duration.ZERO);
+    disc.setPositionRelativeToVehicle(position: new Position(right: -4, up: 0.0, backward: -12.0), duration: Duration.ZERO);
 
     billboard.setVehicle(vehicle: this);
-    billboard.setPositionRelativeToVehicle(position: new Position(x: -6, y: 0.0, z: -12.0), duration: Duration.ZERO);
+    billboard.setPositionRelativeToVehicle(position: new Position(right: -6, up: 0.0, backward: -12.0), duration: Duration.ZERO);
 
     axes.setVehicle(vehicle: this);
-    axes.setPositionRelativeToVehicle(position: new Position(x: 6, y: 0.0, z: -12.0), duration: Duration.ZERO);
+    axes.setPositionRelativeToVehicle(position: new Position(right: 6, up: 0.0, backward: -12.0), duration: Duration.ZERO);
 
     alien.setVehicle(vehicle: this);
-    alien.setPositionRelativeToVehicle(position: new Position(x: 0.0, y: 0.0, z: 12.0), duration: Duration.ZERO);
+    alien.setPositionRelativeToVehicle(position: new Position(right: 0.0, up: 0.0, backward: 12.0), duration: Duration.ZERO);
 
     marker1.setVehicle(vehicle: this);
-    marker1.setPositionRelativeToVehicle(position: new Position(x: 1.0, y: 0.0, z: 12.0), duration: Duration.ZERO);
+    marker1.setPositionRelativeToVehicle(position: new Position(right: 1.0, up: 0.0, backward: 12.0), duration: Duration.ZERO);
     marker1.setOrientationRelativeToVehicle(orientation: new Orientation(axis: new Direction(x: 1, y: -1, z: 1).normalize(), angle: new Angle(revolutions: 0.2)), duration: Duration.ZERO);
 
     marker2.setVehicle(vehicle: this);
-    marker2.setPositionRelativeToVehicle(position: new Position(x: -1.0, y: 0.0, z: 12.0), duration: Duration.ZERO);
+    marker2.setPositionRelativeToVehicle(position: new Position(right: -1.0, up: 0.0, backward: 12.0), duration: Duration.ZERO);
     marker2.setOrientationRelativeToVehicle(orientation: new Orientation(axis: new Direction(x: 1, y: 1, z: 1).normalize(), angle: new Angle(revolutions: -0.25)), duration: Duration.ZERO);
 
   }
@@ -684,13 +684,13 @@ class Scene extends SScene {
     this.camera.setName(name: "camera");
     this.camera.setVehicle(vehicle: this);
     this.camera.setOrientationRelativeToVehicle(orientation: new Orientation(x: 0.0, y: 0.995185, z: 0.0980144, w: 6.12323E-17), duration: Duration.ZERO);
-    this.camera.setPositionRelativeToVehicle(position: new Position(x: 9.61E-16, y: 1.56, z: -7.85), duration: Duration.ZERO);
+    this.camera.setPositionRelativeToVehicle(position: new Position(right: 9.61E-16, up: 1.56, backward: -7.85), duration: Duration.ZERO);
     this.box.setPaint(paint: Color.WHITE, duration: Duration.ZERO);
     this.box.setOpacity(opacity: new Portion(portion: 1.0), duration: Duration.ZERO);
     this.box.setName(name: "box");
     this.box.setVehicle(vehicle: this);
     this.box.setOrientationRelativeToVehicle(orientation: new Orientation(x: 0.0, y: 0.0, z: 0.0, w:1), duration: Duration.ZERO);
-    this.box.setPositionRelativeToVehicle(position: new Position(x: 0.0, y: 0.0, z: 0.0), duration: Duration.ZERO);
+    this.box.setPositionRelativeToVehicle(position: new Position(right: 0.0, up: 0.0, backward: 0.0), duration: Duration.ZERO);
     this.box.setSize(size: new Size(width: 1.0, height: 1.0, depth: 1.0), duration: Duration.ZERO);
   }
 
