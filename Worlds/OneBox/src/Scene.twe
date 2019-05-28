@@ -28,7 +28,7 @@ class Scene extends SScene models Scene {
     this.setFromBelowLightColor(color: new Color(red: 0.541, green: 0.0, blue: 0.125));
     this.setFogDensity(density: new Portion(portion: 0.1));
     this.setName(name: "myScene");
-    this.ground.setPaint(paint: SurfaceAppearance.DARK_GRASS.getImageSource());
+    this.ground.setPaint(paint: SurfaceAppearance.DARK_GRASS);
     this.ground.setOpacity(opacity: new Portion(portion: 1.0));
     this.ground.setName(name: "ground");
     this.ground.setVehicle(vehicle: this);

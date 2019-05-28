@@ -99,15 +99,15 @@ class Scene extends SScene {
     $Debug.log(message: "room paints");
     torus.say(text: "Center torus. Also this text bubble is a little bit longer so it's probably larger and there are some line breaks.", bubblePositionIn: BubblePosition.CENTER, outlineColorIn: Color.BLACK);
     torus.think(text: "Center torus. Also this text bubble is a little bit longer so it's probably larger and there are some line breaks.", bubblePositionIn: BubblePosition.CENTER, outlineColorIn: Color.BLACK);
-    this.room.setWallPaint(paint: WallAppearance.GREEN_STRIPE_WITH_COFFER.getImageSource(), duration: Duration.ONE_SECOND);
-    this.room.setWallPaint(paint: WallAppearance.BLUE_WITH_BEAD.getImageSource(), duration: Duration.ONE_SECOND);
+    this.room.setWallPaint(paint: WallAppearance.GREEN_STRIPE_WITH_COFFER, duration: Duration.ONE_SECOND);
+    this.room.setWallPaint(paint: WallAppearance.BLUE_WITH_BEAD, duration: Duration.ONE_SECOND);
     sphere.say(text: "Center sphere", bubblePositionIn: BubblePosition.CENTER, outlineColorIn: Color.BLACK);
-    this.room.setWallPaint(paint: WallAppearance.BRICK.getImageSource(), duration: Duration.ONE_SECOND);
-    this.room.setCeilingPaint(paint: FloorAppearance.BLUE_TILE.getImageSource(), duration: Duration.ONE_SECOND);
+    this.room.setWallPaint(paint: WallAppearance.BRICK, duration: Duration.ONE_SECOND);
+    this.room.setCeilingPaint(paint: FloorAppearance.BLUE_TILE, duration: Duration.ONE_SECOND);
     cone.say(text: "Center cone", bubblePositionIn: BubblePosition.CENTER, outlineColorIn: Color.BLACK);
-    this.room.setFloorPaint(paint: FloorAppearance.MOROCCAN_TILES.getImageSource(), duration: Duration.ONE_SECOND);
-    this.room.setFloorPaint(paint: FloorAppearance.WOOD_DIAMOND.getImageSource(), duration: Duration.ONE_SECOND);
-    this.room.setFloorPaint(paint: FloorAppearance.PAW_PRINT_CARPET.getImageSource(), duration: Duration.ONE_SECOND);
+    this.room.setFloorPaint(paint: FloorAppearance.MOROCCAN_TILES, duration: Duration.ONE_SECOND);
+    this.room.setFloorPaint(paint: FloorAppearance.WOOD_DIAMOND, duration: Duration.ONE_SECOND);
+    this.room.setFloorPaint(paint: FloorAppearance.PAW_PRINT_CARPET, duration: Duration.ONE_SECOND);
 
 
 
@@ -190,7 +190,7 @@ class Scene extends SScene {
     billboard.turn(direction: TurnDirection.LEFT, amount: new Angle(revolutions: 0.5), asSeenBy: billboard);
     billboard.setBackPaint(paint: Color.BLUE);
     delay(duration: new Duration(seconds: 0.1));
-    billboard.setBackPaint(paint: SurfaceAppearance.GRASS.getImageSource());
+    billboard.setBackPaint(paint: SurfaceAppearance.GRASS);
     billboard.turn(direction: TurnDirection.LEFT, amount: new Angle(revolutions: 0.5), asSeenBy: billboard);
     billboard.setPaint(paint: new ImageSource(resource: "meanQueen"));
     delay(duration: new Duration(seconds: 0.1));
@@ -675,9 +675,9 @@ class Scene extends SScene {
     this.setFromBelowLightColor(color: new Color(red: 0.541, green: 0.0, blue: 0.125), duration: Duration.ZERO);
     this.setFogDensity(density: new Portion(portion: 0.2), duration: Duration.ZERO);
     this.setName(name: "myScene");
-    this.room.setWallPaint(paint: WallAppearance.GREEN_STRIPE_WITH_COFFER.getImageSource(), duration: Duration.ZERO);
-    this.room.setCeilingPaint(paint: FloorAppearance.LEAF_CARPET.getImageSource(), duration: Duration.ZERO);
-    this.room.setFloorPaint(paint: FloorAppearance.LEAF_CARPET.getImageSource(), duration: Duration.ZERO);
+    this.room.setWallPaint(paint: WallAppearance.GREEN_STRIPE_WITH_COFFER, duration: Duration.ZERO);
+    this.room.setCeilingPaint(paint: FloorAppearance.LEAF_CARPET, duration: Duration.ZERO);
+    this.room.setFloorPaint(paint: FloorAppearance.LEAF_CARPET, duration: Duration.ZERO);
     this.room.setOpacity(opacity: Portion.WHOLE, duration: Duration.ZERO);
     this.room.setName(name: "room");
     this.room.setVehicle(vehicle: this);
