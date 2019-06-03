@@ -9,12 +9,12 @@ class Scene extends SScene {
     });
 
     this.addTimeListener(frequency: new Duration(seconds: 1.0), overlappingEventPolicy: OverlappingEventPolicy.IGNORE, listener: (TimeEvent event)-> {
-        textModel2.move(direction: MoveDirection.UP, amount: 1, duration: new Duration(seconds: 2.0), style: AnimationStyle.BEGIN_AND_END_GENTLY);
+        textModel2.move(direction: MoveDirection.UP, amount: 1, duration: new Duration(seconds: 2.0), animationStyle: AnimationStyle.BEGIN_AND_END_GENTLY);
         textModel2.append(value: " X");
     });
 
    //this.addMouseClickListener(overlappingEventPolicy: OverlappingEventPolicy.ENQUEUE, listener: (MouseEvent event)-> {
-   //     textModel2.move(direction: MoveDirection.UP, amount: 1.0, duration: new Duration(seconds: 1.0), style: AnimationStyle.BEGIN_AND_END_GENTLY);
+   //     textModel2.move(direction: MoveDirection.UP, amount: 1.0, duration: new Duration(seconds: 1.0), animationStyle: AnimationStyle.BEGIN_AND_END_GENTLY);
     //    textModel2.append(value: " X");
     //});
   }
@@ -164,8 +164,8 @@ class Scene extends SScene {
     alien.setPaint(paint: Color.BLUE);
     alien.setPaint(paint: Color.WHITE);
     countUpTo( indexB < 3 ) {
-      alien.move(direction: MoveDirection.UP, amount: 0.5, duration: new Duration(seconds: 0.25), style: AnimationStyle.BEGIN_ABRUPTLY_AND_END_GENTLY);
-      alien.move(direction: MoveDirection.DOWN, amount: 0.5, duration: new Duration(seconds: 0.25), style: AnimationStyle.BEGIN_GENTLY_AND_END_ABRUPTLY);
+      alien.move(direction: MoveDirection.UP, amount: 0.5, duration: new Duration(seconds: 0.25), animationStyle: AnimationStyle.BEGIN_ABRUPTLY_AND_END_GENTLY);
+      alien.move(direction: MoveDirection.DOWN, amount: 0.5, duration: new Duration(seconds: 0.25), animationStyle: AnimationStyle.BEGIN_GENTLY_AND_END_ABRUPTLY);
     }
     DecimalNumber alienHeight <- alien.getHeight();
     alien.setHeight(height: 3, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
@@ -328,7 +328,7 @@ class Scene extends SScene {
       box2.setPositionRelativeToVehicle(position: pos);
       box2.setOrientationRelativeToVehicle(orientation: rot);
     }
-    
+
     // turn and roll
     $Debug.log(message: "turn forward");
     turnBox(box: box2, dir: TurnDirection.FORWARD, asSeenBy: box2);
@@ -434,8 +434,8 @@ class Scene extends SScene {
     Color below <- getFromBelowLightColor();
     setFromBelowLightColor(color: Color.BLUE);
     setFromBelowLightColor(color: below);
-    
-    
+
+
   }
 
   void moveBox(SBox box, MoveDirection dir, SBox asSeenBy, Boolean showAsSeenBy) {
@@ -445,7 +445,7 @@ class Scene extends SScene {
       } else {
          asSeenBy.setPaint(paint: Color.WHITE);
       }
-      box.move(direction: dir, amount: 1, duration: Duration.HALF_SECOND, asSeenBy: asSeenBy, style: AnimationStyle.BEGIN_GENTLY_AND_END_ABRUPTLY);
+      box.move(direction: dir, amount: 1, duration: Duration.HALF_SECOND, asSeenBy: asSeenBy, animationStyle: AnimationStyle.BEGIN_GENTLY_AND_END_ABRUPTLY);
     }
   }
 
@@ -455,7 +455,7 @@ class Scene extends SScene {
         target.setPaint(paint: Color.RED, duration: Duration.HALF_SECOND);
         target.setPaint(paint: Color.WHITE, duration: Duration.HALF_SECOND);
       }
-      box.moveToward(target: target, amount: 1, duration: Duration.ONE_SECOND, style: AnimationStyle.BEGIN_GENTLY_AND_END_ABRUPTLY);
+      box.moveToward(target: target, amount: 1, duration: Duration.ONE_SECOND, animationStyle: AnimationStyle.BEGIN_GENTLY_AND_END_ABRUPTLY);
     }
   }
 
@@ -465,7 +465,7 @@ class Scene extends SScene {
         target.setPaint(paint: Color.PURPLE, duration: Duration.HALF_SECOND);
         target.setPaint(paint: Color.WHITE, duration: Duration.HALF_SECOND);
       }
-      box.moveAwayFrom(target: target, amount: 1, duration: Duration.ONE_SECOND, style: AnimationStyle.BEGIN_ABRUPTLY_AND_END_GENTLY);
+      box.moveAwayFrom(target: target, amount: 1, duration: Duration.ONE_SECOND, animationStyle: AnimationStyle.BEGIN_ABRUPTLY_AND_END_GENTLY);
     }
   }
 
@@ -489,7 +489,7 @@ class Scene extends SScene {
           if (target != asSeenBy) {
             asSeenBy.setPaint(paint: Color.BLUE, duration: halfTime);
           }
-        } 
+        }
         doTogether {
           target.setPaint(paint: Color.WHITE, duration: halfTime);
           if (target != asSeenBy) {
@@ -597,14 +597,14 @@ class Scene extends SScene {
     this.box.setPositionRelativeToVehicle(position: new Position(x: -0.5, y: 0.0, z: 0.0), duration: Duration.ZERO);
     this.box.setOrientationRelativeToVehicle(orientation: new Orientation(axis: Direction.UP, angle: new Angle(revolutions: -0.1)), duration: Duration.ZERO);
 
-    // show forward on box 
+    // show forward on box
     SBox nose <- new SBox();
     nose.setName(name: "Nose");
     nose.setVehicle(vehicle: box);
     nose.setSize(size: new Size(width: 0.5, height: 0.5, depth: 0.5), duration: Duration.ZERO);
     nose.setOrientationRelativeToVehicle(orientation: Orientation.IDENTITY, duration: Duration.ZERO);
     nose.setPositionRelativeToVehicle(position: new Position(x: 0, y: 0.25, z: -0.5), duration: Duration.ZERO);
-    
+
     box3.setName(name: "box3");
     box3.setVehicle(vehicle: this);
     box3.setPositionRelativeToVehicle(position: new Position(x: 3.5, y: 2.0, z: 0.0), duration: Duration.ZERO);

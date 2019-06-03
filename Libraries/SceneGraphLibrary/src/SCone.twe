@@ -1,6 +1,6 @@
 class SCone extends SShape
 {
-  SCone () 
+  SCone ()
   {
     super(resource: $SceneGraph.CONE);
 
@@ -21,9 +21,9 @@ class SCone extends SShape
     return this.baseRadius.getValue();
   }
 
-  void setBaseRadius(DecimalNumber baseRadius, Duration duration <- Default.duration(),  AnimationStyle style <- Default.animationStyle()) 
+  void setBaseRadius(DecimalNumber baseRadius, Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
   {
-    this.baseRadius.animateValue(endValue: baseRadius, duration: duration, animationStyle: style);
+    this.baseRadius.animateValue(endValue: baseRadius, duration: duration, animationStyle: animationStyle);
   }
 
   DecimalNumber getLength() {
@@ -32,10 +32,10 @@ class SCone extends SShape
 
   void setLength(Number length,
                  Duration duration <- Default.duration(),
-                 AnimationStyle style <- Default.animationStyle() ) {
-    this.length.animateValue(endValue: length, duration: duration, animationStyle: style);
+                 AnimationStyle animationStyle <- Default.animationStyle() ) {
+    this.length.animateValue(endValue: length, duration: duration, animationStyle: animationStyle);
   }
 
   @CompletelyHidden DimensionProperty baseRadius;
   @CompletelyHidden DimensionProperty length;
-} 
+}

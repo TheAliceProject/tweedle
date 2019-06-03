@@ -7,43 +7,43 @@ class STurnable extends SThing {
     void turn( TurnDirection direction,
                Angle amount,
                Duration duration <- Default.duration(),
-               AnimationStyle style <- Default.animationStyle(),
+               AnimationStyle animationStyle <- Default.animationStyle(),
                SThing asSeenBy <- this ) {
-        localTransformation.animateRotation(axis: direction.getAxis(), angle: amount, asSeenBy: asSeenBy, duration: duration, animationStyle: style);
+        localTransformation.animateRotation(axis: direction.getAxis(), angle: amount, asSeenBy: asSeenBy, duration: duration, animationStyle: animationStyle);
     }
 
     void roll( RollDirection direction,
                Angle amount,
                Duration duration <- Default.duration(),
-               AnimationStyle style <- Default.animationStyle(),
+               AnimationStyle animationStyle <- Default.animationStyle(),
                SThing asSeenBy <- this ) {
-        localTransformation.animateRotation(axis: direction.getAxis(), angle: amount, asSeenBy: asSeenBy, duration: duration, animationStyle: style);
+        localTransformation.animateRotation(axis: direction.getAxis(), angle: amount, asSeenBy: asSeenBy, duration: duration, animationStyle: animationStyle);
     }
 
     void turnToFace( SThing target,
                      Duration duration <- Default.duration(),
-                     AnimationStyle style <- Default.animationStyle() ) {
-        localTransformation.animateTurnToFace(target: target, duration: duration, animationStyle: style);
+                     AnimationStyle animationStyle <- Default.animationStyle() ) {
+        localTransformation.animateTurnToFace(target: target, duration: duration, animationStyle: animationStyle);
     }
 
     void orientToUpright( Duration duration <- Default.duration(),
-                          AnimationStyle style <- Default.animationStyle(),
+                          AnimationStyle animationStyle <- Default.animationStyle(),
                           SThing upAsSeenBy <- this.getScene() ) {
-        localTransformation.animateOrientToUpright(upAsSeenBy: upAsSeenBy, duration: duration, animationStyle: style);
+        localTransformation.animateOrientToUpright(upAsSeenBy: upAsSeenBy, duration: duration, animationStyle: animationStyle);
     }
 
     void pointAt( SThing target,
                   Duration duration <- Default.duration(),
-                  AnimationStyle style <- Default.animationStyle(),
+                  AnimationStyle animationStyle <- Default.animationStyle(),
                   SThing upAsSeenBy <- this.getScene() ) {
-        localTransformation.animatePointAt(target: target, upAsSeenBy: upAsSeenBy, duration: duration, animationStyle: style);
+        localTransformation.animatePointAt(target: target, upAsSeenBy: upAsSeenBy, duration: duration, animationStyle: animationStyle);
     }
 
     void orientTo( SThing target,
                    Duration duration <- Default.duration(),
-                   AnimationStyle style <- Default.animationStyle() ) {
+                   AnimationStyle animationStyle <- Default.animationStyle() ) {
 
-        localTransformation.animateOrientTo( target: target, duration: duration, animationStyle: style );
+        localTransformation.animateOrientTo( target: target, duration: duration, animationStyle: animationStyle );
     }
 
     @TuckedAway Orientation getOrientationRelativeToVehicle() {
@@ -60,8 +60,8 @@ class STurnable extends SThing {
 
     @TuckedAway void setOrientationRelativeToVehicle( Orientation orientation,
                                                     Duration duration <- Default.duration(),
-                                                    AnimationStyle style <- Default.animationStyle() ) {
-        this.localTransformation.animateOrientation(endValue: orientation, duration: duration, animationStyle: style);
+                                                    AnimationStyle animationStyle <- Default.animationStyle() ) {
+        this.localTransformation.animateOrientation(endValue: orientation, duration: duration, animationStyle: animationStyle);
     }
 
     DecimalNumber getDistanceTo( STurnable other ) {

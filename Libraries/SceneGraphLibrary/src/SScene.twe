@@ -20,8 +20,8 @@ class SScene extends SThing {
 
   void setAtmosphereColor( Color color,
                            Duration duration <- Default.duration(),
-                           AnimationStyle style <- Default.animationStyle() ) {
-    atmosphereColor.animateValue( endValue: color, duration: duration, animationStyle: style );
+                           AnimationStyle animationStyle <- Default.animationStyle() ) {
+    atmosphereColor.animateValue( endValue: color, duration: duration, animationStyle: animationStyle );
   }
 
   @CompletelyHidden Color getAmbientLightColor() {
@@ -30,8 +30,8 @@ class SScene extends SThing {
 
   @CompletelyHidden void setAmbientLightColor( Color color,
                                      Duration duration <- Default.duration(),
-                                     AnimationStyle style <- Default.animationStyle() ) {
-    ambientLightColor.animateValue( endValue: color, duration: duration, animationStyle: style );
+                                     AnimationStyle animationStyle <- Default.animationStyle() ) {
+    ambientLightColor.animateValue( endValue: color, duration: duration, animationStyle: animationStyle );
   }
 
   Color getFromAboveLightColor() {
@@ -40,8 +40,8 @@ class SScene extends SThing {
 
   void setFromAboveLightColor( Color color,
                                Duration duration <- Default.duration(),
-                               AnimationStyle style <- Default.animationStyle() ) {
-    fromAboveLightColor.animateValue( endValue: color, duration: duration, animationStyle: style );
+                               AnimationStyle animationStyle <- Default.animationStyle() ) {
+    fromAboveLightColor.animateValue( endValue: color, duration: duration, animationStyle: animationStyle );
   }
 
   Color getFromBelowLightColor() {
@@ -50,8 +50,8 @@ class SScene extends SThing {
 
   void setFromBelowLightColor( Color color,
                                Duration duration <- Default.duration(),
-                               AnimationStyle style <- Default.animationStyle() ) {
-    fromBelowLightColor.animateValue( endValue: color, duration: duration, animationStyle: style );
+                               AnimationStyle animationStyle <- Default.animationStyle() ) {
+    fromBelowLightColor.animateValue( endValue: color, duration: duration, animationStyle: animationStyle );
   }
 
   Portion getFogDensity() {
@@ -60,8 +60,8 @@ class SScene extends SThing {
 
   void setFogDensity( Portion density,
                       Duration duration <- Default.duration(),
-                      AnimationStyle style <- Default.animationStyle() ) {
-    fogDensity.animateValue( endValue: density, duration: duration, animationStyle: style );
+                      AnimationStyle animationStyle <- Default.animationStyle() ) {
+    fogDensity.animateValue( endValue: density, duration: duration, animationStyle: animationStyle );
   }
 
   void addSceneActivationListener( <SceneActivationEvent->void> listener ) {
@@ -181,7 +181,7 @@ class SScene extends SThing {
 
   @CompletelyHidden void activate( SProgram program ) {
     this.activeCount <- this.activeCount + 1;
-    
+
     if( this.program != program ) {
       if( program != null ) {
         // TODO Implement the following to remove mouse, key and focus listeners
@@ -200,7 +200,7 @@ class SScene extends SThing {
 
     this.globalBrightness.setValue(value: Portion.NONE);
     this.changeActiveStatus( isActive: true );
-    
+
     //This forces the scene to initialize itself to make sure we can properly query bounding boxes and other
     // render dependent things. All this info is critical to a scene running
     //AdapterFactory.getAdapterFor( this.sgScene );
@@ -224,7 +224,7 @@ class SScene extends SThing {
     this.handleActiveChanged( isActive: isActive, activationCount: this.activeCount );
     PropertyTween.enableAnimations <- true;
   }
-  
+
 /*
   @CompletelyHidden void addCamerasTo( SProgram program ) {
     forEach(SCamera camera in this.getAllCameras() ) {
@@ -284,11 +284,11 @@ class SScene extends SThing {
   @CompletelyHidden ColorProperty ambientLightColor <- new ColorProperty(owner: this, value: Color.DARK_GRAY);
   @CompletelyHidden ColorProperty fromAboveLightColor <- new ColorProperty(owner: this, value: Color.WHITE);
   @CompletelyHidden ColorProperty fromBelowLightColor <- new ColorProperty(owner: this, value: Color.WHITE);
-  
+
   @CompletelyHidden PortionProperty fogDensity <- new PortionProperty(owner: this, value: Portion.NONE);
   @CompletelyHidden PortionProperty globalBrightness <- new PortionProperty(owner: this, value: Portion.NONE);
-  
+
   @CompletelyHidden SProgram program <- null;
   @CompletelyHidden WholeNumber activeCount <- 0;
-  
+
 }

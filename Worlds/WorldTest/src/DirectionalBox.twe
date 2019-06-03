@@ -20,11 +20,11 @@ class DirectionalBox extends SBox models Box {
 
   void setOpacity(Portion opacity,
                   Duration duration <- Default.duration(),
-                  AnimationStyle style <- Default.animationStyle() ) {
+                  AnimationStyle animationStyle <- Default.animationStyle() ) {
     doTogether {
-      super.setOpacity(opacity: opacity, duration:duration, style: style);
-      nose.setOpacity(opacity: opacity, duration:duration, style: style);
-      hat.setOpacity(opacity: opacity, duration:duration, style: style);
+      super.setOpacity(opacity: opacity, duration:duration, animationStyle: animationStyle);
+      nose.setOpacity(opacity: opacity, duration:duration, animationStyle: animationStyle);
+      hat.setOpacity(opacity: opacity, duration:duration, animationStyle: animationStyle);
     }
   }
 
