@@ -1,0 +1,44 @@
+{
+  "description": {
+    "name": "World with One Box",
+    "icon": "thumbnail.png",
+    "tags": [],
+    "groupTags": [],
+    "themeTags": []},
+  "provenance": {
+    "aliceVersion": "3.5.0.1-alpha",
+    "created": "2018-05-14T16:48:02-0500EST",
+    "creator": "Alice Project"},
+  "metadata": {
+    "formatVersion": "0.1",
+    "identifier": {
+      "name": "WorldWithOneBox",
+      "version": "1.1",
+      "type": "World"}
+  },
+  "prerequisites": [
+    {
+      "name": "SceneGraphLibrary",
+      "version": "1.0",
+      "type": "Library"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Program",
+      "format": "tweedle",
+      "file": "src/Program.twe",
+      "type": "Class"
+    }, {
+      "name": "Scene",
+      "format": "tweedle",
+      "file": "src/Scene.twe",
+      "type": "Class"
+    }, {
+      "name": "Box",
+      "format": "tweedle",
+      "file": "src/Box.twe",
+      "type": "Class"
+    }
+  ]
+}

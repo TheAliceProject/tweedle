@@ -10,6 +10,7 @@ class Program extends SProgram models Program {
     story.initializeInFrame(args: args);
     story.setActiveScene(scene: story.getMyScene());
   }
+
   Scene getMyScene() {
     return this.myScene;
   }

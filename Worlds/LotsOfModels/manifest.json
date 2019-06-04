@@ -14,219 +14,219 @@
   "metadata": {
     "formatVersion": "0.1",
     "identifier": {
-      "id": "08b79ba9-55fc-4492-9664-28c3d8d41ac5",
+      "name": "Program",
       "version": "1.0",
       "type": "World"
     }
   },
   "prerequisites": [
     {
-      "id": "970a310f-90a7-4d29-8380-5b2a742e3ee4",
+      "name": "SceneGraphLibrary",
       "version": "1.0",
       "type": "Library"
     }
   ],
   "resources": [
     {
-      "id": "Program",
+      "name": "Program",
       "format": "tweedle",
       "file": "src/Program.twe",
       "type": "Class"
     },
     {
-      "id": "Scene",
+      "name": "Scene",
       "format": "tweedle",
       "file": "src/Scene.twe",
       "type": "Class"
     },
     {
-      "id": "Peacock",
+      "name": "Peacock",
       "format": "tweedle",
       "file": "src/Peacock.twe",
       "type": "Class"
     },
     {
-      "id": "Flyer",
+      "name": "Flyer",
       "format": "tweedle",
       "file": "src/Flyer.twe",
       "type": "Class"
     },
     {
-      "id": "Cow",
+      "name": "Cow",
       "format": "tweedle",
       "file": "src/Cow.twe",
       "type": "Class"
     },
     {
-      "id": "Quadruped",
+      "name": "Quadruped",
       "format": "tweedle",
       "file": "src/Quadruped.twe",
       "type": "Class"
     },
     {
-      "id": "Hare",
+      "name": "Hare",
       "format": "tweedle",
       "file": "src/Hare.twe",
       "type": "Class"
     },
     {
-      "id": "Biped",
+      "name": "Biped",
       "format": "tweedle",
       "file": "src/Biped.twe",
       "type": "Class"
     },
     {
-      "id": "HermitSnail",
+      "name": "HermitSnail",
       "format": "tweedle",
       "file": "src/HermitSnail.twe",
       "type": "Class"
     },
     {
-      "id": "Slitherer",
+      "name": "Slitherer",
       "format": "tweedle",
       "file": "src/Slitherer.twe",
       "type": "Class"
     },
     {
-      "id": "Shark",
+      "name": "Shark",
       "format": "tweedle",
       "file": "src/Shark.twe",
       "type": "Class"
     },
     {
-      "id": "Fish",
+      "name": "Fish",
       "format": "tweedle",
       "file": "src/Fish.twe",
       "type": "Class"
     },
     {
-      "id": "Swimmer",
+      "name": "Swimmer",
       "format": "tweedle",
       "file": "src/Swimmer.twe",
       "type": "Class"
     },
     {
-      "id": "HangGlider",
+      "name": "HangGlider",
       "format": "tweedle",
       "file": "src/HangGlider.twe",
       "type": "Class"
     },
     {
-      "id": "Aircraft",
+      "name": "Aircraft",
       "format": "tweedle",
       "file": "src/Aircraft.twe",
       "type": "Class"
     },
     {
-      "id": "Transport",
+      "name": "Transport",
       "format": "tweedle",
       "file": "src/Transport.twe",
       "type": "Class"
     },
     {
-      "id": "PoliceCar",
+      "name": "PoliceCar",
       "format": "tweedle",
       "file": "src/PoliceCar.twe",
       "type": "Class"
     },
     {
-      "id": "Automobile",
+      "name": "Automobile",
       "format": "tweedle",
       "file": "src/Automobile.twe",
       "type": "Class"
     },
     {
-      "id": "TrainEngine",
+      "name": "TrainEngine",
       "format": "tweedle",
       "file": "src/TrainEngine.twe",
       "type": "Class"
     },
     {
-      "id": "Train",
+      "name": "Train",
       "format": "tweedle",
       "file": "src/Train.twe",
       "type": "Class"
     },
     {
-      "id": "PirateShip",
+      "name": "PirateShip",
       "format": "tweedle",
       "file": "src/PirateShip.twe",
       "type": "Class"
     },
     {
-      "id": "Watercraft",
+      "name": "Watercraft",
       "format": "tweedle",
       "file": "src/Watercraft.twe",
       "type": "Class"
     },
     {
-      "id": "BonePile",
+      "name": "BonePile",
       "format": "tweedle",
       "file": "src/BonePile.twe",
       "type": "Class"
     },
     {
-      "id": "Prop",
+      "name": "Prop",
       "format": "tweedle",
       "file": "src/Prop.twe",
       "type": "Class"
     },
     {
-      "id": "ColaBottle",
+      "name": "ColaBottle",
       "format": "tweedle",
       "file": "src/ColaBottle.twe",
       "type": "Class"
     },
     {
-      "id": "Cow",
+      "name": "Cow",
       "format": "json",
       "file": "models/Cow/Cow.json",
       "type": "model"
     },
     {
-      "id": "Hare",
+      "name": "Hare",
       "format": "json",
       "file": "models/Hare/Hare.json",
       "type": "model"
     },
     {
-      "id": "PirateShip",
+      "name": "PirateShip",
       "format": "json",
       "file": "models/PirateShip/PirateShip.json",
       "type": "model"
     },
     {
-      "id": "Shark",
+      "name": "Shark",
       "format": "json",
       "file": "models/Shark/Shark.json",
       "type": "model"
     },
     {
-      "id": "Peacock",
+      "name": "Peacock",
       "format": "json",
       "file": "models/Peacock/Peacock.json",
       "type": "model"
     },
     {
-      "id": "TrainEngine",
+      "name": "TrainEngine",
       "format": "json",
       "file": "models/TrainEngine/TrainEngine.json",
       "type": "model"
     },
     {
-      "id": "BonePile",
+      "name": "BonePile",
       "format": "json",
       "file": "models/BonePile/BonePile.json",
       "type": "model"
     },
     {
-      "id": "HermitSnail",
+      "name": "HermitSnail",
       "format": "json",
       "file": "models/HermitSnail/HermitSnail.json",
       "type": "model"
     },
     {
-      "id": "ColaBottle",
+      "name": "ColaBottle",
       "format": "json",
       "file": "models/ColaBottle/ColaBottle.json",
       "type": "model"

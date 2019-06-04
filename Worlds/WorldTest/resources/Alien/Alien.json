@@ -114,7 +114,7 @@
     "identifier": {
       "version": "1.0",
       "type": "Model",
-      "id": "Alien"
+      "name": "Alien"
     }
   },
   "prerequisites": [],
@@ -132,14 +132,13 @@
           0.39562756
         ]
       },
-      "id": "Alien",
       "name": "Alien",
       "format": "dae",
       "file": "Alien_Alien.dae",
       "type": "skeletonMesh"
     },
     {
-      "id": "3e320af4-8dec-4c05-9ebc-46efadd343e8",
+      "uuid": "3e320af4-8dec-4c05-9ebc-46efadd343e8",
       "height": 512.0,
       "width": 512.0,
       "name": "Alien_Alien_DEFAULT_texture_1_diffuseMap",
@@ -148,7 +147,7 @@
       "type": "image"
     },
     {
-      "id": "fb2fa2e8-6622-4da7-a34c-c2a38cde9fbb",
+      "uuid": "fb2fa2e8-6622-4da7-a34c-c2a38cde9fbb",
       "height": 120.0,
       "width": 43.0,
       "name": "DEFAULT.png",
@@ -157,7 +156,7 @@
       "type": "image"
     },
     {
-      "id": "34864060-c7b4-4a78-a8f9-43903efc95d1",
+      "uuid": "34864060-c7b4-4a78-a8f9-43903efc95d1",
       "height": 120.0,
       "width": 43.0,
       "name": "Alien_cls.png",

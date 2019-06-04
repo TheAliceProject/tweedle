@@ -82,7 +82,7 @@
     "identifier": {
       "version": "1.0",
       "type": "Model",
-      "id": "ColaBottle"
+      "name": "ColaBottle"
     }
   },
   "prerequisites": [],
@@ -100,7 +100,7 @@
           0.037127174
         ]
       },
-      "id": "ColaBottle",
+      "name": "ColaBottle",
       "format": "dae",
       "file": "ColaBottle_ColaBottle.dae",
       "type": "skeletonMesh"
@@ -109,7 +109,7 @@
       "uuid": "4d4d050a-5541-49f0-9bee-8c049058bca8",
       "height": 512.0,
       "width": 512.0,
-      "id": "ColaBottle_ColaBottle_DEFAULT_texture_1_diffuseMap",
+      "name": "ColaBottle_ColaBottle_DEFAULT_texture_1_diffuseMap",
       "format": "image/png",
       "file": "ColaBottle_ColaBottle_DEFAULT_texture_1_diffuseMap.png",
       "type": "image"
@@ -118,7 +118,7 @@
       "uuid": "c2dd7cbe-6357-47ff-9742-f65d4c68ed3c",
       "height": 512.0,
       "width": 512.0,
-      "id": "ColaBottle_ColaBottle_DEFAULT_texture_2_diffuseMap",
+      "name": "ColaBottle_ColaBottle_DEFAULT_texture_2_diffuseMap",
       "format": "image/png",
       "file": "ColaBottle_ColaBottle_DEFAULT_texture_2_diffuseMap.png",
       "type": "image"
@@ -127,7 +127,7 @@
       "uuid": "a57ec8cc-67af-4e62-93cb-73467ac3cf10",
       "height": 120.0,
       "width": 38.0,
-      "id": "DEFAULT.png",
+      "name": "DEFAULT.png",
       "format": "image/png",
       "file": "DEFAULT.png",
       "type": "image"
@@ -136,7 +136,7 @@
       "uuid": "f84d8e42-d5cb-4da5-92c4-c81e045a21dc",
       "height": 120.0,
       "width": 38.0,
-      "id": "ColaBottle_cls.png",
+      "name": "ColaBottle_cls.png",
       "format": "image/png",
       "file": "ColaBottle_cls.png",
       "type": "image"

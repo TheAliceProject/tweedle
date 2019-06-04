@@ -763,7 +763,7 @@
     "identifier": {
       "version": "1.0",
       "type": "Model",
-      "id": "Peacock"
+      "name": "Peacock"
     }
   },
   "prerequisites": [],
@@ -781,7 +781,7 @@
           1.1406654
         ]
       },
-      "id": "Peacock",
+      "name": "Peacock",
       "format": "dae",
       "file": "Peacock_Peacock.dae",
       "type": "skeletonMesh"
@@ -790,7 +790,7 @@
       "uuid": "60aa4784-b94e-495f-9329-60baf7115fb9",
       "height": 512.0,
       "width": 512.0,
-      "id": "Peacock_Peacock_DEFAULT_texture_1_diffuseMap",
+      "name": "Peacock_Peacock_DEFAULT_texture_1_diffuseMap",
       "format": "image/png",
       "file": "Peacock_Peacock_DEFAULT_texture_1_diffuseMap.png",
       "type": "image"
@@ -799,7 +799,7 @@
       "uuid": "07995ef8-4f9a-4a00-99b1-4701e703d020",
       "height": 512.0,
       "width": 512.0,
-      "id": "Peacock_Peacock_DEFAULT_texture_2_diffuseMap",
+      "name": "Peacock_Peacock_DEFAULT_texture_2_diffuseMap",
       "format": "image/png",
       "file": "Peacock_Peacock_DEFAULT_texture_2_diffuseMap.png",
       "type": "image"
@@ -808,7 +808,7 @@
       "uuid": "f2c99021-d4aa-4b8c-8d2f-971a6ed54030",
       "height": 120.0,
       "width": 99.0,
-      "id": "DEFAULT.png",
+      "name": "DEFAULT.png",
       "format": "image/png",
       "file": "DEFAULT.png",
       "type": "image"
@@ -817,7 +817,7 @@
       "uuid": "0bf8f503-9353-41e8-96c3-d69e59f7b3d1",
       "height": 120.0,
       "width": 99.0,
-      "id": "Peacock_cls.png",
+      "name": "Peacock_cls.png",
       "format": "image/png",
       "file": "Peacock_cls.png",
       "type": "image"

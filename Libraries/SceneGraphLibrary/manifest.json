@@ -1,6 +1,6 @@
 {
   "description": {
-    "name": "SceneGraphLibrary",
+    "name": "Scene Graph Library",
     "icon": "thumbnail.png",
     "tags": [],
     "groupTags": [],
@@ -14,7 +14,7 @@
   "metadata": {
     "formatVersion": "0.1",
     "identifier": {
-      "id": "970a310f-90a7-4d29-8380-5b2a742e3ee4",
+      "name": "SceneGraphLibrary",
       "version": "1.0",
       "type": "Library"
     }
@@ -22,818 +22,818 @@
   "prerequisites": [],
   "resources": [
     {
-      "id": "Default",
+      "name": "Default",
       "format": "tweedle",
       "file": "src/Default.twe",
       "type": "Class"
     }, {
-      "id": "AnimationStyle",
+      "name": "AnimationStyle",
       "format": "tweedle",
       "file": "src/AnimationStyle.twe",
       "type": "Enum"
     }, {
-      "id": "DimensionPolicy",
+      "name": "DimensionPolicy",
       "format": "tweedle",
       "file": "src/DimensionPolicy.twe",
       "type": "Enum"
     }, {
-      "id": "TurnDirection",
+      "name": "TurnDirection",
       "format": "tweedle",
       "file": "src/TurnDirection.twe",
       "type": "Enum"
     }, {
-      "id": "RollDirection",
+      "name": "RollDirection",
       "format": "tweedle",
       "file": "src/RollDirection.twe",
       "type": "Enum"
     }, {
-      "id": "MoveDirection",
+      "name": "MoveDirection",
       "format": "tweedle",
       "file": "src/MoveDirection.twe",
       "type": "Enum"
     }, {
-      "id": "PathStyle",
+      "name": "PathStyle",
       "format": "tweedle",
       "file": "src/PathStyle.twe",
       "type": "Enum"
     }, {
-      "id": "SpatialRelation",
+      "name": "SpatialRelation",
       "format": "tweedle",
       "file": "src/SpatialRelation.twe",
       "type": "Enum"
     }, {
-      "id": "Epsilon",
+      "name": "Epsilon",
       "format": "tweedle",
       "file": "src/Epsilon.twe",
       "type": "Enum"
     }, {
-      "id": "Property",
+      "name": "Property",
       "format": "tweedle",
       "file": "src/Property.twe",
       "type": "Class"
     }, {
-      "id": "PropertyTween",
+      "name": "PropertyTween",
       "format": "tweedle",
       "file": "src/PropertyTween.twe",
       "type": "Class"
     }, {
-      "id": "DecimalNumberProperty",
+      "name": "DecimalNumberProperty",
       "format": "tweedle",
       "file": "src/DecimalNumberProperty.twe",
       "type": "Class"
     }, {
-      "id": "DimensionProperty",
+      "name": "DimensionProperty",
       "format": "tweedle",
       "file": "src/DimensionProperty.twe",
       "type": "Class"
     }, {
-      "id": "DecimalNumberTween",
+      "name": "DecimalNumberTween",
       "format": "tweedle",
       "file": "src/DecimalNumberTween.twe",
       "type": "Class"
     }, {
-      "id": "PortionProperty",
+      "name": "PortionProperty",
       "format": "tweedle",
       "file": "src/PortionProperty.twe",
       "type": "Class"
     }, {
-      "id": "PortionTween",
+      "name": "PortionTween",
       "format": "tweedle",
       "file": "src/PortionTween.twe",
       "type": "Class"
     }, {
-      "id": "VantagePointProperty",
+      "name": "VantagePointProperty",
       "format": "tweedle",
       "file": "src/VantagePointProperty.twe",
       "type": "Class"
     }, {
-      "id": "PositionTween",
+      "name": "PositionTween",
       "format": "tweedle",
       "file": "src/PositionTween.twe",
       "type": "Class"
     }, {
-      "id": "SmoothPositionTween",
+      "name": "SmoothPositionTween",
       "format": "tweedle",
       "file": "src/SmoothPositionTween.twe",
       "type": "Class"
     }, {
-      "id": "ApplyTranslationTween",
+      "name": "ApplyTranslationTween",
       "format": "tweedle",
       "file": "src/ApplyTranslationTween.twe",
       "type": "Class"
     }, {
-      "id": "OrientationTween",
+      "name": "OrientationTween",
       "format": "tweedle",
       "file": "src/OrientationTween.twe",
       "type": "Class"
     }, {
-      "id": "ApplyRotationTween",
+      "name": "ApplyRotationTween",
       "format": "tweedle",
       "file": "src/ApplyRotationTween.twe",
       "type": "Class"
     }, {
-      "id": "VantagePointTween",
+      "name": "VantagePointTween",
       "format": "tweedle",
       "file": "src/VantagePointTween.twe",
       "type": "Class"
     }, {
-      "id": "SmoothVantagePointTween",
+      "name": "SmoothVantagePointTween",
       "format": "tweedle",
       "file": "src/SmoothVantagePointTween.twe",
       "type": "Class"
     }, {
-      "id": "SizeProperty",
+      "name": "SizeProperty",
       "format": "tweedle",
       "file": "src/SizeProperty.twe",
       "type": "Class"
     }, {
-      "id": "SizeTween",
+      "name": "SizeTween",
       "format": "tweedle",
       "file": "src/SizeTween.twe",
       "type": "Class"
     }, {
-      "id": "WidthOnlyTween",
+      "name": "WidthOnlyTween",
       "format": "tweedle",
       "file": "src/WidthOnlyTween.twe",
       "type": "Class"
     }, {
-      "id": "HeightOnlyTween",
+      "name": "HeightOnlyTween",
       "format": "tweedle",
       "file": "src/HeightOnlyTween.twe",
       "type": "Class"
     }, {
-      "id": "DepthOnlyTween",
+      "name": "DepthOnlyTween",
       "format": "tweedle",
       "file": "src/DepthOnlyTween.twe",
       "type": "Class"
     }, {
-      "id": "ApplyResizeTween",
+      "name": "ApplyResizeTween",
       "format": "tweedle",
       "file": "src/ApplyResizeTween.twe",
       "type": "Class"
     }, {
-      "id": "PaintProperty",
+      "name": "PaintProperty",
       "format": "tweedle",
       "file": "src/PaintProperty.twe",
       "type": "Class"
     }, {
-      "id": "PaintTween",
+      "name": "PaintTween",
       "format": "tweedle",
       "file": "src/PaintTween.twe",
       "type": "Class"
     }, {
-      "id": "ColorProperty",
+      "name": "ColorProperty",
       "format": "tweedle",
       "file": "src/ColorProperty.twe",
       "type": "Class"
     }, {
-      "id": "TextProperty",
+      "name": "TextProperty",
       "format": "tweedle",
       "file": "src/TextProperty.twe",
       "type": "Class"
     }, {
-      "id": "ColorTween",
+      "name": "ColorTween",
       "format": "tweedle",
       "file": "src/ColorTween.twe",
       "type": "Class"
     }, {
-      "id": "SThing",
+      "name": "SThing",
       "format": "tweedle",
       "file": "src/SThing.twe",
       "type": "Class"
     }, {
-      "id": "SScene",
+      "name": "SScene",
       "format": "tweedle",
       "file": "src/SScene.twe",
       "type": "Class"
     }, {
-      "id": "STurnable",
+      "name": "STurnable",
       "format": "tweedle",
       "file": "src/STurnable.twe",
       "type": "Class"
     }, {
-      "id": "SMovableTurnable",
+      "name": "SMovableTurnable",
       "format": "tweedle",
       "file": "src/SMovableTurnable.twe",
       "type": "Class"
     }, {
-      "id": "SCamera",
+      "name": "SCamera",
       "format": "tweedle",
       "file": "src/SCamera.twe",
       "type": "Class"
     }, {
-      "id": "SModel",
+      "name": "SModel",
       "format": "tweedle",
       "file": "src/SModel.twe",
       "type": "Class"
     }, {
-      "id": "SShape",
+      "name": "SShape",
       "format": "tweedle",
       "file": "src/SShape.twe",
       "type": "Class"
     }, {
-      "id": "SJointedModel",
+      "name": "SJointedModel",
       "format": "tweedle",
       "file": "src/SJointedModel.twe",
       "type": "Class"
     }, {
-      "id": "SJoint",
+      "name": "SJoint",
       "format": "tweedle",
       "file": "src/SJoint.twe",
       "type": "Class"
     }, {
-      "id": "SProp",
+      "name": "SProp",
       "format": "tweedle",
       "file": "src/SProp.twe",
       "type": "Class"
     }, {
-      "id": "SBiped",
+      "name": "SBiped",
       "format": "tweedle",
       "file": "src/SBiped.twe",
       "type": "Class"
     }, {
-      "id": "SFlyer",
+      "name": "SFlyer",
       "format": "tweedle",
       "file": "src/SFlyer.twe",
       "type": "Class"
     }, {
-      "id": "SQuadruped",
+      "name": "SQuadruped",
       "format": "tweedle",
       "file": "src/SQuadruped.twe",
       "type": "Class"
     }, {
-      "id": "SSlitherer",
+      "name": "SSlitherer",
       "format": "tweedle",
       "file": "src/SSlitherer.twe",
       "type": "Class"
     }, {
-      "id": "STransport",
+      "name": "STransport",
       "format": "tweedle",
       "file": "src/STransport.twe",
       "type": "Class"
     }, {
-      "id": "SSwimmer",
+      "name": "SSwimmer",
       "format": "tweedle",
       "file": "src/SSwimmer.twe",
       "type": "Class"
     }, {
-      "id": "SBox",
+      "name": "SBox",
       "format": "tweedle",
       "file": "src/SBox.twe",
       "type": "Class"
     }, {
-      "id": "SSphere",
+      "name": "SSphere",
       "format": "tweedle",
       "file": "src/SSphere.twe",
       "type": "Class"
     }, {
-      "id": "SCylinder",
+      "name": "SCylinder",
       "format": "tweedle",
       "file": "src/SCylinder.twe",
       "type": "Class"
     }, {
-      "id": "SCone",
+      "name": "SCone",
       "format": "tweedle",
       "file": "src/SCone.twe",
       "type": "Class"
     }, {
-      "id": "STorus",
+      "name": "STorus",
       "format": "tweedle",
       "file": "src/STorus.twe",
       "type": "Class"
     }, {
-      "id": "SDisc",
+      "name": "SDisc",
       "format": "tweedle",
       "file": "src/SDisc.twe",
       "type": "Class"
     }, {
-      "id": "SBillboard",
+      "name": "SBillboard",
       "format": "tweedle",
       "file": "src/SBillboard.twe",
       "type": "Class"
     }, {
-      "id": "SAxes",
+      "name": "SAxes",
       "format": "tweedle",
       "file": "src/SAxes.twe",
       "type": "Class"
     }, {
-      "id": "SGround",
+      "name": "SGround",
       "format": "tweedle",
       "file": "src/SGround.twe",
       "type": "Class"
     }, {
-      "id": "SRoom",
+      "name": "SRoom",
       "format": "tweedle",
       "file": "src/SRoom.twe",
       "type": "Class"
     }, {
-      "id": "STextModel",
+      "name": "STextModel",
       "format": "tweedle",
       "file": "src/STextModel.twe",
       "type": "Class"
     }, {
-      "id": "SMarker",
+      "name": "SMarker",
       "format": "tweedle",
       "file": "src/SMarker.twe",
       "type": "Class"
     }, {
-      "id": "SCameraMarker",
+      "name": "SCameraMarker",
       "format": "tweedle",
       "file": "src/SCameraMarker.twe",
       "type": "Class"
     }, {
-      "id": "SThingMarker",
+      "name": "SThingMarker",
       "format": "tweedle",
       "file": "src/SThingMarker.twe",
       "type": "Class"
     }, {
-      "id": "SProgram",
+      "name": "SProgram",
       "format": "tweedle",
       "file": "src/SProgram.twe",
       "type": "Class"
     }, {
-      "id": "JointId",
+      "name": "JointId",
       "format": "tweedle",
       "file": "src/JointId.twe",
       "type": "Class"
     }, {
-      "id": "JointIdList",
+      "name": "JointIdList",
       "format": "tweedle",
       "file": "src/JointIdList.twe",
       "type": "Class"
     }, {
-      "id": "JointIdNode",
+      "name": "JointIdNode",
       "format": "tweedle",
       "file": "src/JointIdNode.twe",
       "type": "Class"
     }, {
-      "id": "JointedModelPose",
+      "name": "JointedModelPose",
       "format": "tweedle",
       "file": "src/JointedModelPose.twe",
       "type": "Class"
     }, {
-      "id": "JointIdTransformationPair",
+      "name": "JointIdTransformationPair",
       "format": "tweedle",
       "file": "src/JointIdTransformationPair.twe",
       "type": "Class"
     }, {
-      "id": "AbstractEvent",
+      "name": "AbstractEvent",
       "format": "tweedle",
       "file": "src/AbstractEvent.twe",
       "type": "Class"
     }, {
-      "id": "SceneActivationEvent",
+      "name": "SceneActivationEvent",
       "format": "tweedle",
       "file": "src/SceneActivationEvent.twe",
       "type": "Class"
     }, {
-      "id": "TimeEvent",
+      "name": "TimeEvent",
       "format": "tweedle",
       "file": "src/TimeEvent.twe",
       "type": "Class"
     }, {
-      "id": "MouseEvent",
+      "name": "MouseEvent",
       "format": "tweedle",
       "file": "src/MouseEvent.twe",
       "type": "Class"
     }, {
-      "id": "OverlappingEventPolicy",
+      "name": "OverlappingEventPolicy",
       "format": "tweedle",
       "file": "src/OverlappingEventPolicy.twe",
       "type": "Enum"
     }, {
-      "id": "SurfaceAppearance",
+      "name": "SurfaceAppearance",
       "format": "tweedle",
       "file": "src/SurfaceAppearance.twe",
       "type": "Enum"
     }, {
-      "id": "WallAppearance",
+      "name": "WallAppearance",
       "format": "tweedle",
       "file": "src/WallAppearance.twe",
       "type": "Enum"
     }, {
-      "id": "FloorAppearance",
+      "name": "FloorAppearance",
       "format": "tweedle",
       "file": "src/FloorAppearance.twe",
       "type": "Enum"
     }, {
-      "id": "TextStyle",
+      "name": "TextStyle",
       "format": "tweedle",
       "file": "src/TextStyle.twe",
       "type": "Enum"
     }, {
-      "id": "FontType",
+      "name": "FontType",
       "format": "tweedle",
       "file": "src/FontType.twe",
       "type": "Enum"
     }, {
-      "id": "BubblePosition",
+      "name": "BubblePosition",
       "format": "tweedle",
       "file": "src/BubblePosition.twe",
       "type": "Enum"
     }, {
-      "id": "Ground/brick",
+      "name": "Ground/brick",
       "format": "png",
       "file": "resources/grounds/brick.png",
       "type": "image"
     }, {
-      "id": "Ground/brown_savana_grass",
+      "name": "Ground/brown_savana_grass",
       "format": "png",
       "file": "resources/grounds/brown_savana_grass.png",
       "type": "image"
     }, {
-      "id": "Ground/dark_grass",
+      "name": "Ground/dark_grass",
       "format": "png",
       "file": "resources/grounds/dark_grass.png",
       "type": "image"
     }, {
-      "id": "Ground/desert",
+      "name": "Ground/desert",
       "format": "png",
       "file": "resources/grounds/desert.png",
       "type": "image"
     }, {
-      "id": "Ground/desert_brown",
+      "name": "Ground/desert_brown",
       "format": "png",
       "file": "resources/grounds/desert_brown.png",
       "type": "image"
     }, {
-      "id": "Ground/dirt",
+      "name": "Ground/dirt",
       "format": "png",
       "file": "resources/grounds/dirt.png",
       "type": "image"
     }, {
-      "id": "Ground/dry_grass",
+      "name": "Ground/dry_grass",
       "format": "png",
       "file": "resources/grounds/dry_grass.png",
       "type": "image"
     },
     {
-      "id": "Ground/forest_floor_brown",
+      "name": "Ground/forest_floor_brown",
       "format": "png",
       "file": "resources/grounds/forest_floor_brown.png",
       "type": "image"
     }, {
-      "id": "Ground/forest_floor_dark",
+      "name": "Ground/forest_floor_dark",
       "format": "png",
       "file": "resources/grounds/forest_floor_dark.png",
       "type": "image"
     }, {
-      "id": "Ground/forest_floor_red",
+      "name": "Ground/forest_floor_red",
       "format": "png",
       "file": "resources/grounds/forest_floor_red.png",
       "type": "image"
     }, {
-      "id": "Ground/gold_coins",
+      "name": "Ground/gold_coins",
       "format": "png",
       "file": "resources/grounds/gold_coins.png",
       "type": "image"
     }, {
-      "id": "Ground/grass",
+      "name": "Ground/grass",
       "format": "png",
       "file": "resources/grounds/grass.png",
       "type": "image"
     }, {
-      "id": "Ground/green_savana_grass",
+      "name": "Ground/green_savana_grass",
       "format": "png",
       "file": "resources/grounds/green_savana_grass.png",
       "type": "image"
     }, {
-      "id": "Ground/ice",
+      "name": "Ground/ice",
       "format": "png",
       "file": "resources/grounds/ice.png",
       "type": "image"
     }, {
-      "id": "Ground/jungle",
+      "name": "Ground/jungle",
       "format": "png",
       "file": "resources/grounds/jungle.png",
       "type": "image"
     }, {
-      "id": "Ground/mars",
+      "name": "Ground/mars",
       "format": "png",
       "file": "resources/grounds/mars.png",
       "type": "image"
     }, {
-      "id": "Ground/moon",
+      "name": "Ground/moon",
       "format": "png",
       "file": "resources/grounds/moon.png",
       "type": "image"
     }, {
-      "id": "Ground/ocean",
+      "name": "Ground/ocean",
       "format": "png",
       "file": "resources/grounds/ocean.png",
       "type": "image"
     }, {
-      "id": "Ground/ocean_night",
+      "name": "Ground/ocean_night",
       "format": "png",
       "file": "resources/grounds/ocean_night.png",
       "type": "image"
     }, {
-      "id": "Ground/rocky_brown",
+      "name": "Ground/rocky_brown",
       "format": "png",
       "file": "resources/grounds/rocky_brown.png",
       "type": "image"
     }, {
-      "id": "Ground/rocky_red",
+      "name": "Ground/rocky_red",
       "format": "png",
       "file": "resources/grounds/rocky_red.png",
       "type": "image"
     }, {
-      "id": "Ground/rocky_sand",
+      "name": "Ground/rocky_sand",
       "format": "png",
       "file": "resources/grounds/rocky_sand.png",
       "type": "image"
     }, {
-      "id": "Ground/sand",
+      "name": "Ground/sand",
       "format": "png",
       "file": "resources/grounds/sand.png",
       "type": "image"
     }, {
-      "id": "Ground/snow",
+      "name": "Ground/snow",
       "format": "png",
       "file": "resources/grounds/snow.png",
       "type": "image"
     }, {
-      "id": "Ground/swamp",
+      "name": "Ground/swamp",
       "format": "png",
       "file": "resources/grounds/swamp.png",
       "type": "image"
     }, {
-      "id": "Ground/swamp_poison",
+      "name": "Ground/swamp_poison",
       "format": "png",
       "file": "resources/grounds/swamp_poison.png",
       "type": "image"
     }, {
-      "id": "Ground/swamp_water",
+      "name": "Ground/swamp_water",
       "format": "png",
       "file": "resources/grounds/swamp_water.png",
       "type": "image"
     }, {
-      "id": "Ground/underwater",
+      "name": "Ground/underwater",
       "format": "png",
       "file": "resources/grounds/underwater.png",
       "type": "image"
     }, {
-      "id": "Ground/water",
+      "name": "Ground/water",
       "format": "png",
       "file": "resources/grounds/water.png",
       "type": "image"
     }, {
-      "id": "Ground/wood",
+      "name": "Ground/wood",
       "format": "png",
       "file": "resources/grounds/wood.png",
       "type": "image"
     }, {
-      "id": "Floor/black_ceramic",
+      "name": "Floor/black_ceramic",
       "format": "png",
       "file": "resources/floors/floor-blackCeramicTile.png",
       "type": "image"
     }, {
-      "id": "Floor/black_white",
+      "name": "Floor/black_white",
       "format": "png",
       "file": "resources/floors/floor-blackWhiteLinoleum.png",
       "type": "image"
     }, {
-      "id": "Floor/blue_white",
+      "name": "Floor/blue_white",
       "format": "png",
       "file": "resources/floors/floor-blueDarkWhiteLinoleum.png",
       "type": "image"
     }, {
-      "id": "Floor/blue_moroccan",
+      "name": "Floor/blue_moroccan",
       "format": "png",
       "file": "resources/floors/floor-BlueMoroccanPlainTile.png",
       "type": "image"
     }, {
-      "id": "Floor/carpet_blue",
+      "name": "Floor/carpet_blue",
       "format": "png",
       "file": "resources/floors/floor-CarpetBlueStars.png",
       "type": "image"
     }, {
-      "id": "Floor/carpet_cat_paws",
+      "name": "Floor/carpet_cat_paws",
       "format": "png",
       "file": "resources/floors/floor-carpetCatPaw.png",
       "type": "image"
     }, {
-      "id": "Floor/carpet_hotel_blue",
+      "name": "Floor/carpet_hotel_blue",
       "format": "png",
       "file": "resources/floors/floor-CarpetHotelBlue.png",
       "type": "image"
     }, {
-      "id": "Floor/carpet_hotel_gold",
+      "name": "Floor/carpet_hotel_gold",
       "format": "png",
       "file": "resources/floors/floor-CarpetHotelGoldA.png",
       "type": "image"
     }, {
-      "id": "Floor/carpet_hotel_red",
+      "name": "Floor/carpet_hotel_red",
       "format": "png",
       "file": "resources/floors/floor-CarpetHotelRed.png",
       "type": "image"
     }, {
-      "id": "Floor/carpet_leaves",
+      "name": "Floor/carpet_leaves",
       "format": "png",
       "file": "resources/floors/floor-CarpetLeaves.png",
       "type": "image"
     }, {
-      "id": "Floor/carpet_red_stars",
+      "name": "Floor/carpet_red_stars",
       "format": "png",
       "file": "resources/floors/floor-CarpetRedStars.png",
       "type": "image"
     }, {
-      "id": "Floor/carpet_chianti_white",
+      "name": "Floor/carpet_chianti_white",
       "format": "png",
       "file": "resources/floors/floor-chiantiWhiteTile.png",
       "type": "image"
     }, {
-      "id": "Floor/club_zigzag",
+      "name": "Floor/club_zigzag",
       "format": "png",
       "file": "resources/floors/floor-clubZigZag.png",
       "type": "image"
     }, {
-      "id": "Floor/deck_redwood",
+      "name": "Floor/deck_redwood",
       "format": "png",
       "file": "resources/floors/floor-DeckRedwood.png",
       "type": "image"
     }, {
-      "id": "Floor/green_ceramic",
+      "name": "Floor/green_ceramic",
       "format": "png",
       "file": "resources/floors/floor-greenCeramicTile.png",
       "type": "image"
     }, {
-      "id": "Floor/red_ceramic",
+      "name": "Floor/red_ceramic",
       "format": "png",
       "file": "resources/floors/floor-redCeramicTile.png",
       "type": "image"
     }, {
-      "id": "Floor/turquoise_ceramic",
+      "name": "Floor/turquoise_ceramic",
       "format": "png",
       "file": "resources/floors/floor-turquoiseCeramicTile.png",
       "type": "image"
     }, {
-      "id": "Floor/wood_cross_tile",
+      "name": "Floor/wood_cross_tile",
       "format": "png",
       "file": "resources/floors/floor-WoodCrossTile.png",
       "type": "image"
     }, {
-      "id": "Floor/wood_moroccan",
+      "name": "Floor/wood_moroccan",
       "format": "png",
       "file": "resources/floors/floor-WoodMoroccan.png",
       "type": "image"
     }, {
-      "id": "Floor/wood_panel_diamonds",
+      "name": "Floor/wood_panel_diamonds",
       "format": "png",
       "file": "resources/floors/floor-woodpanelDiamonds.png",
       "type": "image"
     }, {
-      "id": "Wall/blueGoldStripe-KCr-Md",
+      "name": "Wall/blueGoldStripe-KCr-Md",
       "format": "png",
       "file": "resources/walls/wall-blueGoldStripe-KCr-Md.png",
       "type": "image"
     }, {
-      "id": "Wall/blueGoldStripe-KCr-Wh",
+      "name": "Wall/blueGoldStripe-KCr-Wh",
       "format": "png",
       "file": "resources/walls/wall-blueGoldStripe-KCr-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/blueGoldStripe-W2coffer-Md",
+      "name": "Wall/blueGoldStripe-W2coffer-Md",
       "format": "png",
       "file": "resources/walls/wall-blueGoldStripe-W2coffer-Md.png",
       "type": "image"
     }, {
-      "id": "Wall/blueGoldStripe-W2coffer-Wh",
+      "name": "Wall/blueGoldStripe-W2coffer-Wh",
       "format": "png",
       "file": "resources/walls/wall-blueGoldStripe-W2coffer-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/blueGoldStripe-Wbead-Md",
+      "name": "Wall/blueGoldStripe-Wbead-Md",
       "format": "png",
       "file": "resources/walls/wall-blueGoldStripe-Wbead-Md.png",
       "type": "image"
     }, {
-      "id": "Wall/blueGoldStripe-Wbead-Wh",
+      "name": "Wall/blueGoldStripe-Wbead-Wh",
       "format": "png",
       "file": "resources/walls/wall-blueGoldStripe-Wbead-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/blueStars-base",
+      "name": "Wall/blueStars-base",
       "format": "png",
       "file": "resources/walls/wall-blueStars-base.png",
       "type": "image"
     }, {
-      "id": "Wall/brickChimneyRedAgedBelting-base",
+      "name": "Wall/brickChimneyRedAgedBelting-base",
       "format": "png",
       "file": "resources/walls/wall-brickChimneyRedAgedBelting-base.png",
       "type": "image"
     }, {
-      "id": "Wall/charcoalStripeWainscot-KCr-Dk",
+      "name": "Wall/charcoalStripeWainscot-KCr-Dk",
       "format": "png",
       "file": "resources/walls/wall-charcoalStripeWainscot-KCr-Dk.png",
       "type": "image"
     }, {
-      "id": "Wall/charcoalStripeWainscot-W2coffer-Dk",
+      "name": "Wall/charcoalStripeWainscot-W2coffer-Dk",
       "format": "png",
       "file": "resources/walls/wall-charcoalStripeWainscot-W2coffer-Dk.png",
       "type": "image"
     }, {
-      "id": "Wall/clubYellow03-KCr-Wh",
+      "name": "Wall/clubYellow03-KCr-Wh",
       "format": "png",
       "file": "resources/walls/wall-clubYellow03-KCr-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/clubYellow03-W2coffer-Wh",
+      "name": "Wall/clubYellow03-W2coffer-Wh",
       "format": "png",
       "file": "resources/walls/wall-clubYellow03-W2coffer-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/clubYellow03-Wbead-Wh",
+      "name": "Wall/clubYellow03-Wbead-Wh",
       "format": "png",
       "file": "resources/walls/wall-clubYellow03-Wbead-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/decoGoldFan-KCr-Md",
+      "name": "Wall/decoGoldFan-KCr-Md",
       "format": "png",
       "file": "resources/walls/wall-decoGoldFan-KCr-Md.png",
       "type": "image"
     }, {
-      "id": "Wall/decoGoldFan-W2coffer-Md",
+      "name": "Wall/decoGoldFan-W2coffer-Md",
       "format": "png",
       "file": "resources/walls/wall-decoGoldFan-W2coffer-Md.png",
       "type": "image"
     }, {
-      "id": "Wall/greenStripe-KCr-Md",
+      "name": "Wall/greenStripe-KCr-Md",
       "format": "png",
       "file": "resources/walls/wall-greenStripe-KCr-Md.png",
       "type": "image"
     }, {
-      "id": "Wall/greenStripe-W2coffer-Md",
+      "name": "Wall/greenStripe-W2coffer-Md",
       "format": "png",
       "file": "resources/walls/wall-greenStripe-W2coffer-Md.png",
       "type": "image"
     }, {
-      "id": "Wall/greenStripe-Wbead-Md",
+      "name": "Wall/greenStripe-Wbead-Md",
       "format": "png",
       "file": "resources/walls/wall-greenStripe-Wbead-Md.png",
       "type": "image"
     }, {
-      "id": "Wall/paintBunnyCitronette-K-Wh",
+      "name": "Wall/paintBunnyCitronette-K-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintBunnyCitronette-K-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintBunnyDeepLilak-K-Wh",
+      "name": "Wall/paintBunnyDeepLilak-K-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintBunnyDeepLilak-K-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintBunnyRoseblossom-K-Wh",
+      "name": "Wall/paintBunnyRoseblossom-K-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintBunnyRoseblossom-K-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintPasCeladonFields-KCr-Wh",
+      "name": "Wall/paintPasCeladonFields-KCr-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintPasCeladonFields-KCr-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintPasCeladonFields-Wbead-Wh",
+      "name": "Wall/paintPasCeladonFields-Wbead-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintPasCeladonFields-Wbead-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintPasCitronette-KCr-Wh",
+      "name": "Wall/paintPasCitronette-KCr-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintPasCitronette-KCr-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintPasCitronette-Wbead-Wh",
+      "name": "Wall/paintPasCitronette-Wbead-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintPasCitronette-Wbead-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintPasDeepLilac-KCr-Wh",
+      "name": "Wall/paintPasDeepLilac-KCr-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintPasDeepLilac-KCr-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintPasDeepLilac-Wbead-Wh",
+      "name": "Wall/paintPasDeepLilac-Wbead-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintPasDeepLilac-Wbead-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintPasDelftPowder-KCr-Wh",
+      "name": "Wall/paintPasDelftPowder-KCr-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintPasDelftPowder-KCr-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintPasDelftPowder-Wbead-Wh",
+      "name": "Wall/paintPasDelftPowder-Wbead-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintPasDelftPowder-Wbead-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintPasRoseBlossom-KCr-Wh",
+      "name": "Wall/paintPasRoseBlossom-KCr-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintPasRoseBlossom-KCr-Wh.png",
       "type": "image"
     }, {
-      "id": "Wall/paintPasRoseblossom-Wbead-Wh",
+      "name": "Wall/paintPasRoseblossom-Wbead-Wh",
       "format": "png",
       "file": "resources/walls/wall-paintPasRoseblossom-Wbead-Wh.png",
       "type": "image"

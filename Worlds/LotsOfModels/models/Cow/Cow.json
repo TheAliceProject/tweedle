@@ -87,7 +87,7 @@
     "identifier": {
       "version": "1.0",
       "type": "Model",
-      "id": "Cow"
+      "name": "Cow"
     }
   },
   "prerequisites": [],
@@ -105,7 +105,7 @@
           1.1906338
         ]
       },
-      "id": "Cow",
+      "name": "Cow",
       "format": "dae",
       "file": "Cow_Cow.dae",
       "type": "skeletonMesh"
@@ -114,7 +114,7 @@
       "uuid": "eb0ab247-a2a3-4924-8641-fba1dc08fa64",
       "height": 512.0,
       "width": 512.0,
-      "id": "Cow_Cow_DEFAULT_texture_1_diffuseMap",
+      "name": "Cow_Cow_DEFAULT_texture_1_diffuseMap",
       "format": "image/png",
       "file": "Cow_Cow_DEFAULT_texture_1_diffuseMap.png",
       "type": "image"
@@ -123,7 +123,7 @@
       "uuid": "5a94e903-8480-455c-92a0-2deb9e4b477b",
       "height": 256.0,
       "width": 256.0,
-      "id": "Cow_Cow_DEFAULT_texture_2_diffuseMap",
+      "name": "Cow_Cow_DEFAULT_texture_2_diffuseMap",
       "format": "image/png",
       "file": "Cow_Cow_DEFAULT_texture_2_diffuseMap.png",
       "type": "image"
@@ -132,7 +132,7 @@
       "uuid": "3bb83411-5518-4055-abfd-5c55155a44e8",
       "height": 120.0,
       "width": 82.0,
-      "id": "DEFAULT.png",
+      "name": "DEFAULT.png",
       "format": "image/png",
       "file": "DEFAULT.png",
       "type": "image"
@@ -141,7 +141,7 @@
       "uuid": "f1a69b7e-27a9-43a3-bab3-2853eef007a7",
       "height": 120.0,
       "width": 82.0,
-      "id": "Cow_cls.png",
+      "name": "Cow_cls.png",
       "format": "image/png",
       "file": "Cow_cls.png",
       "type": "image"

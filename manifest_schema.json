@@ -154,13 +154,13 @@
           "additionalProperties": false,
           "type": "object",
           "required": [
-            "id",
+            "name",
             "version",
             "type"
           ],
           "properties": {
-            "id": {
-              "$id": "#/properties/metadata/properties/identifier/properties/id",
+            "name": {
+              "$id": "#/properties/metadata/properties/identifier/properties/name",
               "type": "string",
               "description": "The term to refer to the represented content in code and across versions.",
               "default": "",
@@ -213,14 +213,14 @@
         "$id": "#/properties/resources/items",
         "type": "object",
         "required": [
-          "id",
+          "name",
           "format",
           "file",
           "type"
         ],
         "properties": {
-          "id": {
-            "$id": "#/properties/resources/items/properties/id",
+          "name": {
+            "$id": "#/properties/resources/items/properties/name",
             "type": "string",
             "description": "The identifier within the context of this, the parent manifest",
             "examples": [
