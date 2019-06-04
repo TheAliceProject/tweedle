@@ -11,7 +11,13 @@ class SFlyer extends SJointedModel {
         this.tailArray <- tailArray;
         this.neckArray <- neckArray;
     }
-  
+
+    SFlyer(TextString resource)
+    {
+        super(resource: resource, root: SFlyer.ROOT);
+        $Debug.log(message: "Constructed SFlyer without poses or joint arrays.");
+    }
+
     static JointId ROOT <- new JointId( name: "ROOT", parent: null );
     static JointId SPINE_BASE <- new JointId( name: "SPINE_BASE", parent: SFlyer.ROOT );
     static JointId SPINE_MIDDLE <- new JointId( name: "SPINE_MIDDLE", parent: SFlyer.SPINE_BASE );

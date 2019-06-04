@@ -6,11 +6,11 @@ class SBillboard extends SModel {
 
   void setPaint(Paint paint,
                 Duration duration <- Default.duration(),
-                AnimationStyle style <- Default.animationStyle() ) {
+                AnimationStyle animationStyle <- Default.animationStyle() ) {
     if (paint.isImage) {
       this.updateAspectRatio(frontPaint: paint, backPaint: getBackPaint());
     }
-    super.setPaint( paint: paint, duration: duration, style: style );
+    super.setPaint( paint: paint, duration: duration, animationStyle: animationStyle );
 
   }
 
@@ -20,18 +20,18 @@ class SBillboard extends SModel {
 
   void setBackPaint(Paint paint,
                     Duration duration <- Default.duration(),
-                    AnimationStyle style <- Default.animationStyle() ) {
+                    AnimationStyle animationStyle <- Default.animationStyle() ) {
     if (paint.isImage) {
       this.updateAspectRatio(frontPaint: getPaint(), backPaint: paint);
     }
-    this.backPaint.animateValue( endValue: paint, duration: duration, animationStyle: style );
-    
+    this.backPaint.animateValue( endValue: paint, duration: duration, animationStyle: animationStyle );
+
   }
 
   @CompletelyHidden void updateAspectRatio(Paint frontPaint, Paint backPaint) {
     DecimalNumber width <- 0;
     DecimalNumber height <- 0;
-    
+
     if( frontPaint.isImage ) {
       width <- frontPaint.width;
       height <- frontPaint.height;

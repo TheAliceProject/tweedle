@@ -1,6 +1,6 @@
 class SSphere extends SShape
 {
-  SSphere() 
+  SSphere()
   {
     super(resource: $SceneGraph.SPHERE);
 
@@ -16,10 +16,10 @@ class SSphere extends SShape
     return radius.getValue();
   }
 
-  void setRadius(DecimalNumber radius, Duration duration <- Default.duration(),  AnimationStyle style <- Default.animationStyle()) 
+  void setRadius(DecimalNumber radius, Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
   {
-    this.radius.animateValue(endValue: radius, duration: duration, animationStyle: style);
+    this.radius.animateValue(endValue: radius, duration: duration, animationStyle: animationStyle);
   }
 
   @CompletelyHidden DimensionProperty radius;
-} 
+}

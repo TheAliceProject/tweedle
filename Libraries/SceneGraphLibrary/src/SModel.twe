@@ -50,42 +50,42 @@ class SModel extends SMovableTurnable
         return this.getSize().width;
     }
 
-    void setWidth(DecimalNumber width, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(),  AnimationStyle style <- Default.animationStyle())
+    void setWidth(DecimalNumber width, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no width
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.width)) {
             width <- this.defaultSize.width;
         }
 
-        this.size.animateWidth(width: width, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: style);
+        this.size.animateWidth(width: width, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: animationStyle);
     }
 
     DecimalNumber getHeight() {
         return this.getSize().height;
     }
 
-    void setHeight(DecimalNumber height, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(),  AnimationStyle style <- Default.animationStyle())
+    void setHeight(DecimalNumber height, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no height
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.height)) {
             height <- this.defaultSize.height;
         }
 
-        this.size.animateHeight(height: height, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: style);
+        this.size.animateHeight(height: height, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: animationStyle);
     }
 
     DecimalNumber getDepth() {
         return this.getSize().depth;
     }
 
-    void setDepth(DecimalNumber depth, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(),  AnimationStyle style <- Default.animationStyle())
+    void setDepth(DecimalNumber depth, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no depth
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.depth)) {
             depth <- this.defaultSize.depth;
         }
 
-        this.size.animateDepth(depth: depth, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: style);
+        this.size.animateDepth(depth: depth, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: animationStyle);
     }
 
     void resize(Number factor,
@@ -134,9 +134,9 @@ class SModel extends SMovableTurnable
         return this.paint.getValue();
     }
 
-    void setPaint(Paint paint, Duration duration <- Default.duration(),  AnimationStyle style <- Default.animationStyle())
+    void setPaint(Paint paint, Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
     {
-        this.paint.animateValue(endValue: paint, duration: duration, animationStyle: style);
+        this.paint.animateValue(endValue: paint, duration: duration, animationStyle: animationStyle);
     }
 
     Portion getOpacity() {
@@ -145,9 +145,9 @@ class SModel extends SMovableTurnable
 
     void setOpacity(Portion opacity,
                     Duration duration <- Default.duration(),
-                    AnimationStyle style <- Default.animationStyle() )
+                    AnimationStyle animationStyle <- Default.animationStyle() )
     {
-        this.opacity.animateValue(endValue: opacity, duration: duration, animationStyle: style);
+        this.opacity.animateValue(endValue: opacity, duration: duration, animationStyle: animationStyle);
     }
 
     @CompletelyHidden Position getMinPoint( SThing asSeenBy ) {

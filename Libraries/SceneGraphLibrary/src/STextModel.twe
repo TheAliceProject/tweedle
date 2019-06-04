@@ -37,5 +37,35 @@ class STextModel extends SModel {
     return this.text.replaceChar( start: index, end: index + 1, replacement: c);
   }
 
-   @CompletelyHidden TextProperty text;
+  Character charAt(WholeNumber index) {
+    // TODO implement on TextProperty
+    return this.text.charAt(position: index);
+  }
+
+  WholeNumber indexOf(TextString s) {
+    // TODO implement on TextProperty
+    return this.text.indexOf(substring: s, starting: 0);
+  }
+
+  WholeNumber indexOf(TextString s, WholeNumber fromIndex) {
+    // TODO implement on TextProperty
+    return this.text.indexOf(substring: s, starting: fromIndex);
+  }
+
+  WholeNumber lastIndexOf(TextString s) {
+    // TODO implement on TextProperty
+    return this.text.lastIndexOf(substring: s, starting: 0);
+  }
+
+  WholeNumber lastIndexOf(TextString s, WholeNumber fromIndex) {
+    // TODO implement on TextProperty
+    return this.text.lastIndexOf(substring: s, starting: fromIndex);
+  }
+
+  WholeNumber getLength() {
+    // TODO implement on TextProperty
+    return this.text.length();
+  }
+
+  @CompletelyHidden TextProperty text;
 }

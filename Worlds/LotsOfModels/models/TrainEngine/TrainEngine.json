@@ -145,7 +145,7 @@
     "identifier": {
       "version": "1.0",
       "type": "Model",
-      "id": "TrainEngine"
+      "name": "TrainEngine"
     }
   },
   "prerequisites": [],
@@ -163,7 +163,7 @@
           2.2353067
         ]
       },
-      "id": "CircusLights",
+      "name": "CircusLights",
       "format": "dae",
       "file": "TrainEngine_CircusLights.dae",
       "type": "skeletonMesh"
@@ -172,7 +172,7 @@
       "uuid": "bb678f93-c72e-44a5-8561-c5572e482ee7",
       "height": 512.0,
       "width": 512.0,
-      "id": "TrainEngine_CircusLights_DEFAULT_texture_1_diffuseMap",
+      "name": "TrainEngine_CircusLights_DEFAULT_texture_1_diffuseMap",
       "format": "image/png",
       "file": "TrainEngine_CircusLights_DEFAULT_texture_1_diffuseMap.png",
       "type": "image"
@@ -181,7 +181,7 @@
       "uuid": "dd72258b-7e6d-4886-b835-96224a55b1c4",
       "height": 512.0,
       "width": 512.0,
-      "id": "TrainEngine_CircusLights_DEFAULT_texture_2_diffuseMap",
+      "name": "TrainEngine_CircusLights_DEFAULT_texture_2_diffuseMap",
       "format": "image/png",
       "file": "TrainEngine_CircusLights_DEFAULT_texture_2_diffuseMap.png",
       "type": "image"
@@ -190,7 +190,7 @@
       "uuid": "14b53c17-b365-4e4c-b8a1-3ae678dd3865",
       "height": 512.0,
       "width": 512.0,
-      "id": "TrainEngine_CircusLights_DEFAULT_texture_3_diffuseMap",
+      "name": "TrainEngine_CircusLights_DEFAULT_texture_3_diffuseMap",
       "format": "image/png",
       "file": "TrainEngine_CircusLights_DEFAULT_texture_3_diffuseMap.png",
       "type": "image"
@@ -199,7 +199,7 @@
       "uuid": "613b5b98-a194-47d3-a528-a11c6de78bbf",
       "height": 120.0,
       "width": 84.0,
-      "id": "CIRCUS_LIGHTS.png",
+      "name": "CIRCUS_LIGHTS.png",
       "format": "image/png",
       "file": "CIRCUS_LIGHTS.png",
       "type": "image"
@@ -208,7 +208,7 @@
       "uuid": "167d849b-b579-4d96-97db-d28838152756",
       "height": 120.0,
       "width": 84.0,
-      "id": "TrainEngine_cls.png",
+      "name": "TrainEngine_cls.png",
       "format": "image/png",
       "file": "TrainEngine_cls.png",
       "type": "image"

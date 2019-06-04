@@ -63,7 +63,7 @@
     "identifier": {
       "version": "1.0",
       "type": "Model",
-      "id": "PirateShip"
+      "name": "PirateShip"
     }
   },
   "prerequisites": [],
@@ -81,7 +81,7 @@
           13.025754
         ]
       },
-      "id": "PirateShip",
+      "name": "PirateShip",
       "format": "dae",
       "file": "PirateShip_PirateShip.dae",
       "type": "skeletonMesh"
@@ -90,7 +90,7 @@
       "uuid": "c2ba9981-54c3-4f58-bd42-4a6ba1d68fea",
       "height": 1024.0,
       "width": 1024.0,
-      "id": "PirateShip_PirateShip_DEFAULT_texture_1_diffuseMap",
+      "name": "PirateShip_PirateShip_DEFAULT_texture_1_diffuseMap",
       "format": "image/png",
       "file": "PirateShip_PirateShip_DEFAULT_texture_1_diffuseMap.png",
       "type": "image"
@@ -99,7 +99,7 @@
       "uuid": "7feed29d-6987-4071-b355-95e1f27548f3",
       "height": 1024.0,
       "width": 1024.0,
-      "id": "PirateShip_PirateShip_DEFAULT_texture_2_diffuseMap",
+      "name": "PirateShip_PirateShip_DEFAULT_texture_2_diffuseMap",
       "format": "image/png",
       "file": "PirateShip_PirateShip_DEFAULT_texture_2_diffuseMap.png",
       "type": "image"
@@ -108,7 +108,7 @@
       "uuid": "a6b3458f-13e7-4a0f-bc93-85a26ffc3067",
       "height": 512.0,
       "width": 512.0,
-      "id": "PirateShip_PirateShip_DEFAULT_texture_3_diffuseMap",
+      "name": "PirateShip_PirateShip_DEFAULT_texture_3_diffuseMap",
       "format": "image/png",
       "file": "PirateShip_PirateShip_DEFAULT_texture_3_diffuseMap.png",
       "type": "image"
@@ -117,7 +117,7 @@
       "uuid": "0617b3fc-09d1-4562-b94b-d28e3c4c4270",
       "height": 120.0,
       "width": 72.0,
-      "id": "DEFAULT.png",
+      "name": "DEFAULT.png",
       "format": "image/png",
       "file": "DEFAULT.png",
       "type": "image"
@@ -126,7 +126,7 @@
       "uuid": "205d1359-fb52-4774-b0a6-8df659f6b492",
       "height": 120.0,
       "width": 72.0,
-      "id": "PirateShip_cls.png",
+      "name": "PirateShip_cls.png",
       "format": "image/png",
       "file": "PirateShip_cls.png",
       "type": "image"

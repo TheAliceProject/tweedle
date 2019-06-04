@@ -84,7 +84,7 @@
     "identifier": {
       "version": "1.0",
       "type": "Model",
-      "id": "Shark"
+      "name": "Shark"
     }
   },
   "prerequisites": [],
@@ -102,7 +102,7 @@
           4.201054
         ]
       },
-      "id": "Shark",
+      "name": "Shark",
       "format": "dae",
       "file": "Shark_Shark.dae",
       "type": "skeletonMesh"
@@ -111,7 +111,7 @@
       "uuid": "ab7da962-55c4-435c-84b2-5558a763ec16",
       "height": 512.0,
       "width": 512.0,
-      "id": "Shark_Shark_DEFAULT_texture_1_diffuseMap",
+      "name": "Shark_Shark_DEFAULT_texture_1_diffuseMap",
       "format": "image/png",
       "file": "Shark_Shark_DEFAULT_texture_1_diffuseMap.png",
       "type": "image"
@@ -120,7 +120,7 @@
       "uuid": "f6809c98-fff5-49ec-9f57-f8f4f8f6b8f7",
       "height": 120.0,
       "width": 68.0,
-      "id": "DEFAULT.png",
+      "name": "DEFAULT.png",
       "format": "image/png",
       "file": "DEFAULT.png",
       "type": "image"
@@ -129,7 +129,7 @@
       "uuid": "3950d403-8b26-48f9-830f-2351fdd38deb",
       "height": 120.0,
       "width": 68.0,
-      "id": "Shark_cls.png",
+      "name": "Shark_cls.png",
       "format": "image/png",
       "file": "Shark_cls.png",
       "type": "image"

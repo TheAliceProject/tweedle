@@ -1,43 +1,32 @@
-enum SurfaceAppearance {
-{
-    BRICK(resource: "Ground/brick"),
-    BROWN_SAVANA_GRASS(resource: "Ground/brown_savana_grass"),
-    DARK_GRASS(resource: "Ground/dark_grass"),
-    DESERT(resource: "Ground/desert"),
-    DESERT_BROW(resource: "Ground/desert_brown"),
-    DIRT(resource: "Ground/dirt"),
-    DRY_GRASS(resource: "Ground/dry_grass"),
-    FOREST_FLOOR_BROWN(resource: "Ground/forest_floor_brown"),
-    FOREST_FLOOR_DARK(resource: "Ground/forest_floor_dark"),
-    FOREST_FLOOR_RED(resource: "Ground/forest_floor_red"),
-    GOLD_COINS(resource: "Ground/gold_coins"),
-    GRASS(resource: "Ground/grass"),
-    GREEN_SAVANA_GRASS(resource: "Ground/green_savana_grass"),
-    ICE(resource: "Ground/ice"),
-    JUNGLE(resource: "Ground/jungle"),
-    MARS(resource: "Ground/mars"),
-    MOON(resource: "Ground/moon"),
-    OCEAN(resource: "Ground/ocean"),
-    OCEAN_NIGHT(resource: "Ground/ocean_night"),
-    ROCKY_BROWN(resource: "Ground/rocky_brown"),
-    ROCKY_RED(resource: "Ground/rocky_red"),
-    ROCKY_SAND(resource: "Ground/rocky_sand"),
-    SAND(resource: "Ground/sand"),
-    SNOW(resource: "Ground/snow"),
-    SWAMP(resource: "Ground/swamp"),
-    SWAMP_POISON(resource: "Ground/swamp_poison"),
-    SWAMP_WATER(resource: "Ground/swamp_water"),
-    UNDERWATER(resource: "Ground/underwater"),
-    WATER(resource: "Ground/water"),
-    WOOD(resource: "Ground/wood");
-
-    @CompletelyHidden ImageSource imageSource;
-
-    SurfaceAppearance( TextString resource ) {
-        this.imageSource <- new ImageSource(resource: resource);
-    }
-
-    ImageSource getImageSource() {
-        return this.imageSource;
-    }
+class SurfaceAppearance {
+    static ImageSource BRICK <- new ImageSource(resource: "Ground/brick"),
+    static ImageSource BROWN_SAVANA_GRASS <- new ImageSource(resource: "Ground/brown_savana_grass"),
+    static ImageSource DARK_GRASS <- new ImageSource(resource: "Ground/dark_grass"),
+    static ImageSource DESERT <- new ImageSource(resource: "Ground/desert"),
+    static ImageSource DESERT_BROW <- new ImageSource(resource: "Ground/desert_brown"),
+    static ImageSource DIRT <- new ImageSource(resource: "Ground/dirt"),
+    static ImageSource DRY_GRASS <- new ImageSource(resource: "Ground/dry_grass"),
+    static ImageSource FOREST_FLOOR_BROWN <- new ImageSource(resource: "Ground/forest_floor_brown"),
+    static ImageSource FOREST_FLOOR_DARK <- new ImageSource(resource: "Ground/forest_floor_dark"),
+    static ImageSource FOREST_FLOOR_RED <- new ImageSource(resource: "Ground/forest_floor_red"),
+    static ImageSource GOLD_COINS <- new ImageSource(resource: "Ground/gold_coins"),
+    static ImageSource GRASS <- new ImageSource(resource: "Ground/grass"),
+    static ImageSource GREEN_SAVANA_GRASS <- new ImageSource(resource: "Ground/green_savana_grass"),
+    static ImageSource ICE <- new ImageSource(resource: "Ground/ice"),
+    static ImageSource JUNGLE <- new ImageSource(resource: "Ground/jungle"),
+    static ImageSource MARS <- new ImageSource(resource: "Ground/mars"),
+    static ImageSource MOON <- new ImageSource(resource: "Ground/moon"),
+    static ImageSource OCEAN <- new ImageSource(resource: "Ground/ocean"),
+    static ImageSource OCEAN_NIGHT <- new ImageSource(resource: "Ground/ocean_night"),
+    static ImageSource ROCKY_BROWN <- new ImageSource(resource: "Ground/rocky_brown"),
+    static ImageSource ROCKY_RED <- new ImageSource(resource: "Ground/rocky_red"),
+    static ImageSource ROCKY_SAND <- new ImageSource(resource: "Ground/rocky_sand"),
+    static ImageSource SAND <- new ImageSource(resource: "Ground/sand"),
+    static ImageSource SNOW <- new ImageSource(resource: "Ground/snow"),
+    static ImageSource SWAMP <- new ImageSource(resource: "Ground/swamp"),
+    static ImageSource SWAMP_POISON <- new ImageSource(resource: "Ground/swamp_poison"),
+    static ImageSource SWAMP_WATER <- new ImageSource(resource: "Ground/swamp_water"),
+    static ImageSource UNDERWATER <- new ImageSource(resource: "Ground/underwater"),
+    static ImageSource WATER <- new ImageSource(resource: "Ground/water"),
+    static ImageSource WOOD <- new ImageSource(resource: "Ground/wood");
 }

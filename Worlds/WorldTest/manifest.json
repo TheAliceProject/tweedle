@@ -14,56 +14,56 @@
   "metadata": {
     "formatVersion": "0.1",
     "identifier": {
-      "id": "970a310f-90a7-4d29-8380-5b2a742e3ee5",
+      "name": "WorldTest",
       "version": "1.0",
       "type": "World"
     }
   },
   "prerequisites": [
     {
-      "id": "970a310f-90a7-4d29-8380-5b2a742e3ee4",
+      "name": "SceneGraphLibrary",
       "version": "1.0",
       "type": "Library"
     }
   ],
   "resources": [
     {
-      "id": "Program",
+      "name": "Program",
       "format": "tweedle",
       "file": "src/Program.twe",
       "type": "Class"
     }, {
-      "id": "Scene",
+      "name": "Scene",
       "format": "tweedle",
       "file": "src/Scene.twe",
       "type": "Class"
     }, {
-      "id": "Box",
+      "name": "Box",
       "format": "tweedle",
       "file": "src/Box.twe",
       "type": "Class"
     }, {
-      "id": "DirectionalBox",
+      "name": "DirectionalBox",
       "format": "tweedle",
       "file": "src/DirectionalBox.twe",
       "type": "Class"
     }, {
-      "id": "TestAlien",
+      "name": "TestAlien",
       "format": "tweedle",
       "file": "src/TestAlien.twe",
       "type": "Class"
     },
     {
-      "id": "meanQueen",
+      "name": "meanQueen",
       "format": "png",
       "file": "resources/meanQueen.png",
-      "type": "Image"
+      "type": "image"
     },
     {
-      "id": "Alien",
+      "name": "Alien",
       "format": "json",
       "file": "resources/Alien/Alien.json",
-      "type": "Model"
+      "type": "model"
     }
   ]
 }

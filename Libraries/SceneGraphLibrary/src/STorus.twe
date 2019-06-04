@@ -21,10 +21,10 @@ class STorus extends SShape {
 
   void setInnerRadius(Number radius,
                  Duration duration <- Default.duration(),
-                 AnimationStyle style <- Default.animationStyle() ) {
+                 AnimationStyle animationStyle <- Default.animationStyle() ) {
 
     DecimalNumber minRadius <- $Math.min(a: radius, b: outerRadius.getValue());
-    this.innerRadius.animateValue( endValue: minRadius, duration: duration, animationStyle: style );
+    this.innerRadius.animateValue( endValue: minRadius, duration: duration, animationStyle: animationStyle );
   }
 
   DecimalNumber getOuterRadius() {
@@ -33,9 +33,9 @@ class STorus extends SShape {
 
   void setOuterRadius(Number radius,
                       Duration duration <- Default.duration(),
-                      AnimationStyle style <- Default.animationStyle() ) {
+                      AnimationStyle animationStyle <- Default.animationStyle() ) {
     DecimalNumber maxRadius <- $Math.max(a: radius, b: innerRadius.getValue());
-    this.outerRadius.animateValue( endValue: maxRadius, duration: duration, animationStyle: style );
+    this.outerRadius.animateValue( endValue: maxRadius, duration: duration, animationStyle: animationStyle );
   }
 
   @CompletelyHidden DimensionProperty innerRadius;

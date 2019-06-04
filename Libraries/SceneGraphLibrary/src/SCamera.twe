@@ -13,12 +13,12 @@ class SCamera extends SMovableTurnable {
 
   void moveAndOrientToAGoodVantagePointOf(SThing entity,
           Duration duration <- Default.duration(),
-          AnimationStyle style <- Default.animationStyle() ) {
+          AnimationStyle animationStyle <- Default.animationStyle() ) {
 
     Position pos <- new Position(x: 2, y: 4, z: -8);
     Orientation rot <- new Orientation(forward: new Direction(x: -pos.x, y: -pos.y, z: -pos.z), up: Direction.UP);
     VantagePoint end <- new VantagePoint(position: pos, orientation: rot);
 
-    this.localTransformation.animateValue(endValue: end, asSeenBy: entity, duration: duration, animationStyle: style);
+    this.localTransformation.animateValue(endValue: end, asSeenBy: entity, duration: duration, animationStyle: animationStyle);
   }
 }
