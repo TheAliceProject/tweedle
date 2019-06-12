@@ -24,6 +24,14 @@ class SJointedModel extends SModel {
         }
     }
 
+    @CompletelyHidden void setJointedModelResource(TextString resource) {
+        if (currentResource == resource) {
+            return;
+        }
+        // TODO translate more from java, JointedModelImp.setNewResource(), and reconsider use of setResource
+        setResource(resource: resource);
+    }
+
     SJoint getJoint(JointId jointId) {
         if (this.joints != null) {
             forEach(SJoint joint in this.joints) {
