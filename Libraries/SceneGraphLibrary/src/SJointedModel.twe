@@ -1,6 +1,5 @@
 class SJointedModel extends SModel {
     SJointedModel(TextString resource) {
-        $Debug.log(message: "Constructing SJointedModel without root joint. " .. resource);
         super(resource: resource);
     }
 
@@ -22,6 +21,14 @@ class SJointedModel extends SModel {
                 }
             }
         }
+    }
+
+    @CompletelyHidden void setJointedModelResource(TextString resource) {
+        if (currentResource == resource) {
+            return;
+        }
+        // TODO translate more from java, JointedModelImp.setNewResource(), and reconsider use of setResource
+        setResource(resource: resource);
     }
 
     SJoint getJoint(JointId jointId) {
