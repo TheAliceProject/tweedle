@@ -1,6 +1,5 @@
 class SJointedModel extends SModel {
     SJointedModel(TextString resource) {
-        $Debug.log(message: "Constructing SJointedModel without root joint. " .. resource);
         super(resource: resource);
     }
 
