@@ -2,4 +2,12 @@ class SProp extends SJointedModel {
   SProp(TextString resource) {
     super(resource: resource);
   }
+
+  SProp(TextString resource, JointId root) {
+    super(resource: resource, root: root);
+  }
+
+  SProp(TextString resource, JointId[] roots) {
+    super(resource: resource, roots: roots);
+  }
 }
