@@ -1,5 +1,9 @@
 class Slitherer extends SSlitherer models Slitherer {
   Slitherer(TextString resource) {
-    super(resource: resource);
+    super(resource: resource, tailArray: null);
+  }
+
+  Slitherer(TextString resource, JointId[] tailArray) {
+    super(resource: resource, tailArray: tailArray);
   }
 }

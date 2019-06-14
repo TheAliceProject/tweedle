@@ -2,4 +2,8 @@ class Aircraft extends Transport models Aircraft {
   Aircraft(TextString resource) {
     super(resource: resource);
   }
+
+  Aircraft(TextString resource, JointId root) {
+    super(resource: resource, root: root);
+  }
 }

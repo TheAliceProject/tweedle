@@ -1,17 +1,26 @@
 class Automobile extends Transport models Automobile {
   Automobile(TextString resource) {
-    super(resource: resource);
+    super(resource: resource, root:Automobile.ROOT);
   }
 
+  Automobile(TextString resource, JointId root) {
+    super(resource: resource, root: root);
+  }
+
+  @CompletelyHidden static JointId ROOT <- new JointId(name: "ROOT", parent: null );
+  static JointId BACK_WHEELS <- new JointId(name: "BACK_WHEELS", parent: Automobile.ROOT);
+  static JointId FRONT_RIGHT_WHEEL <- new JointId(name: "FRONT_RIGHT_WHEEL", parent: Automobile.ROOT);
+  static JointId FRONT_LEFT_WHEEL <- new JointId(name: "FRONT_LEFT_WHEEL", parent: Automobile.ROOT);
+
   SJoint getBackWheels() {
-    return this.getJoint(jointId: AutomobileResource.BACK_WHEELS);
+    return this.getJoint(jointId: Automobile.BACK_WHEELS);
   }
 
   SJoint getFrontRightWheel() {
-    return this.getJoint(jointId: AutomobileResource.FRONT_RIGHT_WHEEL);
+    return this.getJoint(jointId: Automobile.FRONT_RIGHT_WHEEL);
   }
 
   SJoint getFrontLeftWheel() {
-    return this.getJoint(jointId: AutomobileResource.FRONT_LEFT_WHEEL);
+    return this.getJoint(jointId: Automobile.FRONT_LEFT_WHEEL);
   }
 }

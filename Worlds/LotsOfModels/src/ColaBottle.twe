@@ -5,7 +5,10 @@ class ColaBottle extends Prop models ColaBottle {
 
     static TextString DEFAULT <- "ColaBottle/DEFAULT";
 
-    SJoint getCap() {
-        return this.getJoint(jointId: ColaBottleResource.CAP);
-    }
+  @CompletelyHidden static JointId ROOT <- new JointId(name: "ROOT", parent: null );
+  static JointId CAP <- new JointId(name: "CAP", parent: ColaBottle.ROOT);
+
+  SJoint getCap() {
+    return this.getJoint(jointId: ColaBottle.CAP);
+  }
 }
