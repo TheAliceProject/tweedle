@@ -1,5 +1,6 @@
 class SMovableTurnable extends STurnable {
   SMovableTurnable() {
+    super();
   }
 
   void move(MoveDirection direction, Number amount,

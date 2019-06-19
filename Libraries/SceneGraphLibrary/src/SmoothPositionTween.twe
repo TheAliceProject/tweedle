@@ -1,5 +1,5 @@
 class SmoothPositionTween extends PositionTween {
-  SmoothVantagePointTween(VantagePointProperty property, VantagePoint start, VantagePoint end, SThing asSeenBy) {
+  SmoothPositionTween(VantagePointProperty property, VantagePoint start, VantagePoint end, SThing asSeenBy) {
     super(property: property, start: start.position, end: end.position, asSeenBy: asSeenBy);
 
     startOrientation <- start.orientation;
@@ -25,7 +25,7 @@ class SmoothPositionTween extends PositionTween {
     zHermiteW <- s * endForward.z;
   }
 
-  Position calcuateSmoothedPosition(Portion portion) {
+  Position calculateSmoothedPosition(Portion portion) {
     DecimalNumber x <- VantagePoint.evaluateHermiteCubic(x:xHermiteX, y: xHermiteY, z: xHermiteZ, w: xHermiteW, t: portion);
     DecimalNumber y <- VantagePoint.evaluateHermiteCubic(x:yHermiteX, y: yHermiteY, z: yHermiteZ, w: yHermiteW, t: portion);
     DecimalNumber z <- VantagePoint.evaluateHermiteCubic(x:zHermiteX, y: zHermiteY, z: zHermiteZ, w: zHermiteW, t: portion);
@@ -33,7 +33,7 @@ class SmoothPositionTween extends PositionTween {
   }
 
   void interpolate(Portion portion) {
-    Position pos <- calcuateSmoothedPosition(portion: portion);
+    Position pos <- calculateSmoothedPosition(portion: portion);
     setPositionOnly(position: pos);
   }
 

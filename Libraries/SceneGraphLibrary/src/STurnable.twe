@@ -1,4 +1,7 @@
 class STurnable extends SThing {
+    STurnable() {
+        super();
+    }
 
     Boolean isFacing( SThing other ) {
         return other.getTranslation( asSeenBy: this ).z < 0.0;

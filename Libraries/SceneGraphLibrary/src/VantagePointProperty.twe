@@ -4,7 +4,7 @@ class VantagePointProperty extends Property {
     this.value <- value;
   }
 
-  Size getValue() {
+  VantagePoint getValue() {
     return this.value;
   }
 
