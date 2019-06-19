@@ -6,18 +6,18 @@ class PoliceCar extends Automobile models PoliceCar {
   static TextString POLICE_CAR <- "PoliceCar/POLICE_CAR";
 
   SJoint getBackLeftDoor() {
-    return this.getJoint(jointId: PoliceCarResource.BACK_LEFT_DOOR);
+    return this.getJoint(jointId: PoliceCar.BACK_LEFT_DOOR);
   }
 
   SJoint getFrontLeftDoor() {
-    return this.getJoint(jointId: PoliceCarResource.FRONT_LEFT_DOOR);
+    return this.getJoint(jointId: PoliceCar.FRONT_LEFT_DOOR);
   }
 
   SJoint getBackRightDoor() {
-    return this.getJoint(jointId: PoliceCarResource.BACK_RIGHT_DOOR);
+    return this.getJoint(jointId: PoliceCar.BACK_RIGHT_DOOR);
   }
 
   SJoint getFrontRightDoor() {
-    return this.getJoint(jointId: PoliceCarResource.FRONT_RIGHT_DOOR);
+    return this.getJoint(jointId: PoliceCar.FRONT_RIGHT_DOOR);
   }
 }
