@@ -8,7 +8,7 @@ class SmoothVantagePointTween extends SmoothPositionTween {
   }
 
   void interpolate(Portion portion) {
-    Position pos <- calcuateSmoothedPosition(portion: portion);
+    Position pos <- calculateSmoothedPosition(portion: portion);
     Orientation rot <- startOrientation.interpolatePortion(end: endOrientation, portion: portion);
 
     setValue(vantagePoint: new VantagePoint(position: pos, orientation: rot));
