@@ -12,6 +12,7 @@ class SJoint extends SMovableTurnable {
         $SceneGraph.createJointEntity(joint: this, id: id.getName(), model: model);
         this.defaultTransformation <- $SceneGraph.getLocalTransformation(thing: this);
         $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value:this.defaultTransformation);
+        this.localTransformation.setValue(value: defaultTransformation);
     }
 
     TextString getId() {
