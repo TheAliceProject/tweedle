@@ -5,6 +5,12 @@ class STextModel extends SModel {
       $SceneGraph.bindTextProperty(owner: this, property: this.text, value: this.text.getValue());
   }
 
+  STextModel() {
+    super(resource: $SceneGraph.TEXTMODEL);
+    this.text <- new TextProperty(owner: this, value: "");
+    $SceneGraph.bindTextProperty(owner: this, property: this.text, value: this.text.getValue());
+  }
+
   TextString getValue() {
     return this.text.getValue();
   }
