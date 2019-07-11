@@ -24,7 +24,7 @@ class Default {
   }
 
   static Angle verticalFOV() {
-    return new Angle(revolutions: 0.5 * $Math.RAD2REV);
+    return new Angle(revolutions: 0.5 * $Angle.RAD2REV);
   }
 
   static DecimalNumber nearClipPlane() {
