@@ -137,7 +137,7 @@ class STurnable extends SThing {
 
     @CompletelyHidden DecimalNumber differenceToEpsilon( DecimalNumber a, DecimalNumber b ) {
         DecimalNumber diff <- a - b;
-        if($Math.abs( value: diff ) < .01) {
+        if($DecimalNumber.abs( value: diff ) < .01) {
             return 0;
         }
         return diff;

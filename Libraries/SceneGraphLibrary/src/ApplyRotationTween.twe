@@ -8,7 +8,7 @@ class ApplyRotationTween extends PropertyTween {
     this.currentAngle <- 0;
   }
 
-  void setEndValue() { 
+  void setEndValue() {
     this.interpolate(portion: Portion.WHOLE);
   }
 
@@ -16,7 +16,7 @@ class ApplyRotationTween extends PropertyTween {
     DecimalNumber nextAngle <- portion.numberValue * endAngle.radians;
     DecimalNumber delta <- nextAngle - currentAngle;
     currentAngle <- nextAngle;
-    Orientation rotation <- new Orientation(axis: axis, angle: new Angle(revolutions: delta * $Math.RAD2REV));
+    Orientation rotation <- new Orientation(axis: axis, angle: new Angle(revolutions: delta * $Angle.RAD2REV));
     VantagePoint m <- new VantagePoint(orientation: rotation);
 
     this.property.applyTransformation(transformation: m, asSeenBy: asSeenBy);
