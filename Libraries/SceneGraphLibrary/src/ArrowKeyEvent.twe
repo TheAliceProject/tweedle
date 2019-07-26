@@ -1,17 +1,16 @@
 class ArrowKeyEvent extends AbstractKeyEvent {
+  ArrowKeyEvent(Key key) {
+    super(key: key);
+    direction <- ArrowKeyDirection.fromKey(key: key);
+  }
 
-	ArrowKeyDirection direction;
+  TurnDirection getTurnDirection() {
+    return this.direction.getTurnDirection();
+  }
 
-	ArrowKeyEvent( Key key ) {
-		super( key: key );
-		direction <- ArrowKeyDirection.fromKey(key: key);
-	}
-
-	TurnDirection getTurnDirection() {
-	  return this.direction.getTurnDirection();
-	}
-
-	MoveDirection getMoveDirection(MoveDirectionPlane plane) {
+  MoveDirection getMoveDirection(MoveDirectionPlane plane) {
     return direction.getMoveDirection(plane: plane);
   }
+
+  @CompletelyHidden ArrowKeyDirection direction;
 }
