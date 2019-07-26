@@ -1,0 +1,18 @@
+class MouseClickOnScreenEvent extends AbstractEvent {
+  MouseClickOnScreenEvent(Portion x, Portion y) {
+    super();
+    this.x <- x;
+    this.y <- y;
+  }
+
+  Portion getScreenDistanceFromLeft() {
+    return y;
+  }
+
+  Portion getScreenDistanceFromBottom() {
+    return x;
+  }
+
+  @CompletelyHidden Portion x;
+  @CompletelyHidden Portion y;
+}
