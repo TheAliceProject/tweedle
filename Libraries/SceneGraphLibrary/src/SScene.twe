@@ -82,13 +82,13 @@ class SScene extends SThing {
 
   void addMouseClickOnScreenListener(<MouseClickOnScreenEvent->void> listener,
                                      OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    eventManager.addClickOnScreenListener(scene: this, eventPolicy: overlappingEventPolicy, listener: listener);
+    eventManager.addClickOnScreenListener(scene: this, listener: listener, overlappingEventPolicy: overlappingEventPolicy);
   }
 
   void addMouseClickOnObjectListener(<MouseClickOnObjectEvent->void> listener,
                                      OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                      SThing[] setOfVisuals <- Default.clickableVisuals()) {
-    eventManager.addClickOnObjectListener(scene: this, eventPolicy: overlappingEventPolicy, listener: listener);
+    eventManager.addClickOnObjectListener(scene: this, listener: listener, overlappingEventPolicy: overlappingEventPolicy, setOfVisuals: setOfVisuals);
   }
 
   void addDefaultModelManipulation() {

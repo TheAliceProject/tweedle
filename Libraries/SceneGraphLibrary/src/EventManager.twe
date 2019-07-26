@@ -5,18 +5,18 @@ class EventManager {
   void initialize() {
   }
 
-  void addMouseClickOnScreenListener(SScene scene,
-                                     <MouseClickOnObjectEvent->void> listener,
-                                     OverlappingEventPolicy overlappingEventPolicy) {
+  void addClickOnScreenListener(SScene scene,
+                                <MouseClickOnObjectEvent->void> listener,
+                                OverlappingEventPolicy overlappingEventPolicy) {
     $Mouse.addClickOnScreenListener(scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: (Portion x, Portion y) -> {
       listener(new MouseClickOnScreenEvent(x: x, y: y));
     });
   }
 
-  void addMouseClickOnObjectListener(SScene scene,
-                                     <MouseClickOnObjectEvent->void> listener,
-                                     OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
-                                     SThing[] setOfVisuals <- Default.clickableVisuals()) {
+  void addClickOnObjectListener(SScene scene,
+                                <MouseClickOnObjectEvent->void> listener,
+                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                                SThing[] setOfVisuals <- Default.clickableVisuals()) {
     $Mouse.addClickOnObjectListener(scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: (Portion x, Portion y, SThing model) -> {
       forEach(SThing visual in setOfVisuals) {
         if (model == visual) {
