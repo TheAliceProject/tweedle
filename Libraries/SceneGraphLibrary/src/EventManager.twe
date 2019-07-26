@@ -1,0 +1,59 @@
+class EventManager {
+  EventManager() {
+  }
+
+  void initialize() {
+  }
+
+  void addMouseClickOnScreenListener(SScene scene,
+                                     <MouseClickOnObjectEvent->void> listener,
+                                     OverlappingEventPolicy overlappingEventPolicy) {
+    $Mouse.addClickOnScreenListener(scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: (Portion x, Portion y) -> {
+      listener(new MouseClickOnScreenEvent(x: x, y: y));
+    });
+  }
+
+  void addMouseClickOnObjectListener(SScene scene,
+                                     <MouseClickOnObjectEvent->void> listener,
+                                     OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                                     SThing[] setOfVisuals <- Default.clickableVisuals()) {
+    $Mouse.addClickOnObjectListener(scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: (Portion x, Portion y, SThing model) -> {
+      forEach(SThing visual in setOfVisuals) {
+        if (model == visual) {
+          listener(new MouseClickOnObjectEvent(x: x, y: y, model: model));
+        }
+      }
+    });
+  }
+
+  void addDefaultModelManipulation() {
+    $Mouse.addDragAdapter();
+  }
+
+  void addKeyPressListener(KeyPressListener listener,
+                           OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                           HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
+    $Keyboard.addKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
+  }
+
+  void addArrowKeyPressListener(ArrowKeyPressListener listener,
+                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                                HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
+
+    $Keyboard.addArrowKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
+  }
+
+  void addNumberKeyPressListener(NumberKeyPressListener listener,
+                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                                 HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
+    $Keyboard.addNumberKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
+  }
+
+  void addObjectMoverFor( SMovableTurnable thing ) {
+    $Keyboard.moveWithArrows( thing: thing, speed: 2.5 );
+  }
+
+  @CompletelyHidden void disconnectSystemListeners() {
+    //$System.disconnect(program: this);
+  }
+}

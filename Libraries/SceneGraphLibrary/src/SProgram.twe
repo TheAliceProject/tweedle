@@ -1,7 +1,7 @@
 class SProgram {
   SProgram() {}
 
-
+  @CompletelyHidden eventManager <- new EventManager();
   SScene activeScene <- null;
   DecimalNumber simulationSpeedFactor <- 1.0;
 
@@ -29,10 +29,11 @@ class SProgram {
   }
 
   void initializeInFrame(TextString[] args <- null) {
+    eventManager.initialize();
     //$SceneManager.createFrame();
   }
 
   @CompletelyHidden void disconnectSystemListeners() {
-    //$System.disconnect(program: this);
+    eventManager.disconnectSystemListeners();
   }
 }

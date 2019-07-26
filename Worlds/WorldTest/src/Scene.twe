@@ -13,10 +13,10 @@ class Scene extends SScene {
         textModel2.append(value: " X");
     });
 
-   //this.addMouseClickListener(overlappingEventPolicy: OverlappingEventPolicy.ENQUEUE, listener: (MouseEvent event)-> {
-   //     textModel2.move(direction: MoveDirection.UP, amount: 1.0, duration: new Duration(seconds: 1.0), animationStyle: AnimationStyle.BEGIN_AND_END_GENTLY);
-    //    textModel2.append(value: " X");
-    //});
+   this.addMouseClickOnObjectEventListener(overlappingEventPolicy: OverlappingEventPolicy.OVERLAP, setOfVisuals: new SModel[]{ sphere }, listener: (MouseClickOnObjectEvent event)-> {
+        textModel2.move(direction: MoveDirection.UP, amount: 0.5, duration: new Duration(seconds: 1.0), animationStyle: AnimationStyle.BEGIN_AND_END_GENTLY);
+        textModel2.append(value: " X");
+    });
   }
 
   void myFirstMethod() {
