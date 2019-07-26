@@ -6,7 +6,7 @@ class EventManager {
   }
 
   void addClickOnScreenListener(SScene scene,
-                                <MouseClickOnObjectEvent->void> listener,
+                                <MouseClickOnScreenEvent->void> listener,
                                 OverlappingEventPolicy overlappingEventPolicy) {
     $Mouse.addClickOnScreenListener(scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: (Portion x, Portion y) -> {
       listener(new MouseClickOnScreenEvent(x: x, y: y));
@@ -49,8 +49,8 @@ class EventManager {
     $Keyboard.addNumberKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
   }*/
 
-  void addObjectMoverFor( SMovableTurnable thing ) {
-    $Keyboard.moveWithArrows( thing: thing, speed: 2.5 );
+  void addObjectMoverFor(SMovableTurnable thing) {
+    $Keyboard.moveWithArrows(thing: thing, speed: 2.5);
   }
 
   @CompletelyHidden void disconnectSystemListeners() {
