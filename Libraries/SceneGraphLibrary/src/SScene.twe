@@ -94,24 +94,24 @@ class SScene extends SThing {
   void addDefaultModelManipulation() {
     eventManager.addDefaultModelManipulation();
   }
-
-  void addKeyPressListener(<MouseClickOnObjectEvent->void> listener,
+/*
+  void addKeyPressListener(<KeyEvent->void> listener,
                            OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                            HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
     eventManager.addKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
   }
 
-  void addArrowKeyPressListener(ArrowKeyPressListener listener,
+  void addArrowKeyPressListener(<ArrowKeyEvent->void> listener,
                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                 HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
     eventManager.addArrowKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
   }
 
-  void addNumberKeyPressListener(NumberKeyPressListener listener,
+  void addNumberKeyPressListener(<NumberKeyEvent->void> listener,
                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                  HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
     eventManager.addNumberKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
-  }
+  }*/
 
   void addObjectMoverFor(SMovableTurnable thing) {
     eventManager.moveWithArrows(thing: thing, speed: 2.5);
@@ -272,7 +272,7 @@ class SScene extends SThing {
   @CompletelyHidden PortionProperty globalBrightness <- new PortionProperty(owner: this, value: Portion.NONE);
 
   @CompletelyHidden SProgram program <- null;
-  @CompletelyHidden EventManager <- null;
+  @CompletelyHidden EventManager eventManager <- null;
   @CompletelyHidden WholeNumber activeCount <- 0;
 
 }

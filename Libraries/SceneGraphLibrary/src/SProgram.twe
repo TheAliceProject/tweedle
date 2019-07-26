@@ -1,7 +1,7 @@
 class SProgram {
   SProgram() {}
 
-  @CompletelyHidden eventManager <- new EventManager();
+  @CompletelyHidden EventManager eventManager <- new EventManager();
   SScene activeScene <- null;
   DecimalNumber simulationSpeedFactor <- 1.0;
 

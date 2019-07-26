@@ -30,24 +30,24 @@ class EventManager {
     $Mouse.addDragAdapter();
   }
 
-  void addKeyPressListener(KeyPressListener listener,
+/*  void addKeyPressListener(<KeyEvent->void> listener,
                            OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                            HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
     $Keyboard.addKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
   }
 
-  void addArrowKeyPressListener(ArrowKeyPressListener listener,
+  void addArrowKeyPressListener(<ArrowKeyEvent->void> listener,
                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                 HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
 
     $Keyboard.addArrowKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
   }
 
-  void addNumberKeyPressListener(NumberKeyPressListener listener,
+  void addNumberKeyPressListener(<NumberKeyEvent->void> listener,
                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                  HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
     $Keyboard.addNumberKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
-  }
+  }*/
 
   void addObjectMoverFor( SMovableTurnable thing ) {
     $Keyboard.moveWithArrows( thing: thing, speed: 2.5 );

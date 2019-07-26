@@ -52,6 +52,11 @@
       "file": "src/MoveDirection.twe",
       "type": "Enum"
     }, {
+      "name": "MoveDirectionPlane",
+      "format": "tweedle",
+      "file": "src/MoveDirectionPlane.twe",
+      "type": "Enum"
+    }, {
       "name": "PathStyle",
       "format": "tweedle",
       "file": "src/PathStyle.twe",
@@ -377,6 +382,11 @@
       "file": "src/JointIdTransformationPair.twe",
       "type": "Class"
     }, {
+      "name": "EventManager",
+      "format": "tweedle",
+      "file": "src/EventManager.twe",
+      "type": "Class"
+    }, {
       "name": "AbstractEvent",
       "format": "tweedle",
       "file": "src/AbstractEvent.twe",
@@ -392,10 +402,20 @@
       "file": "src/TimeEvent.twe",
       "type": "Class"
     }, {
-      "name": "MouseEvent",
+      "name": "MouseClickOnScreenEvent",
       "format": "tweedle",
-      "file": "src/MouseEvent.twe",
+      "file": "src/MouseClickOnScreenEvent.twe",
       "type": "Class"
+    }, {
+      "name": "MouseClickOnObjectEvent",
+      "format": "tweedle",
+      "file": "src/MouseClickOnObjectEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "HeldKeyPolicy",
+      "format": "tweedle",
+      "file": "src/HeldKeyPolicy.twe",
+      "type": "Enum"
     }, {
       "name": "OverlappingEventPolicy",
       "format": "tweedle",

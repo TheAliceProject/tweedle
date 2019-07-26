@@ -51,6 +51,7 @@ class Default {
     return new SThing[]{};
   }
 
-//  static HeldKeyPolicy heldKeyPolicy() {
-//  }
+  static HeldKeyPolicy heldKeyPolicy() {
+    return HeldKeyPolicy.FIRE_MULTIPLE;
+  }
 }
