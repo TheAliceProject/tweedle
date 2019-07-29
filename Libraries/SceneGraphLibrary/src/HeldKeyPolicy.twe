@@ -1,0 +1,5 @@
+enum HeldKeyPolicy {
+  FIRE_MULTIPLE,
+  FIRE_ONCE_ON_PRESS,
+  FIRE_ONCE_ON_RELEASE;
+}

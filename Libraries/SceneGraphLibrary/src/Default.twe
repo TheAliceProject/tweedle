@@ -47,6 +47,11 @@ class Default {
     return BubblePosition.AUTOMATIC;
   }
 
-//  static HeldKeyPolicy heldKeyPolicy() {
-//  }
+  static SThing[] clickableVisuals() {
+    return new SThing[]{};
+  }
+
+  static HeldKeyPolicy heldKeyPolicy() {
+    return HeldKeyPolicy.FIRE_MULTIPLE;
+  }
 }

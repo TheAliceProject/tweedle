@@ -52,6 +52,11 @@
       "file": "src/MoveDirection.twe",
       "type": "Enum"
     }, {
+      "name": "MoveDirectionPlane",
+      "format": "tweedle",
+      "file": "src/MoveDirectionPlane.twe",
+      "type": "Enum"
+    }, {
       "name": "PathStyle",
       "format": "tweedle",
       "file": "src/PathStyle.twe",
@@ -377,6 +382,11 @@
       "file": "src/JointIdTransformationPair.twe",
       "type": "Class"
     }, {
+      "name": "EventManager",
+      "format": "tweedle",
+      "file": "src/EventManager.twe",
+      "type": "Class"
+    }, {
       "name": "AbstractEvent",
       "format": "tweedle",
       "file": "src/AbstractEvent.twe",
@@ -387,15 +397,55 @@
       "file": "src/SceneActivationEvent.twe",
       "type": "Class"
     }, {
+      "name": "PointOfViewEvent",
+      "format": "tweedle",
+      "file": "src/PointOfViewEvent.twe",
+      "type": "Class"
+    }, {
       "name": "TimeEvent",
       "format": "tweedle",
       "file": "src/TimeEvent.twe",
       "type": "Class"
     }, {
-      "name": "MouseEvent",
+      "name": "MouseClickOnScreenEvent",
       "format": "tweedle",
-      "file": "src/MouseEvent.twe",
+      "file": "src/MouseClickOnScreenEvent.twe",
       "type": "Class"
+    }, {
+      "name": "MouseClickOnObjectEvent",
+      "format": "tweedle",
+      "file": "src/MouseClickOnObjectEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "Key",
+      "format": "tweedle",
+      "file": "src/Key.twe",
+      "type": "Class"
+    }, {
+      "name": "AbstractKeyEvent",
+      "format": "tweedle",
+      "file": "src/AbstractKeyEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "KeyEvent",
+      "format": "tweedle",
+      "file": "src/KeyEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "ArrowKeyDirection",
+      "format": "tweedle",
+      "file": "src/ArrowKeyDirection.twe",
+      "type": "Class"
+    }, {
+      "name": "ArrowKeyEvent",
+      "format": "tweedle",
+      "file": "src/ArrowKeyEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "HeldKeyPolicy",
+      "format": "tweedle",
+      "file": "src/HeldKeyPolicy.twe",
+      "type": "Enum"
     }, {
       "name": "OverlappingEventPolicy",
       "format": "tweedle",
