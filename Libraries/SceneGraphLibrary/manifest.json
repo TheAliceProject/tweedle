@@ -397,6 +397,11 @@
       "file": "src/SceneActivationEvent.twe",
       "type": "Class"
     }, {
+      "name": "PointOfViewEvent",
+      "format": "tweedle",
+      "file": "src/PointOfViewEvent.twe",
+      "type": "Class"
+    }, {
       "name": "TimeEvent",
       "format": "tweedle",
       "file": "src/TimeEvent.twe",
