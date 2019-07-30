@@ -180,29 +180,29 @@ class SModel extends SMovableTurnable
     }
 
     void say(TextString text,
-            TextStyle textStyleIn <- Default.textStyle(),
-            FontType fontTypeIn <- Default.fontType(),
-            BubblePosition bubblePositionIn <- Default.bubblePosition(),
-            Duration durationIn <- Default.duration(),
-            Color bubbleColorIn <- Color.WHITE,
-            Color outlineColorIn <- Color.WHITE,
-            Color textColorIn <- Color.BLACK,
-            DecimalNumber textScaleIn <- 1.0 ) {
-        $SceneGraph.say(entity: this, bubbleText: text, position: bubblePositionIn.getValue(), fontType: fontTypeIn.getValue(),
-          textStyle: textStyleIn.getValue(), textScale: textScaleIn, bubbleColor: bubbleColorIn, outlineColor: outlineColorIn, textColor: textColorIn, duration: durationIn);
+            TextStyle textStyle <- Default.textStyle(),
+            FontType fontType <- Default.fontType(),
+            BubblePosition bubblePosition <- Default.bubblePosition(),
+            Duration duration <- Default.duration(),
+            Color bubbleColor <- Color.WHITE,
+            Color outlineColor <- Color.WHITE,
+            Color textColor <- Color.BLACK,
+            DecimalNumber textScale <- 1.0 ) {
+        $SceneGraph.say(entity: this, bubbleText: text, bubblePosition: bubblePosition.getValue(), fontType: fontType.getValue(),
+          textStyle: textStyle.getValue(), textScale: textScale, bubbleColor: bubbleColor, outlineColor: outlineColor, textColor: textColor, duration: duration);
     }
 
     void think(TextString text,
-            TextStyle textStyleIn <- Default.textStyle(),
-            FontType fontTypeIn <- Default.fontType(),
-            BubblePosition bubblePositionIn <- Default.bubblePosition(),
-            Duration durationIn <- Default.duration(),
-            Color bubbleColorIn <- Color.WHITE,
-            Color outlineColorIn <- Color.WHITE,
-            Color textColorIn <- Color.BLACK,
-            DecimalNumber textScaleIn <- 1.0 ) {
-        $SceneGraph.think(entity: this, bubbleText: text, position: bubblePositionIn.getValue(), fontType: fontTypeIn.getValue(),
-          textStyle: textStyleIn.getValue(), textScale: textScaleIn, bubbleColor: bubbleColorIn, outlineColor: outlineColorIn, textColor: textColorIn, duration: durationIn);
+            TextStyle textStyle <- Default.textStyle(),
+            FontType fontType <- Default.fontType(),
+            BubblePosition bubblePosition <- Default.bubblePosition(),
+            Duration duration <- Default.duration(),
+            Color bubbleColor <- Color.WHITE,
+            Color outlineColor <- Color.WHITE,
+            Color textColor <- Color.BLACK,
+            DecimalNumber textScale <- 1.0 ) {
+        $SceneGraph.think(entity: this, bubbleText: text, bubblePosition: bubblePosition.getValue(), fontType: fontType.getValue(),
+          textStyle: textStyle.getValue(), textScale: textScale, bubbleColor: bubbleColor, outlineColor: outlineColor, textColor: textColor, duration: duration);
     }
 
     @CompletelyHidden Size defaultSize;
