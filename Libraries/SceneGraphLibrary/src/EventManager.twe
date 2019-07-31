@@ -18,9 +18,13 @@ class EventManager {
                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                 SThing[] setOfVisuals <- Default.clickableVisuals()) {
     $Mouse.addClickOnObjectListener(scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: (Portion x, Portion y, SThing model) -> {
-      forEach(SThing visual in setOfVisuals) {
-        if (model == visual) {
-          listener(new MouseClickOnObjectEvent(x: x, y: y, model: model));
+      if (setOfVisuals.length == 0) {
+        listener(new MouseClickOnObjectEvent(x: x, y: y, model: model));
+      } else {
+        forEach(SThing visual in setOfVisuals) {
+          if (model == visual) {
+            listener(new MouseClickOnObjectEvent(x: x, y: y, model: model));
+          }
         }
       }
     });
