@@ -36,7 +36,7 @@ class SThing {
   }
 
   void playAudio(TextString audioSource) {
-    $Resource.playAudio(source: this, sound: audioSource);
+    $SceneGraph.playAudio(entity: this, sound: audioSource);
   }
 
   Boolean isCollidingWith(SThing other) {
