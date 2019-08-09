@@ -1,15 +1,16 @@
 class AbstractKeyEvent extends AbstractEvent {
-  @CompletelyHidden Key key;
+  @CompletelyHidden WholeNumber key;
 
-   AbstractKeyEvent(Key key) {
-    this.key <- key;
+   AbstractKeyEvent(WholeNumber keyValue) {
+    this.key <- keyValue;
   }
 
   Key getKey() {
     return key;
   }
 
-  Boolean isKey(Key key) {
-    return this.key == key;
+  Boolean isKey(Key key){
+    return this.key == key.getValue();
   }
+
 }

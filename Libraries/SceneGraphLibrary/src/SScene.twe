@@ -101,13 +101,13 @@ class SScene extends SThing {
     eventManager.addKeyPressListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
   }
 
-/*
+
   void addArrowKeyPressListener(<ArrowKeyEvent->void> listener,
                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                 HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
     eventManager.addArrowKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
   }
-
+/*
   void addNumberKeyPressListener(<NumberKeyEvent->void> listener,
                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                  HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {

@@ -43,14 +43,16 @@ class EventManager {
     });
   }
 
-/*
-  void addArrowKeyPressListener(<ArrowKeyEvent->void> listener,
+
+  void addArrowKeyListener(<ArrowKeyEvent->void> listener,
                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                 HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
 
-    $Keyboard.addArrowKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
+    $Keyboard.addArrowKeyPressListener(overlappingEventPolicy: overlappingEventPolicy.getValue(), heldKeyPolicy: heldKeyPolicy.getValue(), listener: (WholeNumber keyValue) -> {
+                                                                  listener(new ArrowKeyEvent(keyValue: keyValue));
   }
 
+/*
   void addNumberKeyPressListener(<NumberKeyEvent->void> listener,
                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                  HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
