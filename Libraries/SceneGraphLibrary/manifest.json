@@ -420,7 +420,7 @@
       "name": "Key",
       "format": "tweedle",
       "file": "src/Key.twe",
-      "type": "Class"
+      "type": "Enum"
     }, {
       "name": "AbstractKeyEvent",
       "format": "tweedle",

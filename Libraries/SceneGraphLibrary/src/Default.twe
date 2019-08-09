@@ -52,6 +52,6 @@ class Default {
   }
 
   static HeldKeyPolicy heldKeyPolicy() {
-    return HeldKeyPolicy.FIRE_MULTIPLE;
+    return HeldKeyPolicy.FIRE_ONCE_ON_PRESS;
   }
 }

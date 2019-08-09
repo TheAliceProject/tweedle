@@ -34,12 +34,16 @@ class EventManager {
     $Mouse.addDragAdapter();
   }
 
-/*  void addKeyPressListener(<KeyEvent->void> listener,
+  void addKeyPressListener(<KeyEvent->void> listener,
                            OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                            HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
-    $Keyboard.addKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
+
+    $Keyboard.addKeyListener(overlappingEventPolicy: overlappingEventPolicy.getValue(), heldKeyPolicy: heldKeyPolicy.getValue(), listener: (Boolean isDigit, Boolean isLetter, WholeNumber keyValue) -> {
+                                listener(new KeyEvent(isDigit: isDigit, isLetter: isLetter, keyValue: keyValue));
+    });
   }
 
+/*
   void addArrowKeyPressListener(<ArrowKeyEvent->void> listener,
                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                 HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
@@ -51,11 +55,12 @@ class EventManager {
                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                  HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
     $Keyboard.addNumberKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
-  }*/
+  }
 
   void addObjectMoverFor(SMovableTurnable thing) {
     $Keyboard.moveWithArrows(thing: thing, speed: 2.5);
   }
+*/
 
   @CompletelyHidden void disconnectSystemListeners() {
     //$System.disconnect(program: this);
