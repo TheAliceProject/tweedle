@@ -442,6 +442,11 @@
       "file": "src/ArrowKeyEvent.twe",
       "type": "Class"
     }, {
+      "name": "NumberKeyEvent",
+      "format": "tweedle",
+      "file": "src/NumberKeyEvent.twe",
+      "type": "Class"
+    }, {
       "name": "HeldKeyPolicy",
       "format": "tweedle",
       "file": "src/HeldKeyPolicy.twe",

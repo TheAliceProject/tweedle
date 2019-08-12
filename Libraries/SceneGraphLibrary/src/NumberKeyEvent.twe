@@ -1,0 +1,33 @@
+class NumberKeyEvent extends AbstractKeyEvent {
+  NumberKeyEvent(WholeNumber keyValue) {
+    super(keyValue: keyValue);
+
+    if(keyValue == Key.DIGIT_0.getValue() || keyValue == Key.NUMPAD0.getValue()) {
+      keyNumber <- 0;
+    } if(keyValue == Key.DIGIT_1.getValue() || keyValue == Key.NUMPAD1.getValue()) {
+      keyNumber <- 1;
+    } if(keyValue == Key.DIGIT_2.getValue() || keyValue == Key.NUMPAD2.getValue()) {
+      keyNumber <- 2;
+    } if(keyValue == Key.DIGIT_3.getValue() || keyValue == Key.NUMPAD3.getValue()) {
+      keyNumber <- 3;
+    } if(keyValue == Key.DIGIT_4.getValue() || keyValue == Key.NUMPAD4.getValue()) {
+      keyNumber <- 4;
+    } if(keyValue == Key.DIGIT_5.getValue() || keyValue == Key.NUMPAD5.getValue()) {
+      keyNumber <- 5;
+    } if(keyValue == Key.DIGIT_6.getValue() || keyValue == Key.NUMPAD6.getValue()) {
+      keyNumber <- 6;
+    } if(keyValue == Key.DIGIT_7.getValue() || keyValue == Key.NUMPAD7.getValue()) {
+      keyNumber <- 7;
+    } if(keyValue == Key.DIGIT_8.getValue() || keyValue == Key.NUMPAD8.getValue()) {
+      keyNumber <- 8;
+    } if(keyValue == Key.DIGIT_9.getValue() || keyValue == Key.NUMPAD9.getValue()) {
+      keyNumber <- 9;
+    }
+  }
+
+  WholeNumber getNumber() {
+    return this.keyNumber;
+  }
+
+  @CompletelyHidden WholeNumber keyNumber;
+}
