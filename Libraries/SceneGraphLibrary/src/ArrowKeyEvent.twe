@@ -2,20 +2,7 @@ class ArrowKeyEvent extends AbstractKeyEvent {
   ArrowKeyEvent(WholeNumber keyValue) {
     super(keyValue: keyValue);
 
-    if(keyValue == Key.A.getValue() || keyValue == Key.LEFT.getValue()) {
-      actualKey <- Key.LEFT;
-    }
-    if(keyValue == Key.S.getValue() || keyValue == Key.DOWN.getValue()) {
-      actualKey <- Key.DOWN;
-    }
-    if(keyValue == Key.W.getValue() || keyValue == Key.UP.getValue()) {
-      actualKey <- Key.UP;
-    }
-    if(keyValue == Key.D.getValue() || keyValue == Key.RIGHT.getValue()) {
-      actualKey <- Key.RIGHT;
-    }
-
-    direction <- ArrowKeyDirection.fromKey(key: actualKey);
+    direction <- ArrowKeyDirection.fromKey(key: key);
   }
 
   TurnDirection getTurnDirection() {
@@ -27,5 +14,4 @@ class ArrowKeyEvent extends AbstractKeyEvent {
   }
 
   @CompletelyHidden ArrowKeyDirection direction;
-  @CompletelyHidden Key actualKey;
 }

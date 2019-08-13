@@ -38,8 +38,8 @@ class EventManager {
                            OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                            HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
 
-    $Keyboard.addKeyListener(overlappingEventPolicy: overlappingEventPolicy.getValue(), heldKeyPolicy: heldKeyPolicy.getValue(), listener: (Boolean isDigit, Boolean isLetter, WholeNumber keyValue) -> {
-                                listener(new KeyEvent(isDigit: isDigit, isLetter: isLetter, keyValue: keyValue));
+    $Keyboard.addKeyListener(overlappingEventPolicy: overlappingEventPolicy.getValue(), heldKeyPolicy: heldKeyPolicy.getValue(), listener: (WholeNumber keyValue) -> {
+                                listener(new KeyEvent(keyValue: keyValue));
     });
   }
 
@@ -62,11 +62,9 @@ class EventManager {
     });
   }
 
-/*
-  void addObjectMoverFor(SMovableTurnable thing) {
+  void moveWithArrows(SMovableTurnable thing) {
     $Keyboard.moveWithArrows(thing: thing, speed: 2.5);
   }
-*/
 
   @CompletelyHidden void disconnectSystemListeners() {
     //$System.disconnect(program: this);

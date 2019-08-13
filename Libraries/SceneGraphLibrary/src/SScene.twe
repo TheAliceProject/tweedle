@@ -115,7 +115,7 @@ class SScene extends SThing {
   }
 
   void addObjectMoverFor(SMovableTurnable thing) {
-    eventManager.moveWithArrows(thing: thing, speed: 2.5);
+    eventManager.moveWithArrows(thing: thing);
   }
 
 /*
