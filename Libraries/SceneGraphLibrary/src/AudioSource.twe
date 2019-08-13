@@ -1,0 +1,16 @@
+class AudioSource {
+  AudioSource(TextString audioResource,
+                DecimalNumber volume <- Default.volume(),
+                DecimalNumber startTime <- Default.startTime(),
+                DecimalNumber stopTime <- Default.stopTime()) {
+    this.audioResource <- audioResource;
+    this.volume <- volume;
+    this.startTime <- startTime;
+    this.stopTime <- stopTime;
+  }
+
+  @CompletelyHidden TextString audioResource;
+  @CompletelyHidden DecimalNumber volume;
+  @CompletelyHidden DecimalNumber startTime;
+  @CompletelyHidden DecimalNumber stopTime;
+}
