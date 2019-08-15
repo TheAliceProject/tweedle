@@ -27,6 +27,19 @@ class Default {
     return new Angle(revolutions: 0.5 * $Angle.RAD2REV);
   }
 
+  static DecimalNumber volume(){
+    return 1.0;
+  }
+
+  static DecimalNumber startTime(){
+    return 0.0;
+  }
+
+  static DecimalNumber stopTime(){
+    // Converted to audioResource.Length in player if < 0
+    return -1.0;
+  }
+
   static DecimalNumber nearClipPlane() {
     return 0.125;
   }

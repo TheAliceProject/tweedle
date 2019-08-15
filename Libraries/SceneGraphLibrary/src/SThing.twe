@@ -35,8 +35,8 @@ class SThing {
     $Clock.delay(duration: duration);
   }
 
-  void playAudio(TextString audioSource) {
-    $Resource.playAudio(source: this, sound: audioSource);
+  void playAudio(AudioSource audioSource) {
+    $SceneGraph.playAudio(entity: this, sound: audioSource.audioResource, volume: audioSource.volume, startTime: audioSource.startTime, stopTime: audioSource.stopTime );
   }
 
   Boolean isCollidingWith(SThing other) {
