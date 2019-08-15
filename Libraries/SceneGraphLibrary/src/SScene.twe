@@ -118,19 +118,19 @@ class SScene extends SThing {
     eventManager.moveWithArrows(thing: thing);
   }
 
+  void addCollisionStartListener(<InteractionEvent->void> listener, SThing[] setA, SThing[] setB,
+                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+    eventManager.addCollisionStartListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
+  }
+
+   void addCollisionEndListener(<InteractionEvent->void> listener, SThing[] setA, SThing[] setB,
+                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+     eventManager.addCollisionEndListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
+   }
+
 /*
   void addPointOfViewChangeListener(PointOfViewChangeListener listener, SThing[] set) {
     $SceneGraph.addTransformationListener(listener: listener, targets: set);
-  }
-
-  void addCollisionStartListener(CollisionStartListener listener, SThing[] setA, SThing[] setB,
-                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addCollisionListener(listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy);
-  }
-
-  void addCollisionEndListener(CollisionEndListener listener, SThing[] setA, SThing[] setB,
-                               OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addCollisionListener(listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy);
   }
 
   void addProximityEnterListener(ProximityEnterListener listener, SThing[] setA, SThing[] setB, Number distance,

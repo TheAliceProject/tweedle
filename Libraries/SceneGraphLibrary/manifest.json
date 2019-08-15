@@ -452,6 +452,11 @@
       "file": "src/AudioSource.twe",
       "type": "Class"
     }, {
+      "name": "InteractionEvent",
+      "format": "tweedle",
+      "file": "src/InteractionEvent.twe",
+      "type": "Class"
+    }, {
       "name": "HeldKeyPolicy",
       "format": "tweedle",
       "file": "src/HeldKeyPolicy.twe",
