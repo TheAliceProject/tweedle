@@ -417,6 +417,11 @@
       "file": "src/MouseClickOnObjectEvent.twe",
       "type": "Class"
     }, {
+      "name": "NumberKeyEvent",
+      "format": "tweedle",
+      "file": "src/NumberKeyEvent.twe",
+      "type": "Class"
+    }, {
       "name": "Key",
       "format": "tweedle",
       "file": "src/Key.twe",
@@ -440,11 +445,6 @@
       "name": "ArrowKeyEvent",
       "format": "tweedle",
       "file": "src/ArrowKeyEvent.twe",
-      "type": "Class"
-    }, {
-      "name": "NumberKeyEvent",
-      "format": "tweedle",
-      "file": "src/NumberKeyEvent.twe",
       "type": "Class"
     }, {
       "name": "HeldKeyPolicy",
