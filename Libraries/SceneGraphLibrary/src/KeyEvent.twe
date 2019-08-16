@@ -1,13 +1,14 @@
 class KeyEvent extends AbstractKeyEvent {
-  KeyEvent(Key key) {
-    super(key: key);
+  KeyEvent(WholeNumber keyValue) {
+    super(keyValue: keyValue);
   }
 
-  Boolean isLetter() {
-    return key.isLetter();
-  }
+    Boolean isLetter() {
+      return key.isLetter;
+    }
 
-  Boolean isDigit() {
-    return key.isDigit();
-  }
+    Boolean isDigit() {
+      return key.isDigit;
+    }
+
 }

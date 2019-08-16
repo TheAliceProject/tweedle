@@ -417,10 +417,15 @@
       "file": "src/MouseClickOnObjectEvent.twe",
       "type": "Class"
     }, {
+      "name": "NumberKeyEvent",
+      "format": "tweedle",
+      "file": "src/NumberKeyEvent.twe",
+      "type": "Class"
+    }, {
       "name": "Key",
       "format": "tweedle",
       "file": "src/Key.twe",
-      "type": "Class"
+      "type": "Enum"
     }, {
       "name": "AbstractKeyEvent",
       "format": "tweedle",

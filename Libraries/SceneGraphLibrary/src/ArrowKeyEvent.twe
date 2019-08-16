@@ -1,6 +1,7 @@
 class ArrowKeyEvent extends AbstractKeyEvent {
-  ArrowKeyEvent(Key key) {
-    super(key: key);
+  ArrowKeyEvent(WholeNumber keyValue) {
+    super(keyValue: keyValue);
+
     direction <- ArrowKeyDirection.fromKey(key: key);
   }
 

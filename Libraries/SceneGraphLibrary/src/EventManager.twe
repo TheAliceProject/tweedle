@@ -34,26 +34,35 @@ class EventManager {
     $Mouse.addDragAdapter();
   }
 
-/*  void addKeyPressListener(<KeyEvent->void> listener,
+  void addKeyPressListener(<KeyEvent->void> listener,
                            OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                            HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
-    $Keyboard.addKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
+
+    $Keyboard.addKeyListener(overlappingEventPolicy: overlappingEventPolicy.getValue(), heldKeyPolicy: heldKeyPolicy.getValue(), listener: (WholeNumber keyValue) -> {
+                                listener(new KeyEvent(keyValue: keyValue));
+    });
   }
 
-  void addArrowKeyPressListener(<ArrowKeyEvent->void> listener,
+
+  void addArrowKeyListener(<ArrowKeyEvent->void> listener,
                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                 HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
 
-    $Keyboard.addArrowKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
+    $Keyboard.addArrowKeyPressListener(overlappingEventPolicy: overlappingEventPolicy.getValue(), heldKeyPolicy: heldKeyPolicy.getValue(), listener: (WholeNumber keyValue) -> {
+                                                                  listener(new ArrowKeyEvent(keyValue: keyValue));
+    });
   }
 
-  void addNumberKeyPressListener(<NumberKeyEvent->void> listener,
+
+  void addNumberKeyListener(<NumberKeyEvent->void> listener,
                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
                                  HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
-    $Keyboard.addNumberKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
-  }*/
+    $Keyboard.addNumberKeyPressListener(overlappingEventPolicy: overlappingEventPolicy.getValue(), heldKeyPolicy: heldKeyPolicy.getValue(), listener: (WholeNumber keyValue) -> {
+                                                                   listener(new NumberKeyEvent(keyValue: keyValue));
+    });
+  }
 
-  void addObjectMoverFor(SMovableTurnable thing) {
+  void moveWithArrows(SMovableTurnable thing) {
     $Keyboard.moveWithArrows(thing: thing, speed: 2.5);
   }
 

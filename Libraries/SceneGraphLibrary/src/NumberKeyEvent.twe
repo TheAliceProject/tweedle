@@ -1,0 +1,33 @@
+class NumberKeyEvent extends AbstractKeyEvent {
+  NumberKeyEvent(WholeNumber keyValue) {
+    super(keyValue: keyValue);
+
+    if(key == Key.DIGIT_0 || key == Key.NUMPAD0) {
+      keyNumber <- 0;
+    } if(key == Key.DIGIT_1 || key == Key.NUMPAD1) {
+      keyNumber <- 1;
+    } if(key == Key.DIGIT_2 || key == Key.NUMPAD2) {
+      keyNumber <- 2;
+    } if(key == Key.DIGIT_3 || key == Key.NUMPAD3) {
+      keyNumber <- 3;
+    } if(key == Key.DIGIT_4 || key == Key.NUMPAD4) {
+      keyNumber <- 4;
+    } if(key == Key.DIGIT_5 || key == Key.NUMPAD5) {
+      keyNumber <- 5;
+    } if(key == Key.DIGIT_6 || key == Key.NUMPAD6) {
+      keyNumber <- 6;
+    } if(key == Key.DIGIT_7 || key == Key.NUMPAD7) {
+      keyNumber <- 7;
+    } if(key == Key.DIGIT_8 || key == Key.NUMPAD8) {
+      keyNumber <- 8;
+    } if(key == Key.DIGIT_9 || key == Key.NUMPAD9) {
+      keyNumber <- 9;
+    }
+  }
+
+  WholeNumber getNumber() {
+    return this.keyNumber;
+  }
+
+  @CompletelyHidden WholeNumber keyNumber;
+}
