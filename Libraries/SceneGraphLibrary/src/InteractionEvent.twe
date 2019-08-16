@@ -5,6 +5,11 @@ class InteractionEvent extends AbstractEvent {
     this.thingFromSetB <- thingFromSetB;
   }
 
+  InteractionEvent(SModel modelInteracted) {
+    super();
+    this.model <- modelInteracted;
+  }
+
   SThing getSThingFromSetA() {
     return thingFromSetA;
   }
@@ -13,6 +18,11 @@ class InteractionEvent extends AbstractEvent {
     return thingFromSetB;
   }
 
+  SModel getModel(){
+    return model;
+  }
+
+  @CompletelyHidden SModel model;
   @CompletelyHidden SThing thingFromSetA;
   @CompletelyHidden SThing thingFromSetB;
 }

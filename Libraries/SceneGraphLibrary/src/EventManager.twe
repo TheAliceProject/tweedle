@@ -84,6 +84,26 @@ class EventManager {
                                                    });
   }
 
+  void addViewEnterListener(<InteractionEvent->void> listener,
+                                    SModel[] set,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+            $Interaction.addViewEnterListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                                set: set,
+                                                listener: (SModel model) -> {
+                                                    listener(new InteractionEvent(modelInteracted: model));
+                                                    });
+  }
+
+  void addViewExitListener(<InteractionEvent->void> listener,
+                                    SModel[] set,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+            $Interaction.addViewExitListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                                set: set,
+                                                listener: (SModel model) -> {
+                                                    listener(new InteractionEvent(modelInteracted: model));
+                                                    });
+  }
+
   void moveWithArrows(SMovableTurnable thing) {
     $Keyboard.moveWithArrows(thing: thing, speed: 2.5);
   }

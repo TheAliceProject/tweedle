@@ -128,6 +128,17 @@ class SScene extends SThing {
      eventManager.addCollisionEndListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
    }
 
+     // These next four could one day move to the camera for which they are meaningful
+     void addViewEnterListener(<InteractionEvent->void> listener, SModel[] set,
+                               OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addViewEnterListener(listener: listener, set: set, overlappingEventPolicy: overlappingEventPolicy);
+     }
+
+     void addViewExitListener(<InteractionEvent->void> listener, SModel[] set,
+                              OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addViewExitListener(listener: listener, set: set, overlappingEventPolicy: overlappingEventPolicy);
+     }
+
 /*
   void addPointOfViewChangeListener(PointOfViewChangeListener listener, SThing[] set) {
     $SceneGraph.addTransformationListener(listener: listener, targets: set);
@@ -141,17 +152,6 @@ class SScene extends SThing {
   void addProximityExitListener(ProximityExitListener listener, SThing[] setA, SThing[] setB, Number distance,
                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
     $SceneGraph.addProximityEventListener(listener: listener, a: setA, b: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
-  }
-
-  // These next four could one day move to the camera for which they are meaningful
-  void addViewEnterListener(ViewEnterListener listener, SModel[] set,
-                            OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addComesIntoViewEventListener(listener: listener, targets: set, overlappingEventPolicy: overlappingEventPolicy);
-  }
-
-  void addViewExitListener(ViewExitListener listener, SModel[] set,
-                           OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addLeavesViewEventListener(listener: listener, targets: set, overlappingEventPolicy: overlappingEventPolicy);
   }
 
   void addOcclusionStartListener(OcclusionStartListener listener, SModel[] setA, SModel[] setB,
