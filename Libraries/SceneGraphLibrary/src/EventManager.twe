@@ -104,6 +104,32 @@ class EventManager {
                                                     });
   }
 
+  void addProximityEnterListener(<InteractionEvent->void> listener,
+                                    SThing[] setA,
+                                    SThing[] setB,
+                                    DecimalNumber distance,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+            $Interaction.addProximityEnterListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                            a: setA, b: setB,
+                                            distance: distance,
+                                            listener: (SThing thingFromSetA, SThing thingFromSetB) -> {
+                                                   listener(new InteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
+                                                   });
+  }
+
+  void addProximityExitListener(<InteractionEvent->void> listener,
+                                    SThing[] setA,
+                                    SThing[] setB,
+                                    DecimalNumber distance,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+            $Interaction.addProximityExitListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                            a: setA, b: setB,
+                                            distance: distance,
+                                            listener: (SThing thingFromSetA, SThing thingFromSetB) -> {
+                                                   listener(new InteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
+                                                   });
+  }
+
   void moveWithArrows(SMovableTurnable thing) {
     $Keyboard.moveWithArrows(thing: thing, speed: 2.5);
   }

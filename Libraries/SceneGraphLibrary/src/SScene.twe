@@ -139,19 +139,19 @@ class SScene extends SThing {
        eventManager.addViewExitListener(listener: listener, set: set, overlappingEventPolicy: overlappingEventPolicy);
      }
 
+     void addProximityEnterListener(<InteractionEvent->void> listener, SThing[] setA, SThing[] setB, DecimalNumber distance,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addProximityEnterListener(listener: listener, setA: setA, setB: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
+     }
+
+     void addProximityExitListener(<InteractionEvent->void> listener, SThing[] setA, SThing[] setB, DecimalNumber distance,
+                                   OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addProximityExitListener(listener: listener, setA: setA, setB: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
+     }
+
 /*
   void addPointOfViewChangeListener(PointOfViewChangeListener listener, SThing[] set) {
     $SceneGraph.addTransformationListener(listener: listener, targets: set);
-  }
-
-  void addProximityEnterListener(ProximityEnterListener listener, SThing[] setA, SThing[] setB, Number distance,
-                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addProximityEventListener(listener: listener, a: setA, b: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
-  }
-
-  void addProximityExitListener(ProximityExitListener listener, SThing[] setA, SThing[] setB, Number distance,
-                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addProximityEventListener(listener: listener, a: setA, b: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
   }
 
   void addOcclusionStartListener(OcclusionStartListener listener, SModel[] setA, SModel[] setB,
