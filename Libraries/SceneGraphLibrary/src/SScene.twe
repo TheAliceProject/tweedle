@@ -149,21 +149,19 @@ class SScene extends SThing {
        eventManager.addProximityExitListener(listener: listener, setA: setA, setB: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
      }
 
-/*
-  void addPointOfViewChangeListener(PointOfViewChangeListener listener, SThing[] set) {
-    $SceneGraph.addTransformationListener(listener: listener, targets: set);
-  }
+     void addPointOfViewChangeListener(<InteractionEvent->void> listener, SThing[] set) {
+       eventManager.addPointOfViewChangeListener(listener: listener, targets: set);
+     }
 
-  void addOcclusionStartListener(OcclusionStartListener listener, SModel[] setA, SModel[] setB,
-                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addOcclusionEventListener(listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy);
-  }
+     void addOcclusionStartListener(<InteractionEvent->void> listener, SModel[] setA, SModel[] setB,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addOcclusionStartListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
+     }
 
-  void addOcclusionEndListener(OcclusionEndListener listener, SModel[] setA, SModel[] setB,
-                               OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addOcclusionEventListener(listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy);
-  }
-*/
+     void addOcclusionEndListener(<InteractionEvent->void> listener, SModel[] setA, SModel[] setB,
+                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addOcclusionEndListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
+     }
 
   @CompletelyHidden void activate(SProgram program) {
     this.activeCount <- this.activeCount + 1;

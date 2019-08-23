@@ -5,11 +5,23 @@ class InteractionEvent extends AbstractEvent {
     this.thingFromSetB <- thingFromSetB;
   }
 
+  InteractionEvent(SThing entity) {
+    super();
+    this.thingFromSetA <- entity;
+  }
+
+  InteractionEvent(SModel foregroundModel, SModel backgroundModel) {
+    super();
+    this.model <- foregroundModel;
+    this.model2 <- backgroundModel;
+  }
+
   InteractionEvent(SModel modelInteracted) {
     super();
     this.model <- modelInteracted;
   }
 
+  // For proximity and collision events
   SThing getSThingFromSetA() {
     return thingFromSetA;
   }
@@ -18,11 +30,25 @@ class InteractionEvent extends AbstractEvent {
     return thingFromSetB;
   }
 
+  // For view entered / exit listener
   SModel getModel(){
     return model;
   }
 
+  SModel getForegroundModel(){
+    return model;
+  }
+
+  SModel getBackgroundModel(){
+    return model2;
+  }
+  // For point of view change listener
+  SThing getEntity(){
+    return thingFromSetA;
+  }
+
   @CompletelyHidden SModel model;
+  @CompletelyHidden SModel model2;
   @CompletelyHidden SThing thingFromSetA;
   @CompletelyHidden SThing thingFromSetB;
 }

@@ -130,6 +130,35 @@ class EventManager {
                                                    });
   }
 
+  void addPointOfViewChangeListener(<InteractionEvent->void> listener, SThing[] targets) {
+            $Interaction.addPointOfViewChangeListener(targets: targets,
+                                            listener: (SThing thingThatMoved) -> {
+                                                   listener(new InteractionEvent(entity: thingThatMoved));
+                                                   });
+  }
+
+  void addOcclusionStartListener(<InteractionEvent->void> listener,
+                                  SModel[] setA,
+                                  SModel[] setB,
+                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+          $Interaction.addOcclusionStartListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                          a: setA, b: setB,
+                                          listener: (SModel thingFromSetA, SModel thingFromSetB) -> {
+                                                 listener(new InteractionEvent(foregroundModel: thingFromSetA, backgroundModel: thingFromSetB));
+                                                 });
+  }
+
+  void addOcclusionEndListener(<InteractionEvent->void> listener,
+                                  SModel[] setA,
+                                  SModel[] setB,
+                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+          $Interaction.addOcclusionEndListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                          a: setA, b: setB,
+                                          listener: (SModel thingFromSetA, SModel thingFromSetB) -> {
+                                                 listener(new InteractionEvent(foregroundModel: thingFromSetA, backgroundModel: thingFromSetB));
+                                                 });
+  }
+
   void moveWithArrows(SMovableTurnable thing) {
     $Keyboard.moveWithArrows(thing: thing, speed: 2.5);
   }
