@@ -18,5 +18,5 @@ class SMarker extends SMovableTurnable {
     this.color <- color;
   }
 
-  @CompletelyHidden Color color = Color.WHITE;
+  @CompletelyHidden Color color <- Color.WHITE;
 }

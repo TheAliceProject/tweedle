@@ -27,7 +27,7 @@ class SModel extends SMovableTurnable
         return this.size.getValue();
     }
 
-    void setSize(Size size, Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
+    void setSize(Size size, Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain dimensions without values
         DecimalNumber w <- size.width;
@@ -53,7 +53,7 @@ class SModel extends SMovableTurnable
         return this.getSize().width;
     }
 
-    void setWidth(DecimalNumber width, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
+    void setWidth(DecimalNumber width, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no width
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.width)) {
@@ -67,7 +67,7 @@ class SModel extends SMovableTurnable
         return this.getSize().height;
     }
 
-    void setHeight(DecimalNumber height, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
+    void setHeight(DecimalNumber height, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no height
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.height)) {
@@ -81,7 +81,7 @@ class SModel extends SMovableTurnable
         return this.getSize().depth;
     }
 
-    void setDepth(DecimalNumber depth, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
+    void setDepth(DecimalNumber depth, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no depth
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.depth)) {
@@ -137,7 +137,7 @@ class SModel extends SMovableTurnable
         return this.paint.getValue();
     }
 
-    void setPaint(Paint paint, Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
+    void setPaint(Paint paint, Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
     {
         this.paint.animateValue(endValue: paint, duration: duration, animationStyle: animationStyle);
     }

@@ -21,6 +21,9 @@ class SBillboard extends SModel {
   void setBackPaint(Paint paint,
                     Duration duration <- Default.duration(),
                     AnimationStyle animationStyle <- Default.animationStyle() ) {
+    if (paint == null) {
+      return;
+    }
     if (paint.isImage) {
       this.updateAspectRatio(frontPaint: getPaint(), backPaint: paint);
     }
