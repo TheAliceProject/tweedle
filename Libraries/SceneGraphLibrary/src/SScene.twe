@@ -118,52 +118,50 @@ class SScene extends SThing {
     eventManager.moveWithArrows(thing: thing);
   }
 
-/*
-  void addPointOfViewChangeListener(PointOfViewChangeListener listener, SThing[] set) {
-    $SceneGraph.addTransformationListener(listener: listener, targets: set);
-  }
-
-  void addCollisionStartListener(CollisionStartListener listener, SThing[] setA, SThing[] setB,
+  void addCollisionStartListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB,
                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addCollisionListener(listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy);
+    eventManager.addCollisionStartListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
   }
 
-  void addCollisionEndListener(CollisionEndListener listener, SThing[] setA, SThing[] setB,
-                               OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addCollisionListener(listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy);
-  }
-
-  void addProximityEnterListener(ProximityEnterListener listener, SThing[] setA, SThing[] setB, Number distance,
-                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addProximityEventListener(listener: listener, a: setA, b: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
-  }
-
-  void addProximityExitListener(ProximityExitListener listener, SThing[] setA, SThing[] setB, Number distance,
+   void addCollisionEndListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB,
                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addProximityEventListener(listener: listener, a: setA, b: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
-  }
+     eventManager.addCollisionEndListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
+   }
 
-  // These next four could one day move to the camera for which they are meaningful
-  void addViewEnterListener(ViewEnterListener listener, SModel[] set,
-                            OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addComesIntoViewEventListener(listener: listener, targets: set, overlappingEventPolicy: overlappingEventPolicy);
-  }
-
-  void addViewExitListener(ViewExitListener listener, SModel[] set,
-                           OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addLeavesViewEventListener(listener: listener, targets: set, overlappingEventPolicy: overlappingEventPolicy);
-  }
-
-  void addOcclusionStartListener(OcclusionStartListener listener, SModel[] setA, SModel[] setB,
-                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addOcclusionEventListener(listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy);
-  }
-
-  void addOcclusionEndListener(OcclusionEndListener listener, SModel[] setA, SModel[] setB,
+     // These next four could one day move to the camera for which they are meaningful
+     void addViewEnterListener(<ViewEvent->void> listener, SModel[] set,
                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $SceneGraph.addOcclusionEventListener(listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy);
-  }
-*/
+       eventManager.addViewEnterListener(listener: listener, set: set, overlappingEventPolicy: overlappingEventPolicy);
+     }
+
+     void addViewExitListener(<ViewEvent->void> listener, SModel[] set,
+                              OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addViewExitListener(listener: listener, set: set, overlappingEventPolicy: overlappingEventPolicy);
+     }
+
+     void addProximityEnterListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB, DecimalNumber distance,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addProximityEnterListener(listener: listener, setA: setA, setB: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
+     }
+
+     void addProximityExitListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB, DecimalNumber distance,
+                                   OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addProximityExitListener(listener: listener, setA: setA, setB: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
+     }
+
+     void addPointOfViewChangeListener(<PointOfViewEvent->void> listener, SThing[] set) {
+       eventManager.addPointOfViewChangeListener(listener: listener, targets: set);
+     }
+
+     void addOcclusionStartListener(<ModelInteractionEvent->void> listener, SModel[] setA, SModel[] setB,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addOcclusionStartListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
+     }
+
+     void addOcclusionEndListener(<ModelInteractionEvent->void> listener, SModel[] setA, SModel[] setB,
+                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addOcclusionEndListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
+     }
 
   @CompletelyHidden void activate(SProgram program) {
     this.activeCount <- this.activeCount + 1;

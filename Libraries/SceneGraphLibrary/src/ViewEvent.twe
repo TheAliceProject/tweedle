@@ -1,0 +1,14 @@
+class ViewEvent extends AbstractEvent {
+
+  ViewEvent(SModel modelInteracted) {
+    super();
+    this.model <- modelInteracted;
+  }
+
+  // For view entered / exit listener
+  SModel getModel(){
+    return model;
+  }
+
+  @CompletelyHidden SModel model;
+}
