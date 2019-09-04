@@ -62,25 +62,25 @@ class EventManager {
     });
   }
 
-  void addCollisionStartListener(<InteractionEvent->void> listener,
+  void addCollisionStartListener(<ThingInteractionEvent->void> listener,
                                     SThing[] setA,
                                     SThing[] setB,
                                     OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
             $Interaction.addCollisionStartListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
                                             a: setA, b: setB,
                                             listener: (SThing thingFromSetA, SThing thingFromSetB) -> {
-                                                   listener(new InteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
+                                                   listener(new ThingInteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
                                                    });
   }
 
-  void addCollisionEndListener(<InteractionEvent->void> listener,
+  void addCollisionEndListener(<ThingInteractionEvent->void> listener,
                                     SThing[] setA,
                                     SThing[] setB,
                                     OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
             $Interaction.addCollisionEndListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
                                             a: setA, b: setB,
                                             listener: (SThing thingFromSetA, SThing thingFromSetB) -> {
-                                                   listener(new InteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
+                                                   listener(new ThingInteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
                                                    });
   }
 
@@ -104,7 +104,7 @@ class EventManager {
                                                     });
   }
 
-  void addProximityEnterListener(<InteractionEvent->void> listener,
+  void addProximityEnterListener(<ThingInteractionEvent->void> listener,
                                     SThing[] setA,
                                     SThing[] setB,
                                     DecimalNumber distance,
@@ -113,11 +113,11 @@ class EventManager {
                                             a: setA, b: setB,
                                             distance: distance,
                                             listener: (SThing thingFromSetA, SThing thingFromSetB) -> {
-                                                   listener(new InteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
+                                                   listener(new ThingInteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
                                                    });
   }
 
-  void addProximityExitListener(<InteractionEvent->void> listener,
+  void addProximityExitListener(<ThingInteractionEvent->void> listener,
                                     SThing[] setA,
                                     SThing[] setB,
                                     DecimalNumber distance,
@@ -126,7 +126,7 @@ class EventManager {
                                             a: setA, b: setB,
                                             distance: distance,
                                             listener: (SThing thingFromSetA, SThing thingFromSetB) -> {
-                                                   listener(new InteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
+                                                   listener(new ThingInteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
                                                    });
   }
 
@@ -137,25 +137,25 @@ class EventManager {
                                                    });
   }
 
-  void addOcclusionStartListener(<InteractionEvent->void> listener,
+  void addOcclusionStartListener(<ModelInteractionEvent->void> listener,
                                   SModel[] setA,
                                   SModel[] setB,
                                   OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
           $Interaction.addOcclusionStartListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
                                           a: setA, b: setB,
-                                          listener: (SModel thingFromSetA, SModel thingFromSetB) -> {
-                                                 listener(new InteractionEvent(foregroundModel: thingFromSetA, backgroundModel: thingFromSetB));
+                                          listener: (SModel modelFromSetA, SModel modelFromSetB) -> {
+                                                 listener(new ModelInteractionEvent(foregroundModel: modelFromSetA, backgroundModel: modelFromSetB));
                                                  });
   }
 
-  void addOcclusionEndListener(<InteractionEvent->void> listener,
+  void addOcclusionEndListener(<ModelInteractionEvent->void> listener,
                                   SModel[] setA,
                                   SModel[] setB,
                                   OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
           $Interaction.addOcclusionEndListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
                                           a: setA, b: setB,
-                                          listener: (SModel thingFromSetA, SModel thingFromSetB) -> {
-                                                 listener(new InteractionEvent(foregroundModel: thingFromSetA, backgroundModel: thingFromSetB));
+                                          listener: (SModel modelFromSetA, SModel modelFromSetB) -> {
+                                                 listener(new ModelInteractionEvent(foregroundModel: modelFromSetA, backgroundModel: modelFromSetB));
                                                  });
   }
 

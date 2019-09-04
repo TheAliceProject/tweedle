@@ -1,0 +1,18 @@
+class ThingInteractionEvent extends AbstractEvent {
+  ThingInteractionEvent(SThing thingFromSetA, SThing thingFromSetB) {
+    super();
+    this.thingFromSetA <- thingFromSetA;
+    this.thingFromSetB <- thingFromSetB;
+  }
+
+  SThing getSThingFromSetA() {
+    return thingFromSetA;
+  }
+
+  SThing getSThingFromSetB() {
+    return thingFromSetB;
+  }
+
+  @CompletelyHidden SThing thingFromSetA;
+  @CompletelyHidden SThing thingFromSetB;
+}

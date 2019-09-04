@@ -397,11 +397,6 @@
       "file": "src/SceneActivationEvent.twe",
       "type": "Class"
     }, {
-      "name": "PointOfViewEvent",
-      "format": "tweedle",
-      "file": "src/PointOfViewEvent.twe",
-      "type": "Class"
-    }, {
       "name": "TimeEvent",
       "format": "tweedle",
       "file": "src/TimeEvent.twe",
@@ -452,9 +447,14 @@
       "file": "src/AudioSource.twe",
       "type": "Class"
     }, {
-      "name": "InteractionEvent",
+      "name": "ThingInteractionEvent",
       "format": "tweedle",
-      "file": "src/InteractionEvent.twe",
+      "file": "src/ThingInteractionEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "ModelInteractionEvent",
+      "format": "tweedle",
+      "file": "src/ModelInteractionEvent.twe",
       "type": "Class"
     }, {
       "name": "ViewEvent",

@@ -1,0 +1,19 @@
+class ModelInteractionEvent extends AbstractEvent {
+
+  ModelInteractionEvent(SModel foregroundModel, SModel backgroundModel) {
+    super();
+    this.model <- foregroundModel;
+    this.model2 <- backgroundModel;
+  }
+
+  SModel getForegroundModel(){
+    return model;
+  }
+
+  SModel getBackgroundModel(){
+    return model2;
+  }
+
+  @CompletelyHidden SModel model;
+  @CompletelyHidden SModel model2;
+}

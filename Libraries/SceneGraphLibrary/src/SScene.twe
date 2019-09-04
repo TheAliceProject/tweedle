@@ -118,12 +118,12 @@ class SScene extends SThing {
     eventManager.moveWithArrows(thing: thing);
   }
 
-  void addCollisionStartListener(<InteractionEvent->void> listener, SThing[] setA, SThing[] setB,
+  void addCollisionStartListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB,
                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
     eventManager.addCollisionStartListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
   }
 
-   void addCollisionEndListener(<InteractionEvent->void> listener, SThing[] setA, SThing[] setB,
+   void addCollisionEndListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB,
                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
      eventManager.addCollisionEndListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
    }
@@ -139,12 +139,12 @@ class SScene extends SThing {
        eventManager.addViewExitListener(listener: listener, set: set, overlappingEventPolicy: overlappingEventPolicy);
      }
 
-     void addProximityEnterListener(<InteractionEvent->void> listener, SThing[] setA, SThing[] setB, DecimalNumber distance,
+     void addProximityEnterListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB, DecimalNumber distance,
                                     OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
        eventManager.addProximityEnterListener(listener: listener, setA: setA, setB: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
      }
 
-     void addProximityExitListener(<InteractionEvent->void> listener, SThing[] setA, SThing[] setB, DecimalNumber distance,
+     void addProximityExitListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB, DecimalNumber distance,
                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
        eventManager.addProximityExitListener(listener: listener, setA: setA, setB: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
      }
@@ -153,12 +153,12 @@ class SScene extends SThing {
        eventManager.addPointOfViewChangeListener(listener: listener, targets: set);
      }
 
-     void addOcclusionStartListener(<InteractionEvent->void> listener, SModel[] setA, SModel[] setB,
+     void addOcclusionStartListener(<ModelInteractionEvent->void> listener, SModel[] setA, SModel[] setB,
                                     OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
        eventManager.addOcclusionStartListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
      }
 
-     void addOcclusionEndListener(<InteractionEvent->void> listener, SModel[] setA, SModel[] setB,
+     void addOcclusionEndListener(<ModelInteractionEvent->void> listener, SModel[] setA, SModel[] setB,
                                   OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
        eventManager.addOcclusionEndListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
      }
