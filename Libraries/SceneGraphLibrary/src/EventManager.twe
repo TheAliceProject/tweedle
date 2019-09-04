@@ -84,23 +84,23 @@ class EventManager {
                                                    });
   }
 
-  void addViewEnterListener(<InteractionEvent->void> listener,
+  void addViewEnterListener(<ViewEvent->void> listener,
                                     SModel[] set,
                                     OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
             $Interaction.addViewEnterListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
                                                 set: set,
                                                 listener: (SModel model) -> {
-                                                    listener(new InteractionEvent(modelInteracted: model));
+                                                    listener(new ViewEvent(modelInteracted: model));
                                                     });
   }
 
-  void addViewExitListener(<InteractionEvent->void> listener,
+  void addViewExitListener(<ViewEvent->void> listener,
                                     SModel[] set,
                                     OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
             $Interaction.addViewExitListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
                                                 set: set,
                                                 listener: (SModel model) -> {
-                                                    listener(new InteractionEvent(modelInteracted: model));
+                                                    listener(new ViewEvent(modelInteracted: model));
                                                     });
   }
 
@@ -130,10 +130,10 @@ class EventManager {
                                                    });
   }
 
-  void addPointOfViewChangeListener(<InteractionEvent->void> listener, SThing[] targets) {
+  void addPointOfViewChangeListener(<PointOfViewEvent->void> listener, SThing[] targets) {
             $Interaction.addPointOfViewChangeListener(targets: targets,
                                             listener: (SThing thingThatMoved) -> {
-                                                   listener(new InteractionEvent(entity: thingThatMoved));
+                                                   listener(new PointOfViewEvent(entity: thingThatMoved));
                                                    });
   }
 

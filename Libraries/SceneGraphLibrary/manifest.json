@@ -457,6 +457,16 @@
       "file": "src/InteractionEvent.twe",
       "type": "Class"
     }, {
+      "name": "ViewEvent",
+      "format": "tweedle",
+      "file": "src/ViewEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "PointOfViewEvent",
+      "format": "tweedle",
+      "file": "src/PointOfViewEvent.twe",
+      "type": "Class"
+    }, {
       "name": "HeldKeyPolicy",
       "format": "tweedle",
       "file": "src/HeldKeyPolicy.twe",

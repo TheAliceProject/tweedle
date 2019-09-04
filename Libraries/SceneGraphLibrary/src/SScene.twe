@@ -129,12 +129,12 @@ class SScene extends SThing {
    }
 
      // These next four could one day move to the camera for which they are meaningful
-     void addViewEnterListener(<InteractionEvent->void> listener, SModel[] set,
+     void addViewEnterListener(<ViewEvent->void> listener, SModel[] set,
                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
        eventManager.addViewEnterListener(listener: listener, set: set, overlappingEventPolicy: overlappingEventPolicy);
      }
 
-     void addViewExitListener(<InteractionEvent->void> listener, SModel[] set,
+     void addViewExitListener(<ViewEvent->void> listener, SModel[] set,
                               OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
        eventManager.addViewExitListener(listener: listener, set: set, overlappingEventPolicy: overlappingEventPolicy);
      }
@@ -149,7 +149,7 @@ class SScene extends SThing {
        eventManager.addProximityExitListener(listener: listener, setA: setA, setB: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
      }
 
-     void addPointOfViewChangeListener(<InteractionEvent->void> listener, SThing[] set) {
+     void addPointOfViewChangeListener(<PointOfViewEvent->void> listener, SThing[] set) {
        eventManager.addPointOfViewChangeListener(listener: listener, targets: set);
      }
 

@@ -5,7 +5,7 @@ class PointOfViewEvent extends AbstractEvent {
   }
 
   SModel getEntity() {
-    return entity;
+    return this.entity;
   }
 
   @CompletelyHidden SThing entity;
