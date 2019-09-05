@@ -32,7 +32,7 @@ class Scene extends SScene {
 
     $Debug.log(message: "torus");
     textModel2.setPaint(paint: Color.BLACK);
-    torus.say(text: "Hello world! I'm a torus", outlineColor: Color.BLACK);
+    torus.say(text: "Hello world! I'm a torus", bubbleOutlineColor: Color.BLACK);
     torus.setPaint(paint: Color.RED);
     axes.setSize(size: new Size(width: 0.5, height: 0.5, depth: 0.5), duration: Duration.ONE_SECOND);
      textModel.place(
@@ -70,12 +70,12 @@ class Scene extends SScene {
 
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: textModel);
     cone.say(text: "Hello world! I'm a cone", fontType: TextFont.SERIF, textStyle: TextStyle.ITALIC);
-    cylinder.say(text: "Hello world! I'm a cylinder", outlineColor: Color.BLACK);
+    cylinder.say(text: "Hello world! I'm a cylinder", bubbleOutlineColor: Color.BLACK);
     this.delay(duration: Duration.TWO_SECONDS);
 
     doTogether{
-        torus.say(text: "Hello world! I'm a torus!", outlineColor: Color.BLACK, fontType: TextFont.MONOSPACED, textScale: 2.0);
-        torus.say(text: "Torus here, I'm apparently talking over myself.", outlineColor: Color.BLACK, fontType: TextFont.SERIF, duration: Duration.TWO_SECONDS);
+        torus.say(text: "Hello world! I'm a torus!", bubbleOutlineColor: Color.BLACK, fontType: TextFont.MONOSPACED, textScale: 2.0);
+        torus.say(text: "Torus here, I'm apparently talking over myself.", bubbleOutlineColor: Color.BLACK, fontType: TextFont.SERIF, duration: Duration.TWO_SECONDS);
         sphere.think(text: "Sphere chiming in!");
         cone.say(text: "What are y'all talking about over there?");
     }
@@ -93,8 +93,8 @@ class Scene extends SScene {
     torus.setHeight(height: 0.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
 
     $Debug.log(message: "room paints");
-    torus.say(text: "Center torus. Also this text bubble is a little bit longer so it's probably larger and there are some line breaks.", bubblePosition: BubblePosition.CENTER, outlineColor: Color.BLACK);
-    torus.think(text: "Center torus. Also this text bubble is a little bit longer so it's probably larger and there are some line breaks.", bubblePosition: BubblePosition.CENTER, outlineColor: Color.BLACK);
+    torus.say(text: "Center torus. Also this text bubble is a little bit longer so it's probably larger and there are some line breaks.", bubblePosition: BubblePosition.CENTER, bubbleOutlineColor: Color.BLACK);
+    torus.think(text: "Center torus. Also this text bubble is a little bit longer so it's probably larger and there are some line breaks.", bubblePosition: BubblePosition.CENTER, bubbleOutlineColor: Color.BLACK);
     this.room.setWallPaint(paint: WallAppearance.GREEN_STRIPE_WITH_COFFER, duration: Duration.ONE_SECOND);
     this.room.setWallPaint(paint: WallAppearance.BLUE_WITH_BEAD, duration: Duration.ONE_SECOND);
     this.room.setWallPaint(paint: WallAppearance.BRICK, duration: Duration.ONE_SECOND);
