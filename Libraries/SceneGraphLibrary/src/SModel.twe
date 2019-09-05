@@ -181,28 +181,28 @@ class SModel extends SMovableTurnable
 
     void say(TextString text,
             TextStyle textStyle <- Default.textStyle(),
-            FontType fontType <- Default.fontType(),
+            TextFont fontType <- Default.fontType(),
             BubblePosition bubblePosition <- Default.bubblePosition(),
             Duration duration <- Default.duration(),
-            Color bubbleColor <- Color.WHITE,
-            Color outlineColor <- Color.WHITE,
-            Color textColor <- Color.BLACK,
+            Color bubbleFillColor <- Color.WHITE,
+            Color bubbleOutlineColor <- Color.WHITE,
+            Color fontColor <- Color.BLACK,
             DecimalNumber textScale <- 1.0 ) {
         $SceneGraph.say(entity: this, bubbleText: text, bubblePosition: bubblePosition.getValue(), fontType: fontType.getValue(),
-          textStyle: textStyle.getValue(), textScale: textScale, bubbleColor: bubbleColor, outlineColor: outlineColor, textColor: textColor, duration: duration);
+          textStyle: textStyle.getValue(), textScale: textScale, bubbleColor: bubbleFillColor, outlineColor: bubbleOutlineColor, textColor: fontColor, duration: duration);
     }
 
     void think(TextString text,
             TextStyle textStyle <- Default.textStyle(),
-            FontType fontType <- Default.fontType(),
+            TextFont fontType <- Default.fontType(),
             BubblePosition bubblePosition <- Default.bubblePosition(),
             Duration duration <- Default.duration(),
-            Color bubbleColor <- Color.WHITE,
-            Color outlineColor <- Color.WHITE,
-            Color textColor <- Color.BLACK,
+            Color bubbleFillColor <- Color.WHITE,
+            Color bubbleOutlineColor <- Color.WHITE,
+            Color fontColor <- Color.BLACK,
             DecimalNumber textScale <- 1.0 ) {
         $SceneGraph.think(entity: this, bubbleText: text, bubblePosition: bubblePosition.getValue(), fontType: fontType.getValue(),
-          textStyle: textStyle.getValue(), textScale: textScale, bubbleColor: bubbleColor, outlineColor: outlineColor, textColor: textColor, duration: duration);
+          textStyle: textStyle.getValue(), textScale: textScale, bubbleColor: bubbleFillColor, outlineColor: bubbleOutlineColor, textColor: fontColor, duration: duration);
     }
 
     @CompletelyHidden Size defaultSize;

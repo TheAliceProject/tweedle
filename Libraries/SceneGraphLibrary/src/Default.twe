@@ -52,8 +52,8 @@ class Default {
     return TextStyle.PLAIN;
   }
 
-  static FontType fontType() {
-    return FontType.DEFAULT;
+  static TextFont fontType() {
+    return TextFont.DEFAULT;
   }
 
   static BubblePosition bubblePosition(){

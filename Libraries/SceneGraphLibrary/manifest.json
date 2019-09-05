@@ -497,9 +497,9 @@
       "file": "src/TextStyle.twe",
       "type": "Enum"
     }, {
-      "name": "FontType",
+      "name": "TextFont",
       "format": "tweedle",
-      "file": "src/FontType.twe",
+      "file": "src/TextFont.twe",
       "type": "Enum"
     }, {
       "name": "BubblePosition",
