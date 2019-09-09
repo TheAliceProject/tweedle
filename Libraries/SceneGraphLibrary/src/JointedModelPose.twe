@@ -1,4 +1,9 @@
 class JointedModelPose {
+    JointedModelPose(JointIdTransformationPair[] pairs) {
+        this.name <- "";
+        this.pairs <- pairs;
+    }
+
     JointedModelPose(TextString name, JointIdTransformationPair[] pairs) {
         this.name <- name;
         this.pairs <- pairs;
