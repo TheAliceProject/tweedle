@@ -42,7 +42,7 @@ class SJointedModel extends SModel {
         return null;
     }
 
-    SJoint[] getJointArray(JointId[] idArray) {
+    @CompletelyHidden SJoint[] getJointArray(JointId[] idArray) {
         WholeNumber len <- idArray.length;
         SJoint[] jointArray <- new SJoint[len];
         if (this.joints != null) {
@@ -52,6 +52,10 @@ class SJointedModel extends SModel {
             }
         }
         return jointArray;
+    }
+
+    @CompletelyHidden SJoint[] getJointArray(JointArrayId jointArrayId) {
+        return getJointArray(idArray: getJointIdArray(jointArrayId));
     }
 
     void straightenOutJoints(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {

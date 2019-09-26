@@ -362,6 +362,11 @@
       "file": "src/JointId.twe",
       "type": "Class"
     }, {
+      "name": "JointArrayId",
+      "format": "tweedle",
+      "file": "src/JointArrayId.twe",
+      "type": "Class"
+    }, {
       "name": "JointIdList",
       "format": "tweedle",
       "file": "src/JointIdList.twe",

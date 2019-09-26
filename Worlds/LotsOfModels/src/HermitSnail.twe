@@ -18,19 +18,23 @@ class HermitSnail extends Slitherer models HermitSnail {
   @CompletelyHidden static JointId RIGHT_TENTACLE_1 <- new JointId(name: "RIGHT_TENTACLE_1", parent: HermitSnail.RIGHT_TENTACLE_0);
   @CompletelyHidden static JointId RIGHT_TENTACLE_2 <- new JointId(name: "RIGHT_TENTACLE_2", parent: HermitSnail.RIGHT_TENTACLE_1);
 
+  @CompletelyHidden static JointId[] SHELL_ARRAY = {HermitSnail.SHELL_0, HermitSnail.SHELL_1};
+  @CompletelyHidden static JointId[] LEFT_TENTACLE_ARRAY = {HermitSnail.LEFT_TENTACLE_0, HermitSnail.LEFT_TENTACLE_1, HermitSnail.LEFT_TENTACLE_2};
+  @CompletelyHidden static JointId[] RIGHT_TENTACLE_ARRAY = {HermitSnail.RIGHT_TENTACLE_0, HermitSnail.RIGHT_TENTACLE_1, HermitSnail.RIGHT_TENTACLE_2};
+
   SJoint getLowerLip() {
     return this.getJoint(jointId: HermitSnail.LOWER_LIP);
   }
 
   SJoint[] getShellArray() {
-    return this.getJointArray(jointIdArray: HermitSnail.SHELL_ARRAY);
+    return this.getJointArray(idArray: HermitSnail.SHELL_ARRAY);
   }
 
   SJoint[] getLeftTentacleArray() {
-    return this.getJointArray(jointIdArray: HermitSnail.LEFT_TENTACLE_ARRAY);
+    return this.getJointArray(idArray: HermitSnail.LEFT_TENTACLE_ARRAY);
   }
 
   SJoint[] getRightTentacleArray() {
-    return this.getJointArray(jointIdArray: HermitSnail.RIGHT_TENTACLE_ARRAY);
+    return this.getJointArray(idArray: HermitSnail.RIGHT_TENTACLE_ARRAY);
   }
 }
