@@ -15,7 +15,7 @@
     "formatVersion": "0.1",
     "identifier": {
       "name": "SceneGraphLibrary",
-      "version": "0.4",
+      "version": "0.5",
       "type": "Library"
     }
   },
@@ -360,6 +360,11 @@
       "name": "JointId",
       "format": "tweedle",
       "file": "src/JointId.twe",
+      "type": "Class"
+    }, {
+      "name": "JointArrayId",
+      "format": "tweedle",
+      "file": "src/JointArrayId.twe",
       "type": "Class"
     }, {
       "name": "JointIdList",

@@ -16,6 +16,8 @@ class Hare extends Biped models Hare {
   @CompletelyHidden static JointId RIGHT_TOES <- new JointId(name: "RIGHT_TOES", parent: Biped.RIGHT_FOOT);
   @CompletelyHidden static JointId LEFT_TOES <- new JointId(name: "LEFT_TOES", parent: Biped.LEFT_FOOT);
 
+  @CompletelyHidden static JointId[] TAIL_ARRAY = {Hare.TAIL_0, Hare.TAIL_1};
+
   SJoint getLeftEar() {
     return this.getJoint(jointId: Hare.LEFT_EAR);
   }
@@ -37,6 +39,6 @@ class Hare extends Biped models Hare {
   }
 
   SJoint[] getTailArray() {
-    return this.getJointArray(jointIdArray: Hare.TAIL_ARRAY);
+    return this.getJointArray(idArray: Hare.TAIL_ARRAY);
   }
 }
