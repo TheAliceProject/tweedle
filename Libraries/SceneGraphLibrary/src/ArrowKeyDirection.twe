@@ -5,16 +5,16 @@ enum ArrowKeyDirection {
   RIGHT(turn: TurnDirection.RIGHT, forwardBack: MoveDirection.RIGHT, upDown: MoveDirection.RIGHT);
 
   static ArrowKeyDirection fromKey(Key key) {
-    if(key == Key.A || key == Key.LEFT) {
+    if(key == Key.A || key == Key.LEFT || key == Key.LEFT_AXIS_LEFT || key == Key.RIGHT_AXIS_LEFT) {
       return LEFT;
     }
-    if(key == Key.S || key == Key.DOWN) {
+    if(key == Key.S || key == Key.DOWN || key == Key.LEFT_AXIS_DOWN || key == Key.RIGHT_AXIS_DOWN) {
       return DOWN;
     }
-    if(key == Key.W || key == Key.UP) {
+    if(key == Key.W || key == Key.UP || key == Key.LEFT_AXIS_UP || key == Key.RIGHT_AXIS_UP) {
       return UP;
     }
-    if(key == Key.D || key == Key.RIGHT) {
+    if(key == Key.D || key == Key.RIGHT || key == Key.LEFT_AXIS_RIGHT || key == Key.RIGHT_AXIS_RIGHT) {
       return RIGHT;
     }
     return null;

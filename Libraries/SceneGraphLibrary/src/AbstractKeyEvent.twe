@@ -564,6 +564,66 @@ class AbstractKeyEvent extends AbstractEvent {
     if(Key.BEGIN.getValue() == keyValue){
       this.key <- Key.BEGIN;
       }
+    if(Key.LEFT_TRIGGER.getValue() == keyValue){
+      this.key <- Key.LEFT_TRIGGER;
+      }
+    if(Key.RIGHT_TRIGGER.getValue() == keyValue){
+      this.key <- Key.RIGHT_TRIGGER;
+      }
+    if(Key.LEFT_GRIP.getValue() == keyValue){
+      this.key <- Key.LEFT_GRIP;
+      }
+    if(Key.RIGHT_GRIP.getValue() == keyValue){
+      this.key <- Key.RIGHT_GRIP;
+      }
+    if(Key.LEFT_PRIMARY.getValue() == keyValue){
+      this.key <- Key.LEFT_PRIMARY;
+      }
+    if(Key.RIGHT_PRIMARY.getValue() == keyValue){
+      this.key <- Key.RIGHT_PRIMARY;
+      }
+    if(Key.LEFT_SECONDARY.getValue() == keyValue){
+      this.key <- Key.LEFT_SECONDARY;
+      }
+    if(Key.RIGHT_SECONDARY.getValue() == keyValue){
+      this.key <- Key.RIGHT_SECONDARY;
+      }
+    if(Key.LEFT_AXIS_UP.getValue() == keyValue){
+      this.key <- Key.LEFT_AXIS_UP;
+      }
+    if(Key.RIGHT_AXIS_UP.getValue() == keyValue){
+      this.key <- Key.RIGHT_AXIS_UP;
+      }
+    if(Key.LEFT_AXIS_DOWN.getValue() == keyValue){
+      this.key <- Key.LEFT_AXIS_DOWN;
+      }
+    if(Key.RIGHT_AXIS_DOWN.getValue() == keyValue){
+      this.key <- Key.RIGHT_AXIS_DOWN;
+      }
+    if(Key.LEFT_AXIS_LEFT.getValue() == keyValue){
+      this.key <- Key.LEFT_AXIS_LEFT;
+      }
+    if(Key.RIGHT_AXIS_LEFT.getValue() == keyValue){
+      this.key <- Key.RIGHT_AXIS_LEFT;
+      }
+    if(Key.LEFT_AXIS_RIGHT.getValue() == keyValue){
+      this.key <- Key.LEFT_AXIS_RIGHT;
+      }
+    if(Key.RIGHT_AXIS_RIGHT.getValue() == keyValue){
+      this.key <- Key.RIGHT_AXIS_RIGHT;
+      }
+    if(Key.LEFT_THUMBSTICK_CLICK.getValue() == keyValue){
+      this.key <- Key.LEFT_THUMBSTICK_CLICK;
+      }
+    if(Key.RIGHT_THUMBSTICK_CLICK.getValue() == keyValue){
+      this.key <- Key.RIGHT_THUMBSTICK_CLICK;
+      }
+    if(Key.LEFT_MENU.getValue() == keyValue){
+      this.key <- Key.LEFT_MENU;
+      }
+    if(Key.RIGHT_MENU.getValue() == keyValue){
+      this.key <- Key.RIGHT_MENU;
+      }
     if(Key.UNDEFINED.getValue() == keyValue){
       this.key <- Key.UNDEFINED;
       }
