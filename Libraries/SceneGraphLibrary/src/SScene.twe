@@ -244,6 +244,14 @@ class SScene extends SThing {
     return this.program;
   }
 
+  @CompletelyHidden VantagePoint getAbsoluteTransformation() {
+    return VantagePoint.IDENTITY;
+  }
+
+  @CompletelyHidden Boolean isSceneOf(SThing other) {
+    return true;
+  }
+
 /* Unused and completely hidden
   void addWhileCollisionListener(WhileCollisionListener listener, SThing[] setA, SThing[] setB)
   void addWhileProximityListener(WhileProximityListener listener, SThing[] setA, SThing[] setB, Number distance)

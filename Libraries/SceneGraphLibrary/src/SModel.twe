@@ -164,13 +164,13 @@ class SModel extends SMovableTurnable
     //Returns a bounding box that reflects any changes to the given entity. Namely any changes to the skeleton of jointed models
     @CompletelyHidden AxisAlignedBox getDynamicAxisAlignedMinimumBoundingBox( SThing asSeenBy ) {
         AxisAlignedBox aabb <- $SceneGraph.getLocalBoundingBox(model: this, dynamic: true);
-        VantagePoint trans <- this.getTransformation( asSeenBy: asSeenBy );
+        VantagePoint trans <- this.getVantagePoint( asSeenBy: asSeenBy );
         return aabb.transform(vantagePoint: trans);
     }
 
     @CompletelyHidden AxisAlignedBox getAxisAlignedMinimumBoundingBox( SThing asSeenBy ) {
         AxisAlignedBox aabb <- $SceneGraph.getLocalBoundingBox(model: this, dynamic: false);
-        VantagePoint trans <- this.getTransformation( asSeenBy: asSeenBy );
+        VantagePoint trans <- this.getVantagePoint( asSeenBy: asSeenBy );
         return aabb.transform(vantagePoint: trans);
     }
 

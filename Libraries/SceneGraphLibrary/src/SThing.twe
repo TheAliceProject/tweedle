@@ -3,15 +3,36 @@ class SThing {
   }
 
   @CompletelyHidden VantagePoint getVantagePoint(SThing asSeenBy) {
-    return $SceneGraph.getVantagePoint(viewer:asSeenBy, target: this);
+    if (asSeenBy == vehicle) {
+      return getLocalTransformation();
+    }
+    if (asSeenBy.isSceneOf(other: this)) {
+      return getAbsoluteTransformation();
+    }
+    if (asSeenBy == this) {
+      return VantagePoint.IDENTITY;
+    }
+    return asSeenBy.getInverseAbsoluteTransformation().multiply(other: getAbsoluteTransformation());
+    // TODO Perhaps normalize orientation of asSeenBy.getInverseAbsoluteTransformation()
   }
 
-  @CompletelyHidden VantagePoint getTransformation(SThing asSeenBy) {
-    return $SceneGraph.getVantagePoint(viewer:asSeenBy, target: this);
+  @CompletelyHidden VantagePoint getAbsoluteTransformation() {
+    if ((vehicle == null) || vehicle.isSceneOf(other: this)) {
+      return getLocalTransformation();
+    }
+    return vehicle.getAbsoluteTransformation().multiply(other: getLocalTransformation());
+  }
+
+  @CompletelyHidden VantagePoint getInverseAbsoluteTransformation() {
+    return $SceneGraph.getInverseAbsoluteTransformation(thing: this);
+  }
+
+  @CompletelyHidden VantagePoint getLocalTransformation() {
+    return $SceneGraph.getLocalTransformation(thing: this);
   }
 
   @CompletelyHidden Position getTranslation(SThing asSeenBy) {
-    return this.getTransformation(asSeenBy: asSeenBy).position;
+    return this.getVantagePoint(asSeenBy: asSeenBy).position;
   }
 
   @CompletelyHidden Position getMinPoint(SThing asSeenBy) {
@@ -58,6 +79,10 @@ class SThing {
 
   WholeNumber getIntegerFromUser(TextString message) {
     return $Dialog.getIntegerFromUser(message: message);
+  }
+
+  @CompletelyHidden Boolean isSceneOf(SThing other) {
+    return this == other.getScene();
   }
 
   @CompletelyHidden SScene getScene() {
