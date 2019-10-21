@@ -1,17 +1,17 @@
 class ArrowKeyEvent extends AbstractKeyEvent {
+  ArrowKeyEvent(WholeNumber keyValue) {
+    super(keyValue: keyValue);
 
-	ArrowKeyDirection direction;
+    direction <- ArrowKeyDirection.fromKey(key: key);
+  }
 
-	ArrowKeyEvent( Key key ) {
-		super( key: key );
-		direction <- ArrowKeyDirection.fromKey(key: key);
-	}
+  TurnDirection getTurnDirection() {
+    return this.direction.getTurnDirection();
+  }
 
-	TurnDirection getTurnDirection() {
-	  return this.direction.getTurnDirection();
-	}
-
-	MoveDirection getMoveDirection(MoveDirectionPlane plane) {
+  MoveDirection getMoveDirection(MoveDirectionPlane plane) {
     return direction.getMoveDirection(plane: plane);
   }
+
+  @CompletelyHidden ArrowKeyDirection direction;
 }

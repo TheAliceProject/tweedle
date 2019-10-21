@@ -4,7 +4,7 @@ class VantagePointProperty extends Property {
     this.value <- value;
   }
 
-  Size getValue() {
+  VantagePoint getValue() {
     return this.value;
   }
 
@@ -14,11 +14,9 @@ class VantagePointProperty extends Property {
   }
 
   void applyTransformation(VantagePoint transformation, SThing asSeenBy) {
-    VantagePoint viewerInVehicle <- asSeenBy.getVantagePoint(asSeenBy: owner.vehicle);
     VantagePoint subjectInViewer <- owner.getVantagePoint(asSeenBy: asSeenBy);
-    VantagePoint m <- viewerInVehicle.multiply(other: transformation).multiply(other: subjectInViewer);
-    
-    setValue(value: m);
+    VantagePoint newValue <- value.multiply(other: subjectInViewer).multiply(other: transformation);
+    setValue(value: newValue);
   }
 
   void animateValue(VantagePoint endValue, SThing asSeenBy, Duration duration, AnimationStyle animationStyle) {

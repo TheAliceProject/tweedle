@@ -7,7 +7,7 @@
     "themeTags": []
   },
   "provenance": {
-    "aliceVersion": "3.4.0.0-alpha",
+    "aliceVersion": "3.5.0.1-alpha",
     "created": "2018",
     "creator": "Alice Project"
   },
@@ -15,7 +15,7 @@
     "formatVersion": "0.1",
     "identifier": {
       "name": "SceneGraphLibrary",
-      "version": "1.0",
+      "version": "0.6",
       "type": "Library"
     }
   },
@@ -50,6 +50,11 @@
       "name": "MoveDirection",
       "format": "tweedle",
       "file": "src/MoveDirection.twe",
+      "type": "Enum"
+    }, {
+      "name": "MoveDirectionPlane",
+      "format": "tweedle",
+      "file": "src/MoveDirectionPlane.twe",
       "type": "Enum"
     }, {
       "name": "PathStyle",
@@ -357,6 +362,11 @@
       "file": "src/JointId.twe",
       "type": "Class"
     }, {
+      "name": "JointArrayId",
+      "format": "tweedle",
+      "file": "src/JointArrayId.twe",
+      "type": "Class"
+    }, {
       "name": "JointIdList",
       "format": "tweedle",
       "file": "src/JointIdList.twe",
@@ -377,6 +387,11 @@
       "file": "src/JointIdTransformationPair.twe",
       "type": "Class"
     }, {
+      "name": "EventManager",
+      "format": "tweedle",
+      "file": "src/EventManager.twe",
+      "type": "Class"
+    }, {
       "name": "AbstractEvent",
       "format": "tweedle",
       "file": "src/AbstractEvent.twe",
@@ -392,10 +407,75 @@
       "file": "src/TimeEvent.twe",
       "type": "Class"
     }, {
-      "name": "MouseEvent",
+      "name": "MouseClickOnScreenEvent",
       "format": "tweedle",
-      "file": "src/MouseEvent.twe",
+      "file": "src/MouseClickOnScreenEvent.twe",
       "type": "Class"
+    }, {
+      "name": "MouseClickOnObjectEvent",
+      "format": "tweedle",
+      "file": "src/MouseClickOnObjectEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "NumberKeyEvent",
+      "format": "tweedle",
+      "file": "src/NumberKeyEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "Key",
+      "format": "tweedle",
+      "file": "src/Key.twe",
+      "type": "Enum"
+    }, {
+      "name": "AbstractKeyEvent",
+      "format": "tweedle",
+      "file": "src/AbstractKeyEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "KeyEvent",
+      "format": "tweedle",
+      "file": "src/KeyEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "ArrowKeyDirection",
+      "format": "tweedle",
+      "file": "src/ArrowKeyDirection.twe",
+      "type": "Class"
+    }, {
+      "name": "ArrowKeyEvent",
+      "format": "tweedle",
+      "file": "src/ArrowKeyEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "AudioSource",
+      "format": "tweedle",
+      "file": "src/AudioSource.twe",
+      "type": "Class"
+    }, {
+      "name": "ThingInteractionEvent",
+      "format": "tweedle",
+      "file": "src/ThingInteractionEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "ModelInteractionEvent",
+      "format": "tweedle",
+      "file": "src/ModelInteractionEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "ViewEvent",
+      "format": "tweedle",
+      "file": "src/ViewEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "PointOfViewEvent",
+      "format": "tweedle",
+      "file": "src/PointOfViewEvent.twe",
+      "type": "Class"
+    }, {
+      "name": "HeldKeyPolicy",
+      "format": "tweedle",
+      "file": "src/HeldKeyPolicy.twe",
+      "type": "Enum"
     }, {
       "name": "OverlappingEventPolicy",
       "format": "tweedle",
@@ -422,9 +502,9 @@
       "file": "src/TextStyle.twe",
       "type": "Enum"
     }, {
-      "name": "FontType",
+      "name": "TextFont",
       "format": "tweedle",
-      "file": "src/FontType.twe",
+      "file": "src/TextFont.twe",
       "type": "Enum"
     }, {
       "name": "BubblePosition",

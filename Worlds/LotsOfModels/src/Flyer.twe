@@ -1,5 +1,21 @@
 class Flyer extends SFlyer models Flyer {
   Flyer(TextString resource) {
-    super(resource: resource);
+    super(resource: resource,
+          spreadWingsPose: null,
+          foldWingsPose: null,
+          tailArray: null,
+          neckArray: null);
+  }
+
+  Flyer(TextString resource,
+        JointedModelPose spreadWingsPose,
+        JointedModelPose foldWingsPose,
+        JointId[] tailArray,
+        JointId[] neckArray) {
+    super(resource: resource,
+          spreadWingsPose: spreadWingsPose,
+          foldWingsPose: foldWingsPose,
+          tailArray: tailArray,
+          neckArray: neckArray);
   }
 }

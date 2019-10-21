@@ -1,5 +1,5 @@
 class VantagePointTween extends PropertyTween {
-  SmoothVantagePointTween(VantagePointProperty property, VantagePoint start, VantagePoint end, SThing asSeenBy) {
+  VantagePointTween(VantagePointProperty property, VantagePoint start, VantagePoint end, SThing asSeenBy) {
     super();
     this.property <- property;
     this.startVP <- start;

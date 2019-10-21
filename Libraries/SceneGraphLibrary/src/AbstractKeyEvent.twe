@@ -1,15 +1,641 @@
 class AbstractKeyEvent extends AbstractEvent {
-	Key key;
+  @CompletelyHidden Key key;
 
-	public AbstractKeyEvent( Key key ) {
-		this.key <- key;
-	}
+   AbstractKeyEvent(WholeNumber keyValue) {
 
-	Key getKey() {
-		return key;
-	}
+    if(Key.ENTER.getValue() == keyValue){
+      this.key <- Key.ENTER;
+      }
+    if(Key.BACK_SPACE.getValue() == keyValue){
+      this.key <- Key.BACK_SPACE;
+      }
+    if(Key.TAB.getValue() == keyValue){
+      this.key <- Key.TAB;
+      }
+    if(Key.CANCEL.getValue() == keyValue){
+      this.key <- Key.CANCEL;
+      }
+    if(Key.CLEAR.getValue() == keyValue){
+      this.key <- Key.CLEAR;
+      }
+    if(Key.SHIFT.getValue() == keyValue){
+      this.key <- Key.SHIFT;
+      }
+    if(Key.CONTROL.getValue() == keyValue){
+      this.key <- Key.CONTROL;
+      }
+    if(Key.ALT.getValue() == keyValue){
+      this.key <- Key.ALT;
+      }
+    if(Key.PAUSE.getValue() == keyValue){
+      this.key <- Key.PAUSE;
+      }
+    if(Key.CAPS_LOCK.getValue() == keyValue){
+      this.key <- Key.CAPS_LOCK;
+      }
+    if(Key.ESCAPE.getValue() == keyValue){
+      this.key <- Key.ESCAPE;
+      }
+    if(Key.SPACE.getValue() == keyValue){
+      this.key <- Key.SPACE;
+      }
+    if(Key.PAGE_UP.getValue() == keyValue){
+      this.key <- Key.PAGE_UP;
+      }
+    if(Key.PAGE_DOWN.getValue() == keyValue){
+      this.key <- Key.PAGE_DOWN;
+      }
+    if(Key.END.getValue() == keyValue){
+      this.key <- Key.END;
+      }
+    if(Key.HOME.getValue() == keyValue){
+      this.key <- Key.HOME;
+      }
+    if(Key.LEFT.getValue() == keyValue){
+      this.key <- Key.LEFT;
+      }
+    if(Key.UP.getValue() == keyValue){
+      this.key <- Key.UP;
+      }
+    if(Key.RIGHT.getValue() == keyValue){
+      this.key <- Key.RIGHT;
+      }
+    if(Key.DOWN.getValue() == keyValue){
+      this.key <- Key.DOWN;
+      }
+    if(Key.COMMA.getValue() == keyValue){
+      this.key <- Key.COMMA;
+      }
+    if(Key.MINUS.getValue() == keyValue){
+      this.key <- Key.MINUS;
+      }
+    if(Key.PERIOD.getValue() == keyValue){
+      this.key <- Key.PERIOD;
+      }
+    if(Key.SLASH.getValue() == keyValue){
+      this.key <- Key.SLASH;
+      }
+    if(Key.DIGIT_0.getValue() == keyValue){
+      this.key <- Key.DIGIT_0;
+      }
+    if(Key.DIGIT_1.getValue() == keyValue){
+      this.key <- Key.DIGIT_1;
+      }
+    if(Key.DIGIT_2.getValue() == keyValue){
+      this.key <- Key.DIGIT_2;
+      }
+    if(Key.DIGIT_3.getValue() == keyValue){
+      this.key <- Key.DIGIT_3;
+      }
+    if(Key.DIGIT_4.getValue() == keyValue){
+      this.key <- Key.DIGIT_4;
+      }
+    if(Key.DIGIT_5.getValue() == keyValue){
+      this.key <- Key.DIGIT_5;
+      }
+    if(Key.DIGIT_6.getValue() == keyValue){
+      this.key <- Key.DIGIT_6;
+      }
+    if(Key.DIGIT_7.getValue() == keyValue){
+      this.key <- Key.DIGIT_7;
+      }
+    if(Key.DIGIT_8.getValue() == keyValue){
+      this.key <- Key.DIGIT_8;
+      }
+    if(Key.DIGIT_9.getValue() == keyValue){
+      this.key <- Key.DIGIT_9;
+      }
+    if(Key.SEMICOLON.getValue() == keyValue){
+      this.key <- Key.SEMICOLON;
+      }
+    if(Key.EQUALS.getValue() == keyValue){
+      this.key <- Key.EQUALS;
+      }
+    if(Key.A.getValue() == keyValue){
+      this.key <- Key.A;
+      }
+    if(Key.B.getValue() == keyValue){
+      this.key <- Key.B;
+      }
+    if(Key.C.getValue() == keyValue){
+      this.key <- Key.C;
+      }
+    if(Key.D.getValue() == keyValue){
+      this.key <- Key.D;
+      }
+    if(Key.E.getValue() == keyValue){
+      this.key <- Key.E;
+      }
+    if(Key.F.getValue() == keyValue){
+      this.key <- Key.F;
+      }
+    if(Key.G.getValue() == keyValue){
+      this.key <- Key.G;
+      }
+    if(Key.H.getValue() == keyValue){
+      this.key <- Key.H;
+      }
+    if(Key.I.getValue() == keyValue){
+      this.key <- Key.I;
+      }
+    if(Key.J.getValue() == keyValue){
+      this.key <- Key.J;
+      }
+    if(Key.K.getValue() == keyValue){
+      this.key <- Key.K;
+      }
+    if(Key.L.getValue() == keyValue){
+      this.key <- Key.L;
+      }
+    if(Key.M.getValue() == keyValue){
+      this.key <- Key.M;
+      }
+    if(Key.N.getValue() == keyValue){
+      this.key <- Key.N;
+      }
+    if(Key.O.getValue() == keyValue){
+      this.key <- Key.O;
+      }
+    if(Key.P.getValue() == keyValue){
+      this.key <- Key.P;
+      }
+    if(Key.Q.getValue() == keyValue){
+      this.key <- Key.Q;
+      }
+    if(Key.R.getValue() == keyValue){
+      this.key <- Key.R;
+      }
+    if(Key.S.getValue() == keyValue){
+      this.key <- Key.S;
+      }
+    if(Key.T.getValue() == keyValue){
+      this.key <- Key.T;
+      }
+    if(Key.U.getValue() == keyValue){
+      this.key <- Key.U;
+      }
+    if(Key.V.getValue() == keyValue){
+      this.key <- Key.V;
+      }
+    if(Key.W.getValue() == keyValue){
+      this.key <- Key.W;
+      }
+    if(Key.X.getValue() == keyValue){
+      this.key <- Key.X;
+      }
+    if(Key.Y.getValue() == keyValue){
+      this.key <- Key.Y;
+      }
+    if(Key.Z.getValue() == keyValue){
+      this.key <- Key.Z;
+      }
+    if(Key.OPEN_BRACKET.getValue() == keyValue){
+      this.key <- Key.OPEN_BRACKET;
+      }
+    if(Key.BACK_SLASH.getValue() == keyValue){
+      this.key <- Key.BACK_SLASH;
+      }
+    if(Key.CLOSE_BRACKET.getValue() == keyValue){
+      this.key <- Key.CLOSE_BRACKET;
+      }
+    if(Key.NUMPAD0.getValue() == keyValue){
+      this.key <- Key.NUMPAD0;
+      }
+    if(Key.NUMPAD1.getValue() == keyValue){
+      this.key <- Key.NUMPAD1;
+      }
+    if(Key.NUMPAD2.getValue() == keyValue){
+      this.key <- Key.NUMPAD2;
+      }
+    if(Key.NUMPAD3.getValue() == keyValue){
+      this.key <- Key.NUMPAD3;
+      }
+    if(Key.NUMPAD4.getValue() == keyValue){
+      this.key <- Key.NUMPAD4;
+      }
+    if(Key.NUMPAD5.getValue() == keyValue){
+      this.key <- Key.NUMPAD5;
+      }
+    if(Key.NUMPAD6.getValue() == keyValue){
+      this.key <- Key.NUMPAD6;
+      }
+    if(Key.NUMPAD7.getValue() == keyValue){
+      this.key <- Key.NUMPAD7;
+      }
+    if(Key.NUMPAD8.getValue() == keyValue){
+      this.key <- Key.NUMPAD8;
+      }
+    if(Key.NUMPAD9.getValue() == keyValue){
+      this.key <- Key.NUMPAD9;
+      }
+    if(Key.MULTIPLY.getValue() == keyValue){
+      this.key <- Key.MULTIPLY;
+      }
+    if(Key.ADD.getValue() == keyValue){
+      this.key <- Key.ADD;
+      }
+    if(Key.SEPARATOR.getValue() == keyValue){
+      this.key <- Key.SEPARATOR;
+      }
+    if(Key.SUBTRACT.getValue() == keyValue){
+      this.key <- Key.SUBTRACT;
+      }
+    if(Key.DECIMAL.getValue() == keyValue){
+      this.key <- Key.DECIMAL;
+      }
+    if(Key.DIVIDE.getValue() == keyValue){
+      this.key <- Key.DIVIDE;
+      }
+    if(Key.DELETE.getValue() == keyValue){
+      this.key <- Key.DELETE;
+      }
+    if(Key.NUM_LOCK.getValue() == keyValue){
+      this.key <- Key.NUM_LOCK;
+      }
+    if(Key.SCROLL_LOCK.getValue() == keyValue){
+      this.key <- Key.SCROLL_LOCK;
+      }
+    if(Key.F1.getValue() == keyValue){
+      this.key <- Key.F1;
+      }
+    if(Key.F2.getValue() == keyValue){
+      this.key <- Key.F2;
+      }
+    if(Key.F3.getValue() == keyValue){
+      this.key <- Key.F3;
+      }
+    if(Key.F4.getValue() == keyValue){
+      this.key <- Key.F4;
+      }
+    if(Key.F5.getValue() == keyValue){
+      this.key <- Key.F5;
+      }
+    if(Key.F6.getValue() == keyValue){
+      this.key <- Key.F6;
+      }
+    if(Key.F7.getValue() == keyValue){
+      this.key <- Key.F7;
+      }
+    if(Key.F8.getValue() == keyValue){
+      this.key <- Key.F8;
+      }
+    if(Key.F9.getValue() == keyValue){
+      this.key <- Key.F9;
+      }
+    if(Key.F10.getValue() == keyValue){
+      this.key <- Key.F10;
+      }
+    if(Key.F11.getValue() == keyValue){
+      this.key <- Key.F11;
+      }
+    if(Key.F12.getValue() == keyValue){
+      this.key <- Key.F12;
+      }
+    if(Key.F13.getValue() == keyValue){
+      this.key <- Key.F13;
+      }
+    if(Key.F14.getValue() == keyValue){
+      this.key <- Key.F14;
+      }
+    if(Key.F15.getValue() == keyValue){
+      this.key <- Key.F15;
+      }
+    if(Key.F16.getValue() == keyValue){
+      this.key <- Key.F16;
+      }
+    if(Key.F17.getValue() == keyValue){
+      this.key <- Key.F17;
+      }
+    if(Key.F18.getValue() == keyValue){
+      this.key <- Key.F18;
+      }
+    if(Key.F19.getValue() == keyValue){
+      this.key <- Key.F19;
+      }
+    if(Key.F20.getValue() == keyValue){
+      this.key <- Key.F20;
+      }
+    if(Key.F21.getValue() == keyValue){
+      this.key <- Key.F21;
+      }
+    if(Key.F22.getValue() == keyValue){
+      this.key <- Key.F22;
+      }
+    if(Key.F23.getValue() == keyValue){
+      this.key <- Key.F23;
+      }
+    if(Key.F24.getValue() == keyValue){
+      this.key <- Key.F24;
+      }
+    if(Key.PRINTSCREEN.getValue() == keyValue){
+      this.key <- Key.PRINTSCREEN;
+      }
+    if(Key.INSERT.getValue() == keyValue){
+      this.key <- Key.INSERT;
+      }
+    if(Key.HELP.getValue() == keyValue){
+      this.key <- Key.HELP;
+      }
+    if(Key.META.getValue() == keyValue){
+      this.key <- Key.META;
+      }
+    if(Key.BACK_QUOTE.getValue() == keyValue){
+      this.key <- Key.BACK_QUOTE;
+      }
+    if(Key.QUOTE.getValue() == keyValue){
+      this.key <- Key.QUOTE;
+      }
+    if(Key.KP_UP.getValue() == keyValue){
+      this.key <- Key.KP_UP;
+      }
+    if(Key.KP_DOWN.getValue() == keyValue){
+      this.key <- Key.KP_DOWN;
+      }
+    if(Key.KP_LEFT.getValue() == keyValue){
+      this.key <- Key.KP_LEFT;
+      }
+    if(Key.KP_RIGHT.getValue() == keyValue){
+      this.key <- Key.KP_RIGHT;
+      }
+    if(Key.DEAD_GRAVE.getValue() == keyValue){
+      this.key <- Key.DEAD_GRAVE;
+      }
+    if(Key.DEAD_ACUTE.getValue() == keyValue){
+      this.key <- Key.DEAD_ACUTE;
+      }
+    if(Key.DEAD_CIRCUMFLEX.getValue() == keyValue){
+      this.key <- Key.DEAD_CIRCUMFLEX;
+      }
+    if(Key.DEAD_TILDE.getValue() == keyValue){
+      this.key <- Key.DEAD_TILDE;
+      }
+    if(Key.DEAD_MACRON.getValue() == keyValue){
+      this.key <- Key.DEAD_MACRON;
+      }
+    if(Key.DEAD_BREVE.getValue() == keyValue){
+      this.key <- Key.DEAD_BREVE;
+      }
+    if(Key.DEAD_ABOVEDOT.getValue() == keyValue){
+      this.key <- Key.DEAD_ABOVEDOT;
+      }
+    if(Key.DEAD_DIAERESIS.getValue() == keyValue){
+      this.key <- Key.DEAD_DIAERESIS;
+      }
+    if(Key.DEAD_ABOVERING.getValue() == keyValue){
+      this.key <- Key.DEAD_ABOVERING;
+      }
+    if(Key.DEAD_DOUBLEACUTE.getValue() == keyValue){
+      this.key <- Key.DEAD_DOUBLEACUTE;
+      }
+    if(Key.DEAD_CARON.getValue() == keyValue){
+      this.key <- Key.DEAD_CARON;
+      }
+    if(Key.DEAD_CEDILLA.getValue() == keyValue){
+      this.key <- Key.DEAD_CEDILLA;
+      }
+    if(Key.DEAD_OGONEK.getValue() == keyValue){
+      this.key <- Key.DEAD_OGONEK;
+      }
+    if(Key.DEAD_IOTA.getValue() == keyValue){
+      this.key <- Key.DEAD_IOTA;
+      }
+    if(Key.DEAD_VOICED_SOUND.getValue() == keyValue){
+      this.key <- Key.DEAD_VOICED_SOUND;
+      }
+    if(Key.DEAD_SEMIVOICED_SOUND.getValue() == keyValue){
+      this.key <- Key.DEAD_SEMIVOICED_SOUND;
+      }
+    if(Key.AMPERSAND.getValue() == keyValue){
+      this.key <- Key.AMPERSAND;
+      }
+    if(Key.ASTERISK.getValue() == keyValue){
+      this.key <- Key.ASTERISK;
+      }
+    if(Key.QUOTEDBL.getValue() == keyValue){
+      this.key <- Key.QUOTEDBL;
+      }
+    if(Key.LESS.getValue() == keyValue){
+      this.key <- Key.LESS;
+      }
+    if(Key.GREATER.getValue() == keyValue){
+      this.key <- Key.GREATER;
+      }
+    if(Key.BRACELEFT.getValue() == keyValue){
+      this.key <- Key.BRACELEFT;
+      }
+    if(Key.BRACERIGHT.getValue() == keyValue){
+      this.key <- Key.BRACERIGHT;
+      }
+    if(Key.AT.getValue() == keyValue){
+      this.key <- Key.AT;
+      }
+    if(Key.COLON.getValue() == keyValue){
+      this.key <- Key.COLON;
+      }
+    if(Key.CIRCUMFLEX.getValue() == keyValue){
+      this.key <- Key.CIRCUMFLEX;
+      }
+    if(Key.DOLLAR.getValue() == keyValue){
+      this.key <- Key.DOLLAR;
+      }
+    if(Key.EURO_SIGN.getValue() == keyValue){
+      this.key <- Key.EURO_SIGN;
+      }
+    if(Key.EXCLAMATION_MARK.getValue() == keyValue){
+      this.key <- Key.EXCLAMATION_MARK;
+      }
+    if(Key.INVERTED_EXCLAMATION_MARK.getValue() == keyValue){
+      this.key <- Key.INVERTED_EXCLAMATION_MARK;
+      }
+    if(Key.LEFT_PARENTHESIS.getValue() == keyValue){
+      this.key <- Key.LEFT_PARENTHESIS;
+      }
+    if(Key.NUMBER_SIGN.getValue() == keyValue){
+      this.key <- Key.NUMBER_SIGN;
+      }
+    if(Key.PLUS.getValue() == keyValue){
+      this.key <- Key.PLUS;
+      }
+    if(Key.RIGHT_PARENTHESIS.getValue() == keyValue){
+      this.key <- Key.RIGHT_PARENTHESIS;
+      }
+    if(Key.UNDERSCORE.getValue() == keyValue){
+      this.key <- Key.UNDERSCORE;
+      }
+    if(Key.WINDOWS.getValue() == keyValue){
+      this.key <- Key.WINDOWS;
+      }
+    if(Key.CONTEXT_MENU.getValue() == keyValue){
+      this.key <- Key.CONTEXT_MENU;
+      }
+    if(Key.FINAL.getValue() == keyValue){
+      this.key <- Key.FINAL;
+      }
+    if(Key.CONVERT.getValue() == keyValue){
+      this.key <- Key.CONVERT;
+      }
+    if(Key.NONCONVERT.getValue() == keyValue){
+      this.key <- Key.NONCONVERT;
+      }
+    if(Key.ACCEPT.getValue() == keyValue){
+      this.key <- Key.ACCEPT;
+      }
+    if(Key.MODECHANGE.getValue() == keyValue){
+      this.key <- Key.MODECHANGE;
+      }
+    if(Key.KANA.getValue() == keyValue){
+      this.key <- Key.KANA;
+      }
+    if(Key.KANJI.getValue() == keyValue){
+      this.key <- Key.KANJI;
+      }
+    if(Key.ALPHANUMERIC.getValue() == keyValue){
+      this.key <- Key.ALPHANUMERIC;
+      }
+    if(Key.KATAKANA.getValue() == keyValue){
+      this.key <- Key.KATAKANA;
+      }
+    if(Key.HIRAGANA.getValue() == keyValue){
+      this.key <- Key.HIRAGANA;
+      }
+    if(Key.FULL_WIDTH.getValue() == keyValue){
+      this.key <- Key.FULL_WIDTH;
+      }
+    if(Key.HALF_WIDTH.getValue() == keyValue){
+      this.key <- Key.HALF_WIDTH;
+      }
+    if(Key.ROMAN_CHARACTERS.getValue() == keyValue){
+      this.key <- Key.ROMAN_CHARACTERS;
+      }
+    if(Key.ALL_CANDIDATES.getValue() == keyValue){
+      this.key <- Key.ALL_CANDIDATES;
+      }
+    if(Key.PREVIOUS_CANDIDATE.getValue() == keyValue){
+      this.key <- Key.PREVIOUS_CANDIDATE;
+      }
+    if(Key.CODE_INPUT.getValue() == keyValue){
+      this.key <- Key.CODE_INPUT;
+      }
+    if(Key.JAPANESE_KATAKANA.getValue() == keyValue){
+      this.key <- Key.JAPANESE_KATAKANA;
+      }
+    if(Key.JAPANESE_HIRAGANA.getValue() == keyValue){
+      this.key <- Key.JAPANESE_HIRAGANA;
+      }
+    if(Key.JAPANESE_ROMAN.getValue() == keyValue){
+      this.key <- Key.JAPANESE_ROMAN;
+      }
+    if(Key.KANA_LOCK.getValue() == keyValue){
+      this.key <- Key.KANA_LOCK;
+      }
+    if(Key.INPUT_METHOD_ON_OFF.getValue() == keyValue){
+      this.key <- Key.INPUT_METHOD_ON_OFF;
+      }
+    if(Key.CUT.getValue() == keyValue){
+      this.key <- Key.CUT;
+      }
+    if(Key.COPY.getValue() == keyValue){
+      this.key <- Key.COPY;
+      }
+    if(Key.PASTE.getValue() == keyValue){
+      this.key <- Key.PASTE;
+      }
+    if(Key.UNDO.getValue() == keyValue){
+      this.key <- Key.UNDO;
+      }
+    if(Key.AGAIN.getValue() == keyValue){
+      this.key <- Key.AGAIN;
+      }
+    if(Key.FIND.getValue() == keyValue){
+      this.key <- Key.FIND;
+      }
+    if(Key.PROPS.getValue() == keyValue){
+      this.key <- Key.PROPS;
+      }
+    if(Key.STOP.getValue() == keyValue){
+      this.key <- Key.STOP;
+      }
+    if(Key.COMPOSE.getValue() == keyValue){
+      this.key <- Key.COMPOSE;
+      }
+    if(Key.ALT_GRAPH.getValue() == keyValue){
+      this.key <- Key.ALT_GRAPH;
+      }
+    if(Key.BEGIN.getValue() == keyValue){
+      this.key <- Key.BEGIN;
+      }
+    if(Key.LEFT_TRIGGER.getValue() == keyValue){
+      this.key <- Key.LEFT_TRIGGER;
+      }
+    if(Key.RIGHT_TRIGGER.getValue() == keyValue){
+      this.key <- Key.RIGHT_TRIGGER;
+      }
+    if(Key.LEFT_GRIP.getValue() == keyValue){
+      this.key <- Key.LEFT_GRIP;
+      }
+    if(Key.RIGHT_GRIP.getValue() == keyValue){
+      this.key <- Key.RIGHT_GRIP;
+      }
+    if(Key.LEFT_PRIMARY.getValue() == keyValue){
+      this.key <- Key.LEFT_PRIMARY;
+      }
+    if(Key.RIGHT_PRIMARY.getValue() == keyValue){
+      this.key <- Key.RIGHT_PRIMARY;
+      }
+    if(Key.LEFT_SECONDARY.getValue() == keyValue){
+      this.key <- Key.LEFT_SECONDARY;
+      }
+    if(Key.RIGHT_SECONDARY.getValue() == keyValue){
+      this.key <- Key.RIGHT_SECONDARY;
+      }
+    if(Key.LEFT_AXIS_UP.getValue() == keyValue){
+      this.key <- Key.LEFT_AXIS_UP;
+      }
+    if(Key.RIGHT_AXIS_UP.getValue() == keyValue){
+      this.key <- Key.RIGHT_AXIS_UP;
+      }
+    if(Key.LEFT_AXIS_DOWN.getValue() == keyValue){
+      this.key <- Key.LEFT_AXIS_DOWN;
+      }
+    if(Key.RIGHT_AXIS_DOWN.getValue() == keyValue){
+      this.key <- Key.RIGHT_AXIS_DOWN;
+      }
+    if(Key.LEFT_AXIS_LEFT.getValue() == keyValue){
+      this.key <- Key.LEFT_AXIS_LEFT;
+      }
+    if(Key.RIGHT_AXIS_LEFT.getValue() == keyValue){
+      this.key <- Key.RIGHT_AXIS_LEFT;
+      }
+    if(Key.LEFT_AXIS_RIGHT.getValue() == keyValue){
+      this.key <- Key.LEFT_AXIS_RIGHT;
+      }
+    if(Key.RIGHT_AXIS_RIGHT.getValue() == keyValue){
+      this.key <- Key.RIGHT_AXIS_RIGHT;
+      }
+    if(Key.LEFT_THUMBSTICK_CLICK.getValue() == keyValue){
+      this.key <- Key.LEFT_THUMBSTICK_CLICK;
+      }
+    if(Key.RIGHT_THUMBSTICK_CLICK.getValue() == keyValue){
+      this.key <- Key.RIGHT_THUMBSTICK_CLICK;
+      }
+    if(Key.LEFT_MENU.getValue() == keyValue){
+      this.key <- Key.LEFT_MENU;
+      }
+    if(Key.RIGHT_MENU.getValue() == keyValue){
+      this.key <- Key.RIGHT_MENU;
+      }
+    if(Key.UNDEFINED.getValue() == keyValue){
+      this.key <- Key.UNDEFINED;
+      }
 
-	Boolean isKey( Key key ) {
-		return this.key == key;
-	}
+  }
+
+  Key getKey() {
+    return this.key;
+  }
+
+  Boolean isKey(Key key){
+    return this.key == key;
+  }
+
 }

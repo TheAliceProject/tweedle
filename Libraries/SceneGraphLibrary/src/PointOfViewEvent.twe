@@ -1,0 +1,12 @@
+class PointOfViewEvent extends AbstractEvent {
+  PointOfViewEvent(SThing entity) {
+    super();
+    this.entity <- entity;
+  }
+
+  SModel getEntity() {
+    return this.entity;
+  }
+
+  @CompletelyHidden SThing entity;
+}

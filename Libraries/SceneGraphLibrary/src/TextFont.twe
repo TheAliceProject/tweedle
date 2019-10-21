@@ -1,10 +1,10 @@
-enum FontType {
+enum TextFont {
 	DEFAULT(value: $FontType.DEFAULT),
 	SERIF(value: $FontType.SERIF),
 	SANS_SERIF(value: $FontType.SANS_SERIF),
 	MONOSPACED(value: $FontType.MONOSPACED);
 
-	FontType(WholeNumber value) {
+	TextFont(WholeNumber value) {
 		this.value <- value;
 	}
 

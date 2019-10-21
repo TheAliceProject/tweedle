@@ -8,32 +8,43 @@ class Peacock extends Flyer models Peacock {
   }
 
   static TextString DEFAULT <- "Peacock/DEFAULT";
+  @PrimeTime static JointId PLUME <- new JointId(name: "PLUME", parent: Flyer.HEAD);
+  @CompletelyHidden static JointId PLUME_TIP <- new JointId(name: "PLUME_TIP", parent: Peacock.PLUME);
+  @PrimeTime static JointId PLUMAGE_BASE <- new JointId(name: "PLUMAGE_BASE", parent: Flyer.SPINE_MIDDLE);
+  @PrimeTime static JointId PLUMAGE_CENTER <- new JointId(name: "PLUMAGE_CENTER", parent: Peacock.PLUMAGE_BASE);
+  @CompletelyHidden static JointId PLUMAGE_CENTER_TIP <- new JointId(name: "PLUMAGE_CENTER_TIP", parent: Peacock.PLUMAGE_CENTER);
+  @PrimeTime static JointId LEFT_PLUMAGE <- new JointId(name: "LEFT_PLUMAGE", parent: Peacock.PLUMAGE_BASE);
+  @CompletelyHidden static JointId PLUMAGE_LEFT_TIP <- new JointId(name: "PLUMAGE_LEFT_TIP", parent: Peacock.LEFT_PLUMAGE);
+  @PrimeTime static JointId RIGHT_PLUMAGE <- new JointId(name: "RIGHT_PLUMAGE", parent: Peacock.PLUMAGE_BASE);
+  @CompletelyHidden static JointId PLUMAGE_RIGHT_TIP <- new JointId(name: "PLUMAGE_RIGHT_TIP", parent: Peacock.RIGHT_PLUMAGE);
+  @CompletelyHidden static JointId LEFT_TOE <- new JointId(name: "LEFT_TOE", parent: Flyer.LEFT_FOOT);
+  @CompletelyHidden static JointId RIGHT_TOE <- new JointId(name: "RIGHT_TOE", parent: Flyer.RIGHT_FOOT);
 
   SJoint getPlume() {
-    return this.getJoint(jointId: PeacockResource.PLUME);
+    return this.getJoint(jointId: Peacock.PLUME);
   }
 
   SJoint getPlumageBase() {
-    return this.getJoint(jointId: PeacockResource.PLUMAGE_BASE);
+    return this.getJoint(jointId: Peacock.PLUMAGE_BASE);
   }
 
   SJoint getPlumageCenter() {
-    return this.getJoint(jointId: PeacockResource.PLUMAGE_CENTER);
+    return this.getJoint(jointId: Peacock.PLUMAGE_CENTER);
   }
 
   SJoint getLeftPlumage() {
-    return this.getJoint(jointId: PeacockResource.LEFT_PLUMAGE);
+    return this.getJoint(jointId: Peacock.LEFT_PLUMAGE);
   }
 
   SJoint getRightPlumage() {
-    return this.getJoint(jointId: PeacockResource.RIGHT_PLUMAGE);
+    return this.getJoint(jointId: Peacock.RIGHT_PLUMAGE);
   }
 
   void spreadFanPose() {
-    this.strikePose(pose: PeacockResource.SPREAD_FAN_POSE);
+    this.strikePose(pose: Peacock.SPREAD_FAN_POSE);
   }
 
   void spreadWingsFanPose() {
-    this.strikePose(pose: PeacockResource.SPREAD_WINGS_FAN_POSE);
+    this.strikePose(pose: Peacock.SPREAD_WINGS_FAN_POSE);
   }
 }

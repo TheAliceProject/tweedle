@@ -1,0 +1,17 @@
+class JointArrayId {
+    JointArrayId (JointId root, TextString pattern) {
+        this.root <- root;
+        this.elementPattern <- pattern;
+    }
+
+    TextString getElementNamePattern() {
+        return elementPattern;
+    }
+
+    JointId getRoot() {
+        return root;
+    }
+
+    @CompletelyHidden JointId root;
+    @CompletelyHidden TextString elementPattern;
+}

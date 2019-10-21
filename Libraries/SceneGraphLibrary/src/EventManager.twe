@@ -1,0 +1,169 @@
+class EventManager {
+  EventManager() {
+  }
+
+  void initialize() {
+  }
+
+  void addClickOnScreenListener(SScene scene,
+                                <MouseClickOnScreenEvent->void> listener,
+                                OverlappingEventPolicy overlappingEventPolicy) {
+    $Mouse.addClickOnScreenListener(scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: (Portion x, Portion y) -> {
+      listener(new MouseClickOnScreenEvent(x: x, y: y));
+    });
+  }
+
+  void addClickOnObjectListener(SScene scene,
+                                <MouseClickOnObjectEvent->void> listener,
+                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                                SThing[] setOfVisuals <- Default.clickableVisuals()) {
+    $Mouse.addClickOnObjectListener(scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: (Portion x, Portion y, SThing model) -> {
+      if (setOfVisuals.length == 0) {
+        listener(new MouseClickOnObjectEvent(x: x, y: y, model: model));
+      } else {
+        forEach(SThing visual in setOfVisuals) {
+          if (model == visual) {
+            listener(new MouseClickOnObjectEvent(x: x, y: y, model: model));
+          }
+        }
+      }
+    });
+  }
+
+  void addDefaultModelManipulation() {
+    $Mouse.addDragAdapter();
+  }
+
+  void addKeyPressListener(<KeyEvent->void> listener,
+                           OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                           HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
+
+    $Keyboard.addKeyListener(overlappingEventPolicy: overlappingEventPolicy.getValue(), heldKeyPolicy: heldKeyPolicy.getValue(), listener: (WholeNumber keyValue) -> {
+                                listener(new KeyEvent(keyValue: keyValue));
+    });
+  }
+
+
+  void addArrowKeyListener(<ArrowKeyEvent->void> listener,
+                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                                HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
+
+    $Keyboard.addArrowKeyPressListener(overlappingEventPolicy: overlappingEventPolicy.getValue(), heldKeyPolicy: heldKeyPolicy.getValue(), listener: (WholeNumber keyValue) -> {
+                                                                  listener(new ArrowKeyEvent(keyValue: keyValue));
+    });
+  }
+
+
+  void addNumberKeyListener(<NumberKeyEvent->void> listener,
+                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                                 HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
+    $Keyboard.addNumberKeyPressListener(overlappingEventPolicy: overlappingEventPolicy.getValue(), heldKeyPolicy: heldKeyPolicy.getValue(), listener: (WholeNumber keyValue) -> {
+                                                                   listener(new NumberKeyEvent(keyValue: keyValue));
+    });
+  }
+
+  void addCollisionStartListener(<ThingInteractionEvent->void> listener,
+                                    SThing[] setA,
+                                    SThing[] setB,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+            $Interaction.addCollisionStartListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                            a: setA, b: setB,
+                                            listener: (SThing thingFromSetA, SThing thingFromSetB) -> {
+                                                   listener(new ThingInteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
+                                                   });
+  }
+
+  void addCollisionEndListener(<ThingInteractionEvent->void> listener,
+                                    SThing[] setA,
+                                    SThing[] setB,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+            $Interaction.addCollisionEndListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                            a: setA, b: setB,
+                                            listener: (SThing thingFromSetA, SThing thingFromSetB) -> {
+                                                   listener(new ThingInteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
+                                                   });
+  }
+
+  void addViewEnterListener(<ViewEvent->void> listener,
+                                    SModel[] set,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+            $Interaction.addViewEnterListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                                set: set,
+                                                listener: (SModel model) -> {
+                                                    listener(new ViewEvent(modelInteracted: model));
+                                                    });
+  }
+
+  void addViewExitListener(<ViewEvent->void> listener,
+                                    SModel[] set,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+            $Interaction.addViewExitListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                                set: set,
+                                                listener: (SModel model) -> {
+                                                    listener(new ViewEvent(modelInteracted: model));
+                                                    });
+  }
+
+  void addProximityEnterListener(<ThingInteractionEvent->void> listener,
+                                    SThing[] setA,
+                                    SThing[] setB,
+                                    DecimalNumber distance,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+            $Interaction.addProximityEnterListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                            a: setA, b: setB,
+                                            distance: distance,
+                                            listener: (SThing thingFromSetA, SThing thingFromSetB) -> {
+                                                   listener(new ThingInteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
+                                                   });
+  }
+
+  void addProximityExitListener(<ThingInteractionEvent->void> listener,
+                                    SThing[] setA,
+                                    SThing[] setB,
+                                    DecimalNumber distance,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+            $Interaction.addProximityExitListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                            a: setA, b: setB,
+                                            distance: distance,
+                                            listener: (SThing thingFromSetA, SThing thingFromSetB) -> {
+                                                   listener(new ThingInteractionEvent(thingFromSetA: thingFromSetA, thingFromSetB: thingFromSetB));
+                                                   });
+  }
+
+  void addPointOfViewChangeListener(<PointOfViewEvent->void> listener, SThing[] targets) {
+            $Interaction.addPointOfViewChangeListener(targets: targets,
+                                            listener: (SThing thingThatMoved) -> {
+                                                   listener(new PointOfViewEvent(entity: thingThatMoved));
+                                                   });
+  }
+
+  void addOcclusionStartListener(<ModelInteractionEvent->void> listener,
+                                  SModel[] setA,
+                                  SModel[] setB,
+                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+          $Interaction.addOcclusionStartListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                          a: setA, b: setB,
+                                          listener: (SModel modelFromSetA, SModel modelFromSetB) -> {
+                                                 listener(new ModelInteractionEvent(foregroundModel: modelFromSetA, backgroundModel: modelFromSetB));
+                                                 });
+  }
+
+  void addOcclusionEndListener(<ModelInteractionEvent->void> listener,
+                                  SModel[] setA,
+                                  SModel[] setB,
+                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+          $Interaction.addOcclusionEndListener(overlappingEventPolicy: overlappingEventPolicy.getValue(),
+                                          a: setA, b: setB,
+                                          listener: (SModel modelFromSetA, SModel modelFromSetB) -> {
+                                                 listener(new ModelInteractionEvent(foregroundModel: modelFromSetA, backgroundModel: modelFromSetB));
+                                                 });
+  }
+
+  void moveWithArrows(SMovableTurnable thing) {
+    $Keyboard.moveWithArrows(thing: thing, speed: 2.5);
+  }
+
+  @CompletelyHidden void disconnectSystemListeners() {
+    //$System.disconnect(program: this);
+  }
+}

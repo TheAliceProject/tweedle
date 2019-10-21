@@ -4,28 +4,41 @@ class Hare extends Biped models Hare {
   }
 
   static TextString DEFAULT <- "Hare/DEFAULT";
+  @PrimeTime static JointId LEFT_EAR <- new JointId(name: "LEFT_EAR", parent: Biped.HEAD);
+  @PrimeTime static JointId LEFT_EAR_MIDDLE <- new JointId(name: "LEFT_EAR_MIDDLE", parent: Hare.LEFT_EAR);
+  @CompletelyHidden static JointId LEFT_EAR_TIP <- new JointId(name: "LEFT_EAR_TIP", parent: Hare.LEFT_EAR_MIDDLE);
+  @PrimeTime static JointId RIGHT_EAR <- new JointId(name: "RIGHT_EAR", parent: Biped.HEAD);
+  @PrimeTime static JointId RIGHT_EAR_MIDDLE <- new JointId(name: "RIGHT_EAR_MIDDLE", parent: Hare.RIGHT_EAR);
+  @CompletelyHidden static JointId RIGHT_EAR_TIP <- new JointId(name: "RIGHT_EAR_TIP", parent: Hare.RIGHT_EAR_MIDDLE);
+  @CompletelyHidden static JointId LOWER_LIP <- new JointId(name: "LOWER_LIP", parent: Biped.MOUTH);
+  @PrimeTime static JointId TAIL_0 <- new JointId(name: "TAIL_0", parent: Biped.PELVIS_LOWER_BODY);
+  @CompletelyHidden static JointId TAIL_1 <- new JointId(name: "TAIL_1", parent: Hare.TAIL_0);
+  @CompletelyHidden static JointId RIGHT_TOES <- new JointId(name: "RIGHT_TOES", parent: Biped.RIGHT_FOOT);
+  @CompletelyHidden static JointId LEFT_TOES <- new JointId(name: "LEFT_TOES", parent: Biped.LEFT_FOOT);
+
+  @CompletelyHidden static JointId[] TAIL_ARRAY = {Hare.TAIL_0, Hare.TAIL_1};
 
   SJoint getLeftEar() {
-    return this.getJoint(jointId: HareResource.LEFT_EAR);
+    return this.getJoint(jointId: Hare.LEFT_EAR);
   }
 
   SJoint getLeftEarMiddle() {
-    return this.getJoint(jointId: HareResource.LEFT_EAR_MIDDLE);
+    return this.getJoint(jointId: Hare.LEFT_EAR_MIDDLE);
   }
 
   SJoint getRightEar() {
-    return this.getJoint(jointId: HareResource.RIGHT_EAR);
+    return this.getJoint(jointId: Hare.RIGHT_EAR);
   }
 
   SJoint getRightEarMiddle() {
-    return this.getJoint(jointId: HareResource.RIGHT_EAR_MIDDLE);
+    return this.getJoint(jointId: Hare.RIGHT_EAR_MIDDLE);
   }
 
   SJoint getTail() {
-    return this.getJoint(jointId: HareResource.TAIL_0);
+    return this.getJoint(jointId: Hare.TAIL_0);
   }
 
   SJoint[] getTailArray() {
-    return this.getJointArray(jointIdArray: HareResource.TAIL_ARRAY);
+    return this.getJointArray(idArray: Hare.TAIL_ARRAY);
   }
 }

@@ -24,7 +24,20 @@ class Default {
   }
 
   static Angle verticalFOV() {
-    return new Angle(revolutions: 0.5 * $Math.RAD2REV);
+    return new Angle(revolutions: 0.5 * $Angle.RAD2REV);
+  }
+
+  static DecimalNumber volume(){
+    return 1.0;
+  }
+
+  static DecimalNumber startTime(){
+    return 0.0;
+  }
+
+  static DecimalNumber stopTime(){
+    // Converted to audioResource.Length in player if < 0
+    return -1.0;
   }
 
   static DecimalNumber nearClipPlane() {
@@ -39,14 +52,19 @@ class Default {
     return TextStyle.PLAIN;
   }
 
-  static FontType fontType() {
-    return FontType.DEFAULT;
+  static TextFont fontType() {
+    return TextFont.DEFAULT;
   }
 
   static BubblePosition bubblePosition(){
     return BubblePosition.AUTOMATIC;
   }
 
-//  static HeldKeyPolicy heldKeyPolicy() {
-//  }
+  static SThing[] clickableVisuals() {
+    return new SThing[]{};
+  }
+
+  static HeldKeyPolicy heldKeyPolicy() {
+    return HeldKeyPolicy.FIRE_ONCE_ON_PRESS;
+  }
 }

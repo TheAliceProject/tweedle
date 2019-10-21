@@ -1,6 +1,5 @@
 class SJointedModel extends SModel {
     SJointedModel(TextString resource) {
-        $Debug.log(message: "Constructing SJointedModel without root joint. " .. resource);
         super(resource: resource);
     }
 
@@ -24,6 +23,14 @@ class SJointedModel extends SModel {
         }
     }
 
+    @CompletelyHidden void setJointedModelResource(TextString resource) {
+        if (currentResource == resource) {
+            return;
+        }
+        // TODO translate more from java, JointedModelImp.setNewResource(), and reconsider use of setResource
+        setResource(resource: resource);
+    }
+
     SJoint getJoint(JointId jointId) {
         if (this.joints != null) {
             forEach(SJoint joint in this.joints) {
@@ -35,16 +42,26 @@ class SJointedModel extends SModel {
         return null;
     }
 
-    SJoint[] getJointArray(JointId[] idArray) {
+    @CompletelyHidden SJoint[] getJointArray(JointId[] idArray) {
         WholeNumber len <- idArray.length;
         SJoint[] jointArray <- new SJoint[len];
         if (this.joints != null) {
             WholeNumber index <- 0;
-            countUpTo(index < JointIdArray.length) {
+            countUpTo(index < len) {
                 jointArray[index] <- this.getJoint(jointId: idArray[index]);
             }
         }
         return jointArray;
+    }
+
+    @CompletelyHidden SJoint[] getJointArray(JointArrayId jointArrayId) {
+        return getJointArray(idArray: getJointIdArray(jointArrayId: jointArrayId));
+    }
+
+    @CompletelyHidden JointId[] getJointIdArray(JointArrayId jointArrayId) {
+        $Debug.log(message: "Access JointArray by ID is not yet supported. Returning empty array for " .. jointArrayId.elementPattern);
+        // TODO Implement resource reading and joint collection
+        return new JointId[0];
     }
 
     void straightenOutJoints(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {

@@ -1,0 +1,15 @@
+enum HeldKeyPolicy {
+	FIRE_MULTIPLE(value: $HeldKeyPolicy.FIRE_MULTIPLE),
+	FIRE_ONCE_ON_PRESS(value: $HeldKeyPolicy.FIRE_ONCE_ON_PRESS),
+	FIRE_ONCE_ON_RELEASE(value: $HeldKeyPolicy.FIRE_ONCE_ON_RELEASE);
+
+	HeldKeyPolicy(WholeNumber value) {
+		this.value <- value;
+	}
+
+	WholeNumber getValue() {
+		return this.value;
+	}
+
+	@CompletelyHidden WholeNumber value;
+}

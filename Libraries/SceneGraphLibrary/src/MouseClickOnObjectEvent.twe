@@ -1,0 +1,14 @@
+class MouseClickOnObjectEvent extends MouseClickOnScreenEvent {
+  MouseClickOnObjectEvent(Portion x, Portion y, SThing model) {
+    super(x: x, y: y);
+    this.visual <- model;
+  }
+
+  SModel getModelAtMouseLocation() {
+    return visual;
+  }
+
+  // This visual can be an SModel, SGround, or SRoom.
+  // In the original java the common interface is Visual.
+  @CompletelyHidden SThing visual;
+}

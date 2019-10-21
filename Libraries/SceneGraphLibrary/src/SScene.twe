@@ -18,227 +18,209 @@ class SScene extends SThing {
     return atmosphereColor.getValue();
   }
 
-  void setAtmosphereColor( Color color,
-                           Duration duration <- Default.duration(),
-                           AnimationStyle animationStyle <- Default.animationStyle() ) {
-    atmosphereColor.animateValue( endValue: color, duration: duration, animationStyle: animationStyle );
+  void setAtmosphereColor(Color color,
+                          Duration duration <- Default.duration(),
+                          AnimationStyle animationStyle <- Default.animationStyle()) {
+    atmosphereColor.animateValue(endValue: color, duration: duration, animationStyle: animationStyle);
   }
 
   @CompletelyHidden Color getAmbientLightColor() {
     return ambientLightColor.getValue();
   }
 
-  @CompletelyHidden void setAmbientLightColor( Color color,
-                                     Duration duration <- Default.duration(),
-                                     AnimationStyle animationStyle <- Default.animationStyle() ) {
-    ambientLightColor.animateValue( endValue: color, duration: duration, animationStyle: animationStyle );
+  @CompletelyHidden void setAmbientLightColor(Color color,
+                                              Duration duration <- Default.duration(),
+                                              AnimationStyle animationStyle <- Default.animationStyle()) {
+    ambientLightColor.animateValue(endValue: color, duration: duration, animationStyle: animationStyle);
   }
 
   Color getFromAboveLightColor() {
     return fromAboveLightColor.getValue();
   }
 
-  void setFromAboveLightColor( Color color,
-                               Duration duration <- Default.duration(),
-                               AnimationStyle animationStyle <- Default.animationStyle() ) {
-    fromAboveLightColor.animateValue( endValue: color, duration: duration, animationStyle: animationStyle );
+  void setFromAboveLightColor(Color color,
+                              Duration duration <- Default.duration(),
+                              AnimationStyle animationStyle <- Default.animationStyle()) {
+    fromAboveLightColor.animateValue(endValue: color, duration: duration, animationStyle: animationStyle);
   }
 
   Color getFromBelowLightColor() {
     return fromBelowLightColor.getValue();
   }
 
-  void setFromBelowLightColor( Color color,
-                               Duration duration <- Default.duration(),
-                               AnimationStyle animationStyle <- Default.animationStyle() ) {
-    fromBelowLightColor.animateValue( endValue: color, duration: duration, animationStyle: animationStyle );
+  void setFromBelowLightColor(Color color,
+                              Duration duration <- Default.duration(),
+                              AnimationStyle animationStyle <- Default.animationStyle()) {
+    fromBelowLightColor.animateValue(endValue: color, duration: duration, animationStyle: animationStyle);
   }
 
   Portion getFogDensity() {
     return fogDensity.getValue();
   }
 
-  void setFogDensity( Portion density,
-                      Duration duration <- Default.duration(),
-                      AnimationStyle animationStyle <- Default.animationStyle() ) {
-    fogDensity.animateValue( endValue: density, duration: duration, animationStyle: animationStyle );
+  void setFogDensity(Portion density,
+                     Duration duration <- Default.duration(),
+                     AnimationStyle animationStyle <- Default.animationStyle()) {
+    fogDensity.animateValue(endValue: density, duration: duration, animationStyle: animationStyle);
   }
 
-  void addSceneActivationListener( <SceneActivationEvent->void> listener ) {
+  void addSceneActivationListener(<SceneActivationEvent->void> listener) {
     $SceneGraph.addSceneActivationListener(scene: this, listener: () -> {
       SceneActivationEvent event <- new SceneActivationEvent();
       listener(event);
     });
   }
 
-/* TODO implement events
-  void addMouseClickOnScreenListener( MouseClickOnScreenListener listener,
-                                      OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
-    $Mouse.addClickOnScreenListener( listener: listener, overlappingEventPolicy: overlappingEventPolicy );
-  }
-
-  void addMouseClickOnObjectListener( MouseClickOnObjectListener listener,
-                                      OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
-                                      Visual[] setOfVisuals <- Default.allVisuals()) {
-    $Mouse.addClickOnObjectListener( listener: listener, overlappingEventPolicy: overlappingEventPolicy, visuals: setOfVisuals );
-  }
-
-  void addDefaultModelManipulation() {
-    $SceneManager.addDragAdapter();
-  }
-*/
-
-
-  void addTimeListener( <TimeEvent->void> listener,
-                                  Duration frequency,
-                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+  void addTimeListener(<TimeEvent->void> listener,
+                       Duration frequency,
+                       OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
       $Clock.addTimeEventListener(duration: frequency, scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: (Duration lastFireTime) -> {
         TimeEvent event <- new TimeEvent(timeElapsed: lastFireTime);
         listener(event);
     });
   }
 
-   void addMouseClickListener( <MouseEvent->void> listener,
-                                   OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+  void addMouseClickOnScreenListener(<MouseClickOnScreenEvent->void> listener,
+                                     OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+    eventManager.addClickOnScreenListener(scene: this, listener: listener, overlappingEventPolicy: overlappingEventPolicy);
+  }
 
-      // TODO Finish mouse click listeners
-     $Mouse.addMouseEventListener(scene: this, eventPolicy: overlappingEventPolicy.getValue(), listener: () -> {
-       MouseEvent event <- new MouseEvent();
-       listener(event);
-    });
+  void addMouseClickOnObjectListener(<MouseClickOnObjectEvent->void> listener,
+                                     OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                                     SThing[] setOfVisuals <- Default.clickableVisuals()) {
+    eventManager.addClickOnObjectListener(scene: this, listener: listener, overlappingEventPolicy: overlappingEventPolicy, setOfVisuals: setOfVisuals);
+  }
 
+  void addDefaultModelManipulation() {
+    eventManager.addDefaultModelManipulation();
+  }
+
+  void addKeyPressListener(<KeyEvent->void> listener,
+                           OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                           HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
+    eventManager.addKeyPressListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
+  }
+
+
+  void addArrowKeyPressListener(<ArrowKeyEvent->void> listener,
+                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                                HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
+    eventManager.addArrowKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
+  }
+
+  void addNumberKeyPressListener(<NumberKeyEvent->void> listener,
+                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
+                                 HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy()) {
+    eventManager.addNumberKeyListener(listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy);
+  }
+
+  void addObjectMoverFor(SMovableTurnable thing) {
+    eventManager.moveWithArrows(thing: thing);
+  }
+
+  void addCollisionStartListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB,
+                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+    eventManager.addCollisionStartListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
+  }
+
+   void addCollisionEndListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB,
+                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+     eventManager.addCollisionEndListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
    }
 
+     // These next four could one day move to the camera for which they are meaningful
+     void addViewEnterListener(<ViewEvent->void> listener, SModel[] set,
+                               OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addViewEnterListener(listener: listener, set: set, overlappingEventPolicy: overlappingEventPolicy);
+     }
 
-/*
-  void addKeyPressListener( KeyPressListener listener,
-                            OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
-                            HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy() ) {
-    $Keyboard.addKeyListener( listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy );
-  }
+     void addViewExitListener(<ViewEvent->void> listener, SModel[] set,
+                              OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addViewExitListener(listener: listener, set: set, overlappingEventPolicy: overlappingEventPolicy);
+     }
 
-  void addArrowKeyPressListener( ArrowKeyPressListener listener,
-                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
-                                 HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy() ) {
-    $Keyboard.addArrowKeyListener( listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy );
-  }
+     void addProximityEnterListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB, DecimalNumber distance,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addProximityEnterListener(listener: listener, setA: setA, setB: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
+     }
 
-  void addNumberKeyPressListener( NumberKeyPressListener listener,
-                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy(),
-                                  HeldKeyPolicy heldKeyPolicy <- Default.heldKeyPolicy() ) {
-    $Keyboard.addNumberKeyListener( listener: listener, overlappingEventPolicy: overlappingEventPolicy, heldKeyPolicy: heldKeyPolicy );
-  }
+     void addProximityExitListener(<ThingInteractionEvent->void> listener, SThing[] setA, SThing[] setB, DecimalNumber distance,
+                                   OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addProximityExitListener(listener: listener, setA: setA, setB: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy);
+     }
 
-  void addObjectMoverFor( SMovableTurnable thing ) {
-    $Keyboard.moveWithArrows( thing: thing, speed: 2.5 );
-  }
+     void addPointOfViewChangeListener(<PointOfViewEvent->void> listener, SThing[] set) {
+       eventManager.addPointOfViewChangeListener(listener: listener, targets: set);
+     }
 
-  void addPointOfViewChangeListener( PointOfViewChangeListener listener, SThing[] set ) {
-    $SceneGraph.addTransformationListener( listener: listener, targets: set );
-  }
+     void addOcclusionStartListener(<ModelInteractionEvent->void> listener, SModel[] setA, SModel[] setB,
+                                    OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addOcclusionStartListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
+     }
 
-  void addCollisionStartListener( CollisionStartListener listener, SThing[] setA, SThing[] setB,
-                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy() ) {
-    $SceneGraph.addCollisionListener( listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy );
-  }
+     void addOcclusionEndListener(<ModelInteractionEvent->void> listener, SModel[] setA, SModel[] setB,
+                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy()) {
+       eventManager.addOcclusionEndListener(listener: listener, setA: setA, setB: setB, overlappingEventPolicy: overlappingEventPolicy);
+     }
 
-  void addCollisionEndListener( CollisionEndListener listener, SThing[] setA, SThing[] setB,
-                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy() ) {
-    $SceneGraph.addCollisionListener( listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy );
-  }
-
-  void addProximityEnterListener( ProximityEnterListener listener, SThing[] setA, SThing[] setB, Number distance,
-                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy() ) {
-    $SceneGraph.addProximityEventListener( listener: listener, a: setA, b: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy );
-  }
-
-  void addProximityExitListener( ProximityExitListener listener, SThing[] setA, SThing[] setB, Number distance,
-                                 OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy() ) {
-    $SceneGraph.addProximityEventListener( listener: listener, a: setA, b: setB, distance: distance, overlappingEventPolicy: overlappingEventPolicy );
-  }
-
-  // These next four could one day move to the camera for which they are meaningful
-  void addViewEnterListener( ViewEnterListener listener, SModel[] set,
-                             OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy() ) {
-    $SceneGraph.addComesIntoViewEventListener( listener: listener, targets: set, overlappingEventPolicy: overlappingEventPolicy );
-  }
-
-  void addViewExitListener( ViewExitListener listener, SModel[] set,
-                            OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy() ) {
-    $SceneGraph.addLeavesViewEventListener( listener: listener, targets: set, overlappingEventPolicy: overlappingEventPolicy );
-  }
-
-  void addOcclusionStartListener( OcclusionStartListener listener, SModel[] setA, SModel[] setB,
-                                  OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy() ) {
-    $SceneGraph.addOcclusionEventListener( listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy );
-  }
-
-  void addOcclusionEndListener( OcclusionEndListener listener, SModel[] setA, SModel[] setB,
-                                OverlappingEventPolicy overlappingEventPolicy <- Default.overlappingEventPolicy() ) {
-    $SceneGraph.addOcclusionEventListener( listener: listener, a: setA, b: setB, overlappingEventPolicy: overlappingEventPolicy );
-  }
-*/
-
-  @CompletelyHidden void activate( SProgram program ) {
+  @CompletelyHidden void activate(SProgram program) {
     this.activeCount <- this.activeCount + 1;
 
-    if( this.program != program ) {
-      if( program != null ) {
+    if(this.program != program) {
+      if(program != null) {
         // TODO Implement the following to remove mouse, key and focus listeners
-        // this.eventManager.removeListenersFrom( program.getOnscreenRenderTarget() );
+        // this.eventManager.removeListenersFrom(program.getOnscreenRenderTarget());
         // or
         // program.disconnectSystemListeners();
+        eventManager <- null;
       }
       this.program <- program;
-      if( program != null ) {
-        // TODO Implement the following to add mouse, key and focus listeners
-        // this.eventManager.addListenersTo( program.getOnscreenRenderTarget() );
-        // or
-        // program.connectSystemListeners();
+      if(program != null) {
+        eventManager <- program.eventManager;
       }
     }
 
     this.globalBrightness.setValue(value: Portion.NONE);
-    this.changeActiveStatus( isActive: true );
+    this.changeActiveStatus(isActive: true);
 
     //This forces the scene to initialize itself to make sure we can properly query bounding boxes and other
     // render dependent things. All this info is critical to a scene running
-    //AdapterFactory.getAdapterFor( this.sgScene );
+    //AdapterFactory.getAdapterFor(this.sgScene);
 
-    //this.addCamerasTo( program: program );
+    //this.addCamerasTo(program: program);
 
-    globalBrightness.animateValue( endValue: Portion.WHOLE, duration: Duration.HALF_SECOND, animationStyle: AnimationStyle.BEGIN_AND_END_GENTLY );
+    globalBrightness.animateValue(endValue: Portion.WHOLE, duration: Duration.HALF_SECOND, animationStyle: AnimationStyle.BEGIN_AND_END_GENTLY);
     $SceneGraph.activateScene(scene: this);
   }
 
-  @CompletelyHidden void deactivate( SProgram program ) {
-    globalBrightness.animateValue( endValue: Portion.NONE, duration: Duration.QUARTER_SECOND, animationStyle: AnimationStyle.BEGIN_AND_END_GENTLY );
-    this.changeActiveStatus( isActive: false );
-    //this.removeCamerasFrom( program: program );
+  @CompletelyHidden void deactivate(SProgram program) {
+    globalBrightness.animateValue(endValue: Portion.NONE, duration: Duration.QUARTER_SECOND, animationStyle: AnimationStyle.BEGIN_AND_END_GENTLY);
+    this.changeActiveStatus(isActive: false);
+    //this.removeCamerasFrom(program: program);
     this.program <- null;
   }
 
 
-  @CompletelyHidden void changeActiveStatus( Boolean isActive) {
+  @CompletelyHidden void changeActiveStatus(Boolean isActive) {
     PropertyTween.enableAnimations <- false;
-    this.handleActiveChanged( isActive: isActive, activationCount: this.activeCount );
+    this.handleActiveChanged(isActive: isActive, activationCount: this.activeCount);
     PropertyTween.enableAnimations <- true;
   }
 
 /*
-  @CompletelyHidden void addCamerasTo( SProgram program ) {
-    forEach(SCamera camera in this.getAllCameras() ) {
-      program.addCameraToSceneGraph( camera: camera );
+  @CompletelyHidden void addCamerasTo(SProgram program) {
+    forEach(SCamera camera in this.getAllCameras()) {
+      program.addCameraToSceneGraph(camera: camera);
       // TODO adapt and implement the above from the original:
-      // program.getOnscreenRenderTarget().addSgCamera( cameraImp.getSgCamera() );
+      // program.getOnscreenRenderTarget().addSgCamera(cameraImp.getSgCamera());
     }
   }
 
-  @CompletelyHidden void removeCamerasFrom( SProgram program ) {
-    forEach(SCamera camera in this.getAllCameras() ) {
-      program.removeCameraFromSceneGraph( camera: camera );
+  @CompletelyHidden void removeCamerasFrom(SProgram program) {
+    forEach(SCamera camera in this.getAllCameras()) {
+      program.removeCameraFromSceneGraph(camera: camera);
       // TODO adapt and implement the above from the original:
-      // program.getOnscreenRenderTarget().removeSgCamera( cameraImp.getSgCamera() );
+      // program.getOnscreenRenderTarget().removeSgCamera(cameraImp.getSgCamera());
     }
   }
   */
@@ -262,6 +244,14 @@ class SScene extends SThing {
     return this.program;
   }
 
+  @CompletelyHidden VantagePoint getAbsoluteTransformation() {
+    return VantagePoint.IDENTITY;
+  }
+
+  @CompletelyHidden Boolean isSceneOf(SThing other) {
+    return true;
+  }
+
 /* Unused and completely hidden
   void addWhileCollisionListener(WhileCollisionListener listener, SThing[] setA, SThing[] setB)
   void addWhileProximityListener(WhileProximityListener listener, SThing[] setA, SThing[] setB, Number distance)
@@ -272,11 +262,11 @@ class SScene extends SThing {
 
 /* TODO needs scenegraph implementation
   @CompletelyHidden void preserveStateAndEventListeners() {
-    $EventManager.silenceAllListeners();
+    eventManager.silenceAllListeners();
   }
 
   @CompletelyHidden void restoreStateAndEventListeners() {
-    $EventManager.restoreAllListeners();
+    eventManager.restoreAllListeners();
   }
   */
 
@@ -289,6 +279,7 @@ class SScene extends SThing {
   @CompletelyHidden PortionProperty globalBrightness <- new PortionProperty(owner: this, value: Portion.NONE);
 
   @CompletelyHidden SProgram program <- null;
+  @CompletelyHidden EventManager eventManager <- null;
   @CompletelyHidden WholeNumber activeCount <- 0;
 
 }

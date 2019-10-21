@@ -1,6 +1,6 @@
 class JointIdTransformationPair {
-    JointIdTransformationPair(JointId id, Position position, Orientation orientation) {
-        this.id <- id;
+    JointIdTransformationPair(JointId joint, Position position, Orientation orientation) {
+        this.id <- joint;
         this.transformation <- new VantagePoint(position: position, orientation: orientation);
     }
 
