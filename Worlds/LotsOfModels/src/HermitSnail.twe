@@ -27,14 +27,14 @@ class HermitSnail extends Slitherer models HermitSnail {
   }
 
   SJoint[] getShellArray() {
-    return this.getJointArray(idArray: HermitSnail.SHELL_ARRAY);
+    return this.getJointArray(jointIdArray: HermitSnail.SHELL_ARRAY);
   }
 
   SJoint[] getLeftTentacleArray() {
-    return this.getJointArray(idArray: HermitSnail.LEFT_TENTACLE_ARRAY);
+    return this.getJointArray(jointIdArray: HermitSnail.LEFT_TENTACLE_ARRAY);
   }
 
   SJoint[] getRightTentacleArray() {
-    return this.getJointArray(idArray: HermitSnail.RIGHT_TENTACLE_ARRAY);
+    return this.getJointArray(jointIdArray: HermitSnail.RIGHT_TENTACLE_ARRAY);
   }
 }
