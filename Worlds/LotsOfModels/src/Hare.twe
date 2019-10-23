@@ -39,6 +39,6 @@ class Hare extends Biped models Hare {
   }
 
   SJoint[] getTailArray() {
-    return this.getJointArray(idArray: Hare.TAIL_ARRAY);
+    return this.getJointArray(jointIdArray: Hare.TAIL_ARRAY);
   }
 }
