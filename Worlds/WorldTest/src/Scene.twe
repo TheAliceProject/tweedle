@@ -192,11 +192,11 @@ class Scene extends SScene {
 
     $Debug.log(message: "disc");
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: disc);
-    disc.setRadius(radius: 1.25);
+    disc.setRadius(baseRadius: 1.25);
     disc.setHeight(height: 1.25);
     disc.setDepth(depth: 0.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
     disc.setWidth(width: 0.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
-    disc.setRadius(radius: 0.5);
+    disc.setRadius(baseRadius: 0.5);
 
     $Debug.log(message: "sphere");
     this.camera.pointAt(target: sphere);

@@ -14,9 +14,9 @@ class SDisc extends SShape {
     return radius.getValue();
   }
 
-  void setRadius(DecimalNumber radius, Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
+  void setRadius(DecimalNumber baseRadius, Duration duration <- Default.duration(),  AnimationStyle animationStyle <- Default.animationStyle())
   {
-    this.radius.animateValue(endValue: radius, duration: duration, animationStyle: animationStyle);
+    this.radius.animateValue(endValue: baseRadius, duration: duration, animationStyle: animationStyle);
   }
 
   @CompletelyHidden DimensionProperty radius;
