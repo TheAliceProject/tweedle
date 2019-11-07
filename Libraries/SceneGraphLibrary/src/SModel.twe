@@ -53,42 +53,42 @@ class SModel extends SMovableTurnable
         return this.getSize().width;
     }
 
-    void setWidth(DecimalNumber width, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
+    void setWidth(DecimalNumber width, SetDimensionPolicy policy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no width
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.width)) {
             width <- this.defaultSize.width;
         }
 
-        this.size.animateWidth(width: width, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: animationStyle);
+        this.size.animateWidth(width: width, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle);
     }
 
     DecimalNumber getHeight() {
         return this.getSize().height;
     }
 
-    void setHeight(DecimalNumber height, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
+    void setHeight(DecimalNumber height, SetDimensionPolicy policy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no height
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.height)) {
             height <- this.defaultSize.height;
         }
 
-        this.size.animateHeight(height: height, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: animationStyle);
+        this.size.animateHeight(height: height, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle);
     }
 
     DecimalNumber getDepth() {
         return this.getSize().depth;
     }
 
-    void setDepth(DecimalNumber depth, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
+    void setDepth(DecimalNumber depth, SetDimensionPolicy policy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no depth
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.depth)) {
             depth <- this.defaultSize.depth;
         }
 
-        this.size.animateDepth(depth: depth, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: animationStyle);
+        this.size.animateDepth(depth: depth, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle);
     }
 
     void resize(Number factor,
@@ -102,9 +102,9 @@ class SModel extends SMovableTurnable
                     Duration duration <- Default.duration(),
                     AnimationStyle animationStyle <- Default.animationStyle(),
                     Boolean isVolumePreserved <- Default.isVolumePreserved()) {
-        DimensionPolicy policy <- DimensionPolicy.PRESERVE_NOTHING;
+        SetDimensionPolicy policy <- SetDimensionPolicy.PRESERVE_NOTHING;
         if (isVolumePreserved) {
-            policy <- DimensionPolicy.PRESERVE_VOLUME;
+            policy <- SetDimensionPolicy.PRESERVE_VOLUME;
         }
         this.size.animateResizeWidth( factor: factor, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle );
     }
@@ -114,9 +114,9 @@ class SModel extends SMovableTurnable
                     AnimationStyle animationStyle <- Default.animationStyle(),
                     Boolean isVolumePreserved <- Default.isVolumePreserved())
     {
-        DimensionPolicy policy <- DimensionPolicy.PRESERVE_NOTHING;
+        SetDimensionPolicy policy <- SetDimensionPolicy.PRESERVE_NOTHING;
         if (isVolumePreserved) {
-            policy <- DimensionPolicy.PRESERVE_VOLUME;
+            policy <- SetDimensionPolicy.PRESERVE_VOLUME;
         }
         this.size.animateResizeHeight( factor: factor, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle );
     }
@@ -126,9 +126,9 @@ class SModel extends SMovableTurnable
                     AnimationStyle animationStyle <- Default.animationStyle(),
                     Boolean isVolumePreserved <- Default.isVolumePreserved())
     {
-        DimensionPolicy policy <- DimensionPolicy.PRESERVE_NOTHING;
+        SetDimensionPolicy policy <- SetDimensionPolicy.PRESERVE_NOTHING;
         if (isVolumePreserved) {
-            policy <- DimensionPolicy.PRESERVE_VOLUME;
+            policy <- SetDimensionPolicy.PRESERVE_VOLUME;
         }
         this.size.animateResizeDepth( factor: factor, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle );
     }

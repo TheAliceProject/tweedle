@@ -11,8 +11,8 @@ class Default {
     return PathStyle.BEE_LINE;
   }
 
-  static DimensionPolicy dimensionPolicy() {
-    return DimensionPolicy.PRESERVE_ASPECT_RATIO;
+  static SetDimensionPolicy dimensionPolicy() {
+    return SetDimensionPolicy.PRESERVE_ASPECT_RATIO;
   }
 
   static Boolean isVolumePreserved() {

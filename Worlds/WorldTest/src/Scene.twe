@@ -391,16 +391,16 @@ class Scene extends SScene {
     this.box.resizeHeight(factor: 0.25, isVolumePreserved: true);
 
     $Debug.log(message: "set width PRESERVE_VOLUME");
-    this.box.setWidth(width: 3, dimensionPolicy: DimensionPolicy.PRESERVE_VOLUME);
-    this.box.setWidth(width: 1, dimensionPolicy: DimensionPolicy.PRESERVE_VOLUME);
+    this.box.setWidth(width: 3, policy: SetDimensionPolicy.PRESERVE_VOLUME);
+    this.box.setWidth(width: 1, policy: SetDimensionPolicy.PRESERVE_VOLUME);
 
     $Debug.log(message: "set height PRESERVE_ASPECT_RATIO");
-    this.box.setHeight(height: 3, dimensionPolicy: DimensionPolicy.PRESERVE_ASPECT_RATIO);
-    this.box.setHeight(height: 1, dimensionPolicy: DimensionPolicy.PRESERVE_ASPECT_RATIO);
+    this.box.setHeight(height: 3, policy: SetDimensionPolicy.PRESERVE_ASPECT_RATIO);
+    this.box.setHeight(height: 1, policy: SetDimensionPolicy.PRESERVE_ASPECT_RATIO);
 
     $Debug.log(message: "set depth PRESERVE_NOTHING");
-    this.box.setDepth(depth: 3, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
-    this.box.setDepth(depth: 1, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
+    this.box.setDepth(depth: 3, policy: SetDimensionPolicy.PRESERVE_NOTHING);
+    this.box.setDepth(depth: 1, policy: SetDimensionPolicy.PRESERVE_NOTHING);
 
     $Debug.log(message: "fog density and atmosphere color");
     Portion fogDensity <- getFogDensity();
