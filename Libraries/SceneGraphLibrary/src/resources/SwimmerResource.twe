@@ -1,0 +1,31 @@
+class SwimmerResource extends JointedModelResource {
+    SwimmerResource(TextString name) {
+        super(name: name);
+    }
+
+  static JointId ROOT <- new JointId(name: "ROOT", parent: null);
+  static JointId NECK <- new JointId(name: "NECK", parent: SwimmerResource.ROOT);
+  static JointId HEAD <- new JointId(name: "HEAD", parent: SwimmerResource.NECK);
+  static JointId MOUTH <- new JointId(name: "MOUTH", parent: SwimmerResource.HEAD);
+  static JointId LEFT_EYE <- new JointId(name: "LEFT_EYE", parent: SwimmerResource.HEAD);
+  static JointId RIGHT_EYE <- new JointId(name: "RIGHT_EYE", parent: SwimmerResource.HEAD);
+  static JointId LEFT_EYELID <- new JointId(name: "LEFT_EYELID", parent: SwimmerResource.HEAD);
+  static JointId RIGHT_EYELID <- new JointId(name: "RIGHT_EYELID", parent: SwimmerResource.HEAD);
+  static JointId FRONT_LEFT_FIN <- new JointId(name: "FRONT_LEFT_FIN", parent: SwimmerResource.NECK);
+  static JointId FRONT_RIGHT_FIN <- new JointId(name: "FRONT_RIGHT_FIN", parent: SwimmerResource.NECK);
+  static JointId SPINE_BASE <- new JointId(name: "SPINE_BASE", parent: SwimmerResource.ROOT);
+  static JointId SPINE_MIDDLE <- new JointId(name: "SPINE_MIDDLE", parent: SwimmerResource.SPINE_BASE);
+  static JointId TAIL <- new JointId(name: "TAIL", parent: SwimmerResource.SPINE_MIDDLE);
+
+    @CompletelyHidden static JointId[] EXPECTED_JOINTS <- new JointId[] {
+        SwimmerResource.ROOT, SwimmerResource.NECK, SwimmerResource.HEAD, SwimmerResource.MOUTH,
+        SwimmerResource.LEFT_EYE, SwimmerResource.RIGHT_EYE, SwimmerResource.LEFT_EYELID, SwimmerResource.RIGHT_EYELID,
+        SwimmerResource.FRONT_LEFT_FIN, SwimmerResource.FRONT_RIGHT_FIN, SwimmerResource.SPINE_BASE,
+        SwimmerResource.SPINE_MIDDLE, SwimmerResource.TAIL};
+
+    @CompletelyHidden JointId[] getJointIds() {
+        return SwimmerResource.EXPECTED_JOINTS;
+    }
+
+    @CompletelyHidden static JointId[] JOINT_ID_ROOTS <- new JointId[] {SwimmerResource.ROOT};
+}

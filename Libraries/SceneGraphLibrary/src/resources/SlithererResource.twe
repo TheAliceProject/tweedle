@@ -1,0 +1,35 @@
+class SlithererResource extends JointedModelResource {
+    SlithererResource(TextString name, JointId[] tailArray) {
+        super(name: name);
+        this.tailArray <- tailArray;
+    }
+
+    static JointId ROOT <- new JointId( name: "ROOT",  parent: null );
+    static JointId SPINE_BASE <- new JointId( name: "SPINE_BASE",  parent: SlithererResource.ROOT );
+    static JointId SPINE_MIDDLE <- new JointId( name: "SPINE_MIDDLE",  parent: SlithererResource.SPINE_BASE );
+    static JointId SPINE_UPPER <- new JointId( name: "SPINE_UPPER",  parent: SlithererResource.SPINE_MIDDLE );
+    static JointId NECK <- new JointId( name: "NECK",  parent: SlithererResource.SPINE_UPPER );
+    static JointId HEAD <- new JointId( name: "HEAD",  parent: SlithererResource.NECK );
+    static JointId MOUTH <- new JointId( name: "MOUTH",  parent: SlithererResource.HEAD );
+    static JointId LEFT_EYE <- new JointId( name: "LEFT_EYE",  parent: SlithererResource.HEAD );
+    static JointId RIGHT_EYE <- new JointId( name: "RIGHT_EYE",  parent: SlithererResource.HEAD );
+    static JointId LEFT_EYELID <- new JointId( name: "LEFT_EYELID",  parent: SlithererResource.HEAD );
+    static JointId RIGHT_EYELID <- new JointId( name: "RIGHT_EYELID",  parent: SlithererResource.HEAD );
+
+    @CompletelyHidden static JointId TAIL_0 <- new JointId( name: "TAIL_0",  parent: SlithererResource.ROOT );
+    @CompletelyHidden JointId[] DEFAULT_TAIL <- new JointId[] {SlithererResource.TAIL_0};
+
+    @CompletelyHidden static JointId[] EXPECTED_JOINTS <- new JointId[] {
+        SlithererResource.ROOT, SlithererResource.SPINE_BASE, SlithererResource.SPINE_MIDDLE, SlithererResource.SPINE_UPPER,
+        SlithererResource.NECK, SlithererResource.HEAD, SlithererResource.MOUTH,
+        SlithererResource.LEFT_EYE, SlithererResource.RIGHT_EYE, SlithererResource.LEFT_EYELID,
+        SlithererResource.RIGHT_EYELID, SlithererResource.TAIL_0};
+
+    @CompletelyHidden JointId[] getJointIds() {
+        return SlithererResource.EXPECTED_JOINTS;
+    }
+
+    @CompletelyHidden static JointId[] JOINT_ID_ROOTS <- new JointId[] {SlithererResource.ROOT};
+
+    @CompletelyHidden JointId[] tailArray;
+}

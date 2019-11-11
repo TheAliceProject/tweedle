@@ -512,6 +512,76 @@
       "file": "src/BubblePosition.twe",
       "type": "Enum"
     }, {
+      "name": "BipedResource",
+      "format": "tweedle",
+      "file": "src/resources/BipedResource.twe",
+      "type": "Class"
+    }, {
+      "name": "FlyerResource",
+      "format": "tweedle",
+      "file": "src/resources/FlyerResource.twe",
+      "type": "Class"
+    }, {
+      "name": "JointedModelResource",
+      "format": "tweedle",
+      "file": "src/resources/JointedModelResource.twe",
+      "type": "Class"
+    }, {
+      "name": "PropResource",
+      "format": "tweedle",
+      "file": "src/resources/PropResource.twe",
+      "type": "Class"
+    }, {
+      "name": "QuadrupedResource",
+      "format": "tweedle",
+      "file": "src/resources/QuadrupedResource.twe",
+      "type": "Class"
+    }, {
+      "name": "SlithererResource",
+      "format": "tweedle",
+      "file": "src/resources/SlithererResource.twe",
+      "type": "Class"
+    }, {
+      "name": "SwimmerResource",
+      "format": "tweedle",
+      "file": "src/resources/SwimmerResource.twe",
+      "type": "Class"
+    }, {
+      "name": "FishResource",
+      "format": "tweedle",
+      "file": "src/resources/FishResource.twe",
+      "type": "Class"
+    }, {
+      "name": "MarineMammalResource",
+      "format": "tweedle",
+      "file": "src/resources/MarineMammalResource.twe",
+      "type": "Class"
+    }, {
+      "name": "TransportResource",
+      "format": "tweedle",
+      "file": "src/resources/TransportResource.twe",
+      "type": "Class"
+    }, {
+      "name": "AircraftResource",
+      "format": "tweedle",
+      "file": "src/resources/AircraftResource.twe",
+      "type": "Class"
+    }, {
+      "name": "AutomobileResource",
+      "format": "tweedle",
+      "file": "src/resources/AutomobileResource.twe",
+      "type": "Class"
+    }, {
+      "name": "TrainResource",
+      "format": "tweedle",
+      "file": "src/resources/TrainResource.twe",
+      "type": "Class"
+    }, {
+      "name": "WatercraftResource",
+      "format": "tweedle",
+      "file": "src/resources/WatercraftResource.twe",
+      "type": "Class"
+    }, {
       "name": "Ground/brick",
       "format": "png",
       "file": "resources/grounds/brick.png",
