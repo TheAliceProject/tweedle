@@ -367,16 +367,6 @@
       "file": "src/JointArrayId.twe",
       "type": "Class"
     }, {
-      "name": "JointIdList",
-      "format": "tweedle",
-      "file": "src/JointIdList.twe",
-      "type": "Class"
-    }, {
-      "name": "JointIdNode",
-      "format": "tweedle",
-      "file": "src/JointIdNode.twe",
-      "type": "Class"
-    }, {
       "name": "JointedModelPose",
       "format": "tweedle",
       "file": "src/JointedModelPose.twe",

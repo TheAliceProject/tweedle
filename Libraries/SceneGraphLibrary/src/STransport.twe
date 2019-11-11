@@ -1,13 +1,5 @@
 class STransport extends SJointedModel {
-  STransport(TextString resource) {
+  STransport(TransportResource resource) {
     super(resource: resource);
-  }
-
-  STransport(TextString resource, JointId root) {
-    super(resource: resource, root: root);
-  }
-
-  STransport(TextString resource, JointId[] roots) {
-    super(resource: resource, roots: roots);
   }
 }

@@ -1,38 +1,32 @@
 class SJointedModel extends SModel {
-    SJointedModel(TextString resource) {
-        super(resource: resource);
+    SJointedModel(JointedModelResource resource) {
+        super(resource: resource.getName());
+        currentResource <- resource;
+        this.name <- resource.getName();
+        buildJoints(resource: resource);
     }
 
-    SJointedModel(TextString resource, JointId root) {
-        super(resource: resource);
-
-        if (root != null) {
-            this.buildJoints(root: root);
+    void setResource(JointedModelResource resource) {
+        if (currentResource != resource) {
+            currentResource <- resource;
+            resourceName <- resource.getName();
+            $SceneGraph.setEntityResource(model: this, resource: resourceName);
+            this.size.sync();
+            this.defaultSize <- this.size.getValue();
         }
     }
 
-    SJointedModel(TextString resource, JointId[] roots) {
-        super(resource: resource);
-
-        if (roots != null) {
-            forEach(JointId root in roots) {
-                if (root != null) {
-                    this.buildJoints(root: root);
-                }
-            }
-        }
-    }
-
-    @CompletelyHidden void setJointedModelResource(TextString resource) {
+    @CompletelyHidden void setJointedModelResource(JointedModelResource resource) {
         if (currentResource == resource) {
             return;
         }
+        buildJoints(resource: resource);
         // TODO translate more from java, JointedModelImp.setNewResource(), and reconsider use of setResource
         setResource(resource: resource);
     }
 
     SJoint getJoint(JointId jointId) {
-        if (this.joints != null) {
+        if (jointId != null && this.joints != null) {
             forEach(SJoint joint in this.joints) {
                 if (joint.getId().getName() == jointId.getName()) {
                     return joint;
@@ -81,27 +75,20 @@ class SJointedModel extends SModel {
         }
     }
 
-    @CompletelyHidden void buildJoints(JointId root) {
-
-        WholeNumber count <- root.getHierarchyCount();
-        this.joints <- new SJoint[count];
-        buildJoint(id: root, parent: null, index: 0);
-    }
-
-    @CompletelyHidden WholeNumber buildJoint(JointId id, SJoint parent, WholeNumber index) {
-
-        SJoint joint <- new SJoint(id: id, parent: parent, model: this);
-        JointIdNode current <- id.getChildren().getFirst();
-        joints[index] <- joint;
-        index <- index + 1;
-
-        while (current != null) {
-            index <- buildJoint(id: current.id, parent: joint, index: index);
-            current <- current.next;
+    @CompletelyHidden void buildJoints(JointedModelResource resource) {
+        if (this.joints != null) {
+            // TODO Reuse and map existing joint values in
         }
-
-        return index;
+        JointId[] ids <- resource.getJointIds();
+        WholeNumber len <- ids.length
+        this.joints <- new SJoint[len];
+        countUpTo(index < len) {
+            JointId jointId <- ids[index];
+            SJoint parent <- getJoint(jointId: jointId.getParent())
+            joints[index] <- new SJoint(id: jointId, parent: parent, model: this);
+        }
     }
 
     @CompletelyHidden SJoint[] joints;
+    @CompletelyHidden JointedModelResource currentResource;
 }
