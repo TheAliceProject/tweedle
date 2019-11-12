@@ -63,6 +63,16 @@ class SJoint extends SMovableTurnable {
         this.localTransformation.animateValue(endValue: defaultTransformation, asSeenBy: this.getVehicle(), duration: duration, animationStyle: animationStyle);
     }
 
+    void setPositionRelativeToVehicle(Position position,
+                                      Duration duration <- Default.duration(),
+                                      AnimationStyle animationStyle <- Default.animationStyle(),
+                                      PathStyle pathStyle <- Default.pathStyle()) {
+
+      Scale parentScale <- model.getScale();
+      Position newPos <- new Position(x: position.x / parentScale.x, y: position.y / parentScale.y, z: position.z / parentScale.z);
+      this.localTransformation.animatePosition(endValue: newPos, duration: duration, animationStyle: animationStyle);
+    }
+
     @CompletelyHidden JointId id;
     @CompletelyHidden SJoint parent;
     @CompletelyHidden SJointedModel model;

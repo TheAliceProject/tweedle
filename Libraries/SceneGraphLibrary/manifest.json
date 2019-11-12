@@ -32,9 +32,9 @@
       "file": "src/AnimationStyle.twe",
       "type": "Enum"
     }, {
-      "name": "DimensionPolicy",
+      "name": "SetDimensionPolicy",
       "format": "tweedle",
-      "file": "src/DimensionPolicy.twe",
+      "file": "src/SetDimensionPolicy.twe",
       "type": "Enum"
     }, {
       "name": "TurnDirection",
