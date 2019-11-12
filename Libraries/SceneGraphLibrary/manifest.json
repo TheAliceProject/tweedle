@@ -572,6 +572,36 @@
       "file": "src/resources/WatercraftResource.twe",
       "type": "Class"
     }, {
+      "name": "PersonResource",
+      "format": "tweedle",
+      "file": "src/resources/PersonResource.twe",
+      "type": "Class"
+    }, {
+      "name": "ElderPersonResource",
+      "format": "tweedle",
+      "file": "src/resources/ElderPersonResource.twe",
+      "type": "Class"
+    }, {
+      "name": "AdultPersonResource",
+      "format": "tweedle",
+      "file": "src/resources/AdultPersonResource.twe",
+      "type": "Class"
+    }, {
+      "name": "TeenPersonResource",
+      "format": "tweedle",
+      "file": "src/resources/TeenPersonResource.twe",
+      "type": "Class"
+    }, {
+      "name": "ChildPersonResource",
+      "format": "tweedle",
+      "file": "src/resources/ChildPersonResource.twe",
+      "type": "Class"
+    }, {
+      "name": "ToddlerPersonResource",
+      "format": "tweedle",
+      "file": "src/resources/ToddlerPersonResource.twe",
+      "type": "Class"
+    }, {
       "name": "Ground/brick",
       "format": "png",
       "file": "resources/grounds/brick.png",
