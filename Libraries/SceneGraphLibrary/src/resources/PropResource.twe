@@ -1,0 +1,7 @@
+class PropResource extends JointedModelResource {
+    PropResource(TextString name) {
+        super(name: name);
+    }
+
+    @CompletelyHidden static JointId[] EXPECTED_JOINTS <- new JointId[0];
+}

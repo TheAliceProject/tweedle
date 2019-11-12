@@ -1,7 +1,6 @@
-class SModel extends SMovableTurnable
-{
+class SModel extends SMovableTurnable {
     SModel(TextString resource) {
-        currentResource <- resource;
+        resourceName <- resource;
         $SceneGraph.createEntity(model: this, resource: resource);
         $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value: this.localTransformation.getValue());
 
@@ -12,15 +11,6 @@ class SModel extends SMovableTurnable
 
         $SceneGraph.bindPaintProperty(owner: this, property: this.paint, value: this.paint.getValue());
         $SceneGraph.bindOpacityProperty(owner: this, property: this.opacity, value: this.opacity.getValue());
-    }
-
-    void setResource(TextString resource) {
-        if (currentResource != resource) {
-            currentResource <- resource;
-            $SceneGraph.setEntityResource(model: this, resource: resource);
-            this.size.sync();
-            this.defaultSize <- this.size.getValue();
-        }
     }
 
     Size getSize() {
@@ -215,5 +205,5 @@ class SModel extends SMovableTurnable
     @CompletelyHidden SizeProperty size <- new SizeProperty(owner: this, value: new Size(width: 1, height: 1, depth: 1));
     @CompletelyHidden PaintProperty paint <- new PaintProperty(owner: this, value: Color.WHITE);
     @CompletelyHidden PortionProperty opacity <- new PortionProperty(owner: this, value: Portion.WHOLE);
-    @CompletelyHidden TextString currentResource;
+    @CompletelyHidden TextString resourceName;
 }

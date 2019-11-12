@@ -1,0 +1,11 @@
+class TrainResource extends TransportResource {
+    TrainResource(TextString name) {
+        super(name: name);
+    }
+
+    @CompletelyHidden static JointId ROOT <- new JointId( name: "ROOT",  parent: null );
+    static JointId NEXT_CAR_LOCATION <- new JointId( name: "NEXT_CAR_LOCATION",  parent: TrainResource.ROOT );
+    static JointArrayId WHEELS_ARRAY <- new JointArrayId(root: ROOT, pattern: "WHEELS");
+
+    @CompletelyHidden static JointId[] EXPECTED_JOINTS <- new JointId[] {TrainResource.ROOT, TrainResource.NEXT_CAR_LOCATION};
+}

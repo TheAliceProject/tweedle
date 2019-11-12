@@ -1,0 +1,28 @@
+class JointedModelResource {
+    JointedModelResource(TextString name) {
+        this.name <- name;
+    }
+
+    JointId[] getJointIds() {
+        return new JointId[0];
+    }
+
+    TextString getName() {
+        return name;
+    }
+
+    @CompletelyHidden static JointId[] concat(JointId[] a, JointId[] b) {
+        WholeNumber lenA <- a.length;
+        WholeNumber lenB <- b.length;
+        JointId[] result <- new JointId[lenA + lenB];
+        countUpTo(index < lenA) {
+            result[index] <- a[index];
+        }
+        countUpTo(index < lenB) {
+            result[index + lenA] <- b[index];
+        }
+        return result;
+    }
+
+    @CompletelyHidden TextString name;
+}
