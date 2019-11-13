@@ -6,29 +6,31 @@ class SJointedModel extends SModel {
         buildJoints(resource: resource);
     }
 
-    void setResource(JointedModelResource resource) {
-        if (currentResource != resource) {
-            currentResource <- resource;
-            resourceName <- resource.getName();
-            $SceneGraph.setEntityResource(model: this, resource: resourceName);
-            this.size.sync();
-            this.defaultSize <- this.size.getValue();
-        }
-    }
-
     @CompletelyHidden void setJointedModelResource(JointedModelResource resource) {
         if (currentResource == resource) {
             return;
         }
+        currentResource <- resource;
+        resourceName <- resource.getName();
+        cachedNamedJoints <- null;
+        $SceneGraph.setEntityResource(model: this, resource: resourceName);
         buildJoints(resource: resource);
-        // TODO translate more from java, JointedModelImp.setNewResource(), and reconsider use of setResource
-        setResource(resource: resource);
+        // TODO preserve applied joint transformations (see JointedModelImp.setNewResource() in java)
+        size.sync();
+        defaultSize <- size.getValue();
     }
 
     SJoint getJoint(JointId jointId) {
-        if (jointId != null && this.joints != null) {
-            forEach(SJoint joint in this.joints) {
-                if (joint.getId().getName() == jointId.getName()) {
+        if (jointId != null) {
+            return getJoint(name: jointId.getName());
+        }
+        return null;
+    }
+
+    @CompletelyHidden SJoint getJoint(TextString name) {
+        if (joints != null) {
+            forEach(SJoint joint in joints) {
+                if (joint.getId().getName() == name) {
                     return joint;
                 }
             }
@@ -49,13 +51,31 @@ class SJointedModel extends SModel {
     }
 
     @CompletelyHidden SJoint[] getJointArray(JointArrayId jointArrayId) {
-        return getJointArray(jointIdArray: getJointIdArray(jointArrayId: jointArrayId));
-    }
-
-    @CompletelyHidden JointId[] getJointIdArray(JointArrayId jointArrayId) {
-        $Debug.log(message: "Access JointArray by ID is not yet supported. Returning empty array for " .. jointArrayId.elementPattern);
-        // TODO Implement resource reading and joint collection
-        return new JointId[0];
+        if (cachedNamedJoints == null) {
+            TextString[] jointNames <- $SceneGraph.findJointsBeginningWith(start: jointArrayId.getElementNamePattern(), model: this);
+            WholeNumber len <- jointNames.length
+            SJoint[] members <- new SJoint[len];
+            SJoint parent <- getJoint(name: "ROOT")
+            countUpTo(index < len) {
+                TextString jointName <- jointNames[index];
+                SJoint existingJoint <- getJoint(name: jointName);
+                if (existingJoint != null) {
+                    // Probably the wheels on a train
+                    members[index] <- existingJoint;
+                } else {
+                    // Probably the path along a railroad track
+                    parent <- new SJoint(name: jointName, parent: parent, model: this)
+                    members[index] <- parent;
+                }
+            }
+            cachedNamedJoints <- new DynamicJointArray(pattern: jointArrayId.getElementNamePattern(), members: members)
+        } else {
+            // Verify the stored value has the same name. Since no model (yet) has more than one dynamic array there is only cached value.
+            if (cachedNamedJoints.getElementNamePattern() != jointArrayId.getElementNamePattern()) {
+                $Debug.log(message: getName() .. " has multiple dynamic joint arrays " .. cachedNamedJoints.getElementNamePattern() .. " and " .. jointArrayId.getElementNamePattern() .. ". This is not yet supported.");
+            }
+        }
+        return cachedNamedJoints.getMembers();
     }
 
     void straightenOutJoints(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
@@ -91,4 +111,7 @@ class SJointedModel extends SModel {
 
     @CompletelyHidden SJoint[] joints;
     @CompletelyHidden JointedModelResource currentResource;
+
+    // Existing models never have more than one of these. If that should change this will need to be turned into a collection.
+    @CompletelyHidden DynamicJointArray cachedNamedJoints;
 }
