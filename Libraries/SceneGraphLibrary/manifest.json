@@ -15,7 +15,7 @@
     "formatVersion": "0.1",
     "identifier": {
       "name": "SceneGraphLibrary",
-      "version": "0.8",
+      "version": "0.9",
       "type": "Library"
     }
   },
@@ -245,6 +245,11 @@
       "name": "SJoint",
       "format": "tweedle",
       "file": "src/SJoint.twe",
+      "type": "Class"
+    }, {
+      "name": "DynamicJointArray",
+      "format": "tweedle",
+      "file": "src/DynamicJointArray.twe",
       "type": "Class"
     }, {
       "name": "SProp",

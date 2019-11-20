@@ -9,11 +9,26 @@ class SJoint extends SMovableTurnable {
             this.vehicle <- parent;
         }
         this.model <- model;
+        bindToScene();
+    }
 
-        $SceneGraph.createJointEntity(joint: this, id: this.name, model: model);
-        this.defaultTransformation <- $SceneGraph.getLocalTransformation(thing: this);
-        $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value:this.defaultTransformation);
-        this.localTransformation.setValue(value: defaultTransformation);
+    SJoint(TextString name, SJoint parent, SJointedModel model) {
+        this.name <- name;
+        this.parent <- parent;
+        if (parent == null) {
+            this.vehicle <- model;
+        } else {
+            this.vehicle <- parent;
+        }
+        this.model <- model;
+        bindToScene();
+    }
+
+    void bindToScene() {
+        $SceneGraph.createJointEntity(joint: this, id: name, model: model);
+        defaultTransformation <- $SceneGraph.getLocalTransformation(thing: this);
+        $SceneGraph.bindTransformationProperty(owner: this, property: localTransformation, value: defaultTransformation);
+        localTransformation.setValue(value: defaultTransformation);
     }
 
     TextString getId() {
