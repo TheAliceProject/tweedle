@@ -80,15 +80,15 @@ class Scene extends SScene {
         cone.say(text: "What are y'all talking about over there?");
     }
     torus.setOpacity(opacity: new Portion(portion: 0.5));
-    torus.setOuterRadius(radius: 1.25);
-    torus.setInnerRadius(radius: 0.1);
-    torus.setInnerRadius(radius: 0.7);
+    torus.setOuterRadius(outerRadius: 1.25);
+    torus.setInnerRadius(innerRadius: 0.1);
+    torus.setInnerRadius(innerRadius: 0.7);
     torus.setOpacity(opacity: new Portion(portion: 1));
-    torus.setOuterRadius(radius: 0.9);
+    torus.setOuterRadius(outerRadius: 0.9);
     torus.setHeight(height: 0.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
     torus.setDepth(depth: 0.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
-    torus.setInnerRadius(radius: 0.25);
-    torus.setOuterRadius(radius: 0.75);
+    torus.setInnerRadius(innerRadius: 0.25);
+    torus.setOuterRadius(outerRadius: 0.75);
     torus.setDepth(depth: 1.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
     torus.setHeight(height: 0.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
 
