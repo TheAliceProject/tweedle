@@ -15,7 +15,7 @@
     "formatVersion": "0.1",
     "identifier": {
       "name": "SceneGraphLibrary",
-      "version": "0.10",
+      "version": "0.11",
       "type": "Library"
     }
   },
@@ -220,6 +220,11 @@
       "name": "SMovableTurnable",
       "format": "tweedle",
       "file": "src/SMovableTurnable.twe",
+      "type": "Class"
+    }, {
+      "name": "SVRHand",
+      "format": "tweedle",
+      "file": "src/SVRHand.twe",
       "type": "Class"
     }, {
       "name": "SCamera",

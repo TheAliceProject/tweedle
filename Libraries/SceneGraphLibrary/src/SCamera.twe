@@ -4,6 +4,8 @@ class SCamera extends SMovableTurnable {
     $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value: this.localTransformation.getValue());
     $SceneGraph.setCameraVerticalFOV(camera: this, fov: Default.verticalFOV());
     $SceneGraph.setCameraClipPlanes(camera: this, nearClip: Default.nearClipPlane(), farClip: Default.farClipPlane());
+    leftHand <- new SVRHand(name: "LeftHand", camera: this);
+    rightHand <- new SVRHand(name: "RightHand", camera: this);
   }
 
   void setVehicle(SThing vehicle) {
@@ -21,4 +23,15 @@ class SCamera extends SMovableTurnable {
 
     this.localTransformation.animateValue(endValue: end, asSeenBy: entity, duration: duration, animationStyle: animationStyle);
   }
+
+  SVRHand getLeftHand() {
+    return leftHand;
+  }
+
+  SVRHand getRightHand() {
+    return rightHand;
+  }
+
+  SVRHand leftHand;
+  SVRHand rightHand;
 }
