@@ -42,6 +42,10 @@ class SThing {
     return this.getTranslation(asSeenBy: asSeenBy);
   }
 
+  @CompletelyHidden AxisAlignedBox getLocalBoundingBox(Boolean dynamic <- true) {
+    return AxisAlignedBox.EMPTY;
+  }
+
   @TuckedAway TextString getName() {
     return this.name;
   }
