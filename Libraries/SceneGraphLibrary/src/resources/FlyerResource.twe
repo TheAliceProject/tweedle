@@ -1,0 +1,77 @@
+class FlyerResource extends JointedModelResource {
+    FlyerResource(TextString name,
+                  JointedModelPose spreadWingsPose,
+                  JointedModelPose foldWingsPose,
+                  JointId[] tailArray,
+                  JointId[] neckArray) {
+        super(name: name);
+        this.spreadWingsPose <- spreadWingsPose;
+        this.foldWingsPose <- foldWingsPose;
+        this.tailArray <- tailArray;
+        this.neckArray <- neckArray;
+    }
+
+    static JointId ROOT <- new JointId( name: "ROOT", parent: null );
+    static JointId SPINE_BASE <- new JointId( name: "SPINE_BASE", parent: FlyerResource.ROOT );
+    static JointId SPINE_MIDDLE <- new JointId( name: "SPINE_MIDDLE", parent: FlyerResource.SPINE_BASE );
+    static JointId SPINE_UPPER <- new JointId( name: "SPINE_UPPER", parent: FlyerResource.SPINE_MIDDLE );
+
+    //Necks are included as arrays access
+    static JointId NECK_0 <- new JointId( name: "NECK_0", parent: FlyerResource.SPINE_UPPER );
+    static JointId NECK_1 <- new JointId( name: "NECK_1", parent: FlyerResource.NECK_0 );
+    @CompletelyHidden static JointId[] DEFAULT_NECK <- new JointId[] {FlyerResource.NECK_0, FlyerResource.NECK_1};
+
+    static JointId HEAD <- new JointId( name: "HEAD", parent: FlyerResource.NECK_1 );
+    static JointId MOUTH <- new JointId( name: "MOUTH", parent: FlyerResource.HEAD );
+    static JointId LOWER_LIP <- new JointId( name: "LOWER_LIP", parent: FlyerResource.MOUTH );
+    static JointId LEFT_EYE <- new JointId( name: "LEFT_EYE", parent: FlyerResource.HEAD );
+    static JointId RIGHT_EYE <- new JointId( name: "RIGHT_EYE", parent: FlyerResource.HEAD );
+    static JointId LEFT_EYELID <- new JointId( name: "LEFT_EYELID", parent: FlyerResource.HEAD );
+    static JointId RIGHT_EYELID <- new JointId( name: "RIGHT_EYELID", parent: FlyerResource.HEAD );
+    static JointId LEFT_WING_SHOULDER <- new JointId( name: "LEFT_WING_SHOULDER", parent: FlyerResource.SPINE_UPPER );
+    static JointId LEFT_WING_ELBOW <- new JointId( name: "LEFT_WING_ELBOW", parent: FlyerResource.LEFT_WING_SHOULDER );
+    static JointId LEFT_WING_WRIST <- new JointId( name: "LEFT_WING_WRIST", parent: FlyerResource.LEFT_WING_ELBOW );
+    static JointId LEFT_WING_TIP <- new JointId( name: "LEFT_WING_TIP", parent: FlyerResource.LEFT_WING_WRIST );
+    static JointId RIGHT_WING_SHOULDER <- new JointId( name: "RIGHT_WING_SHOULDER", parent: FlyerResource.SPINE_UPPER );
+    static JointId RIGHT_WING_ELBOW <- new JointId( name: "RIGHT_WING_ELBOW", parent: FlyerResource.RIGHT_WING_SHOULDER );
+    static JointId RIGHT_WING_WRIST <- new JointId( name: "RIGHT_WING_WRIST", parent: FlyerResource.RIGHT_WING_ELBOW );
+    static JointId RIGHT_WING_TIP <- new JointId( name: "RIGHT_WING_TIP", parent: FlyerResource.RIGHT_WING_WRIST );
+    static JointId PELVIS_LOWER_BODY <- new JointId( name: "PELVIS_LOWER_BODY", parent: FlyerResource.ROOT );
+
+    //Tails are included as arrays access
+    static JointId TAIL_0 <- new JointId( name: "TAIL_0", parent: FlyerResource.PELVIS_LOWER_BODY );
+    static JointId TAIL_1 <- new JointId( name: "TAIL_1", parent: FlyerResource.TAIL_0 );
+    static JointId TAIL_2 <- new JointId( name: "TAIL_2", parent: FlyerResource.TAIL_1 );
+    @CompletelyHidden static JointId[] DEFAULT_TAIL <- new JointId[] {FlyerResource.TAIL_0, FlyerResource.TAIL_1, FlyerResource.TAIL_2};
+
+    static JointId LEFT_HIP <- new JointId( name: "LEFT_HIP", parent: FlyerResource.PELVIS_LOWER_BODY );
+    static JointId LEFT_KNEE <- new JointId( name: "LEFT_KNEE", parent: FlyerResource.LEFT_HIP );
+    static JointId LEFT_ANKLE <- new JointId( name: "LEFT_ANKLE", parent: FlyerResource.LEFT_KNEE );
+    static JointId LEFT_FOOT <- new JointId( name: "LEFT_FOOT", parent: FlyerResource.LEFT_ANKLE );
+    static JointId RIGHT_HIP <- new JointId( name: "RIGHT_HIP", parent: FlyerResource.PELVIS_LOWER_BODY );
+    static JointId RIGHT_KNEE <- new JointId( name: "RIGHT_KNEE", parent: FlyerResource.RIGHT_HIP );
+    static JointId RIGHT_ANKLE <- new JointId( name: "RIGHT_ANKLE", parent: FlyerResource.RIGHT_KNEE );
+    static JointId RIGHT_FOOT <- new JointId( name: "RIGHT_FOOT", parent: FlyerResource.RIGHT_ANKLE );
+
+    @CompletelyHidden static JointId[] EXPECTED_JOINTS <- new JointId[] {
+        FlyerResource.ROOT, FlyerResource.SPINE_BASE, FlyerResource.SPINE_MIDDLE, FlyerResource.SPINE_UPPER,
+        FlyerResource.NECK_0, FlyerResource.NECK_1, FlyerResource.HEAD, FlyerResource.MOUTH, FlyerResource.LOWER_LIP,
+        FlyerResource.LEFT_EYE, FlyerResource.RIGHT_EYE, FlyerResource.LEFT_EYELID, FlyerResource.RIGHT_EYELID,
+        FlyerResource.LEFT_WING_SHOULDER, FlyerResource.LEFT_WING_ELBOW, FlyerResource.LEFT_WING_WRIST,
+        FlyerResource.LEFT_WING_TIP, FlyerResource.RIGHT_WING_SHOULDER, FlyerResource.RIGHT_WING_ELBOW,
+        FlyerResource.RIGHT_WING_WRIST, FlyerResource.RIGHT_WING_TIP, FlyerResource.PELVIS_LOWER_BODY,
+        FlyerResource.TAIL_0, FlyerResource.TAIL_1, FlyerResource.TAIL_2, FlyerResource.LEFT_HIP,
+        FlyerResource.LEFT_KNEE, FlyerResource.LEFT_ANKLE, FlyerResource.LEFT_FOOT, FlyerResource.RIGHT_HIP,
+        FlyerResource.RIGHT_KNEE, FlyerResource.RIGHT_ANKLE, FlyerResource.RIGHT_FOOT};
+
+    @CompletelyHidden JointId[] getJointIds() {
+        return FlyerResource.EXPECTED_JOINTS;
+    }
+
+    @CompletelyHidden static JointId[] JOINT_ID_ROOTS <- new JointId[] {FlyerResource.ROOT};
+
+    @CompletelyHidden JointId[] tailArray;
+    @CompletelyHidden JointId[] neckArray;
+    @CompletelyHidden JointedModelPose spreadWingsPose;
+    @CompletelyHidden JointedModelPose foldWingsPose;
+}

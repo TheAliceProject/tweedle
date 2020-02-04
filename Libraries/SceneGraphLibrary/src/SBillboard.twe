@@ -50,7 +50,7 @@ class SBillboard extends SModel {
       widthToHeightAspectRatio <- width / height;
     }
 
-    setWidth(width: getSize().height*widthToHeightAspectRatio, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING, duration: Duration.ZERO);
+    setWidth(width: getSize().height*widthToHeightAspectRatio, policy: SetDimensionPolicy.PRESERVE_NOTHING, duration: Duration.ZERO);
   }
 
   @CompletelyHidden PaintProperty backPaint <- new PaintProperty(owner: this, value: Color.WHITE);

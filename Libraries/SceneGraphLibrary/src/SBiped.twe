@@ -1,244 +1,189 @@
 class SBiped extends SJointedModel {
-    SBiped(TextString resource) {
-        super(resource: resource, root: SBiped.ROOT);
+    SBiped(BipedResource resource) {
+        super(resource: resource);
     }
 
-    static JointId ROOT <- new JointId(name: "ROOT", parent: null);
-    static JointId SPINE_BASE <- new JointId(name: "SPINE_BASE", parent: SBiped.ROOT);
-    static JointId SPINE_MIDDLE <- new JointId(name: "SPINE_MIDDLE", parent: SBiped.SPINE_BASE);
-    static JointId SPINE_UPPER <- new JointId(name: "SPINE_UPPER", parent: SBiped.SPINE_MIDDLE);
-
-    static JointId NECK <- new JointId(name: "NECK", parent: SBiped.SPINE_UPPER);
-    static JointId HEAD <- new JointId(name: "HEAD", parent: SBiped.NECK);
-    static JointId MOUTH <- new JointId(name: "MOUTH", parent: SBiped.HEAD);
-    static JointId LEFT_EYE <- new JointId(name: "LEFT_EYE", parent: SBiped.HEAD);
-    static JointId LEFT_EYELID <- new JointId(name: "LEFT_EYELID", parent: SBiped.HEAD);
-    static JointId RIGHT_EYE <- new JointId(name: "RIGHT_EYE", parent: SBiped.HEAD);
-    static JointId RIGHT_EYELID <- new JointId(name: "RIGHT_EYELID", parent: SBiped.HEAD);
-
-    static JointId RIGHT_CLAVICLE <- new JointId(name: "RIGHT_CLAVICLE", parent: SBiped.SPINE_UPPER);
-    static JointId RIGHT_SHOULDER <- new JointId(name: "RIGHT_SHOULDER", parent: SBiped.RIGHT_CLAVICLE);
-    static JointId RIGHT_ELBOW <- new JointId(name: "RIGHT_ELBOW", parent: SBiped.RIGHT_SHOULDER);
-    static JointId RIGHT_WRIST <- new JointId(name: "RIGHT_WRIST", parent: SBiped.RIGHT_ELBOW);
-
-    static JointId LEFT_CLAVICLE <- new JointId(name: "LEFT_CLAVICLE", parent: SBiped.SPINE_UPPER);
-    static JointId LEFT_SHOULDER <- new JointId(name: "LEFT_SHOULDER", parent: SBiped.LEFT_CLAVICLE);
-    static JointId LEFT_ELBOW <- new JointId(name: "LEFT_ELBOW", parent: SBiped.LEFT_SHOULDER);
-    static JointId LEFT_WRIST <- new JointId(name: "LEFT_WRIST", parent: SBiped.LEFT_ELBOW);
-
-    static JointId RIGHT_HAND <- new JointId(name: "RIGHT_HAND", parent: SBiped.RIGHT_WRIST);
-    static JointId RIGHT_THUMB <- new JointId(name: "RIGHT_THUMB", parent: SBiped.RIGHT_HAND);
-    static JointId RIGHT_THUMB_KNUCKLE <- new JointId(name: "RIGHT_THUMB_KNUCKLE", parent: SBiped.RIGHT_THUMB);
-    static JointId RIGHT_INDEX_FINGER <- new JointId(name: "RIGHT_INDEX_FINGER", parent: SBiped.RIGHT_HAND);
-    static JointId RIGHT_INDEX_FINGER_KNUCKLE <- new JointId(name: "RIGHT_INDEX_FINGER_KNUCKLE", parent: SBiped.RIGHT_INDEX_FINGER);
-    static JointId RIGHT_MIDDLE_FINGER <- new JointId(name: "RIGHT_MIDDLE_FINGER", parent: SBiped.RIGHT_HAND);
-    static JointId RIGHT_MIDDLE_FINGER_KNUCKLE <- new JointId(name: "RIGHT_MIDDLE_FINGER_KNUCKLE", parent: SBiped.RIGHT_MIDDLE_FINGER);
-    static JointId RIGHT_PINKY_FINGER <- new JointId(name: "RIGHT_PINKY_FINGER", parent: SBiped.RIGHT_HAND);
-    static JointId RIGHT_PINKY_FINGER_KNUCKLE <- new JointId(name: "RIGHT_PINKY_FINGER_KNUCKLE", parent: SBiped.RIGHT_PINKY_FINGER);
-
-    static JointId LEFT_HAND <- new JointId(name: "LEFT_HAND", parent: SBiped.LEFT_WRIST);
-    static JointId LEFT_THUMB <- new JointId(name: "LEFT_THUMB", parent: SBiped.LEFT_HAND);
-    static JointId LEFT_THUMB_KNUCKLE <- new JointId(name: "LEFT_THUMB_KNUCKLE", parent: SBiped.LEFT_THUMB);
-    static JointId LEFT_INDEX_FINGER <- new JointId(name: "LEFT_INDEX_FINGER", parent: SBiped.LEFT_HAND);
-    static JointId LEFT_INDEX_FINGER_KNUCKLE <- new JointId(name: "LEFT_INDEX_FINGER_KNUCKLE", parent: SBiped.LEFT_INDEX_FINGER);
-    static JointId LEFT_MIDDLE_FINGER <- new JointId(name: "LEFT_MIDDLE_FINGER", parent: SBiped.LEFT_HAND);
-    static JointId LEFT_MIDDLE_FINGER_KNUCKLE <- new JointId(name: "LEFT_MIDDLE_FINGER_KNUCKLE", parent: SBiped.LEFT_MIDDLE_FINGER);
-    static JointId LEFT_PINKY_FINGER <- new JointId(name: "LEFT_PINKY_FINGER", parent: SBiped.LEFT_HAND);
-    static JointId LEFT_PINKY_FINGER_KNUCKLE <- new JointId(name: "LEFT_PINKY_FINGER_KNUCKLE", parent: SBiped.LEFT_PINKY_FINGER);
-
-    static JointId PELVIS_LOWER_BODY <- new JointId(name: "PELVIS_LOWER_BODY", parent: SBiped.ROOT);
-
-    static JointId RIGHT_HIP <- new JointId(name: "RIGHT_HIP", parent: SBiped.PELVIS_LOWER_BODY);
-    static JointId RIGHT_KNEE <- new JointId(name: "RIGHT_KNEE", parent: SBiped.RIGHT_HIP);
-    static JointId RIGHT_ANKLE <- new JointId(name: "RIGHT_ANKLE", parent: SBiped.RIGHT_KNEE);
-    static JointId RIGHT_FOOT <- new JointId(name: "RIGHT_FOOT", parent: SBiped.RIGHT_ANKLE);
-
-    static JointId LEFT_HIP <- new JointId(name: "LEFT_HIP", parent: SBiped.PELVIS_LOWER_BODY);
-    static JointId LEFT_KNEE <- new JointId(name: "LEFT_KNEE", parent: SBiped.LEFT_HIP);
-    static JointId LEFT_ANKLE <- new JointId(name: "LEFT_ANKLE", parent: SBiped.LEFT_KNEE);
-    static JointId LEFT_FOOT <- new JointId(name: "LEFT_FOOT", parent: SBiped.LEFT_ANKLE);
-
     SJoint getRoot() {
-        return getJoint(jointId: SBiped.ROOT);
+        return getJoint(jointId: BipedResource.ROOT);
     }
 
     SJoint getPelvis() {
-        return getJoint(jointId: SBiped.PELVIS_LOWER_BODY);
+        return getJoint(jointId: BipedResource.PELVIS_LOWER_BODY);
     }
 
     SJoint getSpineBase() {
-        return getJoint(jointId: SBiped.SPINE_BASE);
+        return getJoint(jointId: BipedResource.SPINE_BASE);
     }
 
     SJoint getSpineMiddle() {
-        return getJoint(jointId: SBiped.SPINE_MIDDLE);
+        return getJoint(jointId: BipedResource.SPINE_MIDDLE);
     }
 
     SJoint getSpineUpper() {
-        return getJoint(jointId: SBiped.SPINE_UPPER);
+        return getJoint(jointId: BipedResource.SPINE_UPPER);
     }
 
     SJoint getNeck() {
-        return getJoint(jointId: SBiped.NECK);
+        return getJoint(jointId: BipedResource.NECK);
     }
 
     SJoint getHead() {
-        return getJoint(jointId: SBiped.HEAD);
+        return getJoint(jointId: BipedResource.HEAD);
     }
 
     SJoint getMouth() {
-        return getJoint(jointId: SBiped.MOUTH);
+        return getJoint(jointId: BipedResource.MOUTH);
     }
 
     SJoint getRightEye() {
-        return getJoint(jointId: SBiped.RIGHT_EYE);
+        return getJoint(jointId: BipedResource.RIGHT_EYE);
     }
 
     SJoint getLeftEye() {
-        return getJoint(jointId: SBiped.LEFT_EYE);
+        return getJoint(jointId: BipedResource.LEFT_EYE);
     }
 
     SJoint getLeftEyelid() {
-        return getJoint(jointId: SBiped.LEFT_EYELID);
+        return getJoint(jointId: BipedResource.LEFT_EYELID);
     }
 
     SJoint getRightEyelid() {
-        return getJoint(jointId: SBiped.RIGHT_EYELID);
+        return getJoint(jointId: BipedResource.RIGHT_EYELID);
     }
 
     SJoint getRightHip() {
-        return getJoint(jointId: SBiped.RIGHT_HIP);
+        return getJoint(jointId: BipedResource.RIGHT_HIP);
     }
 
     SJoint getRightKnee() {
-        return getJoint(jointId: SBiped.RIGHT_KNEE);
+        return getJoint(jointId: BipedResource.RIGHT_KNEE);
     }
 
     SJoint getRightAnkle() {
-        return getJoint(jointId: SBiped.RIGHT_ANKLE);
+        return getJoint(jointId: BipedResource.RIGHT_ANKLE);
     }
 
     SJoint getRightFoot() {
-        return getJoint(jointId: SBiped.RIGHT_FOOT);
+        return getJoint(jointId: BipedResource.RIGHT_FOOT);
     }
 
     SJoint getLeftHip() {
-        return getJoint(jointId: SBiped.LEFT_HIP);
+        return getJoint(jointId: BipedResource.LEFT_HIP);
     }
 
     SJoint getLeftKnee() {
-        return getJoint(jointId: SBiped.LEFT_KNEE);
+        return getJoint(jointId: BipedResource.LEFT_KNEE);
     }
 
     SJoint getLeftAnkle() {
-        return getJoint(jointId: SBiped.LEFT_ANKLE);
+        return getJoint(jointId: BipedResource.LEFT_ANKLE);
     }
 
     SJoint getLeftFoot() {
-        return getJoint(jointId: SBiped.LEFT_FOOT);
+        return getJoint(jointId: BipedResource.LEFT_FOOT);
     }
 
     SJoint getRightClavicle() {
-        return getJoint(jointId: SBiped.RIGHT_CLAVICLE);
+        return getJoint(jointId: BipedResource.RIGHT_CLAVICLE);
     }
 
     SJoint getRightShoulder() {
-        return getJoint(jointId: SBiped.RIGHT_SHOULDER);
+        return getJoint(jointId: BipedResource.RIGHT_SHOULDER);
     }
 
     SJoint getRightElbow() {
-        return getJoint(jointId: SBiped.RIGHT_ELBOW);
+        return getJoint(jointId: BipedResource.RIGHT_ELBOW);
     }
 
     SJoint getRightWrist() {
-        return getJoint(jointId: SBiped.RIGHT_WRIST);
+        return getJoint(jointId: BipedResource.RIGHT_WRIST);
     }
 
     SJoint getRightHand() {
-        return getJoint(jointId: SBiped.RIGHT_HAND);
+        return getJoint(jointId: BipedResource.RIGHT_HAND);
     }
 
     SJoint getRightThumb() {
-        return getJoint(jointId: SBiped.RIGHT_THUMB);
+        return getJoint(jointId: BipedResource.RIGHT_THUMB);
     }
 
     SJoint getRightThumbKnuckle() {
-        return getJoint(jointId: SBiped.RIGHT_THUMB_KNUCKLE);
+        return getJoint(jointId: BipedResource.RIGHT_THUMB_KNUCKLE);
     }
 
     SJoint getRightIndexFinger() {
-        return getJoint(jointId: SBiped.RIGHT_INDEX_FINGER);
+        return getJoint(jointId: BipedResource.RIGHT_INDEX_FINGER);
     }
 
     SJoint getRightIndexFingerKnuckle() {
-        return getJoint(jointId: SBiped.RIGHT_INDEX_FINGER_KNUCKLE);
+        return getJoint(jointId: BipedResource.RIGHT_INDEX_FINGER_KNUCKLE);
     }
 
     SJoint getRightMiddleFinger() {
-        return getJoint(jointId: SBiped.RIGHT_MIDDLE_FINGER);
+        return getJoint(jointId: BipedResource.RIGHT_MIDDLE_FINGER);
     }
 
     SJoint getRightMiddleFingerKnuckle() {
-        return getJoint(jointId: SBiped.RIGHT_MIDDLE_FINGER_KNUCKLE);
+        return getJoint(jointId: BipedResource.RIGHT_MIDDLE_FINGER_KNUCKLE);
     }
 
     SJoint getRightPinkyFinger() {
-        return getJoint(jointId: SBiped.RIGHT_PINKY_FINGER);
+        return getJoint(jointId: BipedResource.RIGHT_PINKY_FINGER);
     }
 
     SJoint getRightPinkyFingerKnuckle() {
-        return getJoint(jointId: SBiped.RIGHT_PINKY_FINGER_KNUCKLE);
+        return getJoint(jointId: BipedResource.RIGHT_PINKY_FINGER_KNUCKLE);
     }
 
     SJoint getLeftClavicle() {
-        return getJoint(jointId: SBiped.LEFT_CLAVICLE);
+        return getJoint(jointId: BipedResource.LEFT_CLAVICLE);
     }
 
     SJoint getLeftShoulder() {
-        return getJoint(jointId: SBiped.LEFT_SHOULDER);
+        return getJoint(jointId: BipedResource.LEFT_SHOULDER);
     }
 
     SJoint getLeftElbow() {
-        return getJoint(jointId: SBiped.LEFT_ELBOW);
+        return getJoint(jointId: BipedResource.LEFT_ELBOW);
     }
 
     SJoint getLeftWrist() {
-        return getJoint(jointId: SBiped.LEFT_WRIST);
+        return getJoint(jointId: BipedResource.LEFT_WRIST);
     }
 
     SJoint getLeftHand() {
-        return getJoint(jointId: SBiped.LEFT_HAND);
+        return getJoint(jointId: BipedResource.LEFT_HAND);
     }
 
     SJoint getLeftThumb() {
-        return getJoint(jointId: SBiped.LEFT_THUMB);
+        return getJoint(jointId: BipedResource.LEFT_THUMB);
     }
 
     SJoint getLeftThumbKnuckle() {
-        return getJoint(jointId: SBiped.LEFT_THUMB_KNUCKLE);
+        return getJoint(jointId: BipedResource.LEFT_THUMB_KNUCKLE);
     }
 
     SJoint getLeftIndexFinger() {
-        return getJoint(jointId: SBiped.LEFT_INDEX_FINGER);
+        return getJoint(jointId: BipedResource.LEFT_INDEX_FINGER);
     }
 
     SJoint getLeftIndexFingerKnuckle() {
-        return getJoint(jointId: SBiped.LEFT_INDEX_FINGER_KNUCKLE);
+        return getJoint(jointId: BipedResource.LEFT_INDEX_FINGER_KNUCKLE);
     }
 
     SJoint getLeftMiddleFinger() {
-        return getJoint(jointId: SBiped.LEFT_MIDDLE_FINGER);
+        return getJoint(jointId: BipedResource.LEFT_MIDDLE_FINGER);
     }
 
     SJoint getLeftMiddleFingerKnuckle() {
-        return getJoint(jointId: SBiped.LEFT_MIDDLE_FINGER_KNUCKLE);
+        return getJoint(jointId: BipedResource.LEFT_MIDDLE_FINGER_KNUCKLE);
     }
 
     SJoint getLeftPinkyFinger() {
-        return getJoint(jointId: SBiped.LEFT_PINKY_FINGER);
+        return getJoint(jointId: BipedResource.LEFT_PINKY_FINGER);
     }
 
     SJoint getLeftPinkyFingerKnuckle() {
-        return getJoint(jointId: SBiped.LEFT_PINKY_FINGER_KNUCKLE);
+        return getJoint(jointId: BipedResource.LEFT_PINKY_FINGER_KNUCKLE);
     }
 }

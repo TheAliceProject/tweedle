@@ -1,0 +1,5 @@
+class ElderPersonResource extends PersonResource {
+    ElderPersonResource(TextString name) {
+        super(name: name);
+    }
+}

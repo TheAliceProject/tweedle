@@ -1,6 +1,7 @@
 class SJoint extends SMovableTurnable {
     SJoint(JointId id, SJoint parent, SJointedModel model) {
         this.id <- id;
+        this.name <- id.getName();
         this.parent <- parent;
         if (parent == null) {
             this.vehicle <- model;
@@ -8,11 +9,26 @@ class SJoint extends SMovableTurnable {
             this.vehicle <- parent;
         }
         this.model <- model;
+        bindToScene();
+    }
 
-        $SceneGraph.createJointEntity(joint: this, id: id.getName(), model: model);
-        this.defaultTransformation <- $SceneGraph.getLocalTransformation(thing: this);
-        $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value:this.defaultTransformation);
-        this.localTransformation.setValue(value: defaultTransformation);
+    SJoint(TextString name, SJoint parent, SJointedModel model) {
+        this.name <- name;
+        this.parent <- parent;
+        if (parent == null) {
+            this.vehicle <- model;
+        } else {
+            this.vehicle <- parent;
+        }
+        this.model <- model;
+        bindToScene();
+    }
+
+    void bindToScene() {
+        $SceneGraph.createJointEntity(joint: this, id: name, model: model);
+        defaultTransformation <- $SceneGraph.getLocalTransformation(thing: this);
+        $SceneGraph.bindTransformationProperty(owner: this, property: localTransformation, value: defaultTransformation);
+        localTransformation.setValue(value: defaultTransformation);
     }
 
     TextString getId() {
@@ -61,6 +77,16 @@ class SJoint extends SMovableTurnable {
 
     void straightenOut(Duration duration, AnimationStyle animationStyle) {
         this.localTransformation.animateValue(endValue: defaultTransformation, asSeenBy: this.getVehicle(), duration: duration, animationStyle: animationStyle);
+    }
+
+    void setPositionRelativeToVehicle(Position position,
+                                      Duration duration <- Default.duration(),
+                                      AnimationStyle animationStyle <- Default.animationStyle(),
+                                      PathStyle pathStyle <- Default.pathStyle()) {
+
+      Scale parentScale <- model.getScale();
+      Position newPos <- new Position(x: position.x / parentScale.x, y: position.y / parentScale.y, z: position.z / parentScale.z);
+      this.localTransformation.animatePosition(endValue: newPos, duration: duration, animationStyle: animationStyle);
     }
 
     @CompletelyHidden JointId id;

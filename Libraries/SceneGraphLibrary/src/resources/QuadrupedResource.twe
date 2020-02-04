@@ -1,0 +1,80 @@
+class QuadrupedResource extends JointedModelResource {
+    QuadrupedResource(TextString name) {
+        super(name: name);
+    }
+
+    static JointId ROOT <- new JointId(name: "ROOT", parent: null);
+    static JointId SPINE_BASE <- new JointId(name: "SPINE_BASE", parent: QuadrupedResource.ROOT);
+    static JointId SPINE_MIDDLE <- new JointId(name: "SPINE_MIDDLE", parent: QuadrupedResource.SPINE_BASE);
+    static JointId SPINE_UPPER <- new JointId(name: "SPINE_UPPER", parent: QuadrupedResource.SPINE_MIDDLE);
+
+    static JointId NECK <- new JointId(name: "NECK", parent: QuadrupedResource.SPINE_UPPER);
+    static JointId HEAD <- new JointId(name: "HEAD", parent: QuadrupedResource.NECK);
+    static JointId MOUTH <- new JointId(name: "MOUTH", parent: QuadrupedResource.HEAD);
+    static JointId LEFT_EYE <- new JointId(name: "LEFT_EYE", parent: QuadrupedResource.HEAD);
+    static JointId LEFT_EYELID <- new JointId(name: "LEFT_EYELID", parent: QuadrupedResource.HEAD);
+    static JointId LEFT_EAR <- new JointId(name: "LEFT_EAR", parent: QuadrupedResource.HEAD);
+    static JointId RIGHT_EYE <- new JointId(name: "RIGHT_EYE", parent: QuadrupedResource.HEAD);
+    static JointId RIGHT_EYELID <- new JointId(name: "RIGHT_EYELID", parent: QuadrupedResource.HEAD);
+    static JointId RIGHT_EAR <- new JointId(name: "RIGHT_EAR", parent: QuadrupedResource.HEAD);
+
+
+    static JointId FRONT_LEFT_CLAVICLE <- new JointId(name: "FRONT_LEFT_CLAVICLE", parent: QuadrupedResource.SPINE_UPPER);
+    static JointId FRONT_LEFT_SHOULDER <- new JointId(name: "FRONT_LEFT_SHOULDER", parent: QuadrupedResource.FRONT_LEFT_CLAVICLE);
+    static JointId FRONT_LEFT_KNEE <- new JointId(name: "FRONT_LEFT_KNEE", parent: QuadrupedResource.FRONT_LEFT_SHOULDER);
+    static JointId FRONT_LEFT_ANKLE <- new JointId(name: "FRONT_LEFT_ANKLE", parent: QuadrupedResource.FRONT_LEFT_KNEE);
+    static JointId FRONT_LEFT_FOOT <- new JointId(name: "FRONT_LEFT_FOOT", parent: QuadrupedResource.FRONT_LEFT_ANKLE);
+    static JointId FRONT_LEFT_TOE <- new JointId(name: "FRONT_LEFT_TOE", parent: QuadrupedResource.FRONT_LEFT_FOOT);
+
+    static JointId FRONT_RIGHT_CLAVICLE <- new JointId(name: "FRONT_RIGHT_CLAVICLE", parent: QuadrupedResource.SPINE_UPPER);
+    static JointId FRONT_RIGHT_SHOULDER <- new JointId(name: "FRONT_RIGHT_SHOULDER", parent: QuadrupedResource.FRONT_RIGHT_CLAVICLE);
+    static JointId FRONT_RIGHT_KNEE <- new JointId(name: "FRONT_RIGHT_KNEE", parent: QuadrupedResource.FRONT_RIGHT_SHOULDER);
+    static JointId FRONT_RIGHT_ANKLE <- new JointId(name: "FRONT_RIGHT_ANKLE", parent: QuadrupedResource.FRONT_RIGHT_KNEE);
+    static JointId FRONT_RIGHT_FOOT <- new JointId(name: "FRONT_RIGHT_FOOT", parent: QuadrupedResource.FRONT_RIGHT_ANKLE);
+    static JointId FRONT_RIGHT_TOE <- new JointId(name: "FRONT_RIGHT_TOE", parent: QuadrupedResource.FRONT_RIGHT_FOOT);
+
+    static JointId PELVIS_LOWER_BODY <- new JointId(name: "PELVIS_LOWER_BODY", parent: QuadrupedResource.ROOT);
+
+    //Tails are included as arrays access
+    @CompletelyHidden static JointId TAIL_0 <- new JointId(name: "TAIL_0", parent: QuadrupedResource.PELVIS_LOWER_BODY);
+    @CompletelyHidden static JointId TAIL_1 <- new JointId(name: "TAIL_1", parent: QuadrupedResource.TAIL_0);
+    @CompletelyHidden static JointId TAIL_2 <- new JointId(name: "TAIL_2", parent: QuadrupedResource.TAIL_1);
+    @CompletelyHidden static JointId TAIL_3 <- new JointId(name: "TAIL_3", parent: QuadrupedResource.TAIL_2);
+    @CompletelyHidden static JointId[] DEFAULT_TAIL <- new JointId[] {
+            QuadrupedResource.TAIL_0, QuadrupedResource.TAIL_1, QuadrupedResource.TAIL_2, QuadrupedResource.TAIL_3};
+
+    static JointId BACK_LEFT_HIP <- new JointId(name: "BACK_LEFT_HIP", parent:  QuadrupedResource.PELVIS_LOWER_BODY);
+    static JointId BACK_LEFT_KNEE <- new JointId(name: "BACK_LEFT_KNEE", parent: QuadrupedResource.BACK_LEFT_HIP);
+    static JointId BACK_LEFT_HOCK <- new JointId(name: "BACK_LEFT_HOCK", parent: QuadrupedResource.BACK_LEFT_KNEE);
+    static JointId BACK_LEFT_ANKLE <- new JointId(name: "BACK_LEFT_ANKLE", parent: QuadrupedResource.BACK_LEFT_HOCK);
+    static JointId BACK_LEFT_FOOT <- new JointId(name: "BACK_LEFT_FOOT", parent: QuadrupedResource.BACK_LEFT_ANKLE);
+    static JointId BACK_LEFT_TOE <- new JointId(name: "BACK_LEFT_TOE", parent: QuadrupedResource.BACK_LEFT_FOOT);
+
+    static JointId BACK_RIGHT_HIP <- new JointId(name: "BACK_RIGHT_HIP", parent:  QuadrupedResource.PELVIS_LOWER_BODY);
+    static JointId BACK_RIGHT_KNEE <- new JointId(name: "BACK_RIGHT_KNEE", parent: QuadrupedResource.BACK_RIGHT_HIP);
+    static JointId BACK_RIGHT_HOCK <- new JointId(name: "BACK_RIGHT_HOCK", parent: QuadrupedResource.BACK_RIGHT_KNEE);
+    static JointId BACK_RIGHT_ANKLE <- new JointId(name: "BACK_RIGHT_ANKLE", parent: QuadrupedResource.BACK_RIGHT_HOCK);
+    static JointId BACK_RIGHT_FOOT <- new JointId(name: "BACK_RIGHT_FOOT", parent: QuadrupedResource.BACK_RIGHT_ANKLE);
+    static JointId BACK_RIGHT_TOE <- new JointId(name: "BACK_RIGHT_TOE", parent: QuadrupedResource.BACK_RIGHT_FOOT);
+
+    @CompletelyHidden static JointId[] EXPECTED_JOINTS <- new JointId[] {
+        QuadrupedResource.ROOT, QuadrupedResource.SPINE_BASE, QuadrupedResource.SPINE_MIDDLE, QuadrupedResource.SPINE_UPPER,
+        QuadrupedResource.NECK, QuadrupedResource.HEAD, QuadrupedResource.MOUTH, QuadrupedResource.LEFT_EYE,
+        QuadrupedResource.LEFT_EYELID, QuadrupedResource.LEFT_EAR, QuadrupedResource.RIGHT_EYE,
+        QuadrupedResource.RIGHT_EYELID, QuadrupedResource.RIGHT_EAR, QuadrupedResource.FRONT_LEFT_CLAVICLE,
+        QuadrupedResource.FRONT_LEFT_SHOULDER, QuadrupedResource.FRONT_LEFT_KNEE, QuadrupedResource.FRONT_LEFT_ANKLE,
+        QuadrupedResource.FRONT_LEFT_FOOT, QuadrupedResource.FRONT_LEFT_TOE, QuadrupedResource.FRONT_RIGHT_CLAVICLE,
+        QuadrupedResource.FRONT_RIGHT_SHOULDER, QuadrupedResource.FRONT_RIGHT_KNEE, QuadrupedResource.FRONT_RIGHT_ANKLE,
+        QuadrupedResource.FRONT_RIGHT_FOOT, QuadrupedResource.FRONT_RIGHT_TOE, QuadrupedResource.PELVIS_LOWER_BODY,
+        QuadrupedResource.TAIL_0, QuadrupedResource.TAIL_1, QuadrupedResource.TAIL_2, QuadrupedResource.TAIL_3,
+        QuadrupedResource.BACK_LEFT_HIP, QuadrupedResource.BACK_LEFT_KNEE, QuadrupedResource.BACK_LEFT_HOCK,
+        QuadrupedResource.BACK_LEFT_ANKLE, QuadrupedResource.BACK_LEFT_FOOT, QuadrupedResource.BACK_LEFT_TOE,
+        QuadrupedResource.BACK_RIGHT_HIP, QuadrupedResource.BACK_RIGHT_KNEE, QuadrupedResource.BACK_RIGHT_HOCK,
+        QuadrupedResource.BACK_RIGHT_ANKLE, QuadrupedResource.BACK_RIGHT_FOOT, QuadrupedResource.BACK_RIGHT_TOE};
+
+    @CompletelyHidden JointId[] getJointIds() {
+        return QuadrupedResource.EXPECTED_JOINTS;
+    }
+
+    @CompletelyHidden static JointId[] JOINT_ID_ROOTS <- new JointId[] {QuadrupedResource.ROOT};
+}

@@ -1,0 +1,76 @@
+class BipedResource extends JointedModelResource {
+    BipedResource(TextString name) {
+        super(name: name);
+    }
+
+    static JointId ROOT <- new JointId(name: "ROOT", parent: null);
+    static JointId SPINE_BASE <- new JointId(name: "SPINE_BASE", parent: BipedResource.ROOT);
+    static JointId SPINE_MIDDLE <- new JointId(name: "SPINE_MIDDLE", parent: BipedResource.SPINE_BASE);
+    static JointId SPINE_UPPER <- new JointId(name: "SPINE_UPPER", parent: BipedResource.SPINE_MIDDLE);
+
+    static JointId NECK <- new JointId(name: "NECK", parent: BipedResource.SPINE_UPPER);
+    static JointId HEAD <- new JointId(name: "HEAD", parent: BipedResource.NECK);
+    static JointId MOUTH <- new JointId(name: "MOUTH", parent: BipedResource.HEAD);
+    static JointId LEFT_EYE <- new JointId(name: "LEFT_EYE", parent: BipedResource.HEAD);
+    static JointId RIGHT_EYE <- new JointId(name: "RIGHT_EYE", parent: BipedResource.HEAD);
+    static JointId LEFT_EYELID <- new JointId(name: "LEFT_EYELID", parent: BipedResource.HEAD);
+    static JointId RIGHT_EYELID <- new JointId(name: "RIGHT_EYELID", parent: BipedResource.HEAD);
+    static JointId PELVIS_LOWER_BODY <- new JointId(name: "PELVIS_LOWER_BODY", parent: BipedResource.ROOT);
+
+    static JointId LEFT_HIP <- new JointId(name: "LEFT_HIP", parent: BipedResource.PELVIS_LOWER_BODY);
+    static JointId LEFT_KNEE <- new JointId(name: "LEFT_KNEE", parent: BipedResource.LEFT_HIP);
+    static JointId LEFT_ANKLE <- new JointId(name: "LEFT_ANKLE", parent: BipedResource.LEFT_KNEE);
+    static JointId LEFT_FOOT <- new JointId(name: "LEFT_FOOT", parent: BipedResource.LEFT_ANKLE);
+    static JointId RIGHT_HIP <- new JointId(name: "RIGHT_HIP", parent: BipedResource.PELVIS_LOWER_BODY);
+    static JointId RIGHT_KNEE <- new JointId(name: "RIGHT_KNEE", parent: BipedResource.RIGHT_HIP);
+    static JointId RIGHT_ANKLE <- new JointId(name: "RIGHT_ANKLE", parent: BipedResource.RIGHT_KNEE);
+    static JointId RIGHT_FOOT <- new JointId(name: "RIGHT_FOOT", parent: BipedResource.RIGHT_ANKLE);
+
+    static JointId RIGHT_CLAVICLE <- new JointId(name: "RIGHT_CLAVICLE", parent: BipedResource.SPINE_UPPER);
+    static JointId RIGHT_SHOULDER <- new JointId(name: "RIGHT_SHOULDER", parent: BipedResource.RIGHT_CLAVICLE);
+    static JointId RIGHT_ELBOW <- new JointId(name: "RIGHT_ELBOW", parent: BipedResource.RIGHT_SHOULDER);
+    static JointId RIGHT_WRIST <- new JointId(name: "RIGHT_WRIST", parent: BipedResource.RIGHT_ELBOW);
+    static JointId RIGHT_HAND <- new JointId(name: "RIGHT_HAND", parent: BipedResource.RIGHT_WRIST);
+    static JointId RIGHT_THUMB <- new JointId(name: "RIGHT_THUMB", parent: BipedResource.RIGHT_HAND);
+    static JointId RIGHT_THUMB_KNUCKLE <- new JointId(name: "RIGHT_THUMB_KNUCKLE", parent: BipedResource.RIGHT_THUMB);
+    static JointId RIGHT_INDEX_FINGER <- new JointId(name: "RIGHT_INDEX_FINGER", parent: BipedResource.RIGHT_HAND);
+    static JointId RIGHT_INDEX_FINGER_KNUCKLE <- new JointId(name: "RIGHT_INDEX_FINGER_KNUCKLE", parent: BipedResource.RIGHT_INDEX_FINGER);
+    static JointId RIGHT_MIDDLE_FINGER <- new JointId(name: "RIGHT_MIDDLE_FINGER", parent: BipedResource.RIGHT_HAND);
+    static JointId RIGHT_MIDDLE_FINGER_KNUCKLE <- new JointId(name: "RIGHT_MIDDLE_FINGER_KNUCKLE", parent: BipedResource.RIGHT_MIDDLE_FINGER);
+    static JointId RIGHT_PINKY_FINGER <- new JointId(name: "RIGHT_PINKY_FINGER", parent: BipedResource.RIGHT_HAND);
+    static JointId RIGHT_PINKY_FINGER_KNUCKLE <- new JointId(name: "RIGHT_PINKY_FINGER_KNUCKLE", parent: BipedResource.RIGHT_PINKY_FINGER);
+    static JointId LEFT_CLAVICLE <- new JointId(name: "LEFT_CLAVICLE", parent: BipedResource.SPINE_UPPER);
+    static JointId LEFT_SHOULDER <- new JointId(name: "LEFT_SHOULDER", parent: BipedResource.LEFT_CLAVICLE);
+    static JointId LEFT_ELBOW <- new JointId(name: "LEFT_ELBOW", parent: BipedResource.LEFT_SHOULDER);
+    static JointId LEFT_WRIST <- new JointId(name: "LEFT_WRIST", parent: BipedResource.LEFT_ELBOW);
+    static JointId LEFT_HAND <- new JointId(name: "LEFT_HAND", parent: BipedResource.LEFT_WRIST);
+    static JointId LEFT_THUMB <- new JointId(name: "LEFT_THUMB", parent: BipedResource.LEFT_HAND);
+    static JointId LEFT_THUMB_KNUCKLE <- new JointId(name: "LEFT_THUMB_KNUCKLE", parent: BipedResource.LEFT_THUMB);
+    static JointId LEFT_INDEX_FINGER <- new JointId(name: "LEFT_INDEX_FINGER", parent: BipedResource.LEFT_HAND);
+    static JointId LEFT_INDEX_FINGER_KNUCKLE <- new JointId(name: "LEFT_INDEX_FINGER_KNUCKLE", parent: BipedResource.LEFT_INDEX_FINGER);
+    static JointId LEFT_MIDDLE_FINGER <- new JointId(name: "LEFT_MIDDLE_FINGER", parent: BipedResource.LEFT_HAND);
+    static JointId LEFT_MIDDLE_FINGER_KNUCKLE <- new JointId(name: "LEFT_MIDDLE_FINGER_KNUCKLE", parent: BipedResource.LEFT_MIDDLE_FINGER);
+    static JointId LEFT_PINKY_FINGER <- new JointId(name: "LEFT_PINKY_FINGER", parent: BipedResource.LEFT_HAND);
+    static JointId LEFT_PINKY_FINGER_KNUCKLE <- new JointId(name: "LEFT_PINKY_FINGER_KNUCKLE", parent: BipedResource.LEFT_PINKY_FINGER);
+
+    @CompletelyHidden static JointId[] EXPECTED_JOINTS <- new JointId[] {
+        BipedResource.ROOT, BipedResource.SPINE_BASE, BipedResource.SPINE_MIDDLE, BipedResource.SPINE_UPPER,
+        BipedResource.NECK, BipedResource.HEAD, BipedResource.MOUTH, BipedResource.LEFT_EYE, BipedResource.RIGHT_EYE,
+        BipedResource.LEFT_EYELID, BipedResource.RIGHT_EYELID, BipedResource.PELVIS_LOWER_BODY, BipedResource.LEFT_HIP,
+        BipedResource.LEFT_KNEE, BipedResource.LEFT_ANKLE, BipedResource.LEFT_FOOT, BipedResource.RIGHT_HIP,
+        BipedResource.RIGHT_KNEE, BipedResource.RIGHT_ANKLE, BipedResource.RIGHT_FOOT, BipedResource.RIGHT_CLAVICLE,
+        BipedResource.RIGHT_SHOULDER, BipedResource.RIGHT_ELBOW, BipedResource.RIGHT_WRIST, BipedResource.RIGHT_HAND,
+        BipedResource.RIGHT_THUMB, BipedResource.RIGHT_THUMB_KNUCKLE, BipedResource.RIGHT_INDEX_FINGER,
+        BipedResource.RIGHT_INDEX_FINGER_KNUCKLE, BipedResource.RIGHT_MIDDLE_FINGER, BipedResource.RIGHT_MIDDLE_FINGER_KNUCKLE,
+        BipedResource.RIGHT_PINKY_FINGER, BipedResource.RIGHT_PINKY_FINGER_KNUCKLE, BipedResource.LEFT_CLAVICLE,
+        BipedResource.LEFT_SHOULDER, BipedResource.LEFT_ELBOW, BipedResource.LEFT_WRIST, BipedResource.LEFT_HAND,
+        BipedResource.LEFT_THUMB, BipedResource.LEFT_THUMB_KNUCKLE, BipedResource.LEFT_INDEX_FINGER,
+        BipedResource.LEFT_INDEX_FINGER_KNUCKLE, BipedResource.LEFT_MIDDLE_FINGER, BipedResource.LEFT_MIDDLE_FINGER_KNUCKLE,
+        BipedResource.LEFT_PINKY_FINGER, BipedResource.LEFT_PINKY_FINGER_KNUCKLE};
+
+    @CompletelyHidden JointId[] getJointIds() {
+        return BipedResource.EXPECTED_JOINTS;
+    }
+
+    @CompletelyHidden static JointId[] JOINT_ID_ROOTS <- new JointId[] {BipedResource.ROOT};
+}

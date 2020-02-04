@@ -1,40 +1,36 @@
 class SJointedModel extends SModel {
-    SJointedModel(TextString resource) {
-        super(resource: resource);
+    SJointedModel(JointedModelResource resource) {
+        super(resource: resource.getName());
+        currentResource <- resource;
+        this.name <- resource.getName();
+        buildJoints(resource: resource);
     }
 
-    SJointedModel(TextString resource, JointId root) {
-        super(resource: resource);
-
-        if (root != null) {
-            this.buildJoints(root: root);
-        }
-    }
-
-    SJointedModel(TextString resource, JointId[] roots) {
-        super(resource: resource);
-
-        if (roots != null) {
-            forEach(JointId root in roots) {
-                if (root != null) {
-                    this.buildJoints(root: root);
-                }
-            }
-        }
-    }
-
-    @CompletelyHidden void setJointedModelResource(TextString resource) {
+    @CompletelyHidden void setJointedModelResource(JointedModelResource resource) {
         if (currentResource == resource) {
             return;
         }
-        // TODO translate more from java, JointedModelImp.setNewResource(), and reconsider use of setResource
-        setResource(resource: resource);
+        currentResource <- resource;
+        resourceName <- resource.getName();
+        cachedNamedJoints <- null;
+        $SceneGraph.setEntityResource(model: this, resource: resourceName);
+        buildJoints(resource: resource);
+        // TODO preserve applied joint transformations (see JointedModelImp.setNewResource() in java)
+        size.sync();
+        defaultSize <- size.getValue();
     }
 
     SJoint getJoint(JointId jointId) {
-        if (this.joints != null) {
-            forEach(SJoint joint in this.joints) {
-                if (joint.getId().getName() == jointId.getName()) {
+        if (jointId != null) {
+            return getJoint(name: jointId.getName());
+        }
+        return null;
+    }
+
+    @CompletelyHidden SJoint getJoint(TextString name) {
+        if (joints != null) {
+            forEach(SJoint joint in joints) {
+                if (joint.getId().getName() == name) {
                     return joint;
                 }
             }
@@ -55,13 +51,31 @@ class SJointedModel extends SModel {
     }
 
     @CompletelyHidden SJoint[] getJointArray(JointArrayId jointArrayId) {
-        return getJointArray(jointIdArray: getJointIdArray(jointArrayId: jointArrayId));
-    }
-
-    @CompletelyHidden JointId[] getJointIdArray(JointArrayId jointArrayId) {
-        $Debug.log(message: "Access JointArray by ID is not yet supported. Returning empty array for " .. jointArrayId.elementPattern);
-        // TODO Implement resource reading and joint collection
-        return new JointId[0];
+        if (cachedNamedJoints == null) {
+            TextString[] jointNames <- $SceneGraph.findJointsBeginningWith(start: jointArrayId.getElementNamePattern(), model: this);
+            WholeNumber len <- jointNames.length
+            SJoint[] members <- new SJoint[len];
+            SJoint parent <- getJoint(name: "ROOT")
+            countUpTo(index < len) {
+                TextString jointName <- jointNames[index];
+                SJoint existingJoint <- getJoint(name: jointName);
+                if (existingJoint != null) {
+                    // Probably the wheels on a train
+                    members[index] <- existingJoint;
+                } else {
+                    // Probably the path along a railroad track
+                    parent <- new SJoint(name: jointName, parent: parent, model: this)
+                    members[index] <- parent;
+                }
+            }
+            cachedNamedJoints <- new DynamicJointArray(pattern: jointArrayId.getElementNamePattern(), members: members)
+        } else {
+            // Verify the stored value has the same name. Since no model (yet) has more than one dynamic array there is only cached value.
+            if (cachedNamedJoints.getElementNamePattern() != jointArrayId.getElementNamePattern()) {
+                $Debug.log(message: getName() .. " has multiple dynamic joint arrays " .. cachedNamedJoints.getElementNamePattern() .. " and " .. jointArrayId.getElementNamePattern() .. ". This is not yet supported.");
+            }
+        }
+        return cachedNamedJoints.getMembers();
     }
 
     void straightenOutJoints(Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle()) {
@@ -81,27 +95,23 @@ class SJointedModel extends SModel {
         }
     }
 
-    @CompletelyHidden void buildJoints(JointId root) {
-
-        WholeNumber count <- root.getHierarchyCount();
-        this.joints <- new SJoint[count];
-        buildJoint(id: root, parent: null, index: 0);
-    }
-
-    @CompletelyHidden WholeNumber buildJoint(JointId id, SJoint parent, WholeNumber index) {
-
-        SJoint joint <- new SJoint(id: id, parent: parent, model: this);
-        JointIdNode current <- id.getChildren().getFirst();
-        joints[index] <- joint;
-        index <- index + 1;
-
-        while (current != null) {
-            index <- buildJoint(id: current.id, parent: joint, index: index);
-            current <- current.next;
+    @CompletelyHidden void buildJoints(JointedModelResource resource) {
+        if (this.joints != null) {
+            // TODO Reuse and map existing joint values in
         }
-
-        return index;
+        JointId[] ids <- resource.getJointIds();
+        WholeNumber len <- ids.length
+        this.joints <- new SJoint[len];
+        countUpTo(index < len) {
+            JointId jointId <- ids[index];
+            SJoint parent <- getJoint(jointId: jointId.getParent())
+            joints[index] <- new SJoint(id: jointId, parent: parent, model: this);
+        }
     }
 
     @CompletelyHidden SJoint[] joints;
+    @CompletelyHidden JointedModelResource currentResource;
+
+    // Existing models never have more than one of these. If that should change this will need to be turned into a collection.
+    @CompletelyHidden DynamicJointArray cachedNamedJoints;
 }

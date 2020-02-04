@@ -1,7 +1,6 @@
-class SModel extends SMovableTurnable
-{
+class SModel extends SMovableTurnable {
     SModel(TextString resource) {
-        currentResource <- resource;
+        resourceName <- resource;
         $SceneGraph.createEntity(model: this, resource: resource);
         $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value: this.localTransformation.getValue());
 
@@ -12,15 +11,6 @@ class SModel extends SMovableTurnable
 
         $SceneGraph.bindPaintProperty(owner: this, property: this.paint, value: this.paint.getValue());
         $SceneGraph.bindOpacityProperty(owner: this, property: this.opacity, value: this.opacity.getValue());
-    }
-
-    void setResource(TextString resource) {
-        if (currentResource != resource) {
-            currentResource <- resource;
-            $SceneGraph.setEntityResource(model: this, resource: resource);
-            this.size.sync();
-            this.defaultSize <- this.size.getValue();
-        }
     }
 
     Size getSize() {
@@ -53,42 +43,42 @@ class SModel extends SMovableTurnable
         return this.getSize().width;
     }
 
-    void setWidth(DecimalNumber width, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
+    void setWidth(DecimalNumber width, SetDimensionPolicy policy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no width
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.width)) {
             width <- this.defaultSize.width;
         }
 
-        this.size.animateWidth(width: width, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: animationStyle);
+        this.size.animateWidth(width: width, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle);
     }
 
     DecimalNumber getHeight() {
         return this.getSize().height;
     }
 
-    void setHeight(DecimalNumber height, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
+    void setHeight(DecimalNumber height, SetDimensionPolicy policy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no height
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.height)) {
             height <- this.defaultSize.height;
         }
 
-        this.size.animateHeight(height: height, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: animationStyle);
+        this.size.animateHeight(height: height, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle);
     }
 
     DecimalNumber getDepth() {
         return this.getSize().depth;
     }
 
-    void setDepth(DecimalNumber depth, DimensionPolicy dimensionPolicy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
+    void setDepth(DecimalNumber depth, SetDimensionPolicy policy <- Default.dimensionPolicy(), Duration duration <- Default.duration(), AnimationStyle animationStyle <- Default.animationStyle())
     {
         // constrain if model has no depth
         if (Epsilon.TINY.isWithinZero(number: this.defaultSize.depth)) {
             depth <- this.defaultSize.depth;
         }
 
-        this.size.animateDepth(depth: depth, dimensionPolicy: dimensionPolicy, duration: duration, animationStyle: animationStyle);
+        this.size.animateDepth(depth: depth, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle);
     }
 
     void resize(Number factor,
@@ -102,9 +92,9 @@ class SModel extends SMovableTurnable
                     Duration duration <- Default.duration(),
                     AnimationStyle animationStyle <- Default.animationStyle(),
                     Boolean isVolumePreserved <- Default.isVolumePreserved()) {
-        DimensionPolicy policy <- DimensionPolicy.PRESERVE_NOTHING;
+        SetDimensionPolicy policy <- SetDimensionPolicy.PRESERVE_NOTHING;
         if (isVolumePreserved) {
-            policy <- DimensionPolicy.PRESERVE_VOLUME;
+            policy <- SetDimensionPolicy.PRESERVE_VOLUME;
         }
         this.size.animateResizeWidth( factor: factor, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle );
     }
@@ -114,9 +104,9 @@ class SModel extends SMovableTurnable
                     AnimationStyle animationStyle <- Default.animationStyle(),
                     Boolean isVolumePreserved <- Default.isVolumePreserved())
     {
-        DimensionPolicy policy <- DimensionPolicy.PRESERVE_NOTHING;
+        SetDimensionPolicy policy <- SetDimensionPolicy.PRESERVE_NOTHING;
         if (isVolumePreserved) {
-            policy <- DimensionPolicy.PRESERVE_VOLUME;
+            policy <- SetDimensionPolicy.PRESERVE_VOLUME;
         }
         this.size.animateResizeHeight( factor: factor, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle );
     }
@@ -126,9 +116,9 @@ class SModel extends SMovableTurnable
                     AnimationStyle animationStyle <- Default.animationStyle(),
                     Boolean isVolumePreserved <- Default.isVolumePreserved())
     {
-        DimensionPolicy policy <- DimensionPolicy.PRESERVE_NOTHING;
+        SetDimensionPolicy policy <- SetDimensionPolicy.PRESERVE_NOTHING;
         if (isVolumePreserved) {
-            policy <- DimensionPolicy.PRESERVE_VOLUME;
+            policy <- SetDimensionPolicy.PRESERVE_VOLUME;
         }
         this.size.animateResizeDepth( factor: factor, dimensionPolicy: policy, duration: duration, animationStyle: animationStyle );
     }
@@ -174,6 +164,11 @@ class SModel extends SMovableTurnable
         return aabb.transform(vantagePoint: trans);
     }
 
+    Scale getScale(){
+        scale <- $SceneGraph.getLocalScale(model: this);
+        return scale;
+    }
+
     void setVehicle(SThing vehicle) {
         this.vehicle <- vehicle;
         localTransformation.value <- $SceneGraph.setVehicle(vehicle: vehicle, rider: this);
@@ -206,8 +201,9 @@ class SModel extends SMovableTurnable
     }
 
     @CompletelyHidden Size defaultSize;
+    @CompletelyHidden Scale scale;
     @CompletelyHidden SizeProperty size <- new SizeProperty(owner: this, value: new Size(width: 1, height: 1, depth: 1));
     @CompletelyHidden PaintProperty paint <- new PaintProperty(owner: this, value: Color.WHITE);
     @CompletelyHidden PortionProperty opacity <- new PortionProperty(owner: this, value: Portion.WHOLE);
-    @CompletelyHidden TextString currentResource;
+    @CompletelyHidden TextString resourceName;
 }

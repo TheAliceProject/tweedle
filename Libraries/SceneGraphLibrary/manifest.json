@@ -15,7 +15,7 @@
     "formatVersion": "0.1",
     "identifier": {
       "name": "SceneGraphLibrary",
-      "version": "0.7",
+      "version": "0.10",
       "type": "Library"
     }
   },
@@ -32,9 +32,9 @@
       "file": "src/AnimationStyle.twe",
       "type": "Enum"
     }, {
-      "name": "DimensionPolicy",
+      "name": "SetDimensionPolicy",
       "format": "tweedle",
-      "file": "src/DimensionPolicy.twe",
+      "file": "src/SetDimensionPolicy.twe",
       "type": "Enum"
     }, {
       "name": "TurnDirection",
@@ -247,6 +247,11 @@
       "file": "src/SJoint.twe",
       "type": "Class"
     }, {
+      "name": "DynamicJointArray",
+      "format": "tweedle",
+      "file": "src/DynamicJointArray.twe",
+      "type": "Class"
+    }, {
       "name": "SProp",
       "format": "tweedle",
       "file": "src/SProp.twe",
@@ -365,16 +370,6 @@
       "name": "JointArrayId",
       "format": "tweedle",
       "file": "src/JointArrayId.twe",
-      "type": "Class"
-    }, {
-      "name": "JointIdList",
-      "format": "tweedle",
-      "file": "src/JointIdList.twe",
-      "type": "Class"
-    }, {
-      "name": "JointIdNode",
-      "format": "tweedle",
-      "file": "src/JointIdNode.twe",
       "type": "Class"
     }, {
       "name": "JointedModelPose",
@@ -511,6 +506,106 @@
       "format": "tweedle",
       "file": "src/BubblePosition.twe",
       "type": "Enum"
+    }, {
+      "name": "BipedResource",
+      "format": "tweedle",
+      "file": "src/resources/BipedResource.twe",
+      "type": "Class"
+    }, {
+      "name": "FlyerResource",
+      "format": "tweedle",
+      "file": "src/resources/FlyerResource.twe",
+      "type": "Class"
+    }, {
+      "name": "JointedModelResource",
+      "format": "tweedle",
+      "file": "src/resources/JointedModelResource.twe",
+      "type": "Class"
+    }, {
+      "name": "PropResource",
+      "format": "tweedle",
+      "file": "src/resources/PropResource.twe",
+      "type": "Class"
+    }, {
+      "name": "QuadrupedResource",
+      "format": "tweedle",
+      "file": "src/resources/QuadrupedResource.twe",
+      "type": "Class"
+    }, {
+      "name": "SlithererResource",
+      "format": "tweedle",
+      "file": "src/resources/SlithererResource.twe",
+      "type": "Class"
+    }, {
+      "name": "SwimmerResource",
+      "format": "tweedle",
+      "file": "src/resources/SwimmerResource.twe",
+      "type": "Class"
+    }, {
+      "name": "FishResource",
+      "format": "tweedle",
+      "file": "src/resources/FishResource.twe",
+      "type": "Class"
+    }, {
+      "name": "MarineMammalResource",
+      "format": "tweedle",
+      "file": "src/resources/MarineMammalResource.twe",
+      "type": "Class"
+    }, {
+      "name": "TransportResource",
+      "format": "tweedle",
+      "file": "src/resources/TransportResource.twe",
+      "type": "Class"
+    }, {
+      "name": "AircraftResource",
+      "format": "tweedle",
+      "file": "src/resources/AircraftResource.twe",
+      "type": "Class"
+    }, {
+      "name": "AutomobileResource",
+      "format": "tweedle",
+      "file": "src/resources/AutomobileResource.twe",
+      "type": "Class"
+    }, {
+      "name": "TrainResource",
+      "format": "tweedle",
+      "file": "src/resources/TrainResource.twe",
+      "type": "Class"
+    }, {
+      "name": "WatercraftResource",
+      "format": "tweedle",
+      "file": "src/resources/WatercraftResource.twe",
+      "type": "Class"
+    }, {
+      "name": "PersonResource",
+      "format": "tweedle",
+      "file": "src/resources/PersonResource.twe",
+      "type": "Class"
+    }, {
+      "name": "ElderPersonResource",
+      "format": "tweedle",
+      "file": "src/resources/ElderPersonResource.twe",
+      "type": "Class"
+    }, {
+      "name": "AdultPersonResource",
+      "format": "tweedle",
+      "file": "src/resources/AdultPersonResource.twe",
+      "type": "Class"
+    }, {
+      "name": "TeenPersonResource",
+      "format": "tweedle",
+      "file": "src/resources/TeenPersonResource.twe",
+      "type": "Class"
+    }, {
+      "name": "ChildPersonResource",
+      "format": "tweedle",
+      "file": "src/resources/ChildPersonResource.twe",
+      "type": "Class"
+    }, {
+      "name": "ToddlerPersonResource",
+      "format": "tweedle",
+      "file": "src/resources/ToddlerPersonResource.twe",
+      "type": "Class"
     }, {
       "name": "Ground/brick",
       "format": "png",

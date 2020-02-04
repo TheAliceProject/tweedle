@@ -1,0 +1,13 @@
+class AutomobileResource extends TransportResource {
+    AutomobileResource(TextString name) {
+        super(name: name);
+    }
+
+    @CompletelyHidden static JointId ROOT <- new JointId( name: "ROOT",  parent: null );
+    static JointId BACK_WHEELS <- new JointId( name: "BACK_WHEELS",  parent: AutomobileResource.ROOT );
+    static JointId FRONT_RIGHT_WHEEL <- new JointId( name: "FRONT_RIGHT_WHEEL",  parent: AutomobileResource.ROOT );
+    static JointId FRONT_LEFT_WHEEL <- new JointId( name: "FRONT_LEFT_WHEEL",  parent: AutomobileResource.ROOT );
+
+    @CompletelyHidden static JointId[] EXPECTED_JOINTS <- new JointId[] { AutomobileResource.ROOT,
+            AutomobileResource.BACK_WHEELS, AutomobileResource.FRONT_RIGHT_WHEEL, AutomobileResource.FRONT_LEFT_WHEEL};
+}

@@ -1,0 +1,17 @@
+class DynamicJointArray {
+    DynamicJointArray (TextString pattern, SJoint[] members) {
+        elementPattern <- pattern;
+        this.members <- members;
+    }
+
+    TextString getMembers() {
+        return members;
+    }
+
+    TextString getElementNamePattern() {
+        return elementPattern;
+    }
+
+    @CompletelyHidden TextString elementPattern;
+    @CompletelyHidden SJoint[] members;
+}

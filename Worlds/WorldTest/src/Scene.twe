@@ -80,15 +80,15 @@ class Scene extends SScene {
         cone.say(text: "What are y'all talking about over there?");
     }
     torus.setOpacity(opacity: new Portion(portion: 0.5));
-    torus.setOuterRadius(radius: 1.25);
-    torus.setInnerRadius(radius: 0.1);
-    torus.setInnerRadius(radius: 0.7);
+    torus.setOuterRadius(outerRadius: 1.25);
+    torus.setInnerRadius(innerRadius: 0.1);
+    torus.setInnerRadius(innerRadius: 0.7);
     torus.setOpacity(opacity: new Portion(portion: 1));
-    torus.setOuterRadius(radius: 0.9);
+    torus.setOuterRadius(outerRadius: 0.9);
     torus.setHeight(height: 0.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
     torus.setDepth(depth: 0.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
-    torus.setInnerRadius(radius: 0.25);
-    torus.setOuterRadius(radius: 0.75);
+    torus.setInnerRadius(innerRadius: 0.25);
+    torus.setOuterRadius(outerRadius: 0.75);
     torus.setDepth(depth: 1.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
     torus.setHeight(height: 0.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
 
@@ -192,11 +192,11 @@ class Scene extends SScene {
 
     $Debug.log(message: "disc");
     this.camera.moveAndOrientToAGoodVantagePointOf(entity: disc);
-    disc.setRadius(radius: 1.25);
+    disc.setRadius(baseRadius: 1.25);
     disc.setHeight(height: 1.25);
     disc.setDepth(depth: 0.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
     disc.setWidth(width: 0.5, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
-    disc.setRadius(radius: 0.5);
+    disc.setRadius(baseRadius: 0.5);
 
     $Debug.log(message: "sphere");
     this.camera.pointAt(target: sphere);
@@ -391,16 +391,16 @@ class Scene extends SScene {
     this.box.resizeHeight(factor: 0.25, isVolumePreserved: true);
 
     $Debug.log(message: "set width PRESERVE_VOLUME");
-    this.box.setWidth(width: 3, dimensionPolicy: DimensionPolicy.PRESERVE_VOLUME);
-    this.box.setWidth(width: 1, dimensionPolicy: DimensionPolicy.PRESERVE_VOLUME);
+    this.box.setWidth(width: 3, policy: SetDimensionPolicy.PRESERVE_VOLUME);
+    this.box.setWidth(width: 1, policy: SetDimensionPolicy.PRESERVE_VOLUME);
 
     $Debug.log(message: "set height PRESERVE_ASPECT_RATIO");
-    this.box.setHeight(height: 3, dimensionPolicy: DimensionPolicy.PRESERVE_ASPECT_RATIO);
-    this.box.setHeight(height: 1, dimensionPolicy: DimensionPolicy.PRESERVE_ASPECT_RATIO);
+    this.box.setHeight(height: 3, policy: SetDimensionPolicy.PRESERVE_ASPECT_RATIO);
+    this.box.setHeight(height: 1, policy: SetDimensionPolicy.PRESERVE_ASPECT_RATIO);
 
     $Debug.log(message: "set depth PRESERVE_NOTHING");
-    this.box.setDepth(depth: 3, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
-    this.box.setDepth(depth: 1, dimensionPolicy: DimensionPolicy.PRESERVE_NOTHING);
+    this.box.setDepth(depth: 3, policy: SetDimensionPolicy.PRESERVE_NOTHING);
+    this.box.setDepth(depth: 1, policy: SetDimensionPolicy.PRESERVE_NOTHING);
 
     $Debug.log(message: "fog density and atmosphere color");
     Portion fogDensity <- getFogDensity();
