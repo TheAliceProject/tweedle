@@ -42,20 +42,20 @@ class SJointedModel extends SModel {
         return null;
     }
 
-    @CompletelyHidden SJoint[] getJointArray(JointId[] idArray) {
-        WholeNumber len <- idArray.length;
+    @CompletelyHidden SJoint[] getJointArray(JointId[] jointIdArray) {
+        WholeNumber len <- jointIdArray.length;
         SJoint[] jointArray <- new SJoint[len];
         if (this.joints != null) {
             WholeNumber index <- 0;
             countUpTo(index < len) {
-                jointArray[index] <- this.getJoint(jointId: idArray[index]);
+                jointArray[index] <- this.getJoint(jointId: jointIdArray[index]);
             }
         }
         return jointArray;
     }
 
     @CompletelyHidden SJoint[] getJointArray(JointArrayId jointArrayId) {
-        return getJointArray(idArray: getJointIdArray(jointArrayId: jointArrayId));
+        return getJointArray(jointIdArray: getJointIdArray(jointArrayId: jointArrayId));
     }
 
     @CompletelyHidden JointId[] getJointIdArray(JointArrayId jointArrayId) {

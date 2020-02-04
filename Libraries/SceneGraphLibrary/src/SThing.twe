@@ -13,7 +13,6 @@ class SThing {
       return VantagePoint.IDENTITY;
     }
     return asSeenBy.getInverseAbsoluteTransformation().multiply(other: getAbsoluteTransformation());
-    // TODO Perhaps normalize orientation of asSeenBy.getInverseAbsoluteTransformation()
   }
 
   @CompletelyHidden VantagePoint getAbsoluteTransformation() {
