@@ -91,8 +91,8 @@ class SScene extends SThing {
     eventManager.addClickOnObjectListener(scene: this, listener: listener, overlappingEventPolicy: overlappingEventPolicy, setOfVisuals: setOfVisuals);
   }
 
-  void addDefaultModelManipulation() {
-    eventManager.addDefaultModelManipulation();
+  void addDefaultModelManipulation(SThing[] setOfVisuals <- Default.clickableVisuals()) {
+    eventManager.addDefaultModelManipulation(setOfVisuals: setOfVisuals);
   }
 
   void addKeyPressListener(<KeyEvent->void> listener,
