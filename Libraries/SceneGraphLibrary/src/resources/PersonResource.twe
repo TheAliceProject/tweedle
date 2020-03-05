@@ -2,4 +2,50 @@ class PersonResource extends BipedResource {
     PersonResource(TextString name) {
         super(name: name);
     }
+
+    @CompletelyHidden SJoint buildJoint(JointId jointId, SJointedModel model) {
+        SJoint parent <- model.getJoint(jointId: jointId.getParent())
+        Orientation o <- reorientationFor(joint: jointId.getName());
+        return new SJoint(id: jointId, parent: parent, model: model, reorientation: o);
+    }
+
+    @CompletelyHidden Orientation reorientationFor(TextString joint) {
+        if (joint == "ROOT" || joint == "NECK" || joint == "SPINE_BASE" || joint == "SPINE_MIDDLE" || joint == "SPINE_UPPER") {
+            return spineLegModifierMatrix;
+        }
+        if (joint == "PELVIS_LOWER_BODY") {
+            return lowerSpineModifierMatrix;
+        }
+        if (joint == "RIGHT_HIP" || joint == "LEFT_HIP" ||
+            joint == "RIGHT_KNEE" || joint == "LEFT_KNEE" ||
+            joint == "RIGHT_ANKLE" || joint == "LEFT_ANKLE" ||
+            joint == "RIGHT_FOOT" || joint == "LEFT_FOOT" ||
+            joint == "RIGHT_TOES" || joint == "LEFT_TOES") {
+            return spineModifierMatrix; // legModifierMatrix;
+        }
+        if (joint == "HEAD" || joint == "LEFT_EYE" || joint == "RIGHT_EYE" || joint == "LEFT_EYELID" || joint == "RIGHT_EYELID") {
+             return headAndEyeModifierMatrix;
+        }
+        if (joint == "MOUTH") {
+             return mouthModifierMatrix;
+        }
+        // Remaining joints are left or right arms
+        if (joint.contains(text: "RIGHT")) {
+            return rightArmModifierMatrix;
+        }
+        return leftArmModifierMatrix;
+    }
+
+    // Roll right 180
+    static Orientation spineLegModifierMatrix <- new Orientation(forward: Direction.FORWARD, up: Direction.DOWN);
+    // Roll right 180 * rotate forward 180
+    static Orientation lowerSpineModifierMatrix <- new Orientation(forward: Direction.BACKWARD, up: Direction.UP);
+    // Rotate backward 90 * rotate right 180;
+    static Orientation headAndEyeModifierMatrix <- new Orientation(forward: Direction.UP, up: Direction.FORWARD);
+    // Roll left 90
+    static Orientation leftArmModifierMatrix <- new Orientation(forward: Direction.FORWARD, up: Direction.LEFT);
+    // Roll right 90
+    static Orientation rightArmModifierMatrix <- new Orientation(forward: Direction.FORWARD, up: Direction.RIGHT);
+    // Identity
+    static Orientation mouthModifierMatrix <- new Orientation(forward: Direction.FORWARD, up: Direction.UP);
 }
