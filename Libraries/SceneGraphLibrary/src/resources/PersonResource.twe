@@ -16,12 +16,10 @@ class PersonResource extends BipedResource {
         if (joint == "PELVIS_LOWER_BODY") {
             return lowerSpineModifierMatrix;
         }
-        if (joint == "RIGHT_HIP" || joint == "LEFT_HIP" ||
-            joint == "RIGHT_KNEE" || joint == "LEFT_KNEE" ||
-            joint == "RIGHT_ANKLE" || joint == "LEFT_ANKLE" ||
-            joint == "RIGHT_FOOT" || joint == "LEFT_FOOT" ||
+        if (joint == "RIGHT_HIP" || joint == "LEFT_HIP" || joint == "RIGHT_KNEE" || joint == "LEFT_KNEE" ||
+            joint == "RIGHT_ANKLE" || joint == "LEFT_ANKLE" || joint == "RIGHT_FOOT" || joint == "LEFT_FOOT" ||
             joint == "RIGHT_TOES" || joint == "LEFT_TOES") {
-            return spineModifierMatrix; // legModifierMatrix;
+            return spineLegModifierMatrix;
         }
         if (joint == "HEAD" || joint == "LEFT_EYE" || joint == "RIGHT_EYE" || joint == "LEFT_EYELID" || joint == "RIGHT_EYELID") {
              return headAndEyeModifierMatrix;
