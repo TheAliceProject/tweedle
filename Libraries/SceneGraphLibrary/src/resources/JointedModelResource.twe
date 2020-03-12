@@ -24,10 +24,5 @@ class JointedModelResource {
         return result;
     }
 
-    @CompletelyHidden SJoint buildJoint(JointId jointId, SJointedModel model) {
-        SJoint parent <- model.getJoint(jointId: jointId.getParent())
-        return new SJoint(id: jointId, parent: parent, model: model);
-    }
-
     @CompletelyHidden TextString name;
 }

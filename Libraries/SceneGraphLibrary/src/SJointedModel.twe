@@ -103,7 +103,9 @@ class SJointedModel extends SModel {
         WholeNumber len <- ids.length
         this.joints <- new SJoint[len];
         countUpTo(index < len) {
-            joints[index] <- resource.buildJoint(jointId: ids[index], model: this);
+            JointId jointId <- ids[index];
+            SJoint parent <- getJoint(jointId: jointId.getParent())
+            joints[index] <- new SJoint(id: jointId, parent: parent, model: this);
         }
     }
 
