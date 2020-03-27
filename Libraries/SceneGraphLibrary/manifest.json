@@ -7,15 +7,15 @@
     "themeTags": []
   },
   "provenance": {
-    "aliceVersion": "3.5.0.1-alpha",
-    "created": "2018",
+    "aliceVersion": "3.6.0.0-beta.5",
+    "created": "2020",
     "creator": "Alice Project"
   },
   "metadata": {
     "formatVersion": "0.1",
     "identifier": {
       "name": "SceneGraphLibrary",
-      "version": "0.10",
+      "version": "0.13",
       "type": "Library"
     }
   },
@@ -220,6 +220,11 @@
       "name": "SMovableTurnable",
       "format": "tweedle",
       "file": "src/SMovableTurnable.twe",
+      "type": "Class"
+    }, {
+      "name": "SVRHand",
+      "format": "tweedle",
+      "file": "src/SVRHand.twe",
       "type": "Class"
     }, {
       "name": "SCamera",

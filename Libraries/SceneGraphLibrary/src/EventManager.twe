@@ -30,8 +30,8 @@ class EventManager {
     });
   }
 
-  void addDefaultModelManipulation() {
-    $Mouse.addDragAdapter();
+  void addDefaultModelManipulation(SThing[] setOfVisuals <- Default.clickableVisuals()) {
+    $Mouse.addDragAdapter(setOfVisuals: setOfVisuals);
   }
 
   void addKeyPressListener(<KeyEvent->void> listener,

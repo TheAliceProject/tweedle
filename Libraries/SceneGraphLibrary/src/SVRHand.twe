@@ -1,0 +1,8 @@
+class SVRHand extends SThing {
+  SVRHand(TextString name, SCamera camera) {
+    this.vehicle <- camera;
+    $SceneGraph.createVrHandEntity(hand: this);
+    setName(name: name);
+    $SceneGraph.connectVrHandToCamera(hand: this, camera: camera);
+  }
+}
