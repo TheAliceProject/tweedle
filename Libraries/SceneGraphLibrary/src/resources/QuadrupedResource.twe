@@ -3,6 +3,11 @@ class QuadrupedResource extends JointedModelResource {
         super(name: name);
     }
 
+	QuadrupedResource(TextString name, JointId[] tailArray) {
+        super(name: name);
+		this.tailArray <- tailArray;
+    }
+
     static JointId ROOT <- new JointId(name: "ROOT", parent: null);
     static JointId SPINE_BASE <- new JointId(name: "SPINE_BASE", parent: QuadrupedResource.ROOT);
     static JointId SPINE_MIDDLE <- new JointId(name: "SPINE_MIDDLE", parent: QuadrupedResource.SPINE_BASE);
@@ -77,4 +82,7 @@ class QuadrupedResource extends JointedModelResource {
     }
 
     @CompletelyHidden static JointId[] JOINT_ID_ROOTS <- new JointId[] {QuadrupedResource.ROOT};
+
+	
+    @CompletelyHidden JointId[] tailArray;
 }
