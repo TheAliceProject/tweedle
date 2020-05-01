@@ -1,6 +1,7 @@
 class QuadrupedResource extends JointedModelResource {
     QuadrupedResource(TextString name) {
         super(name: name);
+		this.tailArray <- DEFAULT_TAIL;
     }
 
 	QuadrupedResource(TextString name, JointId[] tailArray) {
