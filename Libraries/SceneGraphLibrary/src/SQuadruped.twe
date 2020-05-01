@@ -4,7 +4,7 @@ class SQuadruped extends SJointedModel {
     }
 
     SJoint[] getTailArray() {
-        return QuadrupedResource.tail_array;
+        return getJointArray(jointIdArray: QuadrupedResource.DEFAULT_TAIL);
     }
 
     SJoint getRoot() {

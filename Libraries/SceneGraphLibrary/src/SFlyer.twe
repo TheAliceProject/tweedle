@@ -12,11 +12,11 @@ class SFlyer extends SJointedModel {
     }
 
     JointId[] getTailArray() {
-        return currentResource.tailArray;
+        return this.getJointArray(jointIdArray: FlyerResource.DEFAULT_TAIL);
     }
 
     JointId[] getNeckArray() {
-        return currentResource.neckArray;
+        return this.getJointArray(jointIdArray: FlyerResource.DEFAULT_NECK);
     }
 
     SJoint getRoot() {
