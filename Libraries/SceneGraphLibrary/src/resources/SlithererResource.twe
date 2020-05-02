@@ -17,7 +17,7 @@ class SlithererResource extends JointedModelResource {
     static JointId RIGHT_EYELID <- new JointId( name: "RIGHT_EYELID",  parent: SlithererResource.HEAD );
 
     @CompletelyHidden static JointId TAIL_0 <- new JointId( name: "TAIL_0",  parent: SlithererResource.ROOT );
-    @CompletelyHidden JointId[] DEFAULT_TAIL <- new JointId[] {SlithererResource.TAIL_0};
+    @CompletelyHidden static JointId[] DEFAULT_TAIL <- new JointId[] {SlithererResource.TAIL_0};
 
     @CompletelyHidden static JointId[] EXPECTED_JOINTS <- new JointId[] {
         SlithererResource.ROOT, SlithererResource.SPINE_BASE, SlithererResource.SPINE_MIDDLE, SlithererResource.SPINE_UPPER,

@@ -1,6 +1,12 @@
 class QuadrupedResource extends JointedModelResource {
     QuadrupedResource(TextString name) {
         super(name: name);
+		this.tailArray <- DEFAULT_TAIL;
+    }
+
+	QuadrupedResource(TextString name, JointId[] tailArray) {
+        super(name: name);
+		this.tailArray <- tailArray;
     }
 
     static JointId ROOT <- new JointId(name: "ROOT", parent: null);
@@ -77,4 +83,7 @@ class QuadrupedResource extends JointedModelResource {
     }
 
     @CompletelyHidden static JointId[] JOINT_ID_ROOTS <- new JointId[] {QuadrupedResource.ROOT};
+
+	
+    @CompletelyHidden JointId[] tailArray;
 }
