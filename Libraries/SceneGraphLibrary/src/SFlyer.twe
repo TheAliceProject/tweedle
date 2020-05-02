@@ -11,12 +11,12 @@ class SFlyer extends SJointedModel {
         this.strikePose(pose: currentResource.foldWingsPose, duration: duration, animationStyle: animationStyle);
     }
 
-    JointId[] getTailArray() {
-        return currentResource.tailArray;
+    SJoint[] getTailArray() {
+        return this.getJointArray(jointIdArray: currentResource.tailArray);
     }
 
-    JointId[] getNeckArray() {
-        return currentResource.neckArray;
+    SJoint[] getNeckArray() {
+        return this.getJointArray(jointIdArray: currentResource.neckArray);
     }
 
     SJoint getRoot() {
