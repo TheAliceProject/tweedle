@@ -1,0 +1,22 @@
+class CeilingAppearance {
+    static ImageSource BLACK_CHECKER <- new ImageSource(resource: "Floor/black_white");
+    static ImageSource BLUE_CHECKER <- new ImageSource(resource: "Floor/blue_white");
+    static ImageSource BLUE_SQUARES <- new ImageSource(resource: "Floor/blue_moroccan");
+    static ImageSource BLACK_TILES <- new ImageSource(resource: "Floor/black_ceramic");
+    static ImageSource WHITE_TILES <- new ImageSource(resource: "Floor/carpet_chianti_white");
+    static ImageSource PAW_PRINT_CARPET <- new ImageSource(resource: "Floor/carpet_cat_paws");
+    static ImageSource BLUE_STAR_CARPET <- new ImageSource(resource: "Floor/carpet_blue");
+    static ImageSource RED_STAR_CARPET <- new ImageSource(resource: "Floor/carpet_red_stars");
+    static ImageSource RED_CARPET <- new ImageSource(resource: "Floor/carpet_hotel_red");
+    static ImageSource BLUE_CARPET <- new ImageSource(resource: "Floor/carpet_hotel_blue");
+    static ImageSource GOLD_CARPET <- new ImageSource(resource: "Floor/carpet_hotel_gold");
+    static ImageSource LEAF_CARPET <- new ImageSource(resource: "Floor/carpet_leaves");
+    static ImageSource GREEN_TILE <- new ImageSource(resource: "Floor/green_ceramic");
+    static ImageSource RED_TILE <- new ImageSource(resource: "Floor/red_ceramic");
+    static ImageSource BLUE_TILE <- new ImageSource(resource: "Floor/turquoise_ceramic");
+    static ImageSource REDWOOD <- new ImageSource(resource: "Floor/deck_redwood");
+    static ImageSource WOOD_ZIG_ZAG <- new ImageSource(resource: "Floor/club_zigzag");
+    static ImageSource WOOD_SQUARES <- new ImageSource(resource: "Floor/wood_cross_tile");
+    static ImageSource MOROCCAN_TILES <- new ImageSource(resource: "Floor/wood_moroccan");
+    static ImageSource WOOD_DIAMOND <- new ImageSource(resource: "Floor/wood_panel_diamonds");
+}

@@ -20,8 +20,8 @@ class VantagePointProperty extends Property {
       setValue(value: transformation.multiply(other: value));
     } else {
       VantagePoint ownerSeen <- owner.getVantagePoint(asSeenBy: asSeenBy);
-      VantagePoint ownerMoved <- transformation.multiply(other: ownerSeen)
-      VantagePoint newValue <- owner.vehicle.getInverseAbsoluteTransformation()
+      VantagePoint ownerMoved <- transformation.multiply(other: ownerSeen);
+      VantagePoint newValue <- owner.vehicle.getInverseAbsoluteTransformation();
       if (!asSeenBy.isSceneOf(other: owner)) {
         VantagePoint seenBy <- asSeenBy.getAbsoluteTransformation();
         // TODO May need to add seenBy.orientation.normalizeColumns();

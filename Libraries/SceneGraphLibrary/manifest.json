@@ -7,7 +7,7 @@
     "themeTags": []
   },
   "provenance": {
-    "aliceVersion": "3.6.0.0-beta.5",
+    "aliceVersion": "3.6.0.0-beta.6",
     "created": "2020",
     "creator": "Alice Project"
   },
@@ -15,7 +15,7 @@
     "formatVersion": "0.1",
     "identifier": {
       "name": "SceneGraphLibrary",
-      "version": "0.13",
+      "version": "0.14",
       "type": "Library"
     }
   },
@@ -495,6 +495,11 @@
       "name": "FloorAppearance",
       "format": "tweedle",
       "file": "src/FloorAppearance.twe",
+      "type": "Enum"
+    }, {
+      "name": "CeilingAppearance",
+      "format": "tweedle",
+      "file": "src/CeilingAppearance.twe",
       "type": "Enum"
     }, {
       "name": "TextStyle",

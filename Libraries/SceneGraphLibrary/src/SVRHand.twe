@@ -5,4 +5,8 @@ class SVRHand extends SThing {
     setName(name: name);
     $SceneGraph.connectVrHandToCamera(hand: this, camera: camera);
   }
+
+  @CompletelyHidden VantagePoint getAbsoluteTransformation() {
+    return $SceneGraph.getAbsoluteTransformation(thing: this);
+  }
 }
