@@ -53,9 +53,9 @@ class SJointedModel extends SModel {
     @CompletelyHidden SJoint[] getJointArray(JointArrayId jointArrayId) {
         if (cachedNamedJoints == null) {
             TextString[] jointNames <- $SceneGraph.findJointsBeginningWith(start: jointArrayId.getElementNamePattern(), model: this);
-            WholeNumber len <- jointNames.length
+            WholeNumber len <- jointNames.length;
             SJoint[] members <- new SJoint[len];
-            SJoint parent <- getJoint(name: "ROOT")
+            SJoint parent <- getJoint(name: "ROOT");
             countUpTo(index < len) {
                 TextString jointName <- jointNames[index];
                 SJoint existingJoint <- getJoint(name: jointName);
@@ -64,11 +64,11 @@ class SJointedModel extends SModel {
                     members[index] <- existingJoint;
                 } else {
                     // Probably the path along a railroad track
-                    parent <- new SJoint(name: jointName, parent: parent, model: this)
+                    parent <- new SJoint(name: jointName, parent: parent, model: this);
                     members[index] <- parent;
                 }
             }
-            cachedNamedJoints <- new DynamicJointArray(pattern: jointArrayId.getElementNamePattern(), members: members)
+            cachedNamedJoints <- new DynamicJointArray(pattern: jointArrayId.getElementNamePattern(), members: members);
         } else {
             // Verify the stored value has the same name. Since no model (yet) has more than one dynamic array there is only cached value.
             if (cachedNamedJoints.getElementNamePattern() != jointArrayId.getElementNamePattern()) {
@@ -100,11 +100,11 @@ class SJointedModel extends SModel {
             // TODO Reuse and map existing joint values in
         }
         JointId[] ids <- resource.getJointIds();
-        WholeNumber len <- ids.length
+        WholeNumber len <- ids.length;
         this.joints <- new SJoint[len];
         countUpTo(index < len) {
             JointId jointId <- ids[index];
-            SJoint parent <- getJoint(jointId: jointId.getParent())
+            SJoint parent <- getJoint(jointId: jointId.getParent());
             joints[index] <- new SJoint(id: jointId, parent: parent, model: this);
         }
     }

@@ -24,7 +24,7 @@ class STorus extends SShape {
                  AnimationStyle animationStyle <- Default.animationStyle() ) {
     doTogether {
       if (innerRadius > outerRadius.getValue()) {
-        setOuterRadius(outerRadius: innerRadius, duration: duration, animationStyle: animationStyle)
+        setOuterRadius(outerRadius: innerRadius, duration: duration, animationStyle: animationStyle);
       }
       this.innerRadius.animateValue(endValue: innerRadius, duration: duration, animationStyle: animationStyle);
     }
@@ -39,7 +39,7 @@ class STorus extends SShape {
                       AnimationStyle animationStyle <- Default.animationStyle() ) {
     doTogether {
       if (outerRadius < innerRadius.getValue()) {
-        setInnerRadius(innerRadius: outerRadius, duration: duration, animationStyle: animationStyle)
+        setInnerRadius(innerRadius: outerRadius, duration: duration, animationStyle: animationStyle);
       }
       this.outerRadius.animateValue(endValue: outerRadius, duration: duration, animationStyle: animationStyle);
     }
