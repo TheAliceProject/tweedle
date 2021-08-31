@@ -7,15 +7,15 @@
     "themeTags": []
   },
   "provenance": {
-    "aliceVersion": "3.6.0.0-beta.6",
-    "created": "2020",
+    "aliceVersion": "3.6.0.2",
+    "created": "2021",
     "creator": "Alice Project"
   },
   "metadata": {
     "formatVersion": "0.1",
     "identifier": {
       "name": "SceneGraphLibrary",
-      "version": "0.14",
+      "version": "0.16",
       "type": "Library"
     }
   },
