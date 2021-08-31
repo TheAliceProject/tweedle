@@ -16,19 +16,21 @@ class VantagePointProperty extends Property {
   void applyTransformation(VantagePoint transformation, SThing asSeenBy) {
     if (asSeenBy == owner) {
       setValue(value: value.multiply(other: transformation));
-    } else if (asSeenBy == owner.vehicle) {
-      setValue(value: transformation.multiply(other: value));
     } else {
-      VantagePoint ownerSeen <- owner.getVantagePoint(asSeenBy: asSeenBy);
-      VantagePoint ownerMoved <- transformation.multiply(other: ownerSeen);
-      VantagePoint newValue <- owner.vehicle.getInverseAbsoluteTransformation();
-      if (!asSeenBy.isSceneOf(other: owner)) {
-        VantagePoint seenBy <- asSeenBy.getAbsoluteTransformation();
-        // TODO May need to add seenBy.orientation.normalizeColumns();
-        newValue <- newValue.multiply(other: seenBy);
+      if (asSeenBy == owner.vehicle) {
+        setValue(value: transformation.multiply(other: value));
+      } else {
+        VantagePoint ownerSeen <- owner.getVantagePoint(asSeenBy: asSeenBy);
+        VantagePoint ownerMoved <- transformation.multiply(other: ownerSeen);
+        VantagePoint newValue <- owner.vehicle.getInverseAbsoluteTransformation();
+        if (!asSeenBy.isSceneOf(other: owner)) {
+          VantagePoint seenBy <- asSeenBy.getAbsoluteTransformation();
+          // TODO May need to add seenBy.orientation.normalizeColumns();
+          newValue <- newValue.multiply(other: seenBy);
+        }
+        newValue <- newValue.multiply(other: ownerMoved);
+        setValue(value: newValue);
       }
-      newValue <- newValue.multiply(other: ownerMoved);
-      setValue(value: newValue);
     }
   }
 
