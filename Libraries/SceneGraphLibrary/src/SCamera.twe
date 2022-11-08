@@ -2,8 +2,9 @@ class SCamera extends SMovableTurnable {
   SCamera() {
     $SceneGraph.createCameraEntity(camera: this);
     $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value: this.localTransformation.getValue());
-    $SceneGraph.setCameraVerticalFOV(camera: this, fov: Default.verticalFOV());
-    $SceneGraph.setCameraClipPlanes(camera: this, nearClip: Default.nearClipPlane(), farClip: Default.farClipPlane());
+    resetViewingAngle();
+    $SceneGraph.setCameraNearClippingPlaneDistance(camera: this, distance: Default.nearClipPlane());
+    $SceneGraph.setCameraFarClippingPlaneDistance(camera: this, distance: Default.farClipPlane());
     leftHand <- new SVRHand(name: "LeftHand", camera: this);
     rightHand <- new SVRHand(name: "RightHand", camera: this);
   }
@@ -22,6 +23,50 @@ class SCamera extends SMovableTurnable {
     VantagePoint end <- new VantagePoint(position: pos, orientation: rot);
 
     this.localTransformation.animateValue(endValue: end, asSeenBy: entity, duration: duration, animationStyle: animationStyle);
+  }
+
+  void setNearClippingPlaneDistance(Number distance) {
+    $SceneGraph.setCameraNearClippingPlaneDistance(camera: this, distance: distance);
+  }
+
+  DecimalNumber getNearClippingPlaneDistance() {
+    return $SceneGraph.getCameraNearClippingPlaneDistance(camera: this);
+  }
+
+  void setFarClippingPlaneDistance(Number distance) {
+    $SceneGraph.setCameraFarClippingPlaneDistance(camera: this, distance: distance);
+  }
+
+  void resetViewingAngle() {
+    $SceneGraph.setCameraVerticalFOV(camera: this, fov: Default.verticalFOV());
+  }
+
+  DecimalNumber getFarClippingPlaneDistance() {
+    return $SceneGraph.getCameraFarClippingPlaneDistance(camera: this);
+  }
+
+  void setHorizontalViewingAngle(Angle angle) {
+    if (angle.radians > 0) {
+      $SceneGraph.setCameraHorizontalFOV(camera: this, fov: angle);
+    } else {
+      resetViewingAngle();
+    }
+  }
+
+  DecimalNumber getHorizontalViewingAngle() {
+    return $SceneGraph.getCameraHorizontalFOV(camera: this);
+  }
+
+  void setVerticalViewingAngle(Angle angle) {
+    if (angle.radians > 0) {
+      $SceneGraph.setCameraVerticalFOV(camera: this, fov: angle);
+    } else {
+      resetViewingAngle();
+    }
+  }
+
+  DecimalNumber getVerticalViewingAngle() {
+    return $SceneGraph.getCameraVerticalFOV(camera: this);
   }
 
   SVRHand getLeftHand() {
