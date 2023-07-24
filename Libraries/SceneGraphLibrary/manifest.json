@@ -227,6 +227,16 @@
       "file": "src/SVRHand.twe",
       "type": "Class"
     }, {
+      "name": "SVRHeadset",
+      "format": "tweedle",
+      "file": "src/SVRHeadset.twe",
+      "type": "Class"
+    }, {
+      "name": "SVRUser",
+      "format": "tweedle",
+      "file": "src/SVRUser.twe",
+      "type": "Class"
+    }, {
       "name": "SCamera",
       "format": "tweedle",
       "file": "src/SCamera.twe",

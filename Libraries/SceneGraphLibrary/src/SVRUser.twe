@@ -1,0 +1,53 @@
+class SVRUser extends SMovableTurnable {
+  SVRUser() {
+    $SceneGraph.createVRUserEntity(user: this);
+    $SceneGraph.bindTransformationProperty(owner: this, property: this.localTransformation, value: this.localTransformation.getValue());
+    leftHand <- new SVRHand(name: "LeftHand", parent: this);
+    rightHand <- new SVRHand(name: "RightHand", parent: this);
+    headset <- new SVRHeadset(user: this);
+    $SceneGraph.bindSizeProperty(owner: this, property: this.size, value: this.size.getValue());
+  }
+
+  void setVehicle(SThing vehicle) {
+    this.vehicle <- vehicle;
+    this.localTransformation.value <- $SceneGraph.setVehicle(vehicle: vehicle, rider: this);
+  }
+
+  Number getScale() {
+      return size.getValue().width;
+  }
+
+  void setScale(Number scale,
+                Duration duration <- Default.duration(),
+                AnimationStyle animationStyle <- Default.animationStyle()) {
+      size.animateResize(factor: scale, duration: duration, animationStyle: animationStyle);
+  }
+
+  void moveAndOrientToAGoodVantagePointOf(SThing entity,
+          Duration duration <- Default.duration(),
+          AnimationStyle animationStyle <- Default.animationStyle() ) {
+
+    Position pos <- new Position(x: 2, y: 4, z: -8);
+    Orientation rot <- new Orientation(forward: new Direction(x: -pos.x, y: -pos.y, z: -pos.z), up: Direction.UP);
+    VantagePoint end <- new VantagePoint(position: pos, orientation: rot);
+
+    this.localTransformation.animateValue(endValue: end, asSeenBy: entity, duration: duration, animationStyle: animationStyle);
+  }
+
+  SVRHand getHeadset() {
+    return headset;
+  }
+
+  SVRHand getLeftHand() {
+    return leftHand;
+  }
+
+  SVRHand getRightHand() {
+    return rightHand;
+  }
+
+  SVRHeadset headset;
+  SVRHand leftHand;
+  SVRHand rightHand;
+  @CompletelyHidden SizeProperty size <- new SizeProperty(owner: this, value: new Size(width: 1, height: 1, depth: 1));
+}

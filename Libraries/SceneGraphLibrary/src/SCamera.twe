@@ -5,8 +5,8 @@ class SCamera extends SMovableTurnable {
     resetViewingAngle();
     $SceneGraph.setCameraNearClippingPlaneDistance(camera: this, distance: Default.nearClipPlane());
     $SceneGraph.setCameraFarClippingPlaneDistance(camera: this, distance: Default.farClipPlane());
-    leftHand <- new SVRHand(name: "LeftHand", camera: this);
-    rightHand <- new SVRHand(name: "RightHand", camera: this);
+    leftHand <- new SVRHand(name: "LeftHand", parent: this);
+    rightHand <- new SVRHand(name: "RightHand", parent: this);
   }
 
   void setVehicle(SThing vehicle) {
