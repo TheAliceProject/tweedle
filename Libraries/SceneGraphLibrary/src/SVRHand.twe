@@ -1,12 +1,25 @@
 class SVRHand extends SThing {
-  SVRHand(TextString name, SCamera camera) {
-    this.vehicle <- camera;
+  SVRHand(TextString name, SMovableTurnable parent) {
+    this.vehicle <- parent;
     $SceneGraph.createVrHandEntity(hand: this);
     setName(name: name);
-    $SceneGraph.connectVrHandToCamera(hand: this, camera: camera);
+    $SceneGraph.connectVrDevice(device: this, parent: parent);
   }
 
   @CompletelyHidden VantagePoint getAbsoluteTransformation() {
     return $SceneGraph.getAbsoluteTransformation(thing: this);
+  }
+
+  @CompletelyHidden void setOrientationRelativeToVehicle(Orientation orientation,
+                                                         Duration duration <- Default.duration(),
+                                                         AnimationStyle animationStyle <- Default.animationStyle()) {
+    // Override STurnable to be a no-op
+  }
+
+  @CompletelyHidden void setPositionRelativeToVehicle(Position position,
+                                                      Duration duration <- Default.duration(),
+                                                      AnimationStyle animationStyle <- Default.animationStyle(),
+                                                      PathStyle pathStyle <- Default.pathStyle()) {
+    // Override STurnable to be a no-op
   }
 }

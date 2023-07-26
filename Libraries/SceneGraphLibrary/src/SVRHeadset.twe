@@ -1,0 +1,73 @@
+class SVRHeadset extends SThing {
+  SVRHeadset(SVRUser user) {
+    $SceneGraph.createHeadsetEntity(headset: this);
+    $SceneGraph.connectVrDevice(device: this, parent: user);
+    $SceneGraph.setCameraVerticalFOV(camera: this, fov: Default.verticalFOV());
+    setNearClippingPlaneDistance(distance: Default.nearClipPlane());
+    setFarClippingPlaneDistance(distance: Default.farClipPlane());
+    this.vehicle <- user;
+  }
+
+  @CompletelyHidden VantagePoint getAbsoluteTransformation() {
+    return $SceneGraph.getAbsoluteTransformation(thing: this);
+  }
+
+  @CompletelyHidden void setOrientationRelativeToVehicle(Orientation orientation,
+                                                         Duration duration <- Default.duration(),
+                                                         AnimationStyle animationStyle <- Default.animationStyle()) {
+    // Override STurnable to be a no-op
+  }
+
+  @CompletelyHidden void setPositionRelativeToVehicle(Position position,
+                                                      Duration duration <- Default.duration(),
+                                                      AnimationStyle animationStyle <- Default.animationStyle(),
+                                                      PathStyle pathStyle <- Default.pathStyle()) {
+    // Override STurnable to be a no-op
+  }
+
+  void setNearClippingPlaneDistance(Number distance) {
+    $SceneGraph.setCameraNearClippingPlaneDistance(camera: this, distance: distance);
+  }
+
+  DecimalNumber getNearClippingPlaneDistance() {
+    return $SceneGraph.getCameraNearClippingPlaneDistance(camera: this);
+  }
+
+  void setFarClippingPlaneDistance(Number distance) {
+    $SceneGraph.setCameraFarClippingPlaneDistance(camera: this, distance: distance);
+  }
+
+  void resetViewingAngle() {
+    $SceneGraph.setCameraVerticalFOV(camera: this, fov: Default.verticalFOV());
+  }
+
+  DecimalNumber getFarClippingPlaneDistance() {
+    return $SceneGraph.getCameraFarClippingPlaneDistance(camera: this);
+  }
+
+  void setHorizontalViewingAngle(Angle angle) {
+    if (angle.radians > 0) {
+      $SceneGraph.setCameraHorizontalFOV(camera: this, fov: angle);
+    } else {
+      resetViewingAngle();
+    }
+  }
+
+  DecimalNumber getHorizontalViewingAngle() {
+    return $SceneGraph.getCameraHorizontalFOV(camera: this);
+  }
+
+  void setVerticalViewingAngle(Angle angle) {
+    if (angle.radians > 0) {
+      $SceneGraph.setCameraVerticalFOV(camera: this, fov: angle);
+    } else {
+      resetViewingAngle();
+    }
+  }
+
+  DecimalNumber getVerticalViewingAngle() {
+    return $SceneGraph.getCameraVerticalFOV(camera: this);
+  }
+
+  @CompletelyHidden VantagePointProperty localTransformation <- new VantagePointProperty(owner: this, value: VantagePoint.IDENTITY);
+}

@@ -7,15 +7,15 @@
     "themeTags": []
   },
   "provenance": {
-    "aliceVersion": "3.7.0.1",
-    "created": "2022",
+    "aliceVersion": "3.8.0.0",
+    "created": "2023",
     "creator": "Alice Project"
   },
   "metadata": {
     "formatVersion": "0.1",
     "identifier": {
       "name": "SceneGraphLibrary",
-      "version": "0.17",
+      "version": "0.18",
       "type": "Library"
     }
   },
@@ -225,6 +225,16 @@
       "name": "SVRHand",
       "format": "tweedle",
       "file": "src/SVRHand.twe",
+      "type": "Class"
+    }, {
+      "name": "SVRHeadset",
+      "format": "tweedle",
+      "file": "src/SVRHeadset.twe",
+      "type": "Class"
+    }, {
+      "name": "SVRUser",
+      "format": "tweedle",
+      "file": "src/SVRUser.twe",
       "type": "Class"
     }, {
       "name": "SCamera",
