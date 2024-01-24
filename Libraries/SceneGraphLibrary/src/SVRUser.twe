@@ -20,7 +20,8 @@ class SVRUser extends SMovableTurnable {
   void setScale(Number scale,
                 Duration duration <- Default.duration(),
                 AnimationStyle animationStyle <- Default.animationStyle()) {
-      size.animateResize(factor: scale, duration: duration, animationStyle: animationStyle);
+      DecimalNumber factor <- scale / getScale();
+      size.animateResize(factor: factor, duration: duration, animationStyle: animationStyle);
   }
 
   void moveAndOrientToAGoodVantagePointOf(SThing entity,
